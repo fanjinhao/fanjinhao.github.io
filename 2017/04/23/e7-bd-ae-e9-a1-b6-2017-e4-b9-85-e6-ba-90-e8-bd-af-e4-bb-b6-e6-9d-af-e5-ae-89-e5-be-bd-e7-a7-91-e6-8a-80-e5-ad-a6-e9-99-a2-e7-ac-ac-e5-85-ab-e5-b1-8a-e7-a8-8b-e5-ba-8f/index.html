@@ -1,0 +1,1720 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+<html class="theme-next mist" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.2.0" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico?v=6.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon.ico?v=6.2.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.2.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '6.2.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="### Contest1068 - 2017“久源软件杯”安徽科技学院第八届程序设计大赛关于举办“久源软件杯”安徽科技学院第八届程序设计大赛通知&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;ACM&amp;nbsp;国际大学生程序设计竞赛&amp;nbsp;(International Collegiate Programming Contest）是由美国计算机协会（ACM）主办的一项旨在展示大学生">
+<meta name="keywords" content="校赛">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[置顶]        2017“久源软件杯”安徽科技学院第八届程序设计大赛 - 题解">
+<meta property="og:url" content="https://www.fayne.cn/2017/04/23/e7-bd-ae-e9-a1-b6-2017-e4-b9-85-e6-ba-90-e8-bd-af-e4-bb-b6-e6-9d-af-e5-ae-89-e5-be-bd-e7-a7-91-e6-8a-80-e5-ad-a6-e9-99-a2-e7-ac-ac-e5-85-ab-e5-b1-8a-e7-a8-8b-e5-ba-8f/index.html">
+<meta property="og:site_name" content="Fayne&#39;s Blog">
+<meta property="og:description" content="### Contest1068 - 2017“久源软件杯”安徽科技学院第八届程序设计大赛关于举办“久源软件杯”安徽科技学院第八届程序设计大赛通知&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;ACM&amp;nbsp;国际大学生程序设计竞赛&amp;nbsp;(International Collegiate Programming Contest）是由美国计算机协会（ACM）主办的一项旨在展示大学生">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://img.blog.csdn.net/20170423105535273?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZmppbmhhbw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:updated_time" content="2018-05-13T03:26:29.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[置顶]        2017“久源软件杯”安徽科技学院第八届程序设计大赛 - 题解">
+<meta name="twitter:description" content="### Contest1068 - 2017“久源软件杯”安徽科技学院第八届程序设计大赛关于举办“久源软件杯”安徽科技学院第八届程序设计大赛通知&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;ACM&amp;nbsp;国际大学生程序设计竞赛&amp;nbsp;(International Collegiate Programming Contest）是由美国计算机协会（ACM）主办的一项旨在展示大学生">
+<meta name="twitter:image" content="http://img.blog.csdn.net/20170423105535273?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZmppbmhhbw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+
+
+
+
+
+
+  <link rel="canonical" href="https://www.fayne.cn/2017/04/23/e7-bd-ae-e9-a1-b6-2017-e4-b9-85-e6-ba-90-e8-bd-af-e4-bb-b6-e6-9d-af-e5-ae-89-e5-be-bd-e7-a7-91-e6-8a-80-e5-ad-a6-e9-99-a2-e7-ac-ac-e5-85-ab-e5-b1-8a-e7-a8-8b-e5-ba-8f/">
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>[置顶]        2017“久源软件杯”安徽科技学院第八届程序设计大赛 - 题解 | Fayne's Blog</title>
+  
+
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?066203df471a031e8ac8b508c3c6314b";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Fayne's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">成为自己想成为的人永远不会太迟</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-board">
+    <a href="/board/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-pencil"></i> <br>留言板</a>
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@1.2/dist/Meting.min.js"></script>
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.fayne.cn/2017/04/23/e7-bd-ae-e9-a1-b6-2017-e4-b9-85-e6-ba-90-e8-bd-af-e4-bb-b6-e6-9d-af-e5-ae-89-e5-be-bd-e7-a7-91-e6-8a-80-e5-ad-a6-e9-99-a2-e7-ac-ac-e5-85-ab-e5-b1-8a-e7-a8-8b-e5-ba-8f/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Fayne">
+      <meta itemprop="description" content="成为自己想成为的人永远不会太迟">
+      <meta itemprop="image" content="/images/user.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Fayne's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">[置顶]        2017“久源软件杯”安徽科技学院第八届程序设计大赛 - 题解
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2017-04-23 02:59:00" itemprop="dateCreated datePublished" datetime="2017-04-23T02:59:00+08:00">2017-04-23</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/AKOJ/" itemprop="url" rel="index"><span itemprop="name">AKOJ</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/AKOJ/校赛/" itemprop="url" rel="index"><span itemprop="name">校赛</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/AKOJ/校赛/算法学习/" itemprop="url" rel="index"><span itemprop="name">算法学习</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/04/23/e7-bd-ae-e9-a1-b6-2017-e4-b9-85-e6-ba-90-e8-bd-af-e4-bb-b6-e6-9d-af-e5-ae-89-e5-be-bd-e7-a7-91-e6-8a-80-e5-ad-a6-e9-99-a2-e7-ac-ac-e5-85-ab-e5-b1-8a-e7-a8-8b-e5-ba-8f/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2017/04/23/e7-bd-ae-e9-a1-b6-2017-e4-b9-85-e6-ba-90-e8-bd-af-e4-bb-b6-e6-9d-af-e5-ae-89-e5-be-bd-e7-a7-91-e6-8a-80-e5-ad-a6-e9-99-a2-e7-ac-ac-e5-85-ab-e5-b1-8a-e7-a8-8b-e5-ba-8f/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2017/04/23/e7-bd-ae-e9-a1-b6-2017-e4-b9-85-e6-ba-90-e8-bd-af-e4-bb-b6-e6-9d-af-e5-ae-89-e5-be-bd-e7-a7-91-e6-8a-80-e5-ad-a6-e9-99-a2-e7-ac-ac-e5-85-ab-e5-b1-8a-e7-a8-8b-e5-ba-8f/" class="leancloud_visitors" data-flag-title="[置顶]        2017“久源软件杯”安徽科技学院第八届程序设计大赛 - 题解">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <div><br><br>### Contest1068 - 2017“久源软件杯”安徽科技学院第八届程序设计大赛<br><br><div><br><br>关于举办“久源软件杯”<br><br>安徽科技学院第八届程序设计大赛通知<br><br></div><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ACM&nbsp;国际大学生程序设计竞赛&nbsp;(International Collegiate Programming Contest）是由美国计算机协会（ACM）主办的一项旨在展示大学生创新能力、团队精神和在压力下编写程序、分析和解决问题能力的著名竞赛。2010年以来，我校参与了历届安徽省&nbsp;ACM&nbsp;程序设计竞赛，并取得了优异的成绩。为选拔省ACM&nbsp;参赛队员，特举办“久源软件杯”&nbsp;安徽科技学院第八届计算机程序设计大赛，热忱欢迎广大程序设计爱好者踊跃参加。<br><br>&nbsp;<br><br><strong>主办方：</strong>安徽科技学院教务处、信息与网络工程学院<br><br><strong>承办方：</strong>信息与网络工程学院计算机系<br><br><strong>赞助方：</strong>无锡久源软件股份有限公司（独家赞助）<br><br>&nbsp;<br><br>一、&nbsp;比赛时间：<strong>2017&nbsp;年&nbsp;4&nbsp;月&nbsp;22（周六）上午&nbsp;8:00～12:00</strong><br><br>二、比赛地点：计算机与网络实验中心（力行楼六楼）<br><br>三、参赛对象：14～16&nbsp;级计算机、网络、信息、电子等专业<br><br>四、&nbsp;报名方式（免费报名参赛）：<br><br>（1）报名网站：&nbsp;<a href="https://oj.ahstu.cc/JudgeOnline/contest_join.php?cid=1068" target="_blank" rel="noopener">https://oj.ahstu.cc/JudgeOnline/contest_join.php?cid=1068</a><br><br>（2）请加入比赛&nbsp;QQ&nbsp;群：391668336（安科ACM官方群）<br><br>（3）&nbsp;报名时间：2017&nbsp;年&nbsp;4&nbsp;月&nbsp;10日至&nbsp;4月&nbsp;21&nbsp;日<br><br>五、比赛设奖：设一等奖8%、二等奖12%、三等奖15%、优秀奖若干<br><br>（1）一二三等奖都有丰厚的物质奖励<br><br>（2）一二等奖同学直接进入省ACM赛集训<br><br>六、竞赛相关：<br><a id="more"></a><br>1.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;竞赛语言：C/C++/JAVA环境：DevCpp /CodeBlock /Eclipse<br><br>2.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;比赛试题：采用&nbsp;ICPC&nbsp;样式——赛题&nbsp;8～10&nbsp;道<br><br>3.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;练习与比赛网站（AOJ）：<a href="https://oj.ahstu.cc/" target="_blank" rel="noopener">https://oj.ahstu.cc/</a><br><br>&nbsp;<br><br>相关竞赛辅导将随后展开，请关注群通知。<br><br>&nbsp;<br><br>教务处、信息与网络工程学院<br><br>2017&nbsp;年&nbsp;4月&nbsp;11&nbsp;日<br><br><div style="text-align:center"><br><br></div><br><div style="text-align:center">Start Time:&nbsp;<span style="color:rgb(153,51,153)">2017-04-22 08:00:00</span>&nbsp;End Time:&nbsp;<span style="color:rgb(153,51,153)">2017-04-22 12:00:00</span></div><br><div style="text-align:center">Current Time:&nbsp;<span style="color:rgb(153,51,153)">2017-4-22 22:28:34</span>&nbsp;Status:<span style="color:red">Ended</span>&nbsp;&nbsp;&nbsp;<span style="color:blue">Public&nbsp;</span></div><br><span style="color:blue"></span><br><div style="text-align:center">[<a href="https://oj.ahstu.cc/JudgeOnline/status.php?cid=1068" target="_blank" rel="noopener">Status</a>] [<a href="https://oj.ahstu.cc/JudgeOnline/contestrank.php?cid=1068" target="_blank" rel="noopener">Standing</a>]<br> [<a href="https://oj.ahstu.cc/JudgeOnline/conteststatistics.php?cid=1068" target="_blank" rel="noopener">Statistics</a>]</div><br></div>
+
+<p><span style="font-size:14px"></span></p>
+<div style="text-align:center"><br>&lt;div style=”font-family:”Helvetica Neue”,Helvetica,Arial,sans-serif; font-size:14px”&gt;<br><span class="blue" style="color:blue">[<a href="https://oj.ahstu.cc/JudgeOnline/status.php?cid=1068" target="_blank" rel="noopener">Status</a>] [<a href="https://oj.ahstu.cc/JudgeOnline/contestrank.php?cid=1068" target="_blank" rel="noopener">Standing</a>]<br> [<a href="https://oj.ahstu.cc/JudgeOnline/conteststatistics.php?cid=1068" target="_blank" rel="noopener">Statistics</a>]</span></div><br>&lt;table id=”problemset” width=”90%” style=”text-align:center; border-collapse:collapse; width:1158px; margin-left:83.7969px; font-family:”Helvetica Neue”,Helvetica,Arial,sans-serif”&gt;<br><thead><br><tr align="center" class="toprow" style="color:rgb(25,8,8); font-weight:bold; white-space:nowrap; background:rgb(81,81,81)"><br><td width="5" style="padding:3px 10px; border:1px solid rgb(221,221,221); line-height:1.42857"><br>&nbsp;</td><br><td width="10%" style="padding:3px 10px; border:1px solid rgb(221,221,221); line-height:1.42857"><br><a target="_blank" style="font-family:Arial; font-size:18px; margin:15px">Problem ID</a></td><br><td width="60%" style="padding:3px 10px; border:1px solid rgb(221,221,221); line-height:1.42857"><br><a target="_blank" style="font-family:Arial; font-size:18px; margin:15px">Title</a></td><br><td width="10%" style="padding:3px 10px; border:1px solid rgb(221,221,221); line-height:1.42857"><br><a target="_blank" style="font-family:Arial; font-size:18px; margin:15px">Source</a></td><br><td width="5%" style="padding:3px 10px; border:1px solid rgb(221,221,221); line-height:1.42857"><br><a target="_blank" style="font-family:Arial; font-size:18px; margin:15px">AC</a></td><br><td width="5%" style="padding:3px 10px; border:1px solid rgb(221,221,221); line-height:1.42857"><br><a target="_blank" style="font-family:Arial; font-size:18px; margin:15px">Submit</a></td><br></tr><br></thead><br><tbody><br><tr class="evenrow" style="background:rgb(249,249,249); white-space:nowrap"><br><td style="padding:3px 10px; border:1px solid rgb(221,221,221); line-height:1.42857"><br><span style="color:red">N</span></td><br><td style="padding:3px 10px; border:1px solid rgb(221,221,221); line-height:1.42857"><br>1847 Problem &nbsp;A</td><br><td style="padding:3px 10px; border:1px solid rgb(221,221,221); line-height:1.42857"><br><a href="https://oj.ahstu.cc/JudgeOnline/problem.php?id=1847" target="_blank" rel="noopener">A -bits</a></td><br><td style="padding:3px 10px; border:1px solid rgb(221,221,221); line-height:1.42857"><br>icpc08th</td><br><td style="padding:3px 10px; border:1px solid rgb(221,221,221); line-height:1.42857"><br>2</td><br><td style="padding:3px 10px; border:1px solid rgb(221,221,221); line-height:1.42857"><br>48</td><br></tr><br><tr class="oddrow" style="white-space:nowrap"><br><td style="padding:3px 10px; border:1px solid rgb(221,221,221); line-height:1.42857"><br><span style="color:green">Y</span></td><br><td style="padding:3px 10px; border:1px solid rgb(221,221,221); line-height:1.42857"><br>1848 Problem &nbsp;B</td><br><td style="padding:3px 10px; border:1px solid rgb(221,221,221); line-height:1.42857"><br><a href="https://oj.ahstu.cc/JudgeOnline/problem.php?id=1848" target="_blank" rel="noopener">B-黄金矿工</a></td><br><td style="padding:3px 10px; border:1px solid rgb(221,221,221); line-height:1.42857"><br>icpc08th</td><br><td style="padding:3px 10px; border:1px solid rgb(221,221,221); line-height:1.42857"><br>4</td><br><td style="padding:3px 10px; border:1px solid rgb(221,221,221); line-height:1.42857"><br>16</td><br></tr><br><tr class="evenrow" style="background:rgb(249,249,249); white-space:nowrap"><br><td style="padding:3px 10px; border:1px solid rgb(221,221,221); line-height:1.42857"><br>&nbsp;</td><br><td style="padding:3px 10px; border:1px solid rgb(221,221,221); line-height:1.42857"><br>1849 Problem &nbsp;C</td><br><td style="padding:3px 10px; border:1px solid rgb(221,221,221); line-height:1.42857"><br><a href="https://oj.ahstu.cc/JudgeOnline/problem.php?id=1849" target="_blank" rel="noopener">C-皇后的争斗</a></td><br><td style="padding:3px 10px; border:1px solid rgb(221,221,221); line-height:1.42857"><br>icpc08th</td><br><td style="padding:3px 10px; border:1px solid rgb(221,221,221); line-height:1.42857"><br>3</td><br><td style="padding:3px 10px; border:1px solid rgb(221,221,221); line-height:1.42857"><br>5</td><br></tr><br><tr class="oddrow" style="white-space:nowrap; background-color:rgb(228,240,248)"><br><td style="padding:3px 10px; border:1px solid rgb(221,221,221); line-height:1.42857"><br>&nbsp;</td><br><td style="padding:3px 10px; border:1px solid rgb(221,221,221); line-height:1.42857"><br>1850 Problem &nbsp;D</td><br><td style="padding:3px 10px; border:1px solid rgb(221,221,221); line-height:1.42857"><br><a href="https://oj.ahstu.cc/JudgeOnline/problem.php?id=1850" target="_blank" rel="noopener">D-纸盘游戏</a></td><br><td style="padding:3px 10px; border:1px solid rgb(221,221,221); line-height:1.42857"><br>icpc08th</td><br><td style="padding:3px 10px; border:1px solid rgb(221,221,221); line-height:1.42857"><br>4</td><br><td style="padding:3px 10px; border:1px solid rgb(221,221,221); line-height:1.42857"><br>48</td><br></tr><br><tr class="evenrow" style="background:rgb(249,249,249); white-space:nowrap"><br><td style="padding:3px 10px; border:1px solid rgb(221,221,221); line-height:1.42857"><br><span style="color:red">N</span></td><br><td style="padding:3px 10px; border:1px solid rgb(221,221,221); line-height:1.42857"><br>1851 Problem &nbsp;E</td><br><td style="padding:3px 10px; border:1px solid rgb(221,221,221); line-height:1.42857"><br><a href="https://oj.ahstu.cc/JudgeOnline/problem.php?id=1851" target="_blank" rel="noopener">E-平均数</a></td><br><td style="padding:3px 10px; border:1px solid rgb(221,221,221); line-height:1.42857"><br>icpc08th</td><br><td style="padding:3px 10px; border:1px solid rgb(221,221,221); line-height:1.42857"><br>2</td><br><td style="padding:3px 10px; border:1px solid rgb(221,221,221); line-height:1.42857"><br>117</td><br></tr><br><tr class="oddrow" style="white-space:nowrap"><br><td style="padding:3px 10px; border:1px solid rgb(221,221,221); line-height:1.42857"><br><span style="color:green">Y</span></td><br><td style="padding:3px 10px; border:1px solid rgb(221,221,221); line-height:1.42857"><br>1852 Problem &nbsp;F</td><br><td style="padding:3px 10px; border:1px solid rgb(221,221,221); line-height:1.42857"><br><a href="https://oj.ahstu.cc/JudgeOnline/problem.php?id=1852" target="_blank" rel="noopener">F-刹车</a></td><br><td style="padding:3px 10px; border:1px solid rgb(221,221,221); line-height:1.42857"><br>icpc08th</td><br><td style="padding:3px 10px; border:1px solid rgb(221,221,221); line-height:1.42857"><br>99</td><br><td style="padding:3px 10px; border:1px solid rgb(221,221,221); line-height:1.42857"><br>156</td><br></tr><br><tr class="evenrow" style="background:rgb(249,249,249); white-space:nowrap"><br><td style="padding:3px 10px; border:1px solid rgb(221,221,221); line-height:1.42857"><br>&nbsp;</td><br><td style="padding:3px 10px; border:1px solid rgb(221,221,221); line-height:1.42857"><br>1853 Problem &nbsp;G</td><br><td style="padding:3px 10px; border:1px solid rgb(221,221,221); line-height:1.42857"><br><a href="https://oj.ahstu.cc/JudgeOnline/problem.php?id=1853" target="_blank" rel="noopener">G-圆组</a></td><br><td style="padding:3px 10px; border:1px solid rgb(221,221,221); line-height:1.42857"><br>icpc08th</td><br><td style="padding:3px 10px; border:1px solid rgb(221,221,221); line-height:1.42857"><br>2</td><br><td style="padding:3px 10px; border:1px solid rgb(221,221,221); line-height:1.42857"><br>35</td><br></tr><br><tr class="oddrow" style="white-space:nowrap"><br><td style="padding:3px 10px; border:1px solid rgb(221,221,221); line-height:1.42857"><br><span style="color:green">Y</span></td><br><td style="padding:3px 10px; border:1px solid rgb(221,221,221); line-height:1.42857"><br>1854 Problem &nbsp;H</td><br><td style="padding:3px 10px; border:1px solid rgb(221,221,221); line-height:1.42857"><br><a href="https://oj.ahstu.cc/JudgeOnline/problem.php?id=1854" target="_blank" rel="noopener">H-曲线长度</a></td><br><td style="padding:3px 10px; border:1px solid rgb(221,221,221); line-height:1.42857"><br>icpc08th</td><br><td style="padding:3px 10px; border:1px solid rgb(221,221,221); line-height:1.42857"><br>34</td><br><td style="padding:3px 10px; border:1px solid rgb(221,221,221); line-height:1.42857"><br>56</td><br></tr><br><tr class="evenrow" style="background:rgb(249,249,249); white-space:nowrap"><br><td style="padding:3px 10px; border:1px solid rgb(221,221,221); line-height:1.42857"><br><span style="color:green">Y</span></td><br><td style="padding:3px 10px; border:1px solid rgb(221,221,221); line-height:1.42857"><br>1855 Problem &nbsp;I</td><br><td style="padding:3px 10px; border:1px solid rgb(221,221,221); line-height:1.42857"><br><a href="https://oj.ahstu.cc/JudgeOnline/problem.php?id=1855" target="_blank" rel="noopener">I-相交点</a></td><br><td style="padding:3px 10px; border:1px solid rgb(221,221,221); line-height:1.42857"><br>icpc08th</td><br><td style="padding:3px 10px; border:1px solid rgb(221,221,221); line-height:1.42857"><br>63</td><br><td style="padding:3px 10px; border:1px solid rgb(221,221,221); line-height:1.42857"><br>70</td><br></tr><br><tr class="oddrow" style="white-space:nowrap"><br><td style="padding:3px 10px; border:1px solid rgb(221,221,221); line-height:1.42857"><br><span style="color:green">Y</span></td><br><td style="padding:3px 10px; border:1px solid rgb(221,221,221); line-height:1.42857"><br>1856 Problem &nbsp;J</td><br><td style="padding:3px 10px; border:1px solid rgb(221,221,221); line-height:1.42857"><br><a href="https://oj.ahstu.cc/JudgeOnline/problem.php?id=1856" target="_blank" rel="noopener">J-老赵的挑逗</a></td><br><td style="padding:3px 10px; border:1px solid rgb(221,221,221); line-height:1.42857"><br>icpc08th</td><br><td style="padding:3px 10px; border:1px solid rgb(221,221,221); line-height:1.42857"><br>45</td><br><td style="padding:3px 10px; border:1px solid rgb(221,221,221); line-height:1.42857"><br>159</td><br></tr><br></tbody><br><br><div style="text-align:left"><br><br></div><br>
+
+<p><span style="color:#ff0000"></span></p>
+<p></p>
+<center><br><br><div><br><br>## 1847: A -bits<br><br><span style="color:green">Time Limit:&nbsp;</span><span style="color:#ff0000">1 Sec&nbsp;&nbsp;</span><span style="color:green">Memory Limit:&nbsp;</span><span style="color:#ff0000">128 MB</span><br><br><span style="color:green">Submit:&nbsp;</span><span style="color:#ff0000">48&nbsp;&nbsp;</span><span style="color:green">Solved:&nbsp;</span><span style="color:#ff0000">2</span><br><br><a href="https://oj.ahstu.cc/JudgeOnline/problem.php?id=1846" target="_blank" rel="noopener">上一题</a><a href="https://oj.ahstu.cc/JudgeOnline/submitpage.php?id=1847" target="_blank" rel="noopener">Submit</a><a href="https://oj.ahstu.cc/JudgeOnline/problemstatus.php?id=1847" target="_blank" rel="noopener">Status</a><a target="_blank" id="oj-gene" style="color:rgb(51,51,51)">标签打分</a><a href="https://oj.ahstu.cc/JudgeOnline/admin/problem_edit.php?id=1847" target="_blank" rel="noopener">编辑题目信息</a><a href="https://oj.ahstu.cc/JudgeOnline/admin/quixplorer/index.php?action=list&amp;dir=1847&amp;order=name&amp;srt=yes" target="_blank" rel="noopener">编辑测试数据</a><a href="https://oj.ahstu.cc/JudgeOnline/problem.php?id=1848" target="_blank" rel="noopener">下一题</a></div><br><br></center>
+
+<div><br><br>## Description<br><br><div style="color:rgb(51,51,51)"><br><br>定义F(n)为n的二进制表示中，“连续两个1出现的次数”例如&nbsp;F(27)=2（27的二进制位11011）输入整数n（0&lt;=n&lt;=2<sup>63&nbsp;</sup>-2）求S&nbsp;= F(0)+F(1)+…+F(n)的值<br><br></div>
+
+<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><div style="color:rgb(51,51,51)"><br><br>多组输入，每行输入n，当n=-1时结束输入<br><br></div>
+
+<h2 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h2><div style="color:rgb(51,51,51)"><br><br>输出每行输入对应的S值<br><br></div>
+
+<h2 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h2><div style="color:rgb(51,51,51)">0615202122-1</div>
+
+<h2 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h2><div style="color:rgb(51,51,51)">Case 1: 0</div><br><div style="color:rgb(51,51,51)">Case 2: 2</div><br><div style="color:rgb(51,51,51)">Case 3: 12</div><br><div style="color:rgb(51,51,51)">Case 4: 13</div><br><div style="color:rgb(51,51,51)">Case 5: 13</div><br><div style="color:rgb(51,51,51)">Case 6: 14</div><br></div>
+
+<div style="color:rgb(51,51,51)"><br><br></div>
+
+<div><span style="font-size:14px; color:#ff0000">这道题一开始感觉挺简单，可是不是这么简单，首先需要用到长整型long long，然后需要考虑时间问题</span></div>
+
+<div style="color:rgb(51,51,51)"><br><br></div>
+
+<div style="color:rgb(51,51,51)"><pre code_snippet_id="2350366" snippet_file_name="blog_20170423_1_7278298" name="code" class="cpp">#include <cstdio><br>#include <cstring><br>#include <algorithm><br>#include <iostream><br>using namespace std;<br><br>long long aa,bb;<br><br>void cal(long long n) {<br>    bb += n;<br>    if (bb &gt;= (1000000000000ll)) {<br>        aa += bb / (1000000000000ll);<br>        bb %= (1000000000000ll);<br>    }<br>}<br><br>int main() {<br>    freopen(“a.in”,”r”,stdin);<br>    freopen(“a.out”,”w”,stdout);<br>    int cas = 1;<br>    long long n;<br>    long long a,b,c,m;<br>    while (cin &gt;&gt; n &amp;&amp; n &gt;= 0) {<br>        aa = bb = 0;<br>        m = 1, a = n;<br>        for (int i = 0; i &lt; 62; i++) {<br>            cal((n&gt;&gt;2)*m);<br>            if ((n &amp; 3) == 3)<br>                cal((a&amp;((1ll&lt;&lt;i)-1))+1);<br>            m &lt;&lt;= 1;<br>            n &gt;&gt;= 1;<br>        }<br>        printf(“Case %d: “, cas++);<br>        if(aa) {<br>            cout &lt;&lt; aa;<br>            printf(“%012lld\n”,bb);<br>        }<br>        else cout&lt;&lt;bb&lt;&lt;endl;<br>    }<br>    return 0;<br>}</iostream></algorithm></cstring></cstdio></pre><br><br></div>
+
+<div style="color:rgb(51,51,51)"><br><br></div>
+
+<div><br><center style="color:rgb(51,51,51)"><br><div><br><br>## 1848: B-黄金矿工<br><br><span style="color:green">Time Limit:&nbsp;</span>1 Sec&nbsp;&nbsp;<span style="color:green">Memory Limit:&nbsp;</span>128 MB<br><br><span style="color:green">Submit:&nbsp;</span>16&nbsp;&nbsp;<span style="color:green">Solved:&nbsp;</span>4<br><br><a href="https://oj.ahstu.cc/JudgeOnline/problem.php?id=1847" target="_blank" rel="noopener">上一题</a><a href="https://oj.ahstu.cc/JudgeOnline/submitpage.php?id=1848" target="_blank" rel="noopener">Submit</a><a href="https://oj.ahstu.cc/JudgeOnline/problemstatus.php?id=1848" target="_blank" rel="noopener">Status</a><a target="_blank" id="oj-gene" style="color:rgb(51,51,51)">标签打分</a><a href="https://oj.ahstu.cc/JudgeOnline/admin/problem_edit.php?id=1848" target="_blank" rel="noopener">编辑题目信息</a><a href="https://oj.ahstu.cc/JudgeOnline/admin/quixplorer/index.php?action=list&amp;dir=1848&amp;order=name&amp;srt=yes" target="_blank" rel="noopener">编辑测试数据</a><a href="https://oj.ahstu.cc/JudgeOnline/problem.php?id=1849" target="_blank" rel="noopener">下一题</a></div><br></center><br><div style="color:rgb(51,51,51)"><br><br>## Description<br><br><div style="color:rgb(51,51,51)"><br><br>在上个世纪前，安科的后山曾经是一个黄金矿山（现在无力吐槽）。在山上住着是n个矿工，他们辛苦一年终于到了发年终奖励的时候了，公司的CEO vyoung先生决定将一块黄金发给最有价值矿工，不过这就很让他头痛了，这些矿工每个人都是非常卖力的工作的。无奈，vyoung决定让上帝来决定。他让n课矿工围坐在一起成一个圈，第一次淘汰第m个，以后每数k个数淘汰一个，最后一个留下的将获得这块金块。<br><br></div>
+
+<h2 id="Input-1"><a href="#Input-1" class="headerlink" title="Input"></a>Input</h2><div style="color:rgb(51,51,51)"><br><br>输入包含多组数据。每组数据包含三个整数&nbsp;n,k,m(&lt;=2n&lt;=10000,1&lt;=k&lt;=10000,1&lt;=m&lt;=n)<br><br>输入结束标志为n=k=m=0<br><br></div>
+
+<h2 id="Output-1"><a href="#Output-1" class="headerlink" title="Output"></a>Output</h2><div style="color:rgb(51,51,51)"><br><br>对于每组数据输出最后被留下来的人<br><br></div>
+
+<p>##</p>
+<p>##<br>Sample Input</p>
+<p>8 5 3</p>
+<p>100 9999 98</p>
+<p>10000 10000 10000</p>
+<p>0 0 0</p>
+<p>Sample Output</p>
+<p>1</p>
+<p>93</p>
+<p>2019</p>
+<div style="color:rgb(51,51,51)"></div><br></div><br><div style="color:rgb(51,51,51)"><br><br></div><br><div style="color:rgb(51,51,51)"><br><br></div><br><div><span style="font-size:14px; color:#ff0000">模板题，较为简单</span></div><br><div><span style="font-size:14px; color:#ff0000"><br><br></span></div><br><div><span style="font-size:14px; color:#ff0000"></span><pre code_snippet_id="2350366" snippet_file_name="blog_20170423_2_3068584" name="code" class="cpp">#include<cstdio><br><br>int main()<br>{<br>    freopen(“a.in”,”r”,stdin);<br>    freopen(“a.out”,”w”,stdout);<br>  int n,m,k,f;<br>  while(scanf(“%d%d%d”,&amp;n,&amp;k,&amp;m)==3&amp;&amp;n)<br>  {<br>    f=0;<br>    for(int i=2;i&lt;=n;i++)f=(f+k)%i;<br>    f=(m-k+1+f)%n;<br>    if(f&lt;=0)f+=n;<br>    printf(“%d\n”,f);<br>  }<br>}<br></cstdio></pre><br><br></div><br><div><br><br></div><br></div>
+
+<div><br><div id="main" style="color:rgb(51,51,51)"><br><center><br><div><br><br>## 1849: C-皇后的争斗<br><br><span style="color:green">Time Limit:&nbsp;</span>1 Sec&nbsp;&nbsp;<span style="color:green">Memory Limit:&nbsp;</span>128 MB<br><br><span style="color:green">Submit:&nbsp;</span>5&nbsp;&nbsp;<span style="color:green">Solved:&nbsp;</span>3<br><br><a href="https://oj.ahstu.cc/JudgeOnline/problem.php?id=1848" target="_blank" rel="noopener">上一题</a><a href="https://oj.ahstu.cc/JudgeOnline/submitpage.php?id=1849" target="_blank" rel="noopener">Submit</a><a href="https://oj.ahstu.cc/JudgeOnline/problemstatus.php?id=1849" target="_blank" rel="noopener">Status</a><a target="_blank" id="oj-gene" style="color:rgb(51,51,51)">标签打分</a><a href="https://oj.ahstu.cc/JudgeOnline/admin/problem_edit.php?id=1849" target="_blank" rel="noopener">编辑题目信息</a><a href="https://oj.ahstu.cc/JudgeOnline/admin/quixplorer/index.php?action=list&amp;dir=1849&amp;order=name&amp;srt=yes" target="_blank" rel="noopener">编辑测试数据</a><a href="https://oj.ahstu.cc/JudgeOnline/problem.php?id=1850" target="_blank" rel="noopener">下一题</a></div><br></center><br><div><br><br>## Description<br><br><div style="color:rgb(51,51,51)"><br><br>在国际象棋中，两个皇后相互攻击只会是在同一行，同一列，或者同一对角线上。现在给出一个nxm的棋盘，问有多少种方法放置两个相互攻击的皇后<br><br></div>
+
+<h2 id="Input-2"><a href="#Input-2" class="headerlink" title="Input"></a>Input</h2><div style="color:rgb(51,51,51)"><br><br>多组输入，每组输入包含两个整数n,m（0&lt;=n,m&lt;=10<sup>6</sup>）输入结束的标志为n=m=0<br><br></div>
+
+<h2 id="Output-2"><a href="#Output-2" class="headerlink" title="Output"></a>Output</h2><div style="color:rgb(51,51,51)"><br><br>对于每组输入，输出对应的方案数<br><br></div>
+
+<h2 id="Sample-Input-1"><a href="#Sample-Input-1" class="headerlink" title="Sample Input"></a>Sample Input</h2><div style="color:rgb(51,51,51)">100 223</div>
+
+<h2 id="Sample-Output-1"><a href="#Sample-Output-1" class="headerlink" title="Sample Output"></a>Sample Output</h2><div style="color:rgb(51,51,51)">10907100</div><br></div><br></div><br><center><br><br><span style="font-size:14px; color:#ff0000">这道题还是不是很理解，不过下面一个代码就一个公式就解决了，挺郁闷的</span><br><br><span style="font-size:14px; color:#ff0000"></span><br><br><pre code_snippet_id="2350366" snippet_file_name="blog_20170423_3_9829981" name="code" class="cpp">#include<iostream><br>#include<cstdio><br>#include<algorithm><br><br>using namespace std;<br><br>int main()<br>{   freopen(“a.in”,”r”,stdin);<br>    freopen(“a.out”,”w”,stdout);<br>    unsigned long long n,m;<br>    while(cin&gt;&gt;n&gt;&gt;m){<br>        if(!n&amp;&amp;!m)break;<br>        if(n&gt;m)swap(n,m);<br>        cout&lt;&lt;n<em>m</em>(m+n-2)+2<em>n</em>(n-1)<em>(3</em>m-n-1)/3&lt;&lt;endl;<br>    }<br><br>    return 0;<br>}<br></algorithm></cstdio></iostream></pre><br><br><div><span style="font-size:14px"><br><br></span></div>
+
+<h2 id="1850-D-纸盘游戏"><a href="#1850-D-纸盘游戏" class="headerlink" title="1850: D-纸盘游戏"></a>1850: D-纸盘游戏</h2><p><span style="color:green">Time Limit:&nbsp;</span><span style="color:#333333">1 Sec&nbsp;&nbsp;</span><span style="color:green">Memory Limit:&nbsp;</span><span style="color:#333333">128 MB</span></p>
+<p><span style="color:green">Submit:&nbsp;</span><span style="color:#333333">48&nbsp;&nbsp;</span><span style="color:green">Solved:&nbsp;</span><span style="color:#333333">4</span></p>
+<p><a href="https://oj.ahstu.cc/JudgeOnline/problem.php?id=1849" target="_blank" rel="noopener">上一题</a><a href="https://oj.ahstu.cc/JudgeOnline/submitpage.php?id=1850" target="_blank" rel="noopener">Submit</a><a href="https://oj.ahstu.cc/JudgeOnline/problemstatus.php?id=1850" target="_blank" rel="noopener">Status</a><a target="_blank" id="oj-gene" style="color:rgb(51,51,51)">标签打分</a><a href="https://oj.ahstu.cc/JudgeOnline/admin/problem_edit.php?id=1850" target="_blank" rel="noopener">编辑题目信息</a><a href="https://oj.ahstu.cc/JudgeOnline/admin/quixplorer/index.php?action=list&amp;dir=1850&amp;order=name&amp;srt=yes" target="_blank" rel="noopener">编辑测试数据</a><a href="https://oj.ahstu.cc/JudgeOnline/problem.php?id=1851" target="_blank" rel="noopener">下一题</a></p></center><p></p>
+<div style="color:rgb(51,51,51)"><br><br>## Description<br><br><div style="color:rgb(51,51,51)"><br><br>大学英语四级考试就要来临了，你是不是在紧张的复习？也许紧张得连短学期的ACM都没工夫练习了，反正我知道的Kiki和Cici都是如此。当然，作为在考场浸润了十几载的当代大学生，Kiki和Cici更懂得考前的放松，所谓“张弛有道”就是这个意思。这不，Kiki和Cici在每天晚上休息之前都要玩一会儿扑克牌以放松神经。<br><br>“升级”？“双扣”？“红五”？还是“斗地主”？<br><br>当然都不是！那多俗啊~<br><br>作为计算机学院的学生，Kiki和Cici打牌的时候可没忘记专业，她们打牌的规则是这样的：<br><br>1、&nbsp;&nbsp;总共n张牌;<br><br>2、&nbsp;&nbsp;双方轮流抓牌；<br><br>3、&nbsp;&nbsp;每人每次抓牌的个数只能是2的幂次（即：1，2，4，8，16…）<br><br>4、&nbsp;&nbsp;抓完牌，胜负结果也出来了：最后抓完牌的人为胜者；<br><br>假设Kiki和Cici都是足够聪明（其实不用假设，哪有不聪明的学生~），并且每次都是Kiki先抓牌，请问谁能赢呢？<br><br>当然，打牌无论谁赢都问题不大，重要的是马上到来的CET-4能有好的状态。<br><br>Good luck in CET-4 everybody!<br><br></div>
+
+<h2 id="Input-3"><a href="#Input-3" class="headerlink" title="Input"></a>Input</h2><div style="color:rgb(51,51,51)"><br><br>输入数据包含多个测试用例，每个测试用例占一行，包含一个整数n（1&lt;=n&lt;=1000）。<br><br></div>
+
+<h2 id="Output-3"><a href="#Output-3" class="headerlink" title="Output"></a>Output</h2><div style="color:rgb(51,51,51)"><br><br>如果Kiki能赢的话，请输出“Kiki”，否则请输出“Cici”，每个实例的输出占一行。<br><br></div><br></div>
+
+<p></p></div><p></p>
+<div><span style="font-size:14px; color:#ff0000">这道题也是，看了代码少的简直难以置信，考察的博弈论。</span><br><br>&lt;span style=”font-family:”Times New Roman””&gt;<span style="font-size:14px; color:#ff0000">容易找到规律，最佳策略是通过取1或2张牌，使留给对手的牌数总是3的倍数，这时对手不可能一次取光，而你就可以将除以3的余数部分取光。</span><br><br>&lt;span style=”font-family:”Times New Roman””&gt;<span style="font-size:14px; color:#ff0000">这样一来就必然胜利。</span><br><br>&lt;span style=”font-family:”Times New Roman””&gt;<span style="font-size:14px; color:#ff0000"></span><br><br><pre code_snippet_id="2350366" snippet_file_name="blog_20170423_4_3211071" name="code" class="cpp">#include<iostream><br>#include<cstdio><br>using namespace std;<br>int main(void)<br>{<br>    freopen(“a.in”,”r”,stdin);<br>    freopen(“a.out”,”w”,stdout);<br>    int n;<br>    while(scanf(“%d”,&amp;n)==1)<br>    {<br>        if(n%3==0)<br>            cout&lt;&lt;”Cici”&lt;&lt;endl;<br>        else<br>            cout&lt;&lt;”Kiki”&lt;&lt;endl;<br>    }<br>    return 0;<br>}<br></cstdio></iostream></pre><br><br></div>
+
+<div style="color:rgb(51,51,51)"><br><br></div>
+
+<div><br><center style="color:rgb(51,51,51)"><br><div><br><br>## 1851: E-平均数<br><br><span style="color:green">Time Limit:&nbsp;</span>1 Sec&nbsp;&nbsp;<span style="color:green">Memory Limit:&nbsp;</span>128 MB<br><br><span style="color:green">Submit:&nbsp;</span>117&nbsp;&nbsp;<span style="color:green">Solved:&nbsp;</span>2<br><br><a href="https://oj.ahstu.cc/JudgeOnline/problem.php?id=1850" target="_blank" rel="noopener">上一题</a><a href="https://oj.ahstu.cc/JudgeOnline/submitpage.php?id=1851" target="_blank" rel="noopener">Submit</a><a href="https://oj.ahstu.cc/JudgeOnline/problemstatus.php?id=1851" target="_blank" rel="noopener">Status</a><a target="_blank" id="oj-gene" style="color:rgb(51,51,51)">标签打分</a><a href="https://oj.ahstu.cc/JudgeOnline/admin/problem_edit.php?id=1851" target="_blank" rel="noopener">编辑题目信息</a><a href="https://oj.ahstu.cc/JudgeOnline/admin/quixplorer/index.php?action=list&amp;dir=1851&amp;order=name&amp;srt=yes" target="_blank" rel="noopener">编辑测试数据</a><a href="https://oj.ahstu.cc/JudgeOnline/problem.php?id=1852" target="_blank" rel="noopener">下一题</a></div><br></center><br><div style="color:rgb(51,51,51)"><br><br>## Description<br><br><div style="color:rgb(51,51,51)"><br><br>给出n个数，每相邻两个数求一次平均数得到n-1个数，在经过n-1次操作后，剩下1个数，求这个数是多少。<br><br></div>
+
+<h2 id="Input-4"><a href="#Input-4" class="headerlink" title="Input"></a>Input</h2><div style="color:rgb(51,51,51)"><br><br>多组输入，先输入T，表示有T组测试数据&nbsp;每行输入一个n（0&lt;=n&lt;=50000），接下来一行输入n个数a[i],(-1000&lt;=a[i]&lt;=1000)<br><br></div>
+
+<h2 id="Output-4"><a href="#Output-4" class="headerlink" title="Output"></a>Output</h2><div style="color:rgb(51,51,51)"><br><br>对每组输入输出最后得到的一个数(保留小数点后三位)<br><br></div>
+
+<h2 id="Sample-Input-2"><a href="#Sample-Input-2" class="headerlink" title="Sample Input"></a>Sample Input</h2><div style="color:rgb(51,51,51)">4110.421.0 2.231 2 351 2 3 4 5</div><br></div><br><div style="color:rgb(51,51,51)"><br><br></div><br><div><span style="color:#ff0000">&lt;span style=”font-family:”Helvetica Neue”,Arial,”Hiragino Sans GB”,STHeiti,SimSun,”WenQuanYi Micro Hei”,”Microsoft YaHei”,sans-serif; font-size:14px; white-space:pre-wrap”&gt;解题思路：类似与杨辉三角，第i个数起始被加了</span>&lt;span class=”mathjax” style=”font-family:”Helvetica Neue”,Arial,”Hiragino Sans GB”,STHeiti,SimSun,”WenQuanYi Micro Hei”,”Microsoft YaHei”,sans-serif; font-size:14px; white-space:pre-wrap; display:inline-block; margin:0px”&gt;<span class="MathJax_Preview"></span><span style="white-space:nowrap"><span style="width:3.753em; display:inline-block"><span style="display:inline-block; position:relative; width:3.098em; height:0px; font-size:17px"><span style="position:absolute; top:-3.092em; left:0.003em"><span style="font-family:STIXGeneral-Italic,serif">C<span style="display:inline-block; overflow:hidden; height:1px; width:0.003em"></span></span><span style="vertical-align:-0.235em"><span style="font-size:18px; font-family:STIXSizeOneSym,serif">(</span></span><span style="padding-left:0.122em; padding-right:0.122em"><span style="display:inline-block; position:relative; width:1.193em; height:0px"><span style="position:absolute; top:-2.676em; left:10.0156px; margin-left:-0.592em"><span style="font-size:12px; font-family:STIXGeneral-Italic,serif">n</span><span style="font-size:12px; font-family:STIXGeneral-Regular,serif">−</span><span style="font-size:12px; font-family:STIXGeneral-Regular,serif">1</span><span style="display:inline-block; width:0px; height:2.265em"></span></span><span style="position:absolute; top:-1.902em; left:10.0156px; margin-left:-0.473em"><span style="font-size:12px; font-family:STIXGeneral-Italic,serif">i</span><span style="font-size:12px; font-family:STIXGeneral-Regular,serif">−</span><span style="font-size:12px; font-family:STIXGeneral-Regular,serif">1</span><span style="display:inline-block; width:0px; height:2.265em"></span></span></span></span><span style="vertical-align:-0.235em"><span style="font-size:18px; font-family:STIXSizeOneSym,serif">)</span></span><span style="display:inline-block; width:0px; height:3.098em"></span></span></span><span style="border-left-width:0.004em; border-left-style:solid; display:inline-block; overflow:hidden; width:0px; height:1.789em; vertical-align:-0.568em"></span></span></span>&lt;span style=”font-family:”Helvetica Neue”,Arial,”Hiragino Sans GB”,STHeiti,SimSun,”WenQuanYi Micro Hei”,”Microsoft YaHei”,sans-serif; font-size:14px; white-space:pre-wrap”&gt;次。总共有&lt;span class=”mathjax” style=”font-family:”Helvetica Neue”,Arial,”Hiragino Sans GB”,STHeiti,SimSun,”WenQuanYi Micro Hei”,”Microsoft YaHei”,sans-serif; font-size:14px; white-space:pre-wrap; display:inline-block; margin:0px”&gt;<span class="MathJax_Preview"></span><span style="white-space:nowrap"><span style="width:2.265em; display:inline-block"><span style="display:inline-block; position:relative; width:1.848em; height:0px; font-size:17px"><span style="position:absolute; top:-2.199em; left:0.003em"><span style="display:inline-block; position:relative; width:1.789em; height:0px"><span style="position:absolute; top:-2.557em; left:0.003em"><span style="font-family:STIXGeneral-Regular,serif">2</span><span style="display:inline-block; width:0px; height:2.562em"></span></span><span style="position:absolute; top:-2.676em; left:0.539em"><span style="font-size:12px; font-family:STIXGeneral-Italic,serif">n</span><span style="font-size:12px; font-family:STIXGeneral-Regular,serif">−</span><span style="font-size:12px; font-family:STIXGeneral-Regular,serif">1</span><span style="display:inline-block; width:0px; height:2.265em"></span></span></span><span style="display:inline-block; width:0px; height:2.205em"></span></span></span><span style="border-left-width:0.004em; border-left-style:solid; display:inline-block; overflow:hidden; width:0px; height:1.218em; vertical-align:-0.068em"></span></span></span>&lt;span style=”font-family:”Helvetica Neue”,Arial,”Hiragino Sans GB”,STHeiti,SimSun,”WenQuanYi Micro Hei”,”Microsoft YaHei”,sans-serif; font-size:14px; white-space:pre-wrap”&gt;个数相加。但是因为n有50000，&lt;span class=”mathjax” style=”font-family:”Helvetica Neue”,Arial,”Hiragino Sans GB”,STHeiti,SimSun,”WenQuanYi Micro Hei”,”Microsoft YaHei”,sans-serif; font-size:14px; white-space:pre-wrap; display:inline-block; margin:0px”&gt;<span class="MathJax_Preview"></span><span style="white-space:nowrap"><span style="width:2.979em; display:inline-block"><span style="display:inline-block; position:relative; width:2.443em; height:0px; font-size:17px"><span style="position:absolute; top:-2.199em; left:0.003em"><span style="display:inline-block; position:relative; width:2.384em; height:0px"><span style="position:absolute; top:-2.557em; left:0.003em"><span style="font-family:STIXGeneral-Regular,serif">2</span><span style="display:inline-block; width:0px; height:2.562em"></span></span><span style="position:absolute; top:-2.676em; left:0.539em"><span style="font-size:12px; font-family:STIXGeneral-Regular,serif">50000</span><span style="display:inline-block; width:0px; height:2.265em"></span></span></span><span style="display:inline-block; width:0px; height:2.205em"></span></span></span><span style="border-left-width:0.004em; border-left-style:solid; display:inline-block; overflow:hidden; width:0px; height:1.218em; vertical-align:-0.068em"></span></span></span>&lt;span style=”font-family:”Helvetica Neue”,Arial,”Hiragino Sans GB”,STHeiti,SimSun,”WenQuanYi Micro Hei”,”Microsoft YaHei”,sans-serif; font-size:14px; white-space:pre-wrap”&gt;根本存不下，所以借助log函数。<br><br></div><br><div style="color:rgb(51,51,51)"><br><br></div><br><div style="color:rgb(51,51,51)"><pre code_snippet_id="2350366" snippet_file_name="blog_20170423_5_2480723" name="code" class="cpp">#include <iostream><br>#include <cstring><br>#include <cstdlib><br>#include <set><br>#include <cstdio><br>#include <string><br>#include <vector><br>#include <map><br>#include <cmath><br>#include <algorithm><br><br>#define LL long long<br>#define LLU unsigned long long<br><br>using namespace std;<br><br>double log_C[50005],a[50005];<br><br>int main()<br>{<br>    int n,T;<br>    scanf(“%d”,&amp;T);<br>    for (int kcase=1;kcase&lt;=T;++kcase)<br>    {<br>        scanf(“%d”,&amp;n);<br>        for (int i=0;i&lt;n;++i)<br>            scanf(“%lf”,&amp;a[i]);<br>        log_C[0]=log10(1);<br>        for (int i=1;i&lt;n;++i)<br>            log_C[i]=log_C[i-1]+log10(n-i)-log10(i);//,printf(“%lf %lf\n”,log_C[i],pow(10,log_C[i]));<br>        double ans=0.0;<br>        for (int i=0;i&lt;n;++i)<br>            if (a[i]&lt;0)<br>                ans-=pow(10,log_C[i]+log10(-a[i])-log10(2)<em>(n-1));<br>            else<br>                ans+=pow(10,log_C[i]+log10(a[i])-log10(2)</em>(n-1));<br>        printf(“Case #%d: %.3lf\n”,kcase,ans);<br>    }<br>    return 0;<br>}<br></algorithm></cmath></map></vector></string></cstdio></set></cstdlib></cstring></iostream></pre><br><br></div><br><div id="main"><br><center style="color:rgb(51,51,51)"><br><div><br><br>## 1852: F-刹车<br><br><span style="color:green">Time Limit:&nbsp;</span>1 Sec&nbsp;&nbsp;<span style="color:green">Memory Limit:&nbsp;</span>128 MB<br><br><span style="color:green">Submit:&nbsp;</span>156&nbsp;&nbsp;<span style="color:green">Solved:&nbsp;</span>99<br><br><a href="https://oj.ahstu.cc/JudgeOnline/problem.php?id=1851" target="_blank" rel="noopener">上一题</a><a href="https://oj.ahstu.cc/JudgeOnline/submitpage.php?id=1852" target="_blank" rel="noopener">Submit</a><a href="https://oj.ahstu.cc/JudgeOnline/problemstatus.php?id=1852" target="_blank" rel="noopener">Status</a><a target="_blank" id="oj-gene" style="color:rgb(51,51,51)">标签打分</a><a href="https://oj.ahstu.cc/JudgeOnline/admin/problem_edit.php?id=1852" target="_blank" rel="noopener">编辑题目信息</a><a href="https://oj.ahstu.cc/JudgeOnline/admin/quixplorer/index.php?action=list&amp;dir=1852&amp;order=name&amp;srt=yes" target="_blank" rel="noopener">编辑测试数据</a><a href="https://oj.ahstu.cc/JudgeOnline/problem.php?id=1853" target="_blank" rel="noopener">下一题</a></div><br></center><br><div style="color:rgb(51,51,51)"><br><br>## Description<br><br><div style="color:rgb(51,51,51)"><br><br>汽车一每小时n km的速度行驶，到某处需要减速停车。设汽车以等加速度&nbsp;a m/s<sup>2 &nbsp;</sup>刹车。问从开始刹车，到停车，汽车驶过多少距离。<br><br></div>
+
+<h2 id="Input-5"><a href="#Input-5" class="headerlink" title="Input"></a>Input</h2><div style="color:rgb(51,51,51)"><br><br>多组输入，每行输入n&nbsp;（0&lt;=n&lt;=400）,a(-10&lt;=a&lt;=10)<br><br></div>
+
+<h2 id="Output-5"><a href="#Output-5" class="headerlink" title="Output"></a>Output</h2><div style="color:rgb(51,51,51)"><br><br>对于每组输入，输出汽车到停下驶过的距离（单位：米）(小数点后保留三位)<br><br></div>
+
+<h2 id="Sample-Input-3"><a href="#Sample-Input-3" class="headerlink" title="Sample Input"></a>Sample Input</h2><div style="color:rgb(51,51,51)">36 -5</div><br></div><br><div style="color:rgb(51,51,51)"><br><br></div><br><div><span style="font-size:14px; color:#ff0000">简单题</span></div><br><div style="color:rgb(51,51,51)"><br><br></div><br><div style="color:rgb(51,51,51)"><pre code_snippet_id="2350366" snippet_file_name="blog_20170423_6_7082529" name="code" class="cpp">#include<iostream><br>#include<cstdio><br>using namespace std;<br><br>int main(){<br>    // freopen(“a.in”,”r”,stdin);<br>      //  freopen(“a.out”,”w”,stdout);<br>int a,n;<br>while(cin&gt;&gt;n&gt;&gt;a){<br><br>    double v0 = n<em>1000</em>1.0/3600;<br>    double t = v0<em>1.0/(a</em>-1);<br>    double s = v0<em>t + 0.5</em>a<em>t</em>t;<br>    printf(“%.3f\n”,s);<br>}<br>return 0;<br>}<br></cstdio></iostream></pre><br><br></div><br><div><br><center style="color:rgb(51,51,51)"><br><div><br><br>## 1853: G-圆组<br><br><span style="color:green">Time Limit:&nbsp;</span>1 Sec&nbsp;&nbsp;<span style="color:green">Memory Limit:&nbsp;</span>128 MB<br><br><span style="color:green">Submit:&nbsp;</span>35&nbsp;&nbsp;<span style="color:green">Solved:&nbsp;</span>2<br><br><a href="https://oj.ahstu.cc/JudgeOnline/problem.php?id=1852" target="_blank" rel="noopener">上一题</a><a href="https://oj.ahstu.cc/JudgeOnline/submitpage.php?id=1853" target="_blank" rel="noopener">Submit</a><a href="https://oj.ahstu.cc/JudgeOnline/problemstatus.php?id=1853" target="_blank" rel="noopener">Status</a><a target="_blank" id="oj-gene" style="color:rgb(51,51,51)">标签打分</a><a href="https://oj.ahstu.cc/JudgeOnline/admin/problem_edit.php?id=1853" target="_blank" rel="noopener">编辑题目信息</a><a href="https://oj.ahstu.cc/JudgeOnline/admin/quixplorer/index.php?action=list&amp;dir=1853&amp;order=name&amp;srt=yes" target="_blank" rel="noopener">编辑测试数据</a><a href="https://oj.ahstu.cc/JudgeOnline/problem.php?id=1854" target="_blank" rel="noopener">下一题</a></div><br></center><br><div style="color:rgb(51,51,51)"><br><br>## Description<br><br><div style="color:rgb(51,51,51)"><br><br>给出n个圆的圆心和半径，相交的圆算在同一组中，如圆1和圆2和圆3相交，则圆1,2,3在同一组中。求总共有几组圆。<br><br></div>
+
+<h2 id="Input-6"><a href="#Input-6" class="headerlink" title="Input"></a>Input</h2><div style="color:rgb(51,51,51)"><br><br>多组输入，第一行输入n，表示有n（0&lt;=n&lt;=1000）个圆，接下来n行，每行输入&nbsp;圆心坐标&nbsp;x，y，半径r&nbsp;（都是int型）<br><br></div>
+
+<h2 id="Output-6"><a href="#Output-6" class="headerlink" title="Output"></a>Output</h2><div style="color:rgb(51,51,51)"><br><br>对每组输入输出总共圆的组数<br><br></div>
+
+<h2 id="Sample-Input-4"><a href="#Sample-Input-4" class="headerlink" title="Sample Input"></a>Sample Input</h2><div style="color:rgb(51,51,51)">42 0 10 2 1-2 0 10 -2 1</div>
+
+<h2 id="Sample-Output-2"><a href="#Sample-Output-2" class="headerlink" title="Sample Output"></a>Sample Output</h2><div style="color:rgb(51,51,51)">4</div><br></div><br><div style="color:rgb(51,51,51)"><br><br></div><br><div><span style="font-size:14px; color:#ff0000">题目较为简单，遍历判断任意两个圆，并查集进行操作即可</span></div>
+
+<p></p></div><p></p>
+<div style="color:rgb(51,51,51)"><pre code_snippet_id="2350366" snippet_file_name="blog_20170423_7_3320538" name="code" class="cpp">#include <iostream><br>#include <vector><br>#include <cstdio><br>#include <cstring><br>#include <cstdlib><br>#include <cmath><br>using namespace std;<br><br>typedef struct round {<br>    int x;<br>    int y;<br>    int r;<br>};<br>int n;<br>const int maxn  = 1000+10;<br>//int mp[maxn][maxn];<br>int f[maxn];<br>vector<struct round>V;<br>int findset(int x){<br>    return x==f[x]?x:f[x] = findset(f[x]);<br>}<br>void init(){<br>    V.clear();<br>    for(int i=0;i&lt;maxn;i++)<br>        f[i]=i;<br>for(int i=0;i&lt;n;i++){<br>    int x0,y0,R;<br>    scanf(“%d%d%d”,&amp;x0,&amp;y0,&amp;R);<br>    struct round s;<br>    s.x = x0;<br>    s.y = y0;<br>    s.r = R;<br>    V.push_back(s);<br>}<br>}<br><br>void Union(int a,int b){<br>    int x = findset(a);<br>    int y = findset(b);<br>    if(x!=y)<br>        f[y]=x;<br>}<br>double  dis(struct round a,struct round b){<br>    double s = sqrt(1.0<em>(a.x-b.x)</em>(a.x-b.x)+(a.y-b.y)*(a.y-b.y));<br>    return s;<br>}<br>bool charge(struct round a,struct round b){<br>    return dis(a,b)&lt;(a.r+b.r);<br>}<br>void solve(){<br>    for(int i=0;i&lt;n;i++){<br>        for(int j=0;j&lt;n;j++){<br>            if(charge(V[i],V[j])&amp;&amp;i!=j){<br>               // cout&lt;&lt;dis(V[i],V[j])&lt;&lt;endl;<br>                Union(i,j);<br>            }<br>        }<br>    }<br>    int s = 0;<br>    for(int i=0;i&lt;n;i++)<br>        if(f[i]==i)s++;<br>        printf(“%d\n”,s);<br>}<br>int main(){<br>    freopen(“a.in”,”r”,stdin);<br>    freopen(“a.out”,”w”,stdout);<br>    while(~scanf(“%d”,&amp;n)){<br>        init();<br>        solve();<br>    }<br>    return 0;<br>}<br></struct></cmath></cstdlib></cstring></cstdio></vector></iostream></pre><br><br></div><br><div style="color:rgb(51,51,51)"><br><br></div><br><div style="color:rgb(51,51,51)"><br><center><br><div><br><br>## 1854: H-曲线长度<br><br><span style="color:green">Time Limit:&nbsp;</span>1 Sec&nbsp;&nbsp;<span style="color:green">Memory Limit:&nbsp;</span>128 MB<br><br><span style="color:green">Submit:&nbsp;</span>56&nbsp;&nbsp;<span style="color:green">Solved:&nbsp;</span>34<br><br><a href="https://oj.ahstu.cc/JudgeOnline/problem.php?id=1853" target="_blank" rel="noopener">上一题</a><a href="https://oj.ahstu.cc/JudgeOnline/submitpage.php?id=1854" target="_blank" rel="noopener">Submit</a><a href="https://oj.ahstu.cc/JudgeOnline/problemstatus.php?id=1854" target="_blank" rel="noopener">Status</a><a target="_blank" id="oj-gene" style="color:rgb(51,51,51)">标签打分</a><a href="https://oj.ahstu.cc/JudgeOnline/admin/problem_edit.php?id=1854" target="_blank" rel="noopener">编辑题目信息</a><a href="https://oj.ahstu.cc/JudgeOnline/admin/quixplorer/index.php?action=list&amp;dir=1854&amp;order=name&amp;srt=yes" target="_blank" rel="noopener">编辑测试数据</a><a href="https://oj.ahstu.cc/JudgeOnline/problem.php?id=1855" target="_blank" rel="noopener">下一题</a></div><br></center><br><div><br><br>## Description<br><br><div style="color:rgb(51,51,51)"><br><br>计算曲线y &nbsp;= x<sup>3/2</sup><sup>&nbsp;&nbsp;</sup>上相应于ab的一段弧长（-100&lt;a,b&lt;100，a,b均为int）<br><br></div>
+
+<h2 id="Input-7"><a href="#Input-7" class="headerlink" title="Input"></a>Input</h2><div style="color:rgb(51,51,51)"><br><br>多组输入，每组包含两个数，a,b<br><br></div>
+
+<h2 id="Output-7"><a href="#Output-7" class="headerlink" title="Output"></a>Output</h2><div style="color:rgb(51,51,51)"><br><br>对于每组输入，输出对应区间的弧长，结果小数点后保留三位<br><br></div>
+
+<h2 id="Sample-Input-5"><a href="#Sample-Input-5" class="headerlink" title="Sample Input"></a>Sample Input</h2><div style="color:rgb(51,51,51)">1 2</div>
+
+<h2 id="Sample-Output-3"><a href="#Sample-Output-3" class="headerlink" title="Sample Output"></a>Sample Output</h2><div style="color:rgb(51,51,51)">1.578</div><br></div><br><div style="color:rgb(51,51,51)"><br><br></div><br><div style="color:rgb(51,51,51)"><pre code_snippet_id="2350366" snippet_file_name="blog_20170423_8_2033782" name="code" class="cpp">#include<iostream><br>#include<cmath><br>#include<cstdio><br>using namespace std;<br><br>int main(){<br>    //freopen(“a.in”,”r”,stdin);<br>   // freopen(“a.out”,”w”,stdout);<br>int a,b;<br>while(cin&gt;&gt;a&gt;&gt;b){<br>       // double d = 3.0/2;<br>double s = 2.0/3<em>(pow((1+b)</em>1.0,1.5)-pow((1+a)*1.0,1.5));<br><br>printf(“%.3f\n”,s);<br><br>}<br>return 0;<br>}<br><br></cstdio></cmath></iostream></pre><br><br></div><br></div><br><div style="color:rgb(51,51,51)"><br><div id="broadcast" style="color:red"><marquee id="broadcast" style="text-align:center; height:50px; position:static; visibility:visible; width:1287px; z-index:4"><br><br></marquee></div><br><div id="main"><br><center><br><div><br><br>## 1855: I-相交点<br><br><span style="color:green">Time Limit:&nbsp;</span>1 Sec&nbsp;&nbsp;<span style="color:green">Memory Limit:&nbsp;</span>128 MB<br><br><span style="color:green">Submit:&nbsp;</span>70&nbsp;&nbsp;<span style="color:green">Solved:&nbsp;</span>63<br><br><a target="_blank" href="https://oj.ahstu.cc/JudgeOnline/problem.php?id=1854" style="color:rgb(51,51,51)">上一题</a><a href="https://oj.ahstu.cc/JudgeOnline/submitpage.php?id=1855" target="_blank" rel="noopener">Submit</a><a href="https://oj.ahstu.cc/JudgeOnline/problemstatus.php?id=1855" target="_blank" rel="noopener">Status</a><a target="_blank" id="oj-gene" style="color:rgb(51,51,51)">标签打分</a><a href="https://oj.ahstu.cc/JudgeOnline/admin/problem_edit.php?id=1855" target="_blank" rel="noopener">编辑题目信息</a><a href="https://oj.ahstu.cc/JudgeOnline/admin/quixplorer/index.php?action=list&amp;dir=1855&amp;order=name&amp;srt=yes" target="_blank" rel="noopener">编辑测试数据</a><a href="https://oj.ahstu.cc/JudgeOnline/problem.php?id=1856" target="_blank" rel="noopener">下一题</a></div><br></center><br><div><br><br>## Description<br><br><div style="color:rgb(51,51,51)"><br><br>圆1&nbsp;圆心坐标（-1,0）半径为1.5，圆2圆心坐标为（2,0）半径为2，求这两个圆的交点坐标，结果保留小数点后三位<br><br></div>
+
+<h2 id="Input-8"><a href="#Input-8" class="headerlink" title="Input"></a>Input</h2><h2 id="Output-8"><a href="#Output-8" class="headerlink" title="Output"></a>Output</h2><div style="color:rgb(51,51,51)"><br><br>顺序输出两个点坐标,输出格式如下<br><br>x1 y1<br><br>x2 y2<br><br><pre code_snippet_id="2350366" snippet_file_name="blog_20170423_9_2175486" name="code" class="cpp">#include<iostream><br>#include<cmath><br>#include<cstdio><br><br>using namespace std;<br><br>int main()<br>{<br>    freopen(“a.out”,”w”,stdout);<br>    int x1 = -1,y1 = 0,r1 = 1.5;<br>    int x2 = 2,y2 = 0, r2 = 2;<br>    double mid = 1.0<em>(x2+x1)/2;<br>    double x  = 2 - mid;<br>    double y = sqrt(4-x</em>x<em>1.0);<br>    printf(“%.3f %.3f\n%.3f %.3f\n”,x,y,x,y</em>-1);<br>    return 0;<br>}<br></cstdio></cmath></iostream></pre><br><br></div><br></div><br></div>
+
+<p></p></div><p></p>
+<div style="color:rgb(51,51,51)"><br><br></div><br><div style="color:rgb(51,51,51)"><br><center><br><div><br><br>## 1856: J-老赵的挑逗<br><br><span style="color:green">Time Limit:&nbsp;</span>1 Sec&nbsp;&nbsp;<span style="color:green">Memory Limit:&nbsp;</span>128 MB<br><br><span style="color:green">Submit:&nbsp;</span>159&nbsp;&nbsp;<span style="color:green">Solved:&nbsp;</span>45<br><br><a href="https://oj.ahstu.cc/JudgeOnline/problem.php?id=1855" target="_blank" rel="noopener">上一题</a><a href="https://oj.ahstu.cc/JudgeOnline/submitpage.php?id=1856" target="_blank" rel="noopener">Submit</a><a href="https://oj.ahstu.cc/JudgeOnline/problemstatus.php?id=1856" target="_blank" rel="noopener">Status</a><a target="_blank" id="oj-gene" style="color:rgb(51,51,51)">标签打分</a><a href="https://oj.ahstu.cc/JudgeOnline/admin/problem_edit.php?id=1856" target="_blank" rel="noopener">编辑题目信息</a><a href="https://oj.ahstu.cc/JudgeOnline/admin/quixplorer/index.php?action=list&amp;dir=1856&amp;order=name&amp;srt=yes" target="_blank" rel="noopener">编辑测试数据</a><a href="https://oj.ahstu.cc/JudgeOnline/problem.php?id=1857" target="_blank" rel="noopener">下一题</a></div><br></center><br><div><br><br>## Description<br><br><div style="color:rgb(51,51,51)">精通数学的老赵现在想难为一下喜爱编程的童鞋们，现在给出一个三角形的三条边a,b,c求出这个三角形的内切圆和外接圆的面积<br><br></div>
+
+<h2 id="Input-9"><a href="#Input-9" class="headerlink" title="Input"></a>Input</h2><div style="color:rgb(51,51,51)"><br><br>多组输入，每行包括三个整数数a,b,c<br><br></div>
+
+<h2 id="Output-9"><a href="#Output-9" class="headerlink" title="Output"></a>Output</h2><div style="color:rgb(51,51,51)"><br><br>没有每组输入输出对应三角形的内切圆和外界圆面积（结果保留小数点后三位）<br><br></div>
+
+<h2 id="Sample-Input-6"><a href="#Sample-Input-6" class="headerlink" title="Sample Input"></a>Sample Input</h2><div style="color:rgb(51,51,51)">3 4 5</div>
+
+<h2 id="Sample-Output-4"><a href="#Sample-Output-4" class="headerlink" title="Sample Output"></a>Sample Output</h2><div style="color:rgb(51,51,51)">3.142 19.635</div><br></div><br><div style="color:rgb(51,51,51)"><br><br></div><br><div style="color:rgb(51,51,51)"><pre code_snippet_id="2350366" snippet_file_name="blog_20170423_10_8413494" name="code" class="cpp">#include<iostream><br>#include<cmath><br>#include<cstdio><br>using namespace std;<br><br>double cacu(double r){<br>double pi = atan(1)<em>4;<br>return pi</em>r<em>r;<br>}<br>int main(){<br>  //  freopen(“a.in”,”r”,stdin);<br>   // freopen(“a.out”,”w”,stdout);<br>int a,b,c;<br>while(cin&gt;&gt;a&gt;&gt;b&gt;&gt;c){<br>    double p = 1.0</em>(a+b+c)/2;<br>    double temp = p<em>(p-a)</em>(p-b)<em>(p-c);<br>    double s = sqrt(temp);<br>    double R = 1.0</em>a<em>b</em>c/(4<em>s);<br>    double r = 2</em>s/(a+b+c);<br>    double S1 = cacu(r);<br>    double S2 = cacu(R);<br>    printf(“%.3f %.3f\n”,S1,S2);<br>}<br>return 0;<br>}<br></cstdio></cmath></iostream></pre><br><br>附上终榜</div><br><div style="color:rgb(51,51,51)"><a href="https://oj.ahstu.cc/JudgeOnline/contestrank.php?cid=1068" target="_blank" rel="noopener">https://oj.ahstu.cc/JudgeOnline/contestrank.php?cid=1068</a><br><br></div><br><div style="color:rgb(51,51,51)"><br><br></div><br><div style="color:rgb(51,51,51)"><br><br></div><br><div style="text-align:center; color:rgb(51,51,51)"><img src="http://img.blog.csdn.net/20170423105535273?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZmppbmhhbw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt><br><br></div><br><div style="color:rgb(51,51,51)"><br><br></div>
+
+<p></p></div><br></div><br><span style="color:rgb(255,0,0); font-size:18px">属于我参加的最后一届校赛了，简单总结下这次校赛吧，这次校赛考的大部分都是数学题，比赛刚开始时，不知道题目是pdf文档，有点意思，一开始做A题，考的二进制，感觉有思路，于是写，结果老是通不过样例，写的挺着急的，当时好多同学都AC好几题了，有点慌了，再换下一题，一看就是约瑟夫环问题，挺好的，准备的有模板，然后写上去就AC了，C题D题跳过，感觉没什么好的思路，E题平均数，随便写了一下也AC了，接着写F题，写了写也AC了，感觉时间比较充足，不是很慌了，又返回去写A题，终于也AC了。。结果临时说题目全部重判了，重判了，结果全都WA了，全部WA，名次一下掉到了最后。我当时有什么办法呢，我也很绝望啊。算了吧，感觉这次成绩会很差，已经这样了，那慢慢写吧，接着看A题，感觉数据量有点大，似乎有点麻烦，还是看B题吧，于是再写了一遍约瑟夫环问题，因为材料准备充足，找了个纯数学方法写了一遍，然后就AC了，然后F题，真是不知道是什么问题，过了很久，用c++再提交了一遍然后就过了，很是无语啊，不过还好F题最后还是重判了，不过真的也花了点时间找问题。再看I题相交点，因为很多都AC了这题，乍一看感觉很是麻烦啊，没有样例，又过了很久才知道这题就一组数据，输出结果就好了，我却还在找什么输入输出格式。。。然后AC了I题，接着写J，什么内切圆和外接圆面积的问题，怎么这么多数学啊，公式什么的早已经忘了，慢慢推吧，感觉一时半会又推不出。。。内切圆是找材料写好的，最后还是通过余弦定理求出外接圆的半径，于是AC了，然后H题，H题求弧长，是考定积分的，一开始没有怎么写，算了很久然后却积分不出来，最后发现积分里有地方写错了，挺简单的积分被我弄得很复杂，修改了一下，可是还是通不过样例，输出了一串奇怪的串，我相信这次写的不会有问题，可是还是不对，时间就快要结束了，不会我这道题也写不出来吧，，最后发现程序中一个变量用了两次，似乎值已经改变了，其实很早就发现了，可是我就是觉得那样也是不会有问题的，最后还是AC了，这道题。还剩10多分钟，觉得自己没有什么时间写接下来的几题了，虽然至少有一题还是有清晰的思路，还是没有写了，然后后就这样结束了。</span></div><p></p>
+<div><span style="font-size:18px; color:#ff0000">总之，感觉还是实力有很多不足吧，希望自己能不断努力学习，还有就是觉得有时自己有点钻牛角尖，导致浪费很多时间。</span></div>
+
+<div><span style="font-size:18px; color:#ff0000">校赛结束了，准备省赛了，舞台很大，我还是很渺小，加油吧！</span></div>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/mm_reward_qrcode.png" alt="Fayne 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay_qrcode.png" alt="Fayne 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Fayne</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="342.html" title="[置顶]        2017“久源软件杯”安徽科技学院第八届程序设计大赛 - 题解">342.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/校赛/" rel="tag"><i class="fa fa-tag"></i> 校赛</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/04/15/poj1182-e9-a3-9f-e7-89-a9-e9-93-be-e8-a7-a3-e9-a2-98-e6-8a-a5-e5-91-8a/" rel="next" title="POJ 1182 食物链 -- 解题报告">
+                <i class="fa fa-chevron-left"></i> POJ 1182 食物链 -- 解题报告
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/05/22/acm-e9-80-80-e5-bd-b9-e5-b8-96-e6-9c-aa-e7-9c-9f-e6-ad-a3-e5-bc-80-e5-a7-8b-e4-b9-9f-e4-b8-8d-e4-bc-9a-e7-bb-93-e6-9d-9f/" rel="prev" title="ACM退役帖 -- 未真正开始也不会结束">
+                ACM退役帖 -- 未真正开始也不会结束 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+  
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/user.jpg" alt="Fayne">
+            
+              <p class="site-author-name" itemprop="name">Fayne</p>
+              <p class="site-description motion-element" itemprop="description">成为自己想成为的人永远不会太迟</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">80</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">60</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">41</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/fanjinhao" target="_blank" title="GitHub" rel="external nofollow"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="http://blog.csdn.net/fjinhao" target="_blank" title="CSDN" rel="external nofollow"><i class="fa fa-fw fa-blogger"></i>CSDN</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:jinhaoxc@gmail.com" target="_blank" title="E-Mail" rel="external nofollow"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Input"><span class="nav-number">1.</span> <span class="nav-text">Input</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Output"><span class="nav-number">2.</span> <span class="nav-text">Output</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sample-Input"><span class="nav-number">3.</span> <span class="nav-text">Sample Input</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sample-Output"><span class="nav-number">4.</span> <span class="nav-text">Sample Output</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Input-1"><span class="nav-number">5.</span> <span class="nav-text">Input</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Output-1"><span class="nav-number">6.</span> <span class="nav-text">Output</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Input-2"><span class="nav-number">7.</span> <span class="nav-text">Input</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Output-2"><span class="nav-number">8.</span> <span class="nav-text">Output</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sample-Input-1"><span class="nav-number">9.</span> <span class="nav-text">Sample Input</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sample-Output-1"><span class="nav-number">10.</span> <span class="nav-text">Sample Output</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1850-D-纸盘游戏"><span class="nav-number">11.</span> <span class="nav-text">1850: D-纸盘游戏</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Input-3"><span class="nav-number">12.</span> <span class="nav-text">Input</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Output-3"><span class="nav-number">13.</span> <span class="nav-text">Output</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Input-4"><span class="nav-number">14.</span> <span class="nav-text">Input</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Output-4"><span class="nav-number">15.</span> <span class="nav-text">Output</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sample-Input-2"><span class="nav-number">16.</span> <span class="nav-text">Sample Input</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Input-5"><span class="nav-number">17.</span> <span class="nav-text">Input</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Output-5"><span class="nav-number">18.</span> <span class="nav-text">Output</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sample-Input-3"><span class="nav-number">19.</span> <span class="nav-text">Sample Input</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Input-6"><span class="nav-number">20.</span> <span class="nav-text">Input</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Output-6"><span class="nav-number">21.</span> <span class="nav-text">Output</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sample-Input-4"><span class="nav-number">22.</span> <span class="nav-text">Sample Input</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sample-Output-2"><span class="nav-number">23.</span> <span class="nav-text">Sample Output</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Input-7"><span class="nav-number">24.</span> <span class="nav-text">Input</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Output-7"><span class="nav-number">25.</span> <span class="nav-text">Output</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sample-Input-5"><span class="nav-number">26.</span> <span class="nav-text">Sample Input</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sample-Output-3"><span class="nav-number">27.</span> <span class="nav-text">Sample Output</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Input-8"><span class="nav-number">28.</span> <span class="nav-text">Input</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Output-8"><span class="nav-number">29.</span> <span class="nav-text">Output</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Input-9"><span class="nav-number">30.</span> <span class="nav-text">Input</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Output-9"><span class="nav-number">31.</span> <span class="nav-text">Output</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sample-Input-6"><span class="nav-number">32.</span> <span class="nav-text">Sample Input</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sample-Output-4"><span class="nav-number">33.</span> <span class="nav-text">Sample Output</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-heartbeat"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Fayne</span>
+
+  
+
+  
+</div>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.2.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.2.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.2.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.2.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.2.0"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  
+  
+    
+  
+  <script src="//cdn.fayne.cn/js/Valine.min.js"></script>
+
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(function (item) {
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: true,
+        app_id: 'XBJP13WAQUdm3Pp0TwYIGMU8-gzGzoHsz',
+        app_key: 'ywisBiYQCmqpzycdshD9pUCv',
+        placeholder: '记得留下你的邮箱哦~',
+        avatar:'mp',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("XBJP13WAQUdm3Pp0TwYIGMU8-gzGzoHsz", "ywisBiYQCmqpzycdshD9pUCv");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            
+            counter.save(null, {
+              success: function(counter) {
+                
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(counter.get('time'));
+                
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            
+              var newcounter = new Counter();
+              /* Set ACL */
+              var acl = new AV.ACL();
+              acl.setPublicReadAccess(true);
+              acl.setPublicWriteAccess(true);
+              newcounter.setACL(acl);
+              /* End Set ACL */
+              newcounter.set("title", title);
+              newcounter.set("url", url);
+              newcounter.set("time", 1);
+              newcounter.save(null, {
+                success: function(newcounter) {
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+                },
+                error: function(newcounter, error) {
+                  console.log('Failed to create');
+                }
+              });
+            
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <script id="ribbon" type="text/javascript" size="100" alpha="0.3" zindex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
+  
+</body>
+</html>
