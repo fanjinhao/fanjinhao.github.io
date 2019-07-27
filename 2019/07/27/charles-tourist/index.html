@@ -111,18 +111,20 @@
 
 
 
-  <meta name="description" content="成为自己想成为的人永远不会太迟">
-<meta name="keywords" content="Android,iOS,Charles">
+  <meta name="keywords" content="Android,iOS,Charles">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Mac下使用Charles抓包https">
 <meta property="og:url" content="https://www.fayne.cn/2019/07/27/charles-tourist/index.html">
 <meta property="og:site_name" content="Fayne&#39;s Blog">
-<meta property="og:description" content="成为自己想成为的人永远不会太迟">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-27T05:57:27.487Z">
+<meta property="og:image" content="https://cdn.fayne.cn/5786b72dfe46821dbc3b09ee6f2db852.png">
+<meta property="og:image" content="https://cdn.fayne.cn/7ffacf7cbe741adbb8dc58e9e061f3b9.png">
+<meta property="og:image" content="https://cdn.fayne.cn/b5342c90bd51156ce4fcdf750093dd3c.png">
+<meta property="og:image" content="https://cdn.fayne.cn/850e44da98286b090fcb4b05acaff46e.png">
+<meta property="og:updated_time" content="2019-07-27T07:28:48.861Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mac下使用Charles抓包https">
-<meta name="twitter:description" content="成为自己想成为的人永远不会太迟">
+<meta name="twitter:image" content="https://cdn.fayne.cn/5786b72dfe46821dbc3b09ee6f2db852.png">
 
 
 
@@ -459,7 +461,36 @@
       
 
       
-        
+        <p><img src="https://cdn.fayne.cn/5786b72dfe46821dbc3b09ee6f2db852.png" alt="Charles"><br><a id="more"></a></p>
+<h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><p>最近看了一下Mac的网络转包，发现Charles这款工具挺好用的，配置一下证书可以抓包https, 我抓取得是iOS设备，其他类似</p>
+<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><blockquote>
+<p><strong>抓取http</strong></p>
+</blockquote>
+<ul>
+<li>打开Charles</li>
+<li>打开help -&gt; SSL-Proxying -&gt; install Charles root…,如下图位置<br><img src="https://cdn.fayne.cn/7ffacf7cbe741adbb8dc58e9e061f3b9.png" alt="Charles"><br><img src="https://cdn.fayne.cn/b5342c90bd51156ce4fcdf750093dd3c.png" alt="Charles"></li>
+<li>需要将iOS设备和Mac的连到同一网络，在iOS上设置代理，点击设置-无线局域网下-WiFi名称后的感叹号，配置代理，改为手动，服务器填写上面弹出框的的IP地址，端口填写上面的端口号</li>
+<li>再在Mac上allow Charles的弹出框即可，这样已经是可以抓取http协议的包了</li>
+</ul>
+<blockquote>
+<p><strong>抓取https</strong></p>
+</blockquote>
+<p>上述步骤一样，只是需要配置证书了</p>
+<ul>
+<li>在iOS设备上的Safari浏览器中输入链接<a href="chls.pro/ssl">chls.pro/ssl</a>，下载安装证书</li>
+<li>Charles上需要做额外的设置，点击Proxy-&gt;SSL Proxying Settings…如图<br><img src="https://cdn.fayne.cn/850e44da98286b090fcb4b05acaff46e.png" alt="Charles">添加，host填写*，port填写443,这样就可以抓取所有的https了</li>
+</ul>
+<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><h3 id="https显示红色的-lt-unknown-gt"><a href="#https显示红色的-lt-unknown-gt" class="headerlink" title="https显示红色的&lt;unknown&gt;"></a>https显示红色的<code>&lt;unknown&gt;</code></h3><p>如果还是抓取不到，显示红色的unknown, 则还是证书的问题，在iOS设备上的设置中，搜索信任证书设置，将针对根证书启用完成信任勾选即可</p>
+<h3 id="如果要抓取Mac上https"><a href="#如果要抓取Mac上https" class="headerlink" title="如果要抓取Mac上https"></a>如果要抓取Mac上https</h3><p>在help-&gt;ssl-Proxying-&gt;install Charles root Certificate 即可</p>
+<h3 id="更多可以查看官方文档"><a href="#更多可以查看官方文档" class="headerlink" title="更多可以查看官方文档"></a>更多可以查看官方文档</h3><blockquote>
+<p><a href="https://www.charlesproxy.com/documentation/configuration/browser-and-system-configuration/" target="_blank" rel="noopener">更多设备的配置方案</a></p>
+</blockquote>
+<h2 id="抓取原理"><a href="#抓取原理" class="headerlink" title="抓取原理"></a>抓取原理</h2><p>Charles利用的是中间人攻击，Charles需要做的事情是对客户端伪装服务端，对服务端伪装客户端，具体</p>
+<ul>
+<li>截获真实客户端的HTTPS请求，伪装客户端向真实服务端发送HTTPS请求</li>
+<li>接受真实服务器响应，用Charles自己的证书伪装服务端向真实客户端发送数据内容</li>
+</ul>
+
       
     </div>
 
@@ -604,8 +635,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -907,6 +947,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#开始"><span class="nav-number">1.</span> <span class="nav-text">开始</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#步骤"><span class="nav-number">2.</span> <span class="nav-text">步骤</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#问题"><span class="nav-number">3.</span> <span class="nav-text">问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#https显示红色的-lt-unknown-gt"><span class="nav-number">3.1.</span> <span class="nav-text">https显示红色的&lt;unknown&gt;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如果要抓取Mac上https"><span class="nav-number">3.2.</span> <span class="nav-text">如果要抓取Mac上https</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更多可以查看官方文档"><span class="nav-number">3.3.</span> <span class="nav-text">更多可以查看官方文档</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#抓取原理"><span class="nav-number">4.</span> <span class="nav-text">抓取原理</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
