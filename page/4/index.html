@@ -343,6 +343,210 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.fayne.cn/2017/04/13/poj1308isitatree-e8-a7-a3-e9-a2-98-e6-8a-a5-e5-91-8a/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Fayne">
+      <meta itemprop="description" content="成为自己想成为的人永远不会太迟">
+      <meta itemprop="image" content="/images/user.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Fayne's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/04/13/poj1308isitatree-e8-a7-a3-e9-a2-98-e6-8a-a5-e5-91-8a/" itemprop="url">
+                  POJ 1308 Is It A Tree? 解题报告
+                </a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2017-04-13 17:15:00" itemprop="dateCreated datePublished" datetime="2017-04-13T17:15:00+08:00">2017-04-13</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/POJ/" itemprop="url" rel="index"><span itemprop="name">POJ</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/POJ/并查集/" itemprop="url" rel="index"><span itemprop="name">并查集</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/POJ/并查集/算法学习/" itemprop="url" rel="index"><span itemprop="name">算法学习</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/04/13/poj1308isitatree-e8-a7-a3-e9-a2-98-e6-8a-a5-e5-91-8a/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2017/04/13/poj1308isitatree-e8-a7-a3-e9-a2-98-e6-8a-a5-e5-91-8a/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2017/04/13/poj1308isitatree-e8-a7-a3-e9-a2-98-e6-8a-a5-e5-91-8a/" class="leancloud_visitors" data-flag-title="POJ 1308 Is It A Tree? 解题报告">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <div class="ptt" lang="en-US" style="text-align:center; font-size:18pt; font-weight:bold; color:blue"><br>Is It A Tree?</div>
+
+<div class="plm" style="text-align:center; font-size:14px"><br><table align="center"><br><tbody><br><tr><br><td><strong>Time Limit:</strong>&nbsp;1000MS</td><br><td width="10px">&nbsp;</td><br><td><strong>Memory Limit:</strong>&nbsp;10000K</td><br></tr><br><tr><br><td><strong>Total Submissions:</strong>&nbsp;32052</td><br><td width="10px">&nbsp;</td><br><td><strong>Accepted:</strong>&nbsp;10876</td><br></tr><br></tbody><br></table><br></div>
+
+<p>Description</p>
+&lt;div class=”ptx” lang=”en-US” style=”font-family:”Times New Roman”,Times,serif; font-size:14px”&gt;<br>A tree is a well-known data structure that is either empty (null, void, nothing) or is a set of one or more nodes connected by directed edges between nodes satisfying the following properties.&nbsp;<br><br>There is exactly one node, called the root, to which no directed edges point.&nbsp;<br><br>Every node except the root has exactly one edge pointing to it.&nbsp;<br><br>There is a unique sequence of directed edges from the root to each node.&nbsp;<br><br>For example, consider the illustrations below, in which nodes are represented by circles and edges are represented by lines with arrowheads. The first two of these are trees, but the last is not.&nbsp;<br><br><center><img src="http://poj.org/images/1308_1.jpg" alt></center><br><br>In this problem you will be given several descriptions of collections of nodes connected by directed edges. For each of these you are to determine if the collection satisfies the definition of a tree or not.
+
+<p>Input</p>
+&lt;div class=”ptx” lang=”en-US” style=”font-family:”Times New Roman”,Times,serif; font-size:14px”&gt;<br>The input will consist of a sequence of descriptions (test cases) followed by a pair of negative integers. Each test case will consist of a sequence of edge descriptions followed by a pair of zeroes Each edge description will consist of a pair of integers;<br> the first integer identifies the node from which the edge begins, and the second integer identifies the node to which the edge is directed. Node numbers will always be greater than zero.
+
+<p>Output</p>
+<p>&lt;div class=”ptx” lang=”en-US” style=”font-family:”Times New Roman”,Times,serif; font-size:14px”&gt;<br>For each test case display the line “Case k is a tree.” or the line “Case k is not a tree.”, where k corresponds to the test case number (they are sequentially numbered starting with 1).<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/04/13/poj1308isitatree-e8-a7-a3-e9-a2-98-e6-8a-a5-e5-91-8a/#更多" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </p></div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://www.fayne.cn/2017/04/13/poj-1861-network-e8-a7-a3-e9-a2-98-e6-8a-a5-e5-91-8a/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2155,203 +2359,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.fayne.cn/2016/09/25/e5-ae-89-e5-be-bd-e7-9c-812016-e4-ba-ac-e8-83-9c-e6-9d-af-e7-a8-8b-e5-ba-8f-e8-ae-be-e8-ae-a1-e5-a4-a7-e8-b5-9b-f-e5-90-83-e5-9c-a8-e5-b7-a5-e5-a4-a7/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Fayne">
-      <meta itemprop="description" content="成为自己想成为的人永远不会太迟">
-      <meta itemprop="image" content="/images/user.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Fayne's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/09/25/e5-ae-89-e5-be-bd-e7-9c-812016-e4-ba-ac-e8-83-9c-e6-9d-af-e7-a8-8b-e5-ba-8f-e8-ae-be-e8-ae-a1-e5-a4-a7-e8-b5-9b-f-e5-90-83-e5-9c-a8-e5-b7-a5-e5-a4-a7/" itemprop="url">
-                  安徽省2016“京胜杯”程序设计大赛_F_吃在工大
-                </a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2016-09-25 08:15:00" itemprop="dateCreated datePublished" datetime="2016-09-25T08:15:00+08:00">2016-09-25</time>
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/拓扑排序/" itemprop="url" rel="index"><span itemprop="name">拓扑排序</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/拓扑排序/省赛/" itemprop="url" rel="index"><span itemprop="name">省赛</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/拓扑排序/省赛/算法学习/" itemprop="url" rel="index"><span itemprop="name">算法学习</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2016/09/25/e5-ae-89-e5-be-bd-e7-9c-812016-e4-ba-ac-e8-83-9c-e6-9d-af-e7-a8-8b-e5-ba-8f-e8-ae-be-e8-ae-a1-e5-a4-a7-e8-b5-9b-f-e5-90-83-e5-9c-a8-e5-b7-a5-e5-a4-a7/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2016/09/25/e5-ae-89-e5-be-bd-e7-9c-812016-e4-ba-ac-e8-83-9c-e6-9d-af-e7-a8-8b-e5-ba-8f-e8-ae-be-e8-ae-a1-e5-a4-a7-e8-b5-9b-f-e5-90-83-e5-9c-a8-e5-b7-a5-e5-a4-a7/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2016/09/25/e5-ae-89-e5-be-bd-e7-9c-812016-e4-ba-ac-e8-83-9c-e6-9d-af-e7-a8-8b-e5-ba-8f-e8-ae-be-e8-ae-a1-e5-a4-a7-e8-b5-9b-f-e5-90-83-e5-9c-a8-e5-b7-a5-e5-a4-a7/" class="leancloud_visitors" data-flag-title="安徽省2016“京胜杯”程序设计大赛_F_吃在工大">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数：</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>#<br>吃在工大</p>
-<p></p><p></p>
-<table width="300" style="font-family:tahoma,arial,verdana,sans-serif; font-size:9pt; text-align:center; padding-left:15px; color:rgb(102,102,102); margin:auto"><br><tbody><br><tr><br><td style="margin:0px; padding:0px; text-align:left"><span style="font-family:tahoma,arial,verdana,sans-serif">Time Limit: 1000 MS</span></td><br><td style="margin:0px; padding:0px; text-align:left"><span style="font-family:tahoma,arial,verdana,sans-serif">Memory Limit: 65536 KB</span></td><br></tr><br><tr><br><td style="margin:0px; padding:0px; text-align:left"><span style="font-family:tahoma,arial,verdana,sans-serif">Total Submissions: 51</span></td><br><td style="margin:0px; padding:0px; text-align:left"><span style="font-family:tahoma,arial,verdana,sans-serif">Accepted: 15</span></td><br></tr><br></tbody><br></table>
-
-<div style="text-align:left"><span style="font-family:tahoma,arial,verdana,sans-serif"></span><br><br>## Description<br><br><div style="color:rgb(102,102,102)"><strong>&nbsp;&nbsp;&nbsp;&nbsp; JH和他的好朋友YZ两名程序员回访母校合工大，准备在这住一段日子，都说“玩在安大，吃在工大”，JH又是一名典型吃货，于是决定在工大食堂好好吃一段日子，但是，面对美食诱惑：黄焖鸡、风暴干锅、麻辣香锅、奥尔良烤翅…由于时间有限，JH不知道哪顿饭吃哪个菜好。</strong><br><strong>于是YZ为了帮助他解决这个问题，也顺便考考他，给他出了一个问题：“黄焖鸡必须在干锅花菜前面吃，干锅牛肉必须在干锅鱿鱼前面吃….你按这个要求下，就知道吃的顺序啦”。JH抓抓头，分分钟写了个程序搞定，现在，让你来写写看？输出一组JH符合条件下吃的食物的序列。</strong><br><br><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;假设JH每顿只吃一种食物，且每顿吃的都不同，食物编号1到N。</strong><br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2016/09/25/e5-ae-89-e5-be-bd-e7-9c-812016-e4-ba-ac-e8-83-9c-e6-9d-af-e7-a8-8b-e5-ba-8f-e8-ae-be-e8-ae-a1-e5-a4-a7-e8-b5-9b-f-e5-90-83-e5-9c-a8-e5-b7-a5-e5-a4-a7/#更多" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </div></div></article>
-
-
-    
   </section>
 
   
@@ -2401,7 +2408,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">84</span>
+                    <span class="site-state-item-count">85</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2540,7 +2547,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">63</span>
+                      
+                    
+                    <span class="site-state-item-count">64</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
