@@ -118,7 +118,7 @@
 <meta property="og:site_name" content="Fayne&#39;s Blog">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://cdn.fayne.cn/06a51b7fadee146d19d623adb1cec34d21f35993.png">
-<meta property="og:updated_time" content="2020-12-04T13:12:51.181Z">
+<meta property="og:updated_time" content="2020-12-04T13:18:47.628Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS学习笔记 - OC语法">
 <meta name="twitter:image" content="https://cdn.fayne.cn/06a51b7fadee146d19d623adb1cec34d21f35993.png">
@@ -516,8 +516,7 @@
 <li>block 一旦没有进行 copy 操作，就不会在堆上</li>
 <li>使用注意：循环引用问题</li>
 </ul>
-<h3 id="block-在修改-NSMutableArray，需不需要添加-block？"><a href="#block-在修改-NSMutableArray，需不需要添加-block？" class="headerlink" title="block 在修改 NSMutableArray，需不需要添加__block？"></a>block 在修改 NSMutableArray，需不需要添加__block？</h3><h3 id="我们平时编写的-Objective-C-代码，底层实现其实都是-C-C-代码"><a href="#我们平时编写的-Objective-C-代码，底层实现其实都是-C-C-代码" class="headerlink" title="我们平时编写的 Objective-C 代码，底层实现其实都是 C\C++代码"></a>我们平时编写的 Objective-C 代码，底层实现其实都是 C\C++代码</h3><div id="flowchart-0" class="flow-chart"></div>
-
+<h3 id="block-在修改-NSMutableArray，需不需要添加-block？"><a href="#block-在修改-NSMutableArray，需不需要添加-block？" class="headerlink" title="block 在修改 NSMutableArray，需不需要添加__block？"></a>block 在修改 NSMutableArray，需不需要添加__block？</h3><h3 id="我们平时编写的-Objective-C-代码，底层实现其实都是-C-C-代码"><a href="#我们平时编写的-Objective-C-代码，底层实现其实都是-C-C-代码" class="headerlink" title="我们平时编写的 Objective-C 代码，底层实现其实都是 C\C++代码"></a>我们平时编写的 Objective-C 代码，底层实现其实都是 C\C++代码</h3><p>mermaid<br>graph LR<br>A[Objective-C] –&gt; B[C\C++] –&gt; C[汇编语言] –&gt; D[机器语言]</p>
 <h3 id="所以-Objective-C-的面向对象都是基于-C-C-的数据结构实现的"><a href="#所以-Objective-C-的面向对象都是基于-C-C-的数据结构实现的" class="headerlink" title="所以 Objective-C 的面向对象都是基于 C\C++的数据结构实现的"></a>所以 Objective-C 的面向对象都是基于 C\C++的数据结构实现的</h3><h3 id="思考：Objective-C-的对象、类主要是基于-C-C-的什么数据结构实现的？"><a href="#思考：Objective-C-的对象、类主要是基于-C-C-的什么数据结构实现的？" class="headerlink" title="思考：Objective-C 的对象、类主要是基于 C\C++的什么数据结构实现的？"></a>思考：Objective-C 的对象、类主要是基于 C\C++的什么数据结构实现的？</h3><ul>
 <li>结构体</li>
 </ul>
@@ -525,10 +524,7 @@
 <ul>
 <li>如果需要链接其他框架，使用-framework 参数。比如-framework UIKit</li>
 </ul>
-<h2 id="对象的本质"><a href="#对象的本质" class="headerlink" title="对象的本质"></a>对象的本质</h2><h3 id="思考：一个-OC-对象在内存中是如何布局的？"><a href="#思考：一个-OC-对象在内存中是如何布局的？" class="headerlink" title="思考：一个 OC 对象在内存中是如何布局的？"></a>思考：一个 OC 对象在内存中是如何布局的？</h3><h3 id="NSObject-的底层实现"><a href="#NSObject-的底层实现" class="headerlink" title="NSObject 的底层实现"></a>NSObject 的底层实现</h3><p><script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.6.5/flowchart.min.js"></script><textarea id="flowchart-0-code" style="display: none">mermaid
-graph LR
-A[Objective-C] --> B[C\C++] --> C[汇编语言] --> D[机器语言]</textarea><textarea id="flowchart-0-options" style="display: none">{"scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12}</textarea><script>  var code = document.getElementById("flowchart-0-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("flowchart-0-options").value));  var diagram = flowchart.parse(code);  diagram.drawSVG("flowchart-0", options);</script></p>
-
+<h2 id="对象的本质"><a href="#对象的本质" class="headerlink" title="对象的本质"></a>对象的本质</h2><h3 id="思考：一个-OC-对象在内存中是如何布局的？"><a href="#思考：一个-OC-对象在内存中是如何布局的？" class="headerlink" title="思考：一个 OC 对象在内存中是如何布局的？"></a>思考：一个 OC 对象在内存中是如何布局的？</h3><h3 id="NSObject-的底层实现"><a href="#NSObject-的底层实现" class="headerlink" title="NSObject 的底层实现"></a>NSObject 的底层实现</h3>
       
     </div>
 
