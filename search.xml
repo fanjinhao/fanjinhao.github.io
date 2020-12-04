@@ -91,6 +91,21 @@ int main()
       </tags>
   </entry>
   <entry>
+    <title>Kingfisher加载多个Gif图，内存告警崩溃</title>
+    <url>/2019/10/08/Kingfisher-crash/</url>
+    <content><![CDATA[<p><img src="https://cdn.fayne.cn/7271da405a68a7da7afbd7dba22e143c.png" alt="kingfisher"><br><a id="more"></a></p>
+<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>使用Kingfisher加载多个GIF图的时候，内存只增不减，最后导致告警退出</p>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>临时解决方案：设置cacheType为memory，有好的方案请留言，谢谢<br><figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> options: <span class="type">KingfisherOptionsInfo</span> = [.backgroundDecode, .fromMemoryCacheOrRefresh]</span><br><span class="line">kf.setImage(with: url,</span><br><span class="line">                        placeholder: placeholderImage,</span><br><span class="line">                        options: options,</span><br><span class="line">                        progressBlock: <span class="literal">nil</span>) &#123; (image, error, <span class="number">_</span>, url) <span class="keyword">in</span></span><br><span class="line">                            completion?(image, error)&#125;</span><br></pre></td></tr></table></figure></p>
+]]></content>
+      <categories>
+        <category>iOS</category>
+      </categories>
+      <tags>
+        <tag>Kingfisher</tag>
+        <tag>iOS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Atom利器-markdown图床搭建</title>
     <url>/2017/11/19/ImgStoService/</url>
     <content><![CDATA[<p><img src="https://cdn.fayne.cn/05a2feada472159cfe5833ae921922c0.png" alt="Atom"></p>
@@ -117,6 +132,80 @@ int main()
       </categories>
       <tags>
         <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>akoj-1059-Picture</title>
+    <url>/2015/05/09/akoj-1059-picture/</url>
+    <content><![CDATA[<p><strong><span style="font-size:24px; color:#333399">Description</span></strong></p>
+<p><span style="font-family:Times New Roman; font-size:14px">给你一个矩形的宽度和高度，要求按sample output样例输出此矩形。</span></p>
+<p><strong><span style="font-size:24px; color:#333399">Input</span></strong></p>
+<p><span style="font-family:Times New Roman; font-size:14px">输入包含多组数据，每一组包含两个数N和M（ 0 &lt; N ，M , &lt; 75 )分别代表矩形的宽和高。输入以EOF结束。</span></p>
+<p><strong><span style="font-size:24px; color:#333399">Output</span></strong></p>
+<p><span style="font-family:Times New Roman; font-size:14px">对每一组N和M，输出相应的矩形。每一组输出结束后输出一个空行。</span></p>
+<p><strong><span style="font-size:24px; color:#333399">Sample Input</span></strong></p>
+<p><span style="font-family:Times New Roman; font-size:14px"></span></p>
+<pre><span style="font-family:Times New Roman; font-size:14px">3 2</span></pre>
+
+<p><strong><span style="font-size:24px; color:#333399">Sample Output</span></strong></p>
+<p><span style="font-family:Times New Roman; font-size:14px"></span></p>
+<pre><span style="font-family:Times New Roman; font-size:14px">+---+
+|   |
+|   |
++---+</span></pre>
+<a id="more"></a>
+**<span style="font-size:24px; color:#333399">Source</span>**
+
+<span style="font-family:Times New Roman; font-size:14px">Hdu 翻译</span>
+
+<span style="font-family:Times New Roman; font-size:14px">
+
+</span>
+
+<span style="font-family:Times New Roman; font-size:14px"></span>
+
+<pre name="code" class="cpp">#include <stdio.h>
+
+int main()
+{
+    int n, m;
+    int i,j;
+    while ( ~scanf("%d%d", &n, &m))
+    {
+        printf("+");
+        i = n;
+        while (i--)
+        printf("-");
+        printf("+\n");
+
+        j = m;
+        while (m--)
+        {
+
+        printf("|");
+        i = n;
+        while (i--)
+        printf(" ");
+        printf("|\n");
+        }
+        printf("+");
+        i = n;
+        while (i--)
+        printf("-");
+        printf("+\n");
+        printf("\n");
+
+    }
+    return 0;
+}
+</stdio.h></pre>
+]]></content>
+      <categories>
+        <category>AKOJ</category>
+        <category>算法学习</category>
+      </categories>
+      <tags>
+        <tag>akoj</tag>
       </tags>
   </entry>
   <entry>
@@ -310,21 +399,6 @@ Ca2CO3+H2O=Ca2(OH)2+CO2
       </tags>
   </entry>
   <entry>
-    <title>Kingfisher加载多个Gif图，内存告警崩溃</title>
-    <url>/2019/10/08/Kingfisher-crash/</url>
-    <content><![CDATA[<p><img src="https://cdn.fayne.cn/7271da405a68a7da7afbd7dba22e143c.png" alt="kingfisher"><br><a id="more"></a></p>
-<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>使用Kingfisher加载多个GIF图的时候，内存只增不减，最后导致告警退出</p>
-<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>临时解决方案：设置cacheType为memory，有好的方案请留言，谢谢<br><figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> options: <span class="type">KingfisherOptionsInfo</span> = [.backgroundDecode, .fromMemoryCacheOrRefresh]</span><br><span class="line">kf.setImage(with: url,</span><br><span class="line">                        placeholder: placeholderImage,</span><br><span class="line">                        options: options,</span><br><span class="line">                        progressBlock: <span class="literal">nil</span>) &#123; (image, error, <span class="number">_</span>, url) <span class="keyword">in</span></span><br><span class="line">                            completion?(image, error)&#125;</span><br></pre></td></tr></table></figure></p>
-]]></content>
-      <categories>
-        <category>iOS</category>
-      </categories>
-      <tags>
-        <tag>Kingfisher</tag>
-        <tag>iOS</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>akoj-1055-矩阵乘法</title>
     <url>/2015/06/07/akoj-1055-e7-9f-a9-e9-98-b5-e4-b9-98-e6-b3-95/</url>
     <content><![CDATA[<table border="0" width="100%" background="http://183.167.205.82:8081/JudgeOnline/images/table_back.jpg" style="border-collapse:collapse; border-spacing:0px; font-family:Simsun"><br><tbody><br><tr><br><td><br><br><span style="font-size:24px; color:blue">矩阵乘法</span><br><br>Time Limit:1000MS&nbsp; Memory Limit:65536K<br><br>Total Submit:19 Accepted:7<br><br><strong><span style="font-size:24px; color:#333399">Description</span></strong><br><br><span style="font-family:Times New Roman; font-size:14px">矩阵乘法是线性代数中最基本的运算之一。&nbsp;<br><br>给定三个矩阵 A\B\C 请编写程序判断A<em>B = C 是否成立。</em></span><br><br><strong><span style="font-size:24px; color:#333399">Input</span></strong><br><br><span style="font-family:Times New Roman; font-size:14px">输入包含多组数据。每组数据的格式如下：&nbsp;<br><br>第一行包括两个整数p 和q，表示矩阵A 的大小。后继p 行，每行有q 个整数，表示矩阵A&nbsp;<br><br>的元素内容。&nbsp;<br><br>紧接着用相同的格式给出矩阵B 和矩阵C。&nbsp;<br><br>输入数据的最后一行是两个0，你的程序处理到这里时就应该退出了。&nbsp;<br><br>输入数据中所有的整数绝对值都不超过100。</span><br><a id="more"></a><br><strong><span style="font-size:24px; color:#333399">Output</span></strong><br><br><span style="font-family:Times New Roman; font-size:14px">对每一组输入数据，你的程序都要输出单独一行字符。&nbsp;<br><br>如果 AB=C成立则输出”Yes”&nbsp;<br><br>如果 A 和B 根本不能相乘，或A<em>B=C不成立，则输出”No”。注意大小写。</em></span><br><br><strong><span style="font-size:24px; color:#333399">Sample Input</span></strong><br><br><span style="font-family:Times New Roman; font-size:14px"></span><br><pre><span style="font-family:Times New Roman; font-size:14px">2 3<br>1 2 3<br>4 5 6<br>3 2<br>1 2<br>3 4<br>5 6<br>2 2<br>22 28<br>49 64<br>1 2<br>1 2<br>2 1<br>2<br>1<br>2 2<br>2 4<br>1 2<br>1 2<br>1 2<br>1 1<br>1<br>1 1<br>1<br><br>0 0</span></pre><br><br><strong><span style="font-size:24px; color:#333399">Sample Output</span></strong><br><br><span style="font-family:Times New Roman; font-size:14px"></span><br><pre><span style="font-family:Times New Roman; font-size:14px">Yes<br>No<br>No</span></pre><br><br><strong><span style="font-size:24px; color:#333399">Hint</span></strong><br><br><span style="font-family:Times New Roman; font-size:14px">此题考察线性代数基本概念，请参阅线性代数教材。</span><br><br><strong><span style="font-size:24px; color:#333399">Source</span></strong><br><br><span style="font-family:Times New Roman; font-size:14px">2009中科大ACM校赛-普及版</span><br><br><span style="color:rgb(51,51,153); font-size:14px; font-family:Simsun">[</span><a href="http://183.167.205.82:8081/JudgeOnline/submitpage?problem_id=1055" target="_blank" rel="noopener">Submit</a><span style="color:rgb(51,51,153); font-size:14px; font-family:Simsun">]&nbsp;&nbsp;<br> [</span><a target="_blank" style="color:rgb(51,51,153); font-size:14px; font-family:Simsun; outline:none">Go Back</a><span style="color:rgb(51,51,153); font-size:14px; font-family:Simsun">]&nbsp;&nbsp; [</span><a href="http://183.167.205.82:8081/JudgeOnline/problemstatus?problem_id=1055" target="_blank" rel="noopener">Status</a><span style="color:rgb(51,51,153); font-size:14px; font-family:Simsun">]&nbsp;&nbsp;<br> [</span><a href="http://183.167.205.82:8081/JudgeOnline/bbs?problem_id=1055" target="_blank" rel="noopener">Discuss</a><span style="color:rgb(51,51,153); font-size:14px; font-family:Simsun">]</span><br><br><span style="color:rgb(51,51,153); font-size:14px; font-family:Simsun"><br><br></span><br><br><span style="color:rgb(51,51,153); font-size:14px; font-family:Simsun"><br><br></span><br><br><span style="color:rgb(51,51,153); font-size:14px; font-family:Simsun"></span><p></p><pre name="code" class="cpp">#include &lt;stdio.h&gt;<br>#include &lt;string.h&gt;<br>#define MAXN 101<br><br>int a[MAXN][MAXN], b[MAXN][MAXN], c[MAXN][MAXN], d[MAXN][MAXN];<br><br>int main()<br>{<br>    int i, j, m, n, x, y, u, v, p;<br>    while ( ~scanf(“%d%d”, &amp;m, &amp;n))<br>    {<br>        if ( m == 0 &amp;&amp; n == 0 ) break;<br>        for ( i=0; i&lt;m; i++ ) {<br>            for ( j=0; j&lt;n; j++ ) {<br>                scanf(“%d”, &amp;a[i][j]);<br>            }<br>        }<br>        scanf(“%d%d”, &amp;x, &amp;y);<br>        for ( i=0; i&lt;x; i++ ) {<br>            for ( j=0; j&lt;y; j++ ) {<br>                scanf(“%d”, &amp;b[i][j]);<br>            }<br>        }<br>        scanf(“%d%d”, &amp;u, &amp;v);<br>        for ( i=0; i&lt;u; i++ ) {<br>            for ( j=0; j&lt;v; j++ ) {<br>                scanf(“%d”, &amp;c[i][j]);<br>            }<br>        }<br>        if ( n != x || m != u || v != y ) {<br>            puts(“No”);<br>        }<br>        else {<br><br>            for ( i=0; i&lt;u; i++ ) {<br>                for ( j=0; j&lt;v; j++ ) {<br>                    d[i][j] = 0;<br>                    for ( p=0; p&lt;n; p++ ) {<br>                        d[i][j] += a[i][p]  b[p][j];<br>                    }<br>                    if ( d[i][j] != c[i][j] ) break;<br>                }<br>            }<br>            if ( i == u &amp;&amp; j == v ) puts(“Yes”);<br>            else puts(“No”);<br>        }<br>    }<br><br>    return 0;<br>}</pre><br><br></td><br></tr><br></tbody><br></table>
@@ -335,6 +409,64 @@ Ca2CO3+H2O=Ca2(OH)2+CO2
       <categories>
         <category>AKOJ</category>
         <category>基础</category>
+        <category>算法学习</category>
+      </categories>
+      <tags>
+        <tag>akoj</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>akoj-1073- Let the Balloon Rise</title>
+    <url>/2015/05/09/akoj-1073-lettheballoonrise/</url>
+    <content><![CDATA[<p><span style="font-size:24px; color:blue">Let the Balloon Rise</span></p>
+<p>Time Limit:1000MS&nbsp; Memory Limit:65536K</p>
+<p>Total Submit:92 Accepted:58</p>
+<p><strong><span style="font-size:24px; color:#333399">Description</span></strong></p>
+<p><span style="font-family:Times New Roman; font-size:14px">Contest time again! How excited it is to see balloons floating around. But to tell you a secret, the judges’ favorite time is guessing the most popular problem.<br> When the contest is over, they will count the balloons of each color and find the result.&nbsp;</span></p>
+<p>This year, they decide to leave this lovely job to you.&nbsp;</p>
+<p><br><a id="more"></a><br><strong><span style="font-size:24px; color:#333399">Input</span></strong></p>
+<p><span style="font-family:Times New Roman; font-size:14px">Input contains multiple test cases. Each test case starts with a number N ( 0 &lt; N &lt; = 1000 ) – the total number of balloons distributed. The next N lines<br> contain one color each. The color of a balloon is a string of up to 15 lower-case letters.&nbsp;</span></p>
+<p>A test case with N = 0 terminates the input and this test case is not to be processed.</p>
+<p><strong><span style="font-size:24px; color:#333399">Output</span></strong></p>
+<p><span style="font-family:Times New Roman; font-size:14px">For each case, print the color of balloon for the most popular problem on a single line. It is guaranteed that there is a unique solution for each test case.</span></p>
+<p><strong><span style="font-size:24px; color:#333399">Sample Input</span></strong></p>
+<p><span style="font-family:Times New Roman; font-size:14px"></span></p>
+<pre><span style="font-family:Times New Roman; font-size:14px">5
+green
+red
+blue
+red
+red
+3
+pink
+orange
+pink
+0</span></pre>
+
+<p><strong><span style="font-size:24px; color:#333399">Sample Output</span></strong></p>
+<p><span style="font-family:Times New Roman; font-size:14px"></span></p>
+<p>&lt;</p>
+<p>pre&gt;<span style="font-family:Times New Roman; font-size:14px">red<br></span><span style="font-family:Times New Roman; font-size:14px">pink</span></p>
+<p><span style="font-family:Times New Roman; font-size:14px"></span></p>
+<pre name="code" class="cpp">#include <stdio.h>
+#include <string.h>
+int main()
+{
+    int n,i,j,num[1000];
+    int max=0,t=0;
+    char color[1000][16];
+    while(scanf("%d",&n)!=EOF)
+    {
+        if(n)
+        {
+            num[0]=0;
+            scanf("%s",color[0]);
+            for(i=1;i<n;i++) { num[i]="0;" scanf("%s",color[i]); for(j="0;j<i-1;j++)" if(strcmp(color[i],color[j])="=0)" num[i]+="1;" } max="0;" t="0;" for(i="1;i<n;i++)" if(max<num[i]) printf("%s\n",color[t]); else break; }< pre>
+
+<p></p></n;i++)></string.h></stdio.h></pre><p></p>
+]]></content>
+      <categories>
+        <category>AKOJ</category>
         <category>算法学习</category>
       </categories>
       <tags>
@@ -484,152 +616,6 @@ int main()
       </tags>
   </entry>
   <entry>
-    <title>akoj-1059-Picture</title>
-    <url>/2015/05/09/akoj-1059-picture/</url>
-    <content><![CDATA[<p><strong><span style="font-size:24px; color:#333399">Description</span></strong></p>
-<p><span style="font-family:Times New Roman; font-size:14px">给你一个矩形的宽度和高度，要求按sample output样例输出此矩形。</span></p>
-<p><strong><span style="font-size:24px; color:#333399">Input</span></strong></p>
-<p><span style="font-family:Times New Roman; font-size:14px">输入包含多组数据，每一组包含两个数N和M（ 0 &lt; N ，M , &lt; 75 )分别代表矩形的宽和高。输入以EOF结束。</span></p>
-<p><strong><span style="font-size:24px; color:#333399">Output</span></strong></p>
-<p><span style="font-family:Times New Roman; font-size:14px">对每一组N和M，输出相应的矩形。每一组输出结束后输出一个空行。</span></p>
-<p><strong><span style="font-size:24px; color:#333399">Sample Input</span></strong></p>
-<p><span style="font-family:Times New Roman; font-size:14px"></span></p>
-<pre><span style="font-family:Times New Roman; font-size:14px">3 2</span></pre>
-
-<p><strong><span style="font-size:24px; color:#333399">Sample Output</span></strong></p>
-<p><span style="font-family:Times New Roman; font-size:14px"></span></p>
-<pre><span style="font-family:Times New Roman; font-size:14px">+---+
-|   |
-|   |
-+---+</span></pre>
-<a id="more"></a>
-**<span style="font-size:24px; color:#333399">Source</span>**
-
-<span style="font-family:Times New Roman; font-size:14px">Hdu 翻译</span>
-
-<span style="font-family:Times New Roman; font-size:14px">
-
-</span>
-
-<span style="font-family:Times New Roman; font-size:14px"></span>
-
-<pre name="code" class="cpp">#include <stdio.h>
-
-int main()
-{
-    int n, m;
-    int i,j;
-    while ( ~scanf("%d%d", &n, &m))
-    {
-        printf("+");
-        i = n;
-        while (i--)
-        printf("-");
-        printf("+\n");
-
-        j = m;
-        while (m--)
-        {
-
-        printf("|");
-        i = n;
-        while (i--)
-        printf(" ");
-        printf("|\n");
-        }
-        printf("+");
-        i = n;
-        while (i--)
-        printf("-");
-        printf("+\n");
-        printf("\n");
-
-    }
-    return 0;
-}
-</stdio.h></pre>
-]]></content>
-      <categories>
-        <category>AKOJ</category>
-        <category>算法学习</category>
-      </categories>
-      <tags>
-        <tag>akoj</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>akoj-1073- Let the Balloon Rise</title>
-    <url>/2015/05/09/akoj-1073-lettheballoonrise/</url>
-    <content><![CDATA[<p><span style="font-size:24px; color:blue">Let the Balloon Rise</span></p>
-<p>Time Limit:1000MS&nbsp; Memory Limit:65536K</p>
-<p>Total Submit:92 Accepted:58</p>
-<p><strong><span style="font-size:24px; color:#333399">Description</span></strong></p>
-<p><span style="font-family:Times New Roman; font-size:14px">Contest time again! How excited it is to see balloons floating around. But to tell you a secret, the judges’ favorite time is guessing the most popular problem.<br> When the contest is over, they will count the balloons of each color and find the result.&nbsp;</span></p>
-<p>This year, they decide to leave this lovely job to you.&nbsp;</p>
-<p><br><a id="more"></a><br><strong><span style="font-size:24px; color:#333399">Input</span></strong></p>
-<p><span style="font-family:Times New Roman; font-size:14px">Input contains multiple test cases. Each test case starts with a number N ( 0 &lt; N &lt; = 1000 ) – the total number of balloons distributed. The next N lines<br> contain one color each. The color of a balloon is a string of up to 15 lower-case letters.&nbsp;</span></p>
-<p>A test case with N = 0 terminates the input and this test case is not to be processed.</p>
-<p><strong><span style="font-size:24px; color:#333399">Output</span></strong></p>
-<p><span style="font-family:Times New Roman; font-size:14px">For each case, print the color of balloon for the most popular problem on a single line. It is guaranteed that there is a unique solution for each test case.</span></p>
-<p><strong><span style="font-size:24px; color:#333399">Sample Input</span></strong></p>
-<p><span style="font-family:Times New Roman; font-size:14px"></span></p>
-<pre><span style="font-family:Times New Roman; font-size:14px">5
-green
-red
-blue
-red
-red
-3
-pink
-orange
-pink
-0</span></pre>
-
-<p><strong><span style="font-size:24px; color:#333399">Sample Output</span></strong></p>
-<p><span style="font-family:Times New Roman; font-size:14px"></span></p>
-<p>&lt;</p>
-<p>pre&gt;<span style="font-family:Times New Roman; font-size:14px">red<br></span><span style="font-family:Times New Roman; font-size:14px">pink</span></p>
-<p><span style="font-family:Times New Roman; font-size:14px"></span></p>
-<pre name="code" class="cpp">#include <stdio.h>
-#include <string.h>
-int main()
-{
-    int n,i,j,num[1000];
-    int max=0,t=0;
-    char color[1000][16];
-    while(scanf("%d",&n)!=EOF)
-    {
-        if(n)
-        {
-            num[0]=0;
-            scanf("%s",color[0]);
-            for(i=1;i<n;i++) { num[i]="0;" scanf("%s",color[i]); for(j="0;j<i-1;j++)" if(strcmp(color[i],color[j])="=0)" num[i]+="1;" } max="0;" t="0;" for(i="1;i<n;i++)" if(max<num[i]) printf("%s\n",color[t]); else break; }< pre>
-
-<p></p></n;i++)></string.h></stdio.h></pre><p></p>
-]]></content>
-      <categories>
-        <category>AKOJ</category>
-        <category>算法学习</category>
-      </categories>
-      <tags>
-        <tag>akoj</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>akoj-1153-p次方求和</title>
-    <url>/2015/06/22/akoj-1153-p-e6-ac-a1-e6-96-b9-e6-b1-82-e5-92-8c/</url>
-    <content><![CDATA[<table border="0" width="100%" background="http://183.167.205.82:8081/JudgeOnline/images/table_back.jpg" style="border-collapse:collapse; border-spacing:0px; font-family:Simsun"><br><tbody><br><tr><br><td><br><br><span style="font-size:24px; color:blue">p次方求和</span><br><br>Time Limit:1000MS&nbsp; Memory Limit:65536K<br><br>Total Submit:196 Accepted:46<br><br><strong><span style="font-size:24px; color:#333399">Description</span></strong><br><br><span style="font-family:Times New Roman; font-size:14px">一个很简单的问题，求1^p+2^p+3^p+……+n^p的和。</span><br><br><strong><span style="font-size:24px; color:#333399">Input</span></strong><br><br><span style="font-family:Times New Roman; font-size:14px">第一行单独一个数字t表示测试数据组数。接下来会有t行数字，每行包括两个数字n,p，&nbsp;<br><br>输入保证0&lt; n&lt; =1000,0&lt; =p&lt; =1000。&nbsp;<br><a id="more"></a><br></span><br><br><strong><span style="font-size:24px; color:#333399">Output</span></strong><br><br><span style="font-family:Times New Roman; font-size:14px">输出1^p+2^p+3^p+……+n^p对10003取余的结果，每个结果单独占一行。&nbsp;<br><br></span><br><br><strong><span style="font-size:24px; color:#333399">Sample Input</span></strong><br><br><span style="font-family:Times New Roman; font-size:14px"></span><br><pre><span style="font-family:Times New Roman; font-size:14px">2<br>10 1<br>10 2<br><br></span></pre><br><br><strong><span style="font-size:24px; color:#333399">Sample Output</span></strong><br><br><span style="font-family:Times New Roman; font-size:14px"></span><br><pre><span style="font-family:Times New Roman; font-size:14px">55<br>385</span></pre><br><br><strong><span style="font-size:24px; color:#333399">Source</span></strong><br><br><span style="font-weight:bold"><span style="font-size:24px; color:#333399"><span style="color:rgb(51,51,153); font-family:Simsun; font-size:14px"><span style="white-space:pre"></span>[</span><a href="http://183.167.205.82:8081/JudgeOnline/submitpage?problem_id=1153" target="_blank" rel="noopener">Submit</a><span style="color:rgb(51,51,153); font-family:Simsun; font-size:14px">]&nbsp;&nbsp;<br> [</span><a target="_blank" style="outline:none; font-family:Simsun; font-size:14px">Go Back</a><span style="color:rgb(51,51,153); font-family:Simsun; font-size:14px">]&nbsp;&nbsp; [</span><a href="http://183.167.205.82:8081/JudgeOnline/problemstatus?problem_id=1153" target="_blank" rel="noopener">Status</a><span style="color:rgb(51,51,153); font-family:Simsun; font-size:14px">]&nbsp;&nbsp;<br> [</span><a href="http://183.167.205.82:8081/JudgeOnline/bbs?problem_id=1153" target="_blank" rel="noopener">Discuss</a><span style="color:rgb(51,51,153); font-family:Simsun; font-size:14px">]</span></span></span><br><br><pre name="code" class="cpp">#include &lt;stdio.h&gt;<br><br>int a[1002][1002];<br><br>int main()<br>{<br>    int i, j, s, n, p, t;<br>    for ( i=1; i&lt;1002; i++ ) {<br>        a[i][0] = 1;<br>    }<br>    for ( j=1; j&lt;1002; j++ ) {<br>        for ( i=1; i&lt;1002; i++ ) {<br>            a[i][j] = a[i][j-1] * i % 10003;//构造次方表，a[i][j]表示i的j次方<br>        }<br>    }<br>    scanf(“%d”, &amp;t);<br>    while ( t– )<br>    {<br>        s = 0;<br>        scanf(“%d%d”, &amp;n, &amp;p);<br>        for ( i=1; i&lt;=n; i++ ) {<br>            s = s + a[i][p];<br>        }<br>        printf(“%d\n”, s % 10003);<br>    }<br><br>    return 0;<br>}</pre><br><br></td><br></tr><br></tbody><br></table>
-]]></content>
-      <categories>
-        <category>AKOJ</category>
-        <category>基础</category>
-        <category>算法学习</category>
-      </categories>
-      <tags>
-        <tag>akoj</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>akoj-1148-小光棍数</title>
     <url>/2015/05/11/akoj-1148-e5-b0-8f-e5-85-89-e6-a3-8d-e6-95-b0/</url>
     <content><![CDATA[<p><span style="font-size:24px; color:blue">小光棍数</span></p>
@@ -687,6 +673,102 @@ int main()
 <div class="para" style="font-size:14px; color:rgb(51,51,51); margin:15px 0px 5px; text-indent:2em; line-height:24px; font-family:arial,宋体,sans-serif"><br>可以通过换算得出上面三个说法都是正确而且是等价的.</div>
 
 <p><span style="font-size:18px; color:#ff0000">这里用到了第二点的性质，同时需要注意的是使用%lld做的输入输出选项可以参考博客：<a href="http://blog.csdn.net/hongxdong/article/details/5559312" target="_blank" rel="noopener">http://blog.csdn.net/hongxdong/article/details/5559312</a></span></p>
+]]></content>
+      <categories>
+        <category>AKOJ</category>
+        <category>基础</category>
+        <category>算法学习</category>
+      </categories>
+      <tags>
+        <tag>akoj</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>akoj-1153-p次方求和</title>
+    <url>/2015/06/22/akoj-1153-p-e6-ac-a1-e6-96-b9-e6-b1-82-e5-92-8c/</url>
+    <content><![CDATA[<table border="0" width="100%" background="http://183.167.205.82:8081/JudgeOnline/images/table_back.jpg" style="border-collapse:collapse; border-spacing:0px; font-family:Simsun"><br><tbody><br><tr><br><td><br><br><span style="font-size:24px; color:blue">p次方求和</span><br><br>Time Limit:1000MS&nbsp; Memory Limit:65536K<br><br>Total Submit:196 Accepted:46<br><br><strong><span style="font-size:24px; color:#333399">Description</span></strong><br><br><span style="font-family:Times New Roman; font-size:14px">一个很简单的问题，求1^p+2^p+3^p+……+n^p的和。</span><br><br><strong><span style="font-size:24px; color:#333399">Input</span></strong><br><br><span style="font-family:Times New Roman; font-size:14px">第一行单独一个数字t表示测试数据组数。接下来会有t行数字，每行包括两个数字n,p，&nbsp;<br><br>输入保证0&lt; n&lt; =1000,0&lt; =p&lt; =1000。&nbsp;<br><a id="more"></a><br></span><br><br><strong><span style="font-size:24px; color:#333399">Output</span></strong><br><br><span style="font-family:Times New Roman; font-size:14px">输出1^p+2^p+3^p+……+n^p对10003取余的结果，每个结果单独占一行。&nbsp;<br><br></span><br><br><strong><span style="font-size:24px; color:#333399">Sample Input</span></strong><br><br><span style="font-family:Times New Roman; font-size:14px"></span><br><pre><span style="font-family:Times New Roman; font-size:14px">2<br>10 1<br>10 2<br><br></span></pre><br><br><strong><span style="font-size:24px; color:#333399">Sample Output</span></strong><br><br><span style="font-family:Times New Roman; font-size:14px"></span><br><pre><span style="font-family:Times New Roman; font-size:14px">55<br>385</span></pre><br><br><strong><span style="font-size:24px; color:#333399">Source</span></strong><br><br><span style="font-weight:bold"><span style="font-size:24px; color:#333399"><span style="color:rgb(51,51,153); font-family:Simsun; font-size:14px"><span style="white-space:pre"></span>[</span><a href="http://183.167.205.82:8081/JudgeOnline/submitpage?problem_id=1153" target="_blank" rel="noopener">Submit</a><span style="color:rgb(51,51,153); font-family:Simsun; font-size:14px">]&nbsp;&nbsp;<br> [</span><a target="_blank" style="outline:none; font-family:Simsun; font-size:14px">Go Back</a><span style="color:rgb(51,51,153); font-family:Simsun; font-size:14px">]&nbsp;&nbsp; [</span><a href="http://183.167.205.82:8081/JudgeOnline/problemstatus?problem_id=1153" target="_blank" rel="noopener">Status</a><span style="color:rgb(51,51,153); font-family:Simsun; font-size:14px">]&nbsp;&nbsp;<br> [</span><a href="http://183.167.205.82:8081/JudgeOnline/bbs?problem_id=1153" target="_blank" rel="noopener">Discuss</a><span style="color:rgb(51,51,153); font-family:Simsun; font-size:14px">]</span></span></span><br><br><pre name="code" class="cpp">#include &lt;stdio.h&gt;<br><br>int a[1002][1002];<br><br>int main()<br>{<br>    int i, j, s, n, p, t;<br>    for ( i=1; i&lt;1002; i++ ) {<br>        a[i][0] = 1;<br>    }<br>    for ( j=1; j&lt;1002; j++ ) {<br>        for ( i=1; i&lt;1002; i++ ) {<br>            a[i][j] = a[i][j-1] * i % 10003;//构造次方表，a[i][j]表示i的j次方<br>        }<br>    }<br>    scanf(“%d”, &amp;t);<br>    while ( t– )<br>    {<br>        s = 0;<br>        scanf(“%d%d”, &amp;n, &amp;p);<br>        for ( i=1; i&lt;=n; i++ ) {<br>            s = s + a[i][p];<br>        }<br>        printf(“%d\n”, s % 10003);<br>    }<br><br>    return 0;<br>}</pre><br><br></td><br></tr><br></tbody><br></table>
+]]></content>
+      <categories>
+        <category>AKOJ</category>
+        <category>基础</category>
+        <category>算法学习</category>
+      </categories>
+      <tags>
+        <tag>akoj</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>akoj-1162-计算表达式</title>
+    <url>/2015/06/22/akoj-1162-e8-ae-a1-e7-ae-97-e8-a1-a8-e8-be-be-e5-bc-8f/</url>
+    <content><![CDATA[<table border="0" width="100%" background="http://183.167.205.82:8081/JudgeOnline/images/table_back.jpg" style="border-collapse:collapse; border-spacing:0px; font-family:Simsun"><br><tbody><br><tr><br><td><br><br><span style="font-size:24px; color:blue">计算表达式</span><br><br>Time Limit:1000MS&nbsp; Memory Limit:65536K<br><br>Total Submit:14 Accepted:7<br><br><strong><span style="font-size:24px; color:#333399">Description</span></strong><br><br><span style="font-family:Times New Roman; font-size:14px">对于一个不存在括号的表达式进行计算</span><br><br><strong><span style="font-size:24px; color:#333399">Input</span></strong><br><br><span style="font-family:Times New Roman; font-size:14px">存在多种数据，每组数据一行，表达式不存在空格</span><br><br><strong><span style="font-size:24px; color:#333399">Output</span></strong><br><br><span style="font-family:Times New Roman; font-size:14px">输出结果</span><br><a id="more"></a><br><strong><span style="font-size:24px; color:#333399">Sample Input</span></strong><br><br><span style="font-family:Times New Roman; font-size:14px"></span><br><pre><span style="font-family:Times New Roman; font-size:14px">6/2+3+3<em>4</em></span></pre><br><br><strong><span style="font-size:24px; color:#333399">Sample Output</span></strong><br><br><span style="font-family:Times New Roman; font-size:14px"></span><br><pre><span style="font-family:Times New Roman; font-size:14px">18</span></pre><br><br><strong><span style="font-size:24px; color:#333399">Source</span></strong><br><br><span style="font-weight:bold"><span style="font-size:24px; color:#333399"><span style="color:rgb(51,51,153); font-family:Simsun; font-size:14px"><span style="white-space:pre"></span>[</span><a href="http://183.167.205.82:8081/JudgeOnline/submitpage?problem_id=1162" target="_blank" rel="noopener">Submit</a><span style="color:rgb(51,51,153); font-family:Simsun; font-size:14px">]&nbsp;&nbsp;<br> [</span><a target="_blank" style="outline:none; font-family:Simsun; font-size:14px">Go Back</a><span style="color:rgb(51,51,153); font-family:Simsun; font-size:14px">]&nbsp;&nbsp; [</span><a href="http://183.167.205.82:8081/JudgeOnline/problemstatus?problem_id=1162" target="_blank" rel="noopener">Status</a><span style="color:rgb(51,51,153); font-family:Simsun; font-size:14px">]&nbsp;&nbsp;<br> [</span><a href="http://183.167.205.82:8081/JudgeOnline/bbs?problem_id=1162" target="_blank" rel="noopener">Discuss</a><span style="color:rgb(51,51,153); font-family:Simsun; font-size:14px">]</span><br><br></span></span><br><br><strong><span style="font-size:24px; color:#333399"></span></strong><br><pre name="code" class="cpp">#include &lt;stdio.h&gt;<br>#include &lt;string.h&gt;<br><br>/此题关键对数的处理，遇到加减就增加个变量储存 ，<br> <em>遇到‘-’还需要把这个数转换为其相反数储存
+ </em>/<br><br>int main()<br>{<br>    char temp;<br>    int x, a[200], i, sum = 0;<br>    memset(a, 0, sizeof(a));<br>    while (~scanf(“%d”, &amp;x))<br>    {<br>        sum = 0;<br>        i = 0;<br>        a[i] = x;<br>        while ( ~scanf(“%c”, &amp;temp) &amp;&amp; temp != ‘\n’ )<br>        {<br>            scanf(“%d”, &amp;x);<br>            switch(temp)<br>            {<br>                case ‘<em>‘: a[i] </em>= x; break;//遇到乘除就当成一个数处理<br>                case ‘/‘: a[i] /= x; break;<br>                case ‘+’: a[++i] = x; break;<br>                case ‘-‘: a[++i] = -x; break;<br>            }<br>        }<br>        for ( i; i&gt;=0; i–) {<br>            sum += a[i];<br>        }<br>        printf(“%d\n”, sum);<br>    }<br>}</pre><br><br></td><br></tr><br></tbody><br></table>
+]]></content>
+      <categories>
+        <category>AKOJ</category>
+        <category>基础</category>
+        <category>算法学习</category>
+      </categories>
+      <tags>
+        <tag>akoj</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>akoj-1272-字母统计</title>
+    <url>/2015/06/06/akoj-1272-e5-ad-97-e6-af-8d-e7-bb-9f-e8-ae-a1/</url>
+    <content><![CDATA[<p><span style="font-size:24px; color:blue">字母统计</span></p>
+<p>Time Limit:1000MS&nbsp; Memory Limit:65536K</p>
+<p>Total Submit:72 Accepted:48</p>
+<p><strong><span style="font-size:24px; color:#333399">Description</span></strong></p>
+<p><span style="font-family:Times New Roman; font-size:14px">现在给你一个由小写字母组成字符串，要你找出字符串中出现次数最多的字母，如果出现次数最多字母有多个那么输出最小的那个。</span></p>
+<p><strong><span style="font-size:24px; color:#333399">Input</span></strong></p>
+<p><span style="font-family:Times New Roman; font-size:14px">第一行输入一个正整数T（0&lt;t&lt;25）</span></p>
+<p>随后T行输入一个字符串s,s长度小于1010。</p>
+<p><strong><span style="font-size:24px; color:#333399">Output</span></strong><br><a id="more"></a><br><span style="font-family:Times New Roman; font-size:14px">每组数据输出占一行，输出出现次数最多的字符；</span></p>
+<p><strong><span style="font-size:24px; color:#333399">Sample Input</span></strong></p>
+<p><span style="font-family:Times New Roman; font-size:14px"></span></p>
+<pre><span style="font-family:Times New Roman; font-size:14px">3
+abcd
+bbaa
+jsdhfjkshdfjksahdfjkhsajk</span></pre>
+
+<p><strong><span style="font-size:24px; color:#333399">Sample Output</span></strong></p>
+<p><span style="font-family:Times New Roman; font-size:14px"></span></p>
+<pre><span style="font-family:Times New Roman; font-size:14px">a
+a
+j</span></pre>
+
+<p><strong><span style="font-size:24px; color:#333399">Source</span></strong></p>
+<p><span style="font-family:Times New Roman; font-size:14px">LY</span></p>
+<p><span style="font-family:Times New Roman; font-size:14px"></span></p>
+<p></p>
+<p><span style="font-family:Times New Roman; font-size:14px"></span></p>
+<pre name="code" class="cpp">#include <stdio.h>
+#include <string.h>
+#define MAXN 1020
+
+char str[MAXN];
+
+int main()
+{
+    int n, i, word[30], max, p;
+    scanf("%d", &n);
+    while (n--)
+    {
+        max = 0;
+        memset(word, 0, sizeof(word));
+        scanf("%s", str);
+        int k = strlen(str);
+        for ( i=0; i<k; i++ ) { word[str[i] - 'a']++; 这样的好处不仅把每个字母的个数统计好了 } for ( i="0;" i<26; 且按字母排好序了 if (word[i]> max)
+            {
+                max = word[i];
+                p = i;
+            }
+        }
+        printf("%c\n", p+'a');
+    }
+
+    return 0;
+}</k;></string.h></stdio.h></pre>
 ]]></content>
       <categories>
         <category>AKOJ</category>
@@ -757,21 +839,6 @@ int main()
         scanf("%d%d", &w, &n);
         for ( i=0; i<n; i++ ) { scanf("%d", &a[i]); } my_sort(a, n); for ( i="0," j="n-1;" i<="j;" if a[i] + a[j] <="w" 如果最轻的和最重的可以，则比较第二重的和第二轻的 ，依次比较（1） i++; j--; c++; else 如果只剩一个人，单独一条船 让重的人单独一条船， 让第二重的成为最重的人，再到（1）进行比较 printf("%d\n", c); return 0; }< pre>
 </n;></n-1;></string.h></stdio.h></pre>]]></content>
-      <categories>
-        <category>AKOJ</category>
-        <category>基础</category>
-        <category>算法学习</category>
-      </categories>
-      <tags>
-        <tag>akoj</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>akoj-1162-计算表达式</title>
-    <url>/2015/06/22/akoj-1162-e8-ae-a1-e7-ae-97-e8-a1-a8-e8-be-be-e5-bc-8f/</url>
-    <content><![CDATA[<table border="0" width="100%" background="http://183.167.205.82:8081/JudgeOnline/images/table_back.jpg" style="border-collapse:collapse; border-spacing:0px; font-family:Simsun"><br><tbody><br><tr><br><td><br><br><span style="font-size:24px; color:blue">计算表达式</span><br><br>Time Limit:1000MS&nbsp; Memory Limit:65536K<br><br>Total Submit:14 Accepted:7<br><br><strong><span style="font-size:24px; color:#333399">Description</span></strong><br><br><span style="font-family:Times New Roman; font-size:14px">对于一个不存在括号的表达式进行计算</span><br><br><strong><span style="font-size:24px; color:#333399">Input</span></strong><br><br><span style="font-family:Times New Roman; font-size:14px">存在多种数据，每组数据一行，表达式不存在空格</span><br><br><strong><span style="font-size:24px; color:#333399">Output</span></strong><br><br><span style="font-family:Times New Roman; font-size:14px">输出结果</span><br><a id="more"></a><br><strong><span style="font-size:24px; color:#333399">Sample Input</span></strong><br><br><span style="font-family:Times New Roman; font-size:14px"></span><br><pre><span style="font-family:Times New Roman; font-size:14px">6/2+3+3<em>4</em></span></pre><br><br><strong><span style="font-size:24px; color:#333399">Sample Output</span></strong><br><br><span style="font-family:Times New Roman; font-size:14px"></span><br><pre><span style="font-family:Times New Roman; font-size:14px">18</span></pre><br><br><strong><span style="font-size:24px; color:#333399">Source</span></strong><br><br><span style="font-weight:bold"><span style="font-size:24px; color:#333399"><span style="color:rgb(51,51,153); font-family:Simsun; font-size:14px"><span style="white-space:pre"></span>[</span><a href="http://183.167.205.82:8081/JudgeOnline/submitpage?problem_id=1162" target="_blank" rel="noopener">Submit</a><span style="color:rgb(51,51,153); font-family:Simsun; font-size:14px">]&nbsp;&nbsp;<br> [</span><a target="_blank" style="outline:none; font-family:Simsun; font-size:14px">Go Back</a><span style="color:rgb(51,51,153); font-family:Simsun; font-size:14px">]&nbsp;&nbsp; [</span><a href="http://183.167.205.82:8081/JudgeOnline/problemstatus?problem_id=1162" target="_blank" rel="noopener">Status</a><span style="color:rgb(51,51,153); font-family:Simsun; font-size:14px">]&nbsp;&nbsp;<br> [</span><a href="http://183.167.205.82:8081/JudgeOnline/bbs?problem_id=1162" target="_blank" rel="noopener">Discuss</a><span style="color:rgb(51,51,153); font-family:Simsun; font-size:14px">]</span><br><br></span></span><br><br><strong><span style="font-size:24px; color:#333399"></span></strong><br><pre name="code" class="cpp">#include &lt;stdio.h&gt;<br>#include &lt;string.h&gt;<br><br>/此题关键对数的处理，遇到加减就增加个变量储存 ，<br> <em>遇到‘-’还需要把这个数转换为其相反数储存
- </em>/<br><br>int main()<br>{<br>    char temp;<br>    int x, a[200], i, sum = 0;<br>    memset(a, 0, sizeof(a));<br>    while (~scanf(“%d”, &amp;x))<br>    {<br>        sum = 0;<br>        i = 0;<br>        a[i] = x;<br>        while ( ~scanf(“%c”, &amp;temp) &amp;&amp; temp != ‘\n’ )<br>        {<br>            scanf(“%d”, &amp;x);<br>            switch(temp)<br>            {<br>                case ‘<em>‘: a[i] </em>= x; break;//遇到乘除就当成一个数处理<br>                case ‘/‘: a[i] /= x; break;<br>                case ‘+’: a[++i] = x; break;<br>                case ‘-‘: a[++i] = -x; break;<br>            }<br>        }<br>        for ( i; i&gt;=0; i–) {<br>            sum += a[i];<br>        }<br>        printf(“%d\n”, sum);<br>    }<br>}</pre><br><br></td><br></tr><br></tbody><br></table>
-]]></content>
       <categories>
         <category>AKOJ</category>
         <category>基础</category>
@@ -953,73 +1020,6 @@ int main()
       </tags>
   </entry>
   <entry>
-    <title>akoj-1272-字母统计</title>
-    <url>/2015/06/06/akoj-1272-e5-ad-97-e6-af-8d-e7-bb-9f-e8-ae-a1/</url>
-    <content><![CDATA[<p><span style="font-size:24px; color:blue">字母统计</span></p>
-<p>Time Limit:1000MS&nbsp; Memory Limit:65536K</p>
-<p>Total Submit:72 Accepted:48</p>
-<p><strong><span style="font-size:24px; color:#333399">Description</span></strong></p>
-<p><span style="font-family:Times New Roman; font-size:14px">现在给你一个由小写字母组成字符串，要你找出字符串中出现次数最多的字母，如果出现次数最多字母有多个那么输出最小的那个。</span></p>
-<p><strong><span style="font-size:24px; color:#333399">Input</span></strong></p>
-<p><span style="font-family:Times New Roman; font-size:14px">第一行输入一个正整数T（0&lt;t&lt;25）</span></p>
-<p>随后T行输入一个字符串s,s长度小于1010。</p>
-<p><strong><span style="font-size:24px; color:#333399">Output</span></strong><br><a id="more"></a><br><span style="font-family:Times New Roman; font-size:14px">每组数据输出占一行，输出出现次数最多的字符；</span></p>
-<p><strong><span style="font-size:24px; color:#333399">Sample Input</span></strong></p>
-<p><span style="font-family:Times New Roman; font-size:14px"></span></p>
-<pre><span style="font-family:Times New Roman; font-size:14px">3
-abcd
-bbaa
-jsdhfjkshdfjksahdfjkhsajk</span></pre>
-
-<p><strong><span style="font-size:24px; color:#333399">Sample Output</span></strong></p>
-<p><span style="font-family:Times New Roman; font-size:14px"></span></p>
-<pre><span style="font-family:Times New Roman; font-size:14px">a
-a
-j</span></pre>
-
-<p><strong><span style="font-size:24px; color:#333399">Source</span></strong></p>
-<p><span style="font-family:Times New Roman; font-size:14px">LY</span></p>
-<p><span style="font-family:Times New Roman; font-size:14px"></span></p>
-<p></p>
-<p><span style="font-family:Times New Roman; font-size:14px"></span></p>
-<pre name="code" class="cpp">#include <stdio.h>
-#include <string.h>
-#define MAXN 1020
-
-char str[MAXN];
-
-int main()
-{
-    int n, i, word[30], max, p;
-    scanf("%d", &n);
-    while (n--)
-    {
-        max = 0;
-        memset(word, 0, sizeof(word));
-        scanf("%s", str);
-        int k = strlen(str);
-        for ( i=0; i<k; i++ ) { word[str[i] - 'a']++; 这样的好处不仅把每个字母的个数统计好了 } for ( i="0;" i<26; 且按字母排好序了 if (word[i]> max)
-            {
-                max = word[i];
-                p = i;
-            }
-        }
-        printf("%c\n", p+'a');
-    }
-
-    return 0;
-}</k;></string.h></stdio.h></pre>
-]]></content>
-      <categories>
-        <category>AKOJ</category>
-        <category>基础</category>
-        <category>算法学习</category>
-      </categories>
-      <tags>
-        <tag>akoj</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>akoj-1280另类阶乘问题</title>
     <url>/2015/05/09/akoj-1280-e5-8f-a6-e7-b1-bb-e9-98-b6-e4-b9-98-e9-97-ae-e9-a2-98/</url>
     <content><![CDATA[<p><span style="font-size:24px; color:blue">另类阶乘问题</span></p>
@@ -1057,6 +1057,50 @@ long long  jie(int n)
       </categories>
       <tags>
         <tag>akoj</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>akoj-1319-四方定理</title>
+    <url>/2015/07/12/akoj-1319-e5-9b-9b-e6-96-b9-e5-ae-9a-e7-90-86/</url>
+    <content><![CDATA[<p><span style="font-size:24px; color:blue">四方定理</span></p>
+<p>Time Limit:1000MS&nbsp; Memory Limit:65536K</p>
+<p>Total Submit:28 Accepted:11</p>
+<p><strong><span style="font-size:24px; color:#333399">Description</span></strong></p>
+<p><span style="font-family:Times New Roman; font-size:14px">数论中著名的“四方定理”讲的是：所有自然数至多只要用四个数的平方和就可以表示。</span></p>
+<p><strong><span style="font-size:24px; color:#333399">Input</span></strong></p>
+<p><span style="font-family:Times New Roman; font-size:14px">输入包含多行数据</span></p>
+<p>每行输入一个n，(1&lt;=n&lt;=10000)</p>
+<p>数据以EOF结束<br><a id="more"></a><br><strong><span style="font-size:24px; color:#333399">Output</span></strong></p>
+<p><span style="font-family:Times New Roman; font-size:14px">由于可能会出现多种情况，依次输出最小的a,b,c,d即可</span></p>
+<p>即输出最小的a,然后输出最小的b,依此类推</p>
+<p><strong><span style="font-size:24px; color:#333399">Sample Input</span></strong></p>
+<pre><span style="font-family:Times New Roman; font-size:14px">110
+211
+520</span></pre>
+
+<p><strong><span style="font-size:24px; color:#333399">Sample Output</span></strong></p>
+<pre><span style="font-family:Times New Roman; font-size:14px">0 1 3 10
+0 3 9 11
+0 0 6 22</span></pre>
+
+<p><strong><span style="font-size:24px; color:#333399">Source</span></strong></p>
+<p><span style="font-size:14px; color:#333399">[<a href="http://183.167.205.82:8081/JudgeOnline/submitpage?problem_id=1319" target="_blank" rel="noopener">Submit</a>]&nbsp;&nbsp; [<a>Go Back</a>]&nbsp;&nbsp; [<a href="http://183.167.205.82:8081/JudgeOnline/problemstatus?problem_id=1319" target="_blank" rel="noopener">Status</a>]&nbsp;&nbsp;<br> [<a href="http://183.167.205.82:8081/JudgeOnline/bbs?problem_id=1319" target="_blank" rel="noopener">Discuss</a>]</span></p>
+<p></p><p></p>
+<pre name="code" class="cpp">#include <stdio.h>
+
+int main()
+{
+    int n, i, j, x, y, s;
+    while ( ~scanf("%d", &n) )
+    {
+        for ( i=0; i<=n; i++ ) { for ( j="0;" j<="n;" j++ x="0;" x<="n;" x++ y="0;" y<="n;" y++ s="i*i+j*j+x*x+y*y;" if n printf("%d %d %d\n", i, j, x, y); break; } }< pre>
+</=n;></stdio.h></pre>]]></content>
+      <categories>
+        <category>AKOJ</category>
+        <category>算法学习</category>
+      </categories>
+      <tags>
+        <tag>acm</tag>
       </tags>
   </entry>
   <entry>
@@ -1236,50 +1280,6 @@ public class P1369 {
       </tags>
   </entry>
   <entry>
-    <title>akoj-1319-四方定理</title>
-    <url>/2015/07/12/akoj-1319-e5-9b-9b-e6-96-b9-e5-ae-9a-e7-90-86/</url>
-    <content><![CDATA[<p><span style="font-size:24px; color:blue">四方定理</span></p>
-<p>Time Limit:1000MS&nbsp; Memory Limit:65536K</p>
-<p>Total Submit:28 Accepted:11</p>
-<p><strong><span style="font-size:24px; color:#333399">Description</span></strong></p>
-<p><span style="font-family:Times New Roman; font-size:14px">数论中著名的“四方定理”讲的是：所有自然数至多只要用四个数的平方和就可以表示。</span></p>
-<p><strong><span style="font-size:24px; color:#333399">Input</span></strong></p>
-<p><span style="font-family:Times New Roman; font-size:14px">输入包含多行数据</span></p>
-<p>每行输入一个n，(1&lt;=n&lt;=10000)</p>
-<p>数据以EOF结束<br><a id="more"></a><br><strong><span style="font-size:24px; color:#333399">Output</span></strong></p>
-<p><span style="font-family:Times New Roman; font-size:14px">由于可能会出现多种情况，依次输出最小的a,b,c,d即可</span></p>
-<p>即输出最小的a,然后输出最小的b,依此类推</p>
-<p><strong><span style="font-size:24px; color:#333399">Sample Input</span></strong></p>
-<pre><span style="font-family:Times New Roman; font-size:14px">110
-211
-520</span></pre>
-
-<p><strong><span style="font-size:24px; color:#333399">Sample Output</span></strong></p>
-<pre><span style="font-family:Times New Roman; font-size:14px">0 1 3 10
-0 3 9 11
-0 0 6 22</span></pre>
-
-<p><strong><span style="font-size:24px; color:#333399">Source</span></strong></p>
-<p><span style="font-size:14px; color:#333399">[<a href="http://183.167.205.82:8081/JudgeOnline/submitpage?problem_id=1319" target="_blank" rel="noopener">Submit</a>]&nbsp;&nbsp; [<a>Go Back</a>]&nbsp;&nbsp; [<a href="http://183.167.205.82:8081/JudgeOnline/problemstatus?problem_id=1319" target="_blank" rel="noopener">Status</a>]&nbsp;&nbsp;<br> [<a href="http://183.167.205.82:8081/JudgeOnline/bbs?problem_id=1319" target="_blank" rel="noopener">Discuss</a>]</span></p>
-<p></p><p></p>
-<pre name="code" class="cpp">#include <stdio.h>
-
-int main()
-{
-    int n, i, j, x, y, s;
-    while ( ~scanf("%d", &n) )
-    {
-        for ( i=0; i<=n; i++ ) { for ( j="0;" j<="n;" j++ x="0;" x<="n;" x++ y="0;" y<="n;" y++ s="i*i+j*j+x*x+y*y;" if n printf("%d %d %d\n", i, j, x, y); break; } }< pre>
-</=n;></stdio.h></pre>]]></content>
-      <categories>
-        <category>AKOJ</category>
-        <category>算法学习</category>
-      </categories>
-      <tags>
-        <tag>acm</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>AKOJ -- 1529 -- 寻找最大数</title>
     <url>/2017/06/30/akoj-1529-e5-af-bb-e6-89-be-e6-9c-80-e5-a4-a7-e6-95-b0/</url>
     <content><![CDATA[<center><br><br><div><br><br>## 1529: 寻找最大数<br><br><span style="color:green">Time Limit:&nbsp;</span>1 Sec&nbsp;&nbsp;<span style="color:green">Memory Limit:&nbsp;</span>128 MB<br><br><span style="color:green">Submit:&nbsp;</span>107&nbsp;&nbsp;<span style="color:green">Solved:&nbsp;</span>53<br><br><a href="https://oj.ahstu.cc/JudgeOnline/problem.php?id=1528" target="_blank" rel="noopener">上一题</a><a href="https://oj.ahstu.cc/JudgeOnline/submitpage.php?id=1529" target="_blank" rel="noopener">Submit</a><a href="https://oj.ahstu.cc/JudgeOnline/problemstatus.php?id=1529" target="_blank" rel="noopener">Status</a><a target="_blank" id="oj-gene" style="color:rgb(51,51,51)">标签打分</a><a href="https://oj.ahstu.cc/JudgeOnline/admin/problem_edit.php?id=1529" target="_blank" rel="noopener">编辑题目信息</a><a href="https://oj.ahstu.cc/JudgeOnline/admin/quixplorer/index.php?action=list&amp;dir=1529&amp;order=name&amp;srt=yes" target="_blank" rel="noopener">编辑测试数据</a><a href="https://oj.ahstu.cc/JudgeOnline/problem.php?id=1530" target="_blank" rel="noopener">下一题</a></div><br><br></center>
@@ -1345,27 +1345,6 @@ int main()
       </tags>
   </entry>
   <entry>
-    <title>Android定制之Ubuntu下常见问题及解决</title>
-    <url>/2018/08/26/android-linux-note/</url>
-    <content><![CDATA[<p><img src="https://cdn.fayne.cn/o-linux.png" alt="Android-O"><br><a id="more"></a></p>
-<h2 id="解决chrome打不开"><a href="#解决chrome打不开" class="headerlink" title="解决chrome打不开"></a>解决chrome打不开</h2><p>初次安装操作系统后, 安装Chrome浏览器发现点击无任何反应, 可以尝试以下命令解决<br><code>sudo apt install --reinstall libnss3</code></p>
-<h2 id="滚动条替换"><a href="#滚动条替换" class="headerlink" title="滚动条替换"></a>滚动条替换</h2><p>Ubuntu默认的滚动条显示不好用, 而且不易操作, 可以换为以下滚动条<br><code>gsettings set com.canonical.desktop.interface scrollbar-mode normal</code><br>恢复为默认滚动条样式命令：<br><code>gsettings reset com.canonical.desktop.interface scrollbar-mode</code></p>
-<h2 id="MTK刷机错误S-UNDEFINED-ERROR-1001"><a href="#MTK刷机错误S-UNDEFINED-ERROR-1001" class="headerlink" title="MTK刷机错误S_UNDEFINED_ERROR (1001)"></a>MTK刷机错误S_UNDEFINED_ERROR (1001)</h2><p>当在ubuntu 14.04 或是更高版本使用MTK的Smart Phone Flash Tool 工具刷机时，会遇到一个错误：<br>BROM ERROR : S_UNDEFINED_ERROR (1001)<br>是由于 modemmanager包在ubuntu 14.04或是更高版本中对于MTK的Flash工具支持不完全，所造成的，如果想使用MTK 的 Flash　工具，就要卸载这个包</p>
-<ul>
-<li>执行以下命令：<br><code>sudo apt-get remove modemmanager</code></li>
-<li>然后重启udev服务<br><code>sudo service udev restart</code></li>
-<li>卸载这个服务之后可能会造成内核模块　cdc_acm　不可用．执行以下命令进行检查<br><code>lsmod | grep cdc_acm</code></li>
-<li>如果没有输出，执行<br><code>sudo modprobe cdc_acm</code><br>完成后，可以正常刷机了<h2 id="网络共享不能打开-smb-报错-this-location-could-not-be-displayed"><a href="#网络共享不能打开-smb-报错-this-location-could-not-be-displayed" class="headerlink" title="网络共享不能打开(smb://#### 报错 this location could not be displayed)"></a>网络共享不能打开(smb://#### 报错 this location could not be displayed)</h2>修复命令<code>sudo apt-get install gvfs-backends</code><h2 id="命令行右键消失"><a href="#命令行右键消失" class="headerlink" title="命令行右键消失"></a>命令行右键消失</h2><code>sudo apt-get install nautilus-open-terminal</code></li>
-</ul>
-]]></content>
-      <categories>
-        <category>Android</category>
-      </categories>
-      <tags>
-        <tag>Android</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Android数据储存方案</title>
     <url>/2017/10/31/android-data-save/</url>
     <content><![CDATA[<blockquote>
@@ -1392,6 +1371,57 @@ int main()
 <h4 id="示例-2"><a href="#示例-2" class="headerlink" title="示例"></a>示例</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> Button btnSaveData;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">        setContentView(R.layout.activity_main);</span><br><span class="line"></span><br><span class="line">        btnSaveData = findViewById(R.id.btnSaveData);</span><br><span class="line">        btnSaveData.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View view)</span> </span>&#123;</span><br><span class="line">              <span class="comment">// 通过getSharedPreferences()方法指定SharedPreferences的文件名为data，并得到SharedPreferences.Editor对象。</span></span><br><span class="line">                SharedPreferences.Editor editor = getSharedPreferences(<span class="string">"data"</span>, MODE_PRIVATE).edit();</span><br><span class="line">                editor.putString(<span class="string">"name"</span>, <span class="string">"Tom"</span>);</span><br><span class="line">                editor.putInt(<span class="string">"age"</span>, <span class="number">28</span>);</span><br><span class="line">                editor.putBoolean(<span class="string">"married"</span>, <span class="keyword">false</span>);</span><br><span class="line">                <span class="comment">// 调用apply()方法进行提交</span></span><br><span class="line">                editor.apply();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="从SharedPreferences中读取数据"><a href="#从SharedPreferences中读取数据" class="headerlink" title="从SharedPreferences中读取数据"></a>从SharedPreferences中读取数据</h3><p>//TODO 未完待续</p>
 <h2 id="SQLite数据库储存数据"><a href="#SQLite数据库储存数据" class="headerlink" title="SQLite数据库储存数据"></a>SQLite数据库储存数据</h2>]]></content>
+      <categories>
+        <category>Android</category>
+      </categories>
+      <tags>
+        <tag>android</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Android定制之Ubuntu下常见问题及解决</title>
+    <url>/2018/08/26/android-linux-note/</url>
+    <content><![CDATA[<p><img src="https://cdn.fayne.cn/o-linux.png" alt="Android-O"><br><a id="more"></a></p>
+<h2 id="解决chrome打不开"><a href="#解决chrome打不开" class="headerlink" title="解决chrome打不开"></a>解决chrome打不开</h2><p>初次安装操作系统后, 安装Chrome浏览器发现点击无任何反应, 可以尝试以下命令解决<br><code>sudo apt install --reinstall libnss3</code></p>
+<h2 id="滚动条替换"><a href="#滚动条替换" class="headerlink" title="滚动条替换"></a>滚动条替换</h2><p>Ubuntu默认的滚动条显示不好用, 而且不易操作, 可以换为以下滚动条<br><code>gsettings set com.canonical.desktop.interface scrollbar-mode normal</code><br>恢复为默认滚动条样式命令：<br><code>gsettings reset com.canonical.desktop.interface scrollbar-mode</code></p>
+<h2 id="MTK刷机错误S-UNDEFINED-ERROR-1001"><a href="#MTK刷机错误S-UNDEFINED-ERROR-1001" class="headerlink" title="MTK刷机错误S_UNDEFINED_ERROR (1001)"></a>MTK刷机错误S_UNDEFINED_ERROR (1001)</h2><p>当在ubuntu 14.04 或是更高版本使用MTK的Smart Phone Flash Tool 工具刷机时，会遇到一个错误：<br>BROM ERROR : S_UNDEFINED_ERROR (1001)<br>是由于 modemmanager包在ubuntu 14.04或是更高版本中对于MTK的Flash工具支持不完全，所造成的，如果想使用MTK 的 Flash　工具，就要卸载这个包</p>
+<ul>
+<li>执行以下命令：<br><code>sudo apt-get remove modemmanager</code></li>
+<li>然后重启udev服务<br><code>sudo service udev restart</code></li>
+<li>卸载这个服务之后可能会造成内核模块　cdc_acm　不可用．执行以下命令进行检查<br><code>lsmod | grep cdc_acm</code></li>
+<li>如果没有输出，执行<br><code>sudo modprobe cdc_acm</code><br>完成后，可以正常刷机了<h2 id="网络共享不能打开-smb-报错-this-location-could-not-be-displayed"><a href="#网络共享不能打开-smb-报错-this-location-could-not-be-displayed" class="headerlink" title="网络共享不能打开(smb://#### 报错 this location could not be displayed)"></a>网络共享不能打开(smb://#### 报错 this location could not be displayed)</h2>修复命令<code>sudo apt-get install gvfs-backends</code><h2 id="命令行右键消失"><a href="#命令行右键消失" class="headerlink" title="命令行右键消失"></a>命令行右键消失</h2><code>sudo apt-get install nautilus-open-terminal</code></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Android</category>
+      </categories>
+      <tags>
+        <tag>Android</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>安卓学习笔记</title>
+    <url>/2017/09/27/android-study01/</url>
+    <content><![CDATA[<h2 id="目录分析"><a href="#目录分析" class="headerlink" title="目录分析"></a>目录分析</h2><ul>
+<li><code>src</code> 代码目录(放置所有Java代码)</li>
+<li><code>gen</code> 这个目录是自动生成的，主要有一个R.java文件，在项目中添加的任何文件都会生成一个相应的资源id</li>
+<li><code>assets</code> 存放一些随程序打包的文件（用的不多），程序运行时可以动态读取这些文件的内容</li>
+<li><code>bin</code> 编译时自动产生的文件。其中会有一个是你当前项目编译好的安装包</li>
+<li><code>libs</code> 存放第三方jar包。这个目录下的jar包会被自动添加到构建路径中去</li>
+<li><code>res</code> 资源目录，使用到的所有图片，布局，字符串等资源。上述的R.java中的内容也是根据这个目录下的文件自动生成的。有很多子目录，其中drawable目录存放图片，布局放在layout目录下，字符串放在values目录下</li>
+<li><code>AndroidManifest.xml</code> 整个Android项目的配置文件，在程序中定义的所有四大组件都需要在这文件里注册，另外还可以在这个文件中给出应用程序权限声明<a id="more"></a></li>
+<li><code>project.properties</code> 通过一行代码指定了编译程序所使用的SDK版本</li>
+</ul>
+<h2 id="使用Android的日志工具-Log"><a href="#使用Android的日志工具-Log" class="headerlink" title="使用Android的日志工具 Log"></a>使用Android的日志工具 Log</h2><ul>
+<li><code>Log.v()</code> 打印最琐碎的，意义最小的日志信息。对应级别verbose，是Android日志中级别最低的一种</li>
+<li><code>Log.d()</code> 打印一些调试信息。对应级别debug，比verbose高一级</li>
+<li><code>Log.i()</code> 打印一下比较重要的数据，这些数据应该是你非常想看到的，可以帮你分析用户行为的哪种，对应级别info，比debug高一级</li>
+<li><code>Log.w()</code> 打印一些警告信息，提示程序在这个地方可能会有潜在的风险，最好去修复一下这些警告的地方。对用级别warn，比info高一级</li>
+<li><code>Log.e()</code> 打印程序中的错误信息，比如程序进入到了catch语句中。当有错误信息打印出来的时候，一般都代表你程序出现了严重的问题了，必须尽快修复。对应级别error，比warn高一级</li>
+</ul>
+<p><code>Log.d</code>方法中传入了两个参数，第一个参数是tag，一般传入当前的类名就好，主要用于对打印信息进行过滤，第二个参数是msg，即想到要打印的具体的内容</p>
+<p>System.out.println()与Log，Log和Logcat配合起来很强大，可以添加过滤器，但前者处理起来很麻烦。后者检查日志更加专业，方便</p>
+]]></content>
       <categories>
         <category>Android</category>
       </categories>
@@ -1433,36 +1463,6 @@ int main()
       </categories>
       <tags>
         <tag>Android</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>安卓学习笔记</title>
-    <url>/2017/09/27/android-study01/</url>
-    <content><![CDATA[<h2 id="目录分析"><a href="#目录分析" class="headerlink" title="目录分析"></a>目录分析</h2><ul>
-<li><code>src</code> 代码目录(放置所有Java代码)</li>
-<li><code>gen</code> 这个目录是自动生成的，主要有一个R.java文件，在项目中添加的任何文件都会生成一个相应的资源id</li>
-<li><code>assets</code> 存放一些随程序打包的文件（用的不多），程序运行时可以动态读取这些文件的内容</li>
-<li><code>bin</code> 编译时自动产生的文件。其中会有一个是你当前项目编译好的安装包</li>
-<li><code>libs</code> 存放第三方jar包。这个目录下的jar包会被自动添加到构建路径中去</li>
-<li><code>res</code> 资源目录，使用到的所有图片，布局，字符串等资源。上述的R.java中的内容也是根据这个目录下的文件自动生成的。有很多子目录，其中drawable目录存放图片，布局放在layout目录下，字符串放在values目录下</li>
-<li><code>AndroidManifest.xml</code> 整个Android项目的配置文件，在程序中定义的所有四大组件都需要在这文件里注册，另外还可以在这个文件中给出应用程序权限声明<a id="more"></a></li>
-<li><code>project.properties</code> 通过一行代码指定了编译程序所使用的SDK版本</li>
-</ul>
-<h2 id="使用Android的日志工具-Log"><a href="#使用Android的日志工具-Log" class="headerlink" title="使用Android的日志工具 Log"></a>使用Android的日志工具 Log</h2><ul>
-<li><code>Log.v()</code> 打印最琐碎的，意义最小的日志信息。对应级别verbose，是Android日志中级别最低的一种</li>
-<li><code>Log.d()</code> 打印一些调试信息。对应级别debug，比verbose高一级</li>
-<li><code>Log.i()</code> 打印一下比较重要的数据，这些数据应该是你非常想看到的，可以帮你分析用户行为的哪种，对应级别info，比debug高一级</li>
-<li><code>Log.w()</code> 打印一些警告信息，提示程序在这个地方可能会有潜在的风险，最好去修复一下这些警告的地方。对用级别warn，比info高一级</li>
-<li><code>Log.e()</code> 打印程序中的错误信息，比如程序进入到了catch语句中。当有错误信息打印出来的时候，一般都代表你程序出现了严重的问题了，必须尽快修复。对应级别error，比warn高一级</li>
-</ul>
-<p><code>Log.d</code>方法中传入了两个参数，第一个参数是tag，一般传入当前的类名就好，主要用于对打印信息进行过滤，第二个参数是msg，即想到要打印的具体的内容</p>
-<p>System.out.println()与Log，Log和Logcat配合起来很强大，可以添加过滤器，但前者处理起来很麻烦。后者检查日志更加专业，方便</p>
-]]></content>
-      <categories>
-        <category>Android</category>
-      </categories>
-      <tags>
-        <tag>android</tag>
       </tags>
   </entry>
   <entry>
@@ -1539,6 +1539,26 @@ int main()
       </tags>
   </entry>
   <entry>
+    <title>hexo快速收录 - 基于python的百度主动推送工具</title>
+    <url>/2017/09/01/baiduPushTool/</url>
+    <content><![CDATA[<h3 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h3><ul>
+<li>基于python的主动推送工具, 根据百度站长工具说的，主动推送&gt;自动收录&gt;sitemap&gt;手动提交，于是写了一个Python版本的主动提交工具备忘</li>
+<li>使用此工具前提得有自己网站的站点地图<a id="more"></a>
+</li>
+</ul>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># coding: utf-8</span></span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> httplib</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">generate</span><span class="params">(urlSitemap)</span>:</span> <span class="comment">#生成urls.txt 所有网址链接</span></span><br><span class="line">    data = requests.get(urlSitemap).text</span><br><span class="line">    link_list1 = re.findall(<span class="string">r"url=\"(.*?)\"/&gt;"</span>, data)</span><br><span class="line">    link_list2 = re.findall(<span class="string">r"&lt;loc&gt;(.*?)&lt;/loc&gt;"</span>, data)</span><br><span class="line">    urls = open(<span class="string">"urls.txt"</span>, <span class="string">'w+'</span>)</span><br><span class="line">    <span class="keyword">for</span> url <span class="keyword">in</span> link_list1 + link_list2:</span><br><span class="line">        <span class="keyword">print</span> &gt;&gt; urls, <span class="string">"https:%s"</span> % url</span><br><span class="line">    urls.close()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">push</span><span class="params">(filecontents)</span>:</span></span><br><span class="line">    <span class="comment"># 括号内容需自己提供</span></span><br><span class="line">    url = <span class="string">"/urls?site=(url)&amp;token=(token)"</span> <span class="comment"># url为网址地址，token在百度站长平台里会提供</span></span><br><span class="line">    headers = &#123;<span class="string">'Content-Type'</span>: <span class="string">'text/plain'</span>&#125;</span><br><span class="line">    conn = httplib.HTTPConnection(<span class="string">'data.zz.baidu.com'</span>)</span><br><span class="line">    conn.request(method=<span class="string">"POST"</span>, url=url, body=filecontents, headers=headers)</span><br><span class="line">    response = conn.getresponse()</span><br><span class="line">    baidupushresult = response.read()</span><br><span class="line">    conn.close()</span><br><span class="line">    <span class="keyword">return</span> baidupushresult</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    url = <span class="string">'http://www.fayne.cn/baidusitemap.xml'</span> <span class="comment"># url 填写sitemap.xml地址，这里是我的</span></span><br><span class="line">    generate(url)</span><br><span class="line">    filecontents = open(<span class="string">'urls.txt'</span>, <span class="string">'rb'</span>).read()</span><br><span class="line">    ps = eval(push(filecontents))</span><br><span class="line">    <span class="keyword">print</span> <span class="string">'成功推送%d条，当天剩余%d条'</span> % (ps[<span class="string">'success'</span>], ps[<span class="string">'remain'</span>])</span><br></pre></td></tr></table></figure>
+<h3 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h3><p>运行此代码，输出<br><code>成功推送233条，当天剩余4991126条</code> ，表明推送成功</p>
+<h3 id="结束收工"><a href="#结束收工" class="headerlink" title="结束收工"></a>结束收工</h3><p>至此，一个简单主动推送工具就完成了，代码写的有些丑陋，望见谅</p>
+]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>tool</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>B趣味求和</title>
     <url>/2015/04/18/b-e8-b6-a3-e5-91-b3-e6-b1-82-e5-92-8c/</url>
     <content><![CDATA[<p><span style="font-family:Times New Roman; font-size:14px">编写一个程序，求Sn=a+aa+aaa+……+aa…aaa（有n个a）的值，其中a是一个数字。</span></p>
@@ -1577,6 +1597,37 @@ int main()
       </categories>
       <tags>
         <tag>acm</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Atom上传图片错误卡死img.toPng is not a function</title>
+    <url>/2019/07/27/atom-error-img-toPng/</url>
+    <content><![CDATA[<p><img src="https://cdn.fayne.cn/50065f575b3fa1cb59c92132f7a4204c.png" alt="Atom_Error"><br><a id="more"></a></p>
+<h2 id="错误"><a href="#错误" class="headerlink" title="错误"></a>错误</h2><p>今天在使用七牛图床的时候发现错误<br> TypeError: img.toPng is not a function<br> 报错导致图片上传失败，如上图，卡死在这个位置，只有退出Atom才行</p>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><ul>
+<li>路径: <code>user/.atom/packages/markdown-assistant/lib/main.coffee</code>57行<ul>
+<li>将`uploadFn = (callback)-&gt;<pre><code>uploaderIns.upload(img.toPng(), &apos;png&apos;, callback)`
+</code></pre></li>
+<li>修改为<br>`uploadFn = (callback)-&gt;<pre><code>uploaderIns.upload(img.toPNG(), &apos;png&apos;, callback)`
+</code></pre>即可</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>修改main.coffee第57行代码api名称改变</p>
+</blockquote>
+<p><img src="https://cdn.fayne.cn/a2d033f8422b317e0390bf853703f0e2.png" alt="error_atom"></p>
+<p><img src="https://cdn.fayne.cn/3ef317c5d9e779ab93aa540bf8e13c22.png" alt="atom_config"></p>
+<blockquote>
+<p>以上，就可以愉快的贴图了</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>Atom</category>
+      </categories>
+      <tags>
+        <tag>error</tag>
+        <tag>atom</tag>
       </tags>
   </entry>
   <entry>
@@ -1626,26 +1677,6 @@ int main()
       </categories>
       <tags>
         <tag>akoj</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>hexo快速收录 - 基于python的百度主动推送工具</title>
-    <url>/2017/09/01/baiduPushTool/</url>
-    <content><![CDATA[<h3 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h3><ul>
-<li>基于python的主动推送工具, 根据百度站长工具说的，主动推送&gt;自动收录&gt;sitemap&gt;手动提交，于是写了一个Python版本的主动提交工具备忘</li>
-<li>使用此工具前提得有自己网站的站点地图<a id="more"></a>
-</li>
-</ul>
-<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># coding: utf-8</span></span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> httplib</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">generate</span><span class="params">(urlSitemap)</span>:</span> <span class="comment">#生成urls.txt 所有网址链接</span></span><br><span class="line">    data = requests.get(urlSitemap).text</span><br><span class="line">    link_list1 = re.findall(<span class="string">r"url=\"(.*?)\"/&gt;"</span>, data)</span><br><span class="line">    link_list2 = re.findall(<span class="string">r"&lt;loc&gt;(.*?)&lt;/loc&gt;"</span>, data)</span><br><span class="line">    urls = open(<span class="string">"urls.txt"</span>, <span class="string">'w+'</span>)</span><br><span class="line">    <span class="keyword">for</span> url <span class="keyword">in</span> link_list1 + link_list2:</span><br><span class="line">        <span class="keyword">print</span> &gt;&gt; urls, <span class="string">"https:%s"</span> % url</span><br><span class="line">    urls.close()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">push</span><span class="params">(filecontents)</span>:</span></span><br><span class="line">    <span class="comment"># 括号内容需自己提供</span></span><br><span class="line">    url = <span class="string">"/urls?site=(url)&amp;token=(token)"</span> <span class="comment"># url为网址地址，token在百度站长平台里会提供</span></span><br><span class="line">    headers = &#123;<span class="string">'Content-Type'</span>: <span class="string">'text/plain'</span>&#125;</span><br><span class="line">    conn = httplib.HTTPConnection(<span class="string">'data.zz.baidu.com'</span>)</span><br><span class="line">    conn.request(method=<span class="string">"POST"</span>, url=url, body=filecontents, headers=headers)</span><br><span class="line">    response = conn.getresponse()</span><br><span class="line">    baidupushresult = response.read()</span><br><span class="line">    conn.close()</span><br><span class="line">    <span class="keyword">return</span> baidupushresult</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    url = <span class="string">'http://www.fayne.cn/baidusitemap.xml'</span> <span class="comment"># url 填写sitemap.xml地址，这里是我的</span></span><br><span class="line">    generate(url)</span><br><span class="line">    filecontents = open(<span class="string">'urls.txt'</span>, <span class="string">'rb'</span>).read()</span><br><span class="line">    ps = eval(push(filecontents))</span><br><span class="line">    <span class="keyword">print</span> <span class="string">'成功推送%d条，当天剩余%d条'</span> % (ps[<span class="string">'success'</span>], ps[<span class="string">'remain'</span>])</span><br></pre></td></tr></table></figure>
-<h3 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h3><p>运行此代码，输出<br><code>成功推送233条，当天剩余4991126条</code> ，表明推送成功</p>
-<h3 id="结束收工"><a href="#结束收工" class="headerlink" title="结束收工"></a>结束收工</h3><p>至此，一个简单主动推送工具就完成了，代码写的有些丑陋，望见谅</p>
-]]></content>
-      <categories>
-        <category>前端</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-        <tag>tool</tag>
       </tags>
   </entry>
   <entry>
@@ -1716,62 +1747,6 @@ int main()
       </tags>
   </entry>
   <entry>
-    <title>Atom上传图片错误卡死img.toPng is not a function</title>
-    <url>/2019/07/27/atom-error-img-toPng/</url>
-    <content><![CDATA[<p><img src="https://cdn.fayne.cn/50065f575b3fa1cb59c92132f7a4204c.png" alt="Atom_Error"><br><a id="more"></a></p>
-<h2 id="错误"><a href="#错误" class="headerlink" title="错误"></a>错误</h2><p>今天在使用七牛图床的时候发现错误<br> TypeError: img.toPng is not a function<br> 报错导致图片上传失败，如上图，卡死在这个位置，只有退出Atom才行</p>
-<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><ul>
-<li>路径: <code>user/.atom/packages/markdown-assistant/lib/main.coffee</code>57行<ul>
-<li>将`uploadFn = (callback)-&gt;<pre><code>uploaderIns.upload(img.toPng(), &apos;png&apos;, callback)`
-</code></pre></li>
-<li>修改为<br>`uploadFn = (callback)-&gt;<pre><code>uploaderIns.upload(img.toPNG(), &apos;png&apos;, callback)`
-</code></pre>即可</li>
-</ul>
-</li>
-</ul>
-<blockquote>
-<p>修改main.coffee第57行代码api名称改变</p>
-</blockquote>
-<p><img src="https://cdn.fayne.cn/a2d033f8422b317e0390bf853703f0e2.png" alt="error_atom"></p>
-<p><img src="https://cdn.fayne.cn/3ef317c5d9e779ab93aa540bf8e13c22.png" alt="atom_config"></p>
-<blockquote>
-<p>以上，就可以愉快的贴图了</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>Atom</category>
-      </categories>
-      <tags>
-        <tag>error</tag>
-        <tag>atom</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>中国大学MOOC-陈越、何钦铭-数据结构-2015秋 01-复杂度2 Maximum Subsequence Sum   (25分)</title>
-    <url>/2015/09/02/e4-b8-ad-e5-9b-bd-e5-a4-a7-e5-ad-a6mooc-e9-99-88-e8-b6-8a-e3-80-81-e4-bd-95-e9-92-a6-e9-93-ad-e6-95-b0-e6-8d-ae-e7-bb-93-e6-9e-84-2015-e7-a7-8b01-e5-a4-8d-e6-9d-82-e5-ba-a62maximumsubsequences/</url>
-    <content><![CDATA[<div class="m-qdetail"><strong><span style="font-size:18px">01-复杂度2&nbsp;Maximum Subsequence Sum&nbsp;&nbsp;&nbsp;(25分)</span></strong><br><div class="content"><br><div class="ques-view"><br>Given a sequence of <span class="katex"><span class="katex-inner"><span class="strut" style="height:0.68333em"></span><span class="strut bottom" style="height:0.68333em; vertical-align:0em"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.07153em">K</span></span></span></span><br> integers { <span class="katex"><span class="katex-inner"><span class="strut" style="height:0.68333em"></span><span class="strut bottom" style="height:0.83333em; vertical-align:-0.15em"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit" style="margin-right:0.10903em">N</span><span class="vlist"><span style="top:0.15em; margin-right:0.05em; margin-left:-0.10903em"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord">1</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em">​</span></span>​</span></span></span></span></span></span>,<span class="katex"><span class="katex-inner"><span class="strut" style="height:0.68333em"></span><span class="strut bottom" style="height:0.83333em; vertical-align:-0.15em"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit" style="margin-right:0.10903em">N</span><span class="vlist"><span style="top:0.15em; margin-right:0.05em; margin-left:-0.10903em"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord">2</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em">​</span></span>​</span></span></span></span></span></span>,<br> …, <span class="katex"><span class="katex-inner"><span class="strut" style="height:0.68333em"></span><span class="strut bottom" style="height:0.83333em; vertical-align:-0.15em"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit" style="margin-right:0.10903em">N</span><span class="vlist"><span style="top:0.15em; margin-right:0.05em; margin-left:-0.10903em"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit" style="margin-right:0.07153em">K</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em">​</span></span>​</span></span></span></span></span></span><br> }. A continuous subsequence is defined to be { <span class="katex"><span class="katex-inner"><span class="strut" style="height:0.68333em"></span><span class="strut bottom" style="height:0.83333em; vertical-align:-0.15em"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit" style="margin-right:0.10903em">N</span><span class="vlist"><span style="top:0.15em; margin-right:0.05em; margin-left:-0.10903em"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit">i</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em">​</span></span>​</span></span></span></span></span></span>,<span class="katex"><span class="katex-inner"><span class="strut" style="height:0.68333em"></span><span class="strut bottom" style="height:0.891661em; vertical-align:-0.208331em"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit" style="margin-right:0.10903em">N</span><span class="vlist"><span style="top:0.15em; margin-right:0.05em; margin-left:-0.10903em"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord scriptstyle cramped"><span class="mord mathit">i</span><span class="mbin">+</span><span class="mord">1</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em">​</span></span>​</span></span></span></span></span></span>,<br> …, <span class="katex"><span class="katex-inner"><span class="strut" style="height:0.68333em"></span><span class="strut bottom" style="height:0.969438em; vertical-align:-0.286108em"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit" style="margin-right:0.10903em">N</span><span class="vlist"><span style="top:0.15em; margin-right:0.05em; margin-left:-0.10903em"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit" style="margin-right:0.05724em">j</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em">​</span></span>​</span></span></span></span></span></span><br> } where <span class="katex"><span class="katex-inner"><span class="strut" style="height:0.68333em"></span><span class="strut bottom" style="height:0.8777699999999999em; vertical-align:-0.19444em"></span><span class="base textstyle uncramped"><span class="mord">1</span><span class="mrel">≤</span><span class="mord mathit">i</span><span class="mrel">≤</span><span class="mord mathit" style="margin-right:0.05724em">j</span><span class="mrel">≤</span><span class="mord mathit" style="margin-right:0.07153em">K</span></span></span></span>.<br> The Maximum Subsequence is the continuous subsequence which has the largest sum of its elements. For example, given sequence { -2, 11, -4, 13, -5, -2 }, its maximum subsequence is { 11, -4, 13 } with the largest sum being 20.<br><br>Now you are supposed to find the largest sum, together with the first and the last numbers of the maximum subsequence.<br><br>### Input Specification:<br><br>Each input file contains one test case. Each case occupies two lines. The first line contains a positive integer<span class="katex"><span class="katex-inner"><span class="strut" style="height:0.68333em"></span><span class="strut bottom" style="height:0.68333em; vertical-align:0em"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.07153em">K</span></span></span></span><br> (<span class="katex"><span class="katex-inner"><span class="strut" style="height:0.64444em"></span><span class="strut bottom" style="height:0.78041em; vertical-align:-0.13597em"></span><span class="base textstyle uncramped"><span class="mrel">≤</span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span></span></span></span>).<br> The second line contains <span class="katex"><span class="katex-inner"><span class="strut" style="height:0.68333em"></span><span class="strut bottom" style="height:0.68333em; vertical-align:0em"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.07153em">K</span></span></span></span><br> numbers, separated by a space.<br><br>### Output Specification:<br><br>For each test case, output in one line the largest sum, together with the first and the last numbers of the maximum subsequence. The numbers must be separated by one space, but there must be no extra space at the end of a line. In case that the maximum subsequence<br> is not unique, output the one with the smallest indices <span class="katex"><span class="katex-inner"><span class="strut" style="height:0.65952em"></span><span class="strut bottom" style="height:0.65952em; vertical-align:0em"></span><span class="base textstyle uncramped"><span class="mord mathit">i</span></span></span></span><br> and <span class="katex"><span class="katex-inner"><span class="strut" style="height:0.65952em"></span><span class="strut bottom" style="height:0.85396em; vertical-align:-0.19444em"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.05724em">j</span></span></span></span><br> (as shown by the sample case). If all the <span class="katex"><span class="katex-inner"><span class="strut" style="height:0.68333em"></span><span class="strut bottom" style="height:0.68333em; vertical-align:0em"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.07153em">K</span></span></span></span><br> numbers are negative, then its maximum sum is defined to be 0, and you are supposed to output the first and the last numbers of the whole sequence.<br><br>### Sample Input:<br><br>    10<br>    -10 1 2 3 4 -5 -23 3 7 -21<br>    <code>&lt;/pre&gt;
-
-    ### Sample Output:
-
-    &lt;pre&gt;</code>10 1 4<br><br></div><br></div><br><div class="u-tip"><br><br><em>   时间限制：200ms
-</em>   内存限制：64MB<br><em>   代码长度限制：16kB
-</em>   判题程序：系统默认<br><em>   作者：陈越
-</em>   单位：浙江大学<br><span style="font-family:KaiTi_GB2312; font-size:18px; color:#FF0000">大致题意：</span><br><a id="more"></a><br><span style="font-family:KaiTi_GB2312; font-size:18px; color:#FF0000">此题为 最大子列和 的变式，找出序列中的最大子序列之和，并输出子序列中初始位的数和末位的数<br><br></span><br><br><span style="font-family:KaiTi_GB2312; font-size:18px; color:#FF0000">解题思路：</span><br><br><span style="font-family:KaiTi_GB2312; font-size:18px; color:#FF0000">用在线处理的方式，用thisMax储存当前临时序列和，如果大于最大maxSum的值，则更新maxSum的值</span><br><br><span style="font-family:KaiTi_GB2312; font-size:18px; color:#FF0000">如果thisSum的值小于0时，将thisSum的值赋为0，因为thisSum小于0时，再加上一个数肯定比之前还要小</span><br><br><span style="font-family:KaiTi_GB2312; font-size:18px">具体解答请看以下代码：</span><br><br><pre name="code" class="cpp">#include <iostream><br> /<em>
-  </em> author：Fayne<br>  <em> time:2015-9-2 21:24:16
-  </em>thisSum用于保存临时序列之和，maxSum更新最大序列和<br>  <em>left, right分别表示最大序列的左右序号，tempLeft保存临时左端的序号
-  </em>/<br>using namespace std;<br>int A[10010];<br><br>int main()<br>{<br>    int k, i;<br>    cin &gt;&gt; k;<br>    for ( i=0; i&lt;k; i++ )<br>        cin &gt;&gt; A[i];<br>    int left = 0, right = k-1, maxSum = -1, thisSum = 0, tempLeft;//maxSum赋初值为-1为了解决出现全部序列为负的情况<br>    for ( i=0; i&lt;k; i++ )<br>    {<br>        thisSum += A[i];<br><br>        if ( thisSum &gt; maxSum )//如果临时序列和大于最大和，则更新最大和<br>        {<br>            maxSum = thisSum;<br>            left = tempLeft;//将临时左端的序号赋值给左端序号<br>            right = i;<br>        }<br>        else if ( thisSum &lt; 0 )//thisSum小于0时，从此刻下一个开始重新求和<br>        {<br>            thisSum = 0;<br>            tempLeft = i+1;//把此刻的下一序号赋值给临时左端序号<br>        }<br>    }<br>    if ( maxSum &lt; 0 )//maxSum &lt; 0 说明整个序列全为负数，根据题意，最大和应该为0<br>        maxSum = 0;<br>    cout &lt;&lt; maxSum &lt;&lt; “ “ &lt;&lt; A[left]&lt;&lt; “ “ &lt;&lt; A[right]&lt;&lt; endl;<br><br>    return 0;<br>}</iostream></pre><br><br><span style="font-family:KaiTi_GB2312; font-size:18px; color:#FF0000">注意题意：If all the<span class="katex"><span class="katex-inner"><span class="strut" style="height:0.68333em"></span><span class="strut bottom" style="height:0.68333em; vertical-align:0em"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.07153em">K</span></span></span></span><br> numbers are negative, then its maximum sum is defined to be 0</span><br><br></div><br></div>
-]]></content>
-      <categories>
-        <category>MOOC</category>
-        <category>算法学习</category>
-      </categories>
-      <tags>
-        <tag>pat</tag>
-        <tag>acm</tag>
-        <tag>mooc</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Tiki&amp;球</title>
     <url>/2019/09/28/cat/</url>
     <content><![CDATA[<div id="hexo-blog-encrypt" data-wpm="密码无效, 请检查并重试" data-whm="这些内容无法验证，但您仍然可以查看"><div class="hbe-input-container"><input type="password" id="hbePass" placeholder="Hey, 请输入密码" /><label>Hey, 请输入密码</label><div class="bottom-line"></div></div><script id="hbeData" type="hbeData" data-hmacdigest="9c14b2cfe305641a4557e4442f487bb88d2ba9f387d578072b62c0c7a54cd509">5393d9cd48cf4ad629c25c2765d478ff918c3f927f5a06f7a62ff39ee7e52eb9b36d0c0c0626b435e24ae77d825ee3f9dbbe91550a1819d5298b5d94edfd47ebea195ec91c32074aba90539dc613ff7fcb46110088535a956e7cd8a459962dcaacb619dfcc878fb5c305894dfb59dda1d62d5a4214f450f0811eb31e2b374eb4e3f4fe53bfe43103bb0c42f62a9fe6de85a483eee463e147cc1448571cc15761d19544821e2a0f76545397e495f41f1806417bb5f06437807d7d248bd824897c08599534b4049c49922ae94d84631d3242c55485d170d7ef0caccdb9eb986c7a3d3ba5de91c25f3c2f4920687e4bbb42dfb3e7e2a33649ed939297ed4b33a8dc7036eefeb9b7d5b69979394ab6a4e3f112a9f7f165465bf3893e125057618ecc363a0c710aa549696c5bb519d7ac692c328b9ecda94b5c3328b03ee4ba266931</script></div><script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">]]></content>
@@ -1822,6 +1797,31 @@ int main()
         <tag>iOS</tag>
         <tag>Android</tag>
         <tag>Charles</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>中国大学MOOC-陈越、何钦铭-数据结构-2015秋 01-复杂度2 Maximum Subsequence Sum   (25分)</title>
+    <url>/2015/09/02/e4-b8-ad-e5-9b-bd-e5-a4-a7-e5-ad-a6mooc-e9-99-88-e8-b6-8a-e3-80-81-e4-bd-95-e9-92-a6-e9-93-ad-e6-95-b0-e6-8d-ae-e7-bb-93-e6-9e-84-2015-e7-a7-8b01-e5-a4-8d-e6-9d-82-e5-ba-a62maximumsubsequences/</url>
+    <content><![CDATA[<div class="m-qdetail"><strong><span style="font-size:18px">01-复杂度2&nbsp;Maximum Subsequence Sum&nbsp;&nbsp;&nbsp;(25分)</span></strong><br><div class="content"><br><div class="ques-view"><br>Given a sequence of <span class="katex"><span class="katex-inner"><span class="strut" style="height:0.68333em"></span><span class="strut bottom" style="height:0.68333em; vertical-align:0em"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.07153em">K</span></span></span></span><br> integers { <span class="katex"><span class="katex-inner"><span class="strut" style="height:0.68333em"></span><span class="strut bottom" style="height:0.83333em; vertical-align:-0.15em"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit" style="margin-right:0.10903em">N</span><span class="vlist"><span style="top:0.15em; margin-right:0.05em; margin-left:-0.10903em"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord">1</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em">​</span></span>​</span></span></span></span></span></span>,<span class="katex"><span class="katex-inner"><span class="strut" style="height:0.68333em"></span><span class="strut bottom" style="height:0.83333em; vertical-align:-0.15em"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit" style="margin-right:0.10903em">N</span><span class="vlist"><span style="top:0.15em; margin-right:0.05em; margin-left:-0.10903em"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord">2</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em">​</span></span>​</span></span></span></span></span></span>,<br> …, <span class="katex"><span class="katex-inner"><span class="strut" style="height:0.68333em"></span><span class="strut bottom" style="height:0.83333em; vertical-align:-0.15em"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit" style="margin-right:0.10903em">N</span><span class="vlist"><span style="top:0.15em; margin-right:0.05em; margin-left:-0.10903em"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit" style="margin-right:0.07153em">K</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em">​</span></span>​</span></span></span></span></span></span><br> }. A continuous subsequence is defined to be { <span class="katex"><span class="katex-inner"><span class="strut" style="height:0.68333em"></span><span class="strut bottom" style="height:0.83333em; vertical-align:-0.15em"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit" style="margin-right:0.10903em">N</span><span class="vlist"><span style="top:0.15em; margin-right:0.05em; margin-left:-0.10903em"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit">i</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em">​</span></span>​</span></span></span></span></span></span>,<span class="katex"><span class="katex-inner"><span class="strut" style="height:0.68333em"></span><span class="strut bottom" style="height:0.891661em; vertical-align:-0.208331em"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit" style="margin-right:0.10903em">N</span><span class="vlist"><span style="top:0.15em; margin-right:0.05em; margin-left:-0.10903em"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord scriptstyle cramped"><span class="mord mathit">i</span><span class="mbin">+</span><span class="mord">1</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em">​</span></span>​</span></span></span></span></span></span>,<br> …, <span class="katex"><span class="katex-inner"><span class="strut" style="height:0.68333em"></span><span class="strut bottom" style="height:0.969438em; vertical-align:-0.286108em"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit" style="margin-right:0.10903em">N</span><span class="vlist"><span style="top:0.15em; margin-right:0.05em; margin-left:-0.10903em"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit" style="margin-right:0.05724em">j</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em">​</span></span>​</span></span></span></span></span></span><br> } where <span class="katex"><span class="katex-inner"><span class="strut" style="height:0.68333em"></span><span class="strut bottom" style="height:0.8777699999999999em; vertical-align:-0.19444em"></span><span class="base textstyle uncramped"><span class="mord">1</span><span class="mrel">≤</span><span class="mord mathit">i</span><span class="mrel">≤</span><span class="mord mathit" style="margin-right:0.05724em">j</span><span class="mrel">≤</span><span class="mord mathit" style="margin-right:0.07153em">K</span></span></span></span>.<br> The Maximum Subsequence is the continuous subsequence which has the largest sum of its elements. For example, given sequence { -2, 11, -4, 13, -5, -2 }, its maximum subsequence is { 11, -4, 13 } with the largest sum being 20.<br><br>Now you are supposed to find the largest sum, together with the first and the last numbers of the maximum subsequence.<br><br>### Input Specification:<br><br>Each input file contains one test case. Each case occupies two lines. The first line contains a positive integer<span class="katex"><span class="katex-inner"><span class="strut" style="height:0.68333em"></span><span class="strut bottom" style="height:0.68333em; vertical-align:0em"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.07153em">K</span></span></span></span><br> (<span class="katex"><span class="katex-inner"><span class="strut" style="height:0.64444em"></span><span class="strut bottom" style="height:0.78041em; vertical-align:-0.13597em"></span><span class="base textstyle uncramped"><span class="mrel">≤</span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span></span></span></span>).<br> The second line contains <span class="katex"><span class="katex-inner"><span class="strut" style="height:0.68333em"></span><span class="strut bottom" style="height:0.68333em; vertical-align:0em"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.07153em">K</span></span></span></span><br> numbers, separated by a space.<br><br>### Output Specification:<br><br>For each test case, output in one line the largest sum, together with the first and the last numbers of the maximum subsequence. The numbers must be separated by one space, but there must be no extra space at the end of a line. In case that the maximum subsequence<br> is not unique, output the one with the smallest indices <span class="katex"><span class="katex-inner"><span class="strut" style="height:0.65952em"></span><span class="strut bottom" style="height:0.65952em; vertical-align:0em"></span><span class="base textstyle uncramped"><span class="mord mathit">i</span></span></span></span><br> and <span class="katex"><span class="katex-inner"><span class="strut" style="height:0.65952em"></span><span class="strut bottom" style="height:0.85396em; vertical-align:-0.19444em"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.05724em">j</span></span></span></span><br> (as shown by the sample case). If all the <span class="katex"><span class="katex-inner"><span class="strut" style="height:0.68333em"></span><span class="strut bottom" style="height:0.68333em; vertical-align:0em"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.07153em">K</span></span></span></span><br> numbers are negative, then its maximum sum is defined to be 0, and you are supposed to output the first and the last numbers of the whole sequence.<br><br>### Sample Input:<br><br>    10<br>    -10 1 2 3 4 -5 -23 3 7 -21<br>    <code>&lt;/pre&gt;
+
+    ### Sample Output:
+
+    &lt;pre&gt;</code>10 1 4<br><br></div><br></div><br><div class="u-tip"><br><br><em>   时间限制：200ms
+</em>   内存限制：64MB<br><em>   代码长度限制：16kB
+</em>   判题程序：系统默认<br><em>   作者：陈越
+</em>   单位：浙江大学<br><span style="font-family:KaiTi_GB2312; font-size:18px; color:#FF0000">大致题意：</span><br><a id="more"></a><br><span style="font-family:KaiTi_GB2312; font-size:18px; color:#FF0000">此题为 最大子列和 的变式，找出序列中的最大子序列之和，并输出子序列中初始位的数和末位的数<br><br></span><br><br><span style="font-family:KaiTi_GB2312; font-size:18px; color:#FF0000">解题思路：</span><br><br><span style="font-family:KaiTi_GB2312; font-size:18px; color:#FF0000">用在线处理的方式，用thisMax储存当前临时序列和，如果大于最大maxSum的值，则更新maxSum的值</span><br><br><span style="font-family:KaiTi_GB2312; font-size:18px; color:#FF0000">如果thisSum的值小于0时，将thisSum的值赋为0，因为thisSum小于0时，再加上一个数肯定比之前还要小</span><br><br><span style="font-family:KaiTi_GB2312; font-size:18px">具体解答请看以下代码：</span><br><br><pre name="code" class="cpp">#include <iostream><br> /<em>
+  </em> author：Fayne<br>  <em> time:2015-9-2 21:24:16
+  </em>thisSum用于保存临时序列之和，maxSum更新最大序列和<br>  <em>left, right分别表示最大序列的左右序号，tempLeft保存临时左端的序号
+  </em>/<br>using namespace std;<br>int A[10010];<br><br>int main()<br>{<br>    int k, i;<br>    cin &gt;&gt; k;<br>    for ( i=0; i&lt;k; i++ )<br>        cin &gt;&gt; A[i];<br>    int left = 0, right = k-1, maxSum = -1, thisSum = 0, tempLeft;//maxSum赋初值为-1为了解决出现全部序列为负的情况<br>    for ( i=0; i&lt;k; i++ )<br>    {<br>        thisSum += A[i];<br><br>        if ( thisSum &gt; maxSum )//如果临时序列和大于最大和，则更新最大和<br>        {<br>            maxSum = thisSum;<br>            left = tempLeft;//将临时左端的序号赋值给左端序号<br>            right = i;<br>        }<br>        else if ( thisSum &lt; 0 )//thisSum小于0时，从此刻下一个开始重新求和<br>        {<br>            thisSum = 0;<br>            tempLeft = i+1;//把此刻的下一序号赋值给临时左端序号<br>        }<br>    }<br>    if ( maxSum &lt; 0 )//maxSum &lt; 0 说明整个序列全为负数，根据题意，最大和应该为0<br>        maxSum = 0;<br>    cout &lt;&lt; maxSum &lt;&lt; “ “ &lt;&lt; A[left]&lt;&lt; “ “ &lt;&lt; A[right]&lt;&lt; endl;<br><br>    return 0;<br>}</iostream></pre><br><br><span style="font-family:KaiTi_GB2312; font-size:18px; color:#FF0000">注意题意：If all the<span class="katex"><span class="katex-inner"><span class="strut" style="height:0.68333em"></span><span class="strut bottom" style="height:0.68333em; vertical-align:0em"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.07153em">K</span></span></span></span><br> numbers are negative, then its maximum sum is defined to be 0</span><br><br></div><br></div>
+]]></content>
+      <categories>
+        <category>MOOC</category>
+        <category>算法学习</category>
+      </categories>
+      <tags>
+        <tag>pat</tag>
+        <tag>acm</tag>
+        <tag>mooc</tag>
       </tags>
   </entry>
   <entry>
@@ -1992,6 +1992,44 @@ int main(int argc, char const *argv[])
       </tags>
   </entry>
   <entry>
+    <title>安徽省2016“京胜杯”程序设计大赛_D_梯田AGAIN</title>
+    <url>/2016/09/25/e5-ae-89-e5-be-bd-e7-9c-812016-e4-ba-ac-e8-83-9c-e6-9d-af-e7-a8-8b-e5-ba-8f-e8-ae-be-e8-ae-a1-e5-a4-a7-e8-b5-9b-d-e6-a2-af-e7-94-b0again/</url>
+    <content><![CDATA[<p>梯田AGAIN</p>
+<p></p><p></p>
+<table width="300" style="font-family:tahoma,arial,verdana,sans-serif; font-size:9pt; text-align:center; padding-left:15px; color:rgb(102,102,102); margin:auto"><br><tbody><br><tr><br><td style="margin:0px; padding:0px; text-align:left">Time Limit: 5000 MS</td><br><td style="margin:0px; padding:0px; text-align:left">Memory Limit: 65536 KB</td><br></tr><br><tr><br><td style="margin:0px; padding:0px; text-align:left">Total Submissions: 95</td><br><td style="margin:0px; padding:0px; text-align:left">Accepted: 21</td><br></tr><br></tbody><br></table>
+
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><div>大家还记得去年的梯田吗？土豪YZK在一块小岛上有着一大片n<em>m的梯田，每块1</em>1的田地都有它的高度。奴隶们不甘被YZK剥削，他们联合起来决定发动一场海啸淹掉YZK的部分梯田。<br><br>奴隶们去年尝试了一下，结果发现，由于土质太过松软，水能够透过土地渗入到相邻的梯田，即对于海啸高度h，梯田中所有小于等于h的土地都会由于土质松软而被被淹没。<br><br>现在给你一个n*m的矩阵，代表梯田中每块田地的高度。然后给定q个询问，每个询问给定一个海啸高度h，问在此高度下，不被淹没的梯田数量是多少。<br><br></div>
+
+<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><div>第一行一个整数T，表示测试数据组数。<br><br>对于每组测试数据：<br><br>第一行三个数字n，m，q，表示梯田的行数，列数和询问数。<br><br>之后n行，每行m个数字，表示每块田地的高度，梯田高度不大于1000000。<br><br>之后q行，每行给出一个海啸高度h，问大于这个高度的梯田有多少块。<br><a id="more"></a><br>0&lt;T&lt;20。<br><br>0&lt;n，m&lt;=200。<br><br>0&lt;=q&lt;1000。<br><br>0&lt;=h&lt;=1000000.<br><br></div>
+
+<h2 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h2><div>对于每个询问，给出一个整数，表示大于这个海啸高度的梯田数量。</div>
+
+<h2 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h2><div>2<br><br>2&nbsp;2&nbsp;2<br><br>1&nbsp;2<br><br>3&nbsp;4<br><br>2<br><br>3<br><br>2&nbsp;3&nbsp;3<br><br>1&nbsp;2&nbsp;3<br><br>3&nbsp;4&nbsp;5<br><br>0<br><br>4<br><br>5<br><br></div>
+
+<h2 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h2><div>​2<br><br>1<br><br>6<br><br>1<br><br>0</div>
+
+<h2 id="Hint"><a href="#Hint" class="headerlink" title="Hint"></a>Hint</h2><div>经测试，此题存在卡输入输出问题，现将时限修改，在此对被卡的同学表示歉意。<br><br>另外，由于测评环境为xp，取消对stdio同步对流式输入输出效率可能是不起作用的，请大家务必注意。若怀疑某题存在卡IO的可能，请使用C式io函数或者用io加速外挂进行Io操作。</div>
+
+<div><br><br></div>
+
+<div><span style="font-size:14px; color:#ff0000">题解：这题题意写的很清楚，可是要注意一点，要是每次都普通查询操作那么就会超时，此题我是放在了一维数组，然后二分查找实现的，个人觉得此代码写的并不完美，欢迎各位朋友提出宝贵改进意见</span></div>
+
+<div><br><br></div>
+
+<div><pre code_snippet_id="1899547" snippet_file_name="blog_20160925_1_9432305" name="code" class="cpp">#include <iostream><br>#include <algorithm><br>#include <cstdio><br><br>using namespace std;<br><br>int a[40010], s;<br><br>int search(int start, int end, int key)<br>{<br>&nbsp; &nbsp; int mid, pos = 0;<br>&nbsp; &nbsp; while (start &lt; end)<br>&nbsp; &nbsp; {<br>&nbsp; &nbsp; &nbsp; &nbsp; mid = (start + end) / 2;<br>&nbsp; &nbsp; &nbsp; &nbsp; if (a[mid] &gt; key) {<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; end = mid;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; pos = end;<br>&nbsp; &nbsp; &nbsp; &nbsp; }else {<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; start = mid + 1;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; pos = start;<br>&nbsp; &nbsp; &nbsp; &nbsp; }<br>&nbsp; &nbsp; }<br>&nbsp; &nbsp; return pos;<br>}<br><br>int main(int argc, char const <em>argv[])<br>{<br>    int T, n, m, q, h, i, j;<br>    scanf(“%d”, &amp;T);<br>    while (T–)<br>    {<br>        scanf(“%d%d%d”, &amp;n, &amp;m, &amp;q);<br>        s = n </em> m;<br>        for (i=0; i&lt;s; i++)<br>            scanf(“%d”, &amp;a[i]);<br>        sort(a, a+s);<br>        while (q–)<br>        {<br>            scanf(“%d”, &amp;h);<br>            if (h &lt; a[0]) printf(“%d\n”, s);<br>            else if (h &gt; a[s-1]) printf(“%d\n”, 0);<br>            else<br>                printf(“%d\n”, s - search(0, s-1, h));<br>        }<br>    }<br>    return 0;<br>}</cstdio></algorithm></iostream></pre><br><br></div>
+]]></content>
+      <categories>
+        <category>二分法</category>
+        <category>省赛</category>
+        <category>算法学习</category>
+      </categories>
+      <tags>
+        <tag>acm</tag>
+        <tag>省赛</tag>
+        <tag>二分</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>安徽省2016“京胜杯”程序设计大赛_E_转啊转</title>
     <url>/2016/09/25/e5-ae-89-e5-be-bd-e7-9c-812016-e4-ba-ac-e8-83-9c-e6-9d-af-e7-a8-8b-e5-ba-8f-e8-ae-be-e8-ae-a1-e5-a4-a7-e8-b5-9b-e-e8-bd-ac-e5-95-8a-e8-bd-ac/</url>
     <content><![CDATA[<p>#<br>转啊转</p>
@@ -2040,41 +2078,34 @@ int main(int argc, char const *argv[])
       </tags>
   </entry>
   <entry>
-    <title>安徽省2016“京胜杯”程序设计大赛_D_梯田AGAIN</title>
-    <url>/2016/09/25/e5-ae-89-e5-be-bd-e7-9c-812016-e4-ba-ac-e8-83-9c-e6-9d-af-e7-a8-8b-e5-ba-8f-e8-ae-be-e8-ae-a1-e5-a4-a7-e8-b5-9b-d-e6-a2-af-e7-94-b0again/</url>
-    <content><![CDATA[<p>梯田AGAIN</p>
+    <title>安徽省2016“京胜杯”程序设计大赛_G_木条染色</title>
+    <url>/2016/09/27/e5-ae-89-e5-be-bd-e7-9c-812016-e4-ba-ac-e8-83-9c-e6-9d-af-e7-a8-8b-e5-ba-8f-e8-ae-be-e8-ae-a1-e5-a4-a7-e8-b5-9b-g-e6-9c-a8-e6-9d-a1-e6-9f-93-e8-89-b2/</url>
+    <content><![CDATA[<p>#<br>木条染色</p>
 <p></p><p></p>
-<table width="300" style="font-family:tahoma,arial,verdana,sans-serif; font-size:9pt; text-align:center; padding-left:15px; color:rgb(102,102,102); margin:auto"><br><tbody><br><tr><br><td style="margin:0px; padding:0px; text-align:left">Time Limit: 5000 MS</td><br><td style="margin:0px; padding:0px; text-align:left">Memory Limit: 65536 KB</td><br></tr><br><tr><br><td style="margin:0px; padding:0px; text-align:left">Total Submissions: 95</td><br><td style="margin:0px; padding:0px; text-align:left">Accepted: 21</td><br></tr><br></tbody><br></table>
+<table width="300" style="font-family:tahoma,arial,verdana,sans-serif; font-size:9pt; text-align:center; padding-left:15px; color:rgb(102,102,102); margin:auto"><br><tbody><br><tr><br><td style="margin:0px; padding:0px; text-align:left"><span style="font-family:tahoma,arial,verdana,sans-serif">Time Limit: 1000 MS</span></td><br><td style="margin:0px; padding:0px; text-align:left"><span style="font-family:tahoma,arial,verdana,sans-serif">Memory Limit: 65536 KB</span></td><br></tr><br><tr><br><td style="margin:0px; padding:0px; text-align:left"><span style="font-family:tahoma,arial,verdana,sans-serif">Total Submissions: 134</span></td><br><td style="margin:0px; padding:0px; text-align:left"><span style="font-family:tahoma,arial,verdana,sans-serif">Accepted: 20</span></td><br></tr><br></tbody><br></table>
 
-<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><div>大家还记得去年的梯田吗？土豪YZK在一块小岛上有着一大片n<em>m的梯田，每块1</em>1的田地都有它的高度。奴隶们不甘被YZK剥削，他们联合起来决定发动一场海啸淹掉YZK的部分梯田。<br><br>奴隶们去年尝试了一下，结果发现，由于土质太过松软，水能够透过土地渗入到相邻的梯田，即对于海啸高度h，梯田中所有小于等于h的土地都会由于土质松软而被被淹没。<br><br>现在给你一个n*m的矩阵，代表梯田中每块田地的高度。然后给定q个询问，每个询问给定一个海啸高度h，问在此高度下，不被淹没的梯田数量是多少。<br><br></div>
+<div style="text-align:left"><span style="font-family:tahoma,arial,verdana,sans-serif"></span><br><br>## Description<br><br><div style="color:rgb(102,102,102)">&nbsp; &nbsp;小明是一个非常浪漫的画家，他喜欢画各种奇奇怪怪的画，虽然没人理解他画的究竟是什么东西。<br>有一天，他突发奇想，对于一根木条，他每次从木条中选取一个区间[l,r]进行染色，经过多次染色后，他想知道在[a,b]区间中有几个未被染色的子区间？<br><br>可惜小明虽然画画非常厉害，但是并不擅长解决这类问题，于是，他拿着这根木条来找你，希望你能够给他帮助。<br><br>假设木条无限长，所有查询都在木条长度范围内，未被染色的子区间是指，木条上染过色的区间的间断部分。<br><br></div>
 
-<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><div>第一行一个整数T，表示测试数据组数。<br><br>对于每组测试数据：<br><br>第一行三个数字n，m，q，表示梯田的行数，列数和询问数。<br><br>之后n行，每行m个数字，表示每块田地的高度，梯田高度不大于1000000。<br><br>之后q行，每行给出一个海啸高度h，问大于这个高度的梯田有多少块。<br><a id="more"></a><br>0&lt;T&lt;20。<br><br>0&lt;n，m&lt;=200。<br><br>0&lt;=q&lt;1000。<br><br>0&lt;=h&lt;=1000000.<br><br></div>
+<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><div style="color:rgb(102,102,102)">第一行一个整数T，代表数据组数。<br>对于每组数据，第一行给出两个整数n，q，分别代表染色的区间个数，以及查询个数。<br><br>之后n行，每行两个整数l，r，表示将l到r的区间进行染色，包含l，r两个节点。<br><br>之后q行，每行两个整数a，b，表示询问a到b总共有多少未被染色的子区间。<br><br>两组数据之间用一个空行隔开。<br><a id="more"></a><br>T&lt;20<br><br>n&lt;10000<br><br>q&lt;100000<br><br>0&lt;=l&lt;r&lt;1000000<br><br>0&lt;=a&lt;=b&lt;1000000<br></div>
 
-<h2 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h2><div>对于每个询问，给出一个整数，表示大于这个海啸高度的梯田数量。</div>
+<h2 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h2><div style="color:rgb(102,102,102)">对于每次询问，输出一个整数，表示查询结果。<br>每组数据之后，请输出一个空行。<br></div>
 
-<h2 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h2><div>2<br><br>2&nbsp;2&nbsp;2<br><br>1&nbsp;2<br><br>3&nbsp;4<br><br>2<br><br>3<br><br>2&nbsp;3&nbsp;3<br><br>1&nbsp;2&nbsp;3<br><br>3&nbsp;4&nbsp;5<br><br>0<br><br>4<br><br>5<br><br></div>
+<h2 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h2><div style="color:rgb(102,102,102)">2<br><br>2&nbsp;3<br><br>1&nbsp;2<br><br>3&nbsp;4<br><br>1&nbsp;3<br><br>3&nbsp;4<br><br>5&nbsp;5<br><br>3&nbsp;3<br><br>1&nbsp;5<br><br>2&nbsp;8<br><br>5&nbsp;6<br><br>0&nbsp;5<br><br>0&nbsp;9<br><br>9&nbsp;9<br><br></div>
 
-<h2 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h2><div>​2<br><br>1<br><br>6<br><br>1<br><br>0</div>
+<h2 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h2><div style="color:rgb(102,102,102)">1<br><br>0<br><br>1<br><br>1<br><br>2<br><br>1<br><br></div>
 
-<h2 id="Hint"><a href="#Hint" class="headerlink" title="Hint"></a>Hint</h2><div>经测试，此题存在卡输入输出问题，现将时限修改，在此对被卡的同学表示歉意。<br><br>另外，由于测评环境为xp，取消对stdio同步对流式输入输出效率可能是不起作用的，请大家务必注意。若怀疑某题存在卡IO的可能，请使用C式io函数或者用io加速外挂进行Io操作。</div>
+<h2 id="Hint"><a href="#Hint" class="headerlink" title="Hint"></a>Hint</h2><div><span style="color:#666666">对于第一组数据，[0,1)，(2,3)，(4,+)是未染色的子区间，因此查询[1,3]可以找到(2,3)这个子区间，而对于[3,4]不能找到，对于[5,5]可以找到[5,5]。</span><br><br>对于第二组数据，[0,1)和(8,+)是未染色的子区间，因此对于[0,5]只有子区间[0,1)，对于查询[0,9]，有子区间[0,1)和（8,9]，对于查询[9,9]，有[9,9]这个子区间。<br><p style="color:rgb(102,102,102)"><br><br><span style="font-size:14px; color:#ff0000">//这道题还木有做出来，正在努力A中，欢迎各位朋友给出解题思路</span><br><br><span style="color:#ff0000"><span style="font-size:14px">2017-4-29 19:02:19—-补下这道题的题解，这道题用的是线段是+离散化，代码参考如下</span></span><br><br><span style="color:#ff0000"><span style="font-size:14px"><br><br></span></span><br><br><span style="color:#ff0000"><span style="font-size:14px"><br><br></span></span><br><br><span style="color:#ff0000"><span style="font-size:14px"></span></span></p><br><br><pre code_snippet_id="2363556" snippet_file_name="blog_20170429_1_9522696" name="code" class="cpp">#include<cstdio><br>#include<cstring><br>#include<algorithm><br>using namespace std;<br>#define lson i&lt;&lt;1<br>#define rson (i&lt;&lt;1)+1<br>int maxn,t,n,m;<br>int va[500000];<br>int ha[1000005],pre,pre2;<br>struct node{<br>    int x,y;<br>}b[100005];<br>int a[100005];<br>void build(int i,int l,int r)<br>{<br>       va[i] = 1;<br>       if(l==r)return;<br>       build(lson,l,(l+r)/2);<br>       build(rson,(l+r)/2+1,r);<br>}<br>inline void pushUp(int i)<br>{<br>     if(va[lson]==va[rson])va[i] = va[lson];<br>     else va[i] = -1;<br>}<br>inline void pushDown(int i)<br>{<br>    va[lson] = va[i];<br>    va[rson] = va[i];<br>}<br>void update(int i,int l,int r,int L,int R)<br>{<br>     if(l==L&amp;&amp;r==R)<br>     {<br>         va[i] = 0;<br>         return ;<br>     }<br>     if(va[i]!=-1)pushDown(i);<br>     if(R&lt;=(l+r)/2)update(lson,l,(l+r)/2,L,R);<br>     else if(L&gt;=(l+r)/2+1)update(rson,(l+r)/2+1,r,L,R);<br>     else {<br>         update(lson,l,(l+r)/2,L,(l+r)/2);<br>         update(rson,(l+r)/2+1,r,(l+r)/2+1,R);<br>     }<br>     pushUp(i);<br>}<br>int  query(int i,int l,int r,int L,int R)<br>{<br>     if(va[i]!=-1)<br>     {<br>         return va[i];<br>     }<br>     if(R&lt;=(l+r)/2)return query(lson,l,(l+r)/2,L,R);<br>     else if(L&gt;=(l+r)/2+1)return query(rson,(l+r)/2+1,r,L,R);<br>     else return query(lson,l,(l+r)/2,L,(l+r)/2) + query(rson,(l+r)/2+1,r,(l+r)/2+1,R);<br>}<br>inline void init()<br>{<br>        pre = 2;<br>        sort(a,a+2<em>n);<br>        ha[a[0]] = pre;<br>        for(int i=1;i&lt;2</em>n;i++)<br>            if(a[i]&gt;a[i-1])<br>            {<br>                pre+=2;<br>                ha[a[i]] = pre;<br>            }<br>        pre2 = 1;<br>        for(int i=max(a[0]-1,0);i&lt;=a[2<em>n-1]+2;i++)<br>           if(ha[i])<br>           {<br>                  pre2 = ha[i]+1;<br>           }<br>           else ha[i] = pre2;<br>}<br>int main()<br>{<br>    scanf(“%d”,&amp;t);<br>    while(t–)<br>    {<br>        scanf(“%d%d”,&amp;n,&amp;m);<br>        for(int i=0;i&lt;n;i++)<br>        {<br>              scanf(“%d%d”,&amp;a[i</em>2],&amp;a[i<em>2+1]);<br>            b[i].x = a[i</em>2];<br>            b[i].y = a[i<em>2+1];<br>        }<br>        init();<br>        build(1,1,pre2);<br>        for(int i=0;i&lt;n;i++)<br>            update(1,1,pre2,ha[b[i].x],ha[b[i].y]);<br>        for(int i=0;i&lt;m;i++)<br>        {<br>            int c,d;<br>            c = max(c,max(0,a[0]-1));<br>            d = min(a[2</em>i-1]+2,d);<br>            scanf(“%d%d”,&amp;c,&amp;d);<br>            printf(“%d\n”,query(1,1,pre2,ha[c],ha[d]));<br>        }<br>        for(int i=max(a[0]-1,0);i&lt;=a[2*n-1]+2;i++)<br>            ha[i] = 0;<br>        if(t!=0)printf(“\n”);<br>    }<br>    return 0;<br>}</algorithm></cstring></cstdio></pre><br><br></div>
 
-<div><br><br></div>
-
-<div><span style="font-size:14px; color:#ff0000">题解：这题题意写的很清楚，可是要注意一点，要是每次都普通查询操作那么就会超时，此题我是放在了一维数组，然后二分查找实现的，个人觉得此代码写的并不完美，欢迎各位朋友提出宝贵改进意见</span></div>
-
-<div><br><br></div>
-
-<div><pre code_snippet_id="1899547" snippet_file_name="blog_20160925_1_9432305" name="code" class="cpp">#include <iostream><br>#include <algorithm><br>#include <cstdio><br><br>using namespace std;<br><br>int a[40010], s;<br><br>int search(int start, int end, int key)<br>{<br>&nbsp; &nbsp; int mid, pos = 0;<br>&nbsp; &nbsp; while (start &lt; end)<br>&nbsp; &nbsp; {<br>&nbsp; &nbsp; &nbsp; &nbsp; mid = (start + end) / 2;<br>&nbsp; &nbsp; &nbsp; &nbsp; if (a[mid] &gt; key) {<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; end = mid;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; pos = end;<br>&nbsp; &nbsp; &nbsp; &nbsp; }else {<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; start = mid + 1;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; pos = start;<br>&nbsp; &nbsp; &nbsp; &nbsp; }<br>&nbsp; &nbsp; }<br>&nbsp; &nbsp; return pos;<br>}<br><br>int main(int argc, char const <em>argv[])<br>{<br>    int T, n, m, q, h, i, j;<br>    scanf(“%d”, &amp;T);<br>    while (T–)<br>    {<br>        scanf(“%d%d%d”, &amp;n, &amp;m, &amp;q);<br>        s = n </em> m;<br>        for (i=0; i&lt;s; i++)<br>            scanf(“%d”, &amp;a[i]);<br>        sort(a, a+s);<br>        while (q–)<br>        {<br>            scanf(“%d”, &amp;h);<br>            if (h &lt; a[0]) printf(“%d\n”, s);<br>            else if (h &gt; a[s-1]) printf(“%d\n”, 0);<br>            else<br>                printf(“%d\n”, s - search(0, s-1, h));<br>        }<br>    }<br>    return 0;<br>}</cstdio></algorithm></iostream></pre><br><br></div>
+<p></p></div><p></p>
 ]]></content>
       <categories>
-        <category>二分法</category>
         <category>省赛</category>
         <category>算法学习</category>
       </categories>
       <tags>
         <tag>acm</tag>
         <tag>省赛</tag>
-        <tag>二分</tag>
+        <tag>线段树</tag>
       </tags>
   </entry>
   <entry>
@@ -2108,25 +2139,28 @@ int main(int argc, char const *argv[])
       </tags>
   </entry>
   <entry>
-    <title>安徽省2016“京胜杯”程序设计大赛_G_木条染色</title>
-    <url>/2016/09/27/e5-ae-89-e5-be-bd-e7-9c-812016-e4-ba-ac-e8-83-9c-e6-9d-af-e7-a8-8b-e5-ba-8f-e8-ae-be-e8-ae-a1-e5-a4-a7-e8-b5-9b-g-e6-9c-a8-e6-9d-a1-e6-9f-93-e8-89-b2/</url>
-    <content><![CDATA[<p>#<br>木条染色</p>
-<p></p><p></p>
-<table width="300" style="font-family:tahoma,arial,verdana,sans-serif; font-size:9pt; text-align:center; padding-left:15px; color:rgb(102,102,102); margin:auto"><br><tbody><br><tr><br><td style="margin:0px; padding:0px; text-align:left"><span style="font-family:tahoma,arial,verdana,sans-serif">Time Limit: 1000 MS</span></td><br><td style="margin:0px; padding:0px; text-align:left"><span style="font-family:tahoma,arial,verdana,sans-serif">Memory Limit: 65536 KB</span></td><br></tr><br><tr><br><td style="margin:0px; padding:0px; text-align:left"><span style="font-family:tahoma,arial,verdana,sans-serif">Total Submissions: 134</span></td><br><td style="margin:0px; padding:0px; text-align:left"><span style="font-family:tahoma,arial,verdana,sans-serif">Accepted: 20</span></td><br></tr><br></tbody><br></table>
+    <title>安徽省2016“京胜杯”程序设计大赛_I_恶魔A+B</title>
+    <url>/2016/10/30/e5-ae-89-e5-be-bd-e7-9c-812016-e4-ba-ac-e8-83-9c-e6-9d-af-e7-a8-8b-e5-ba-8f-e8-ae-be-e8-ae-a1-e5-a4-a7-e8-b5-9b-i-e6-81-b6-e9-ad-94a-2bb/</url>
+    <content><![CDATA[<div style="text-align:center"><br><br>恶魔A+B<br><br><table width="300" style="font-family:tahoma,arial,verdana,sans-serif; font-size:9pt; text-align:center; padding-left:15px; color:rgb(102,102,102); margin:auto"><br><tbody><br><tr><br><td style="margin:0px; padding:0px; text-align:left">Time Limit: 1000 MS</td><br><td style="margin:0px; padding:0px; text-align:left">Memory Limit: 65536 KB</td><br></tr><br><tr><br><td style="margin:0px; padding:0px; text-align:left">Total Submissions: 73</td><br><td style="margin:0px; padding:0px; text-align:left">Accepted: 17</td><br></tr><br></tbody><br></table><br><br></div>
 
-<div style="text-align:left"><span style="font-family:tahoma,arial,verdana,sans-serif"></span><br><br>## Description<br><br><div style="color:rgb(102,102,102)">&nbsp; &nbsp;小明是一个非常浪漫的画家，他喜欢画各种奇奇怪怪的画，虽然没人理解他画的究竟是什么东西。<br>有一天，他突发奇想，对于一根木条，他每次从木条中选取一个区间[l,r]进行染色，经过多次染色后，他想知道在[a,b]区间中有几个未被染色的子区间？<br><br>可惜小明虽然画画非常厉害，但是并不擅长解决这类问题，于是，他拿着这根木条来找你，希望你能够给他帮助。<br><br>假设木条无限长，所有查询都在木条长度范围内，未被染色的子区间是指，木条上染过色的区间的间断部分。<br><br></div>
-
-<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><div style="color:rgb(102,102,102)">第一行一个整数T，代表数据组数。<br>对于每组数据，第一行给出两个整数n，q，分别代表染色的区间个数，以及查询个数。<br><br>之后n行，每行两个整数l，r，表示将l到r的区间进行染色，包含l，r两个节点。<br><br>之后q行，每行两个整数a，b，表示询问a到b总共有多少未被染色的子区间。<br><br>两组数据之间用一个空行隔开。<br><a id="more"></a><br>T&lt;20<br><br>n&lt;10000<br><br>q&lt;100000<br><br>0&lt;=l&lt;r&lt;1000000<br><br>0&lt;=a&lt;=b&lt;1000000<br></div>
-
-<h2 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h2><div style="color:rgb(102,102,102)">对于每次询问，输出一个整数，表示查询结果。<br>每组数据之后，请输出一个空行。<br></div>
-
-<h2 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h2><div style="color:rgb(102,102,102)">2<br><br>2&nbsp;3<br><br>1&nbsp;2<br><br>3&nbsp;4<br><br>1&nbsp;3<br><br>3&nbsp;4<br><br>5&nbsp;5<br><br>3&nbsp;3<br><br>1&nbsp;5<br><br>2&nbsp;8<br><br>5&nbsp;6<br><br>0&nbsp;5<br><br>0&nbsp;9<br><br>9&nbsp;9<br><br></div>
-
-<h2 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h2><div style="color:rgb(102,102,102)">1<br><br>0<br><br>1<br><br>1<br><br>2<br><br>1<br><br></div>
-
-<h2 id="Hint"><a href="#Hint" class="headerlink" title="Hint"></a>Hint</h2><div><span style="color:#666666">对于第一组数据，[0,1)，(2,3)，(4,+)是未染色的子区间，因此查询[1,3]可以找到(2,3)这个子区间，而对于[3,4]不能找到，对于[5,5]可以找到[5,5]。</span><br><br>对于第二组数据，[0,1)和(8,+)是未染色的子区间，因此对于[0,5]只有子区间[0,1)，对于查询[0,9]，有子区间[0,1)和（8,9]，对于查询[9,9]，有[9,9]这个子区间。<br><p style="color:rgb(102,102,102)"><br><br><span style="font-size:14px; color:#ff0000">//这道题还木有做出来，正在努力A中，欢迎各位朋友给出解题思路</span><br><br><span style="color:#ff0000"><span style="font-size:14px">2017-4-29 19:02:19—-补下这道题的题解，这道题用的是线段是+离散化，代码参考如下</span></span><br><br><span style="color:#ff0000"><span style="font-size:14px"><br><br></span></span><br><br><span style="color:#ff0000"><span style="font-size:14px"><br><br></span></span><br><br><span style="color:#ff0000"><span style="font-size:14px"></span></span></p><br><br><pre code_snippet_id="2363556" snippet_file_name="blog_20170429_1_9522696" name="code" class="cpp">#include<cstdio><br>#include<cstring><br>#include<algorithm><br>using namespace std;<br>#define lson i&lt;&lt;1<br>#define rson (i&lt;&lt;1)+1<br>int maxn,t,n,m;<br>int va[500000];<br>int ha[1000005],pre,pre2;<br>struct node{<br>    int x,y;<br>}b[100005];<br>int a[100005];<br>void build(int i,int l,int r)<br>{<br>       va[i] = 1;<br>       if(l==r)return;<br>       build(lson,l,(l+r)/2);<br>       build(rson,(l+r)/2+1,r);<br>}<br>inline void pushUp(int i)<br>{<br>     if(va[lson]==va[rson])va[i] = va[lson];<br>     else va[i] = -1;<br>}<br>inline void pushDown(int i)<br>{<br>    va[lson] = va[i];<br>    va[rson] = va[i];<br>}<br>void update(int i,int l,int r,int L,int R)<br>{<br>     if(l==L&amp;&amp;r==R)<br>     {<br>         va[i] = 0;<br>         return ;<br>     }<br>     if(va[i]!=-1)pushDown(i);<br>     if(R&lt;=(l+r)/2)update(lson,l,(l+r)/2,L,R);<br>     else if(L&gt;=(l+r)/2+1)update(rson,(l+r)/2+1,r,L,R);<br>     else {<br>         update(lson,l,(l+r)/2,L,(l+r)/2);<br>         update(rson,(l+r)/2+1,r,(l+r)/2+1,R);<br>     }<br>     pushUp(i);<br>}<br>int  query(int i,int l,int r,int L,int R)<br>{<br>     if(va[i]!=-1)<br>     {<br>         return va[i];<br>     }<br>     if(R&lt;=(l+r)/2)return query(lson,l,(l+r)/2,L,R);<br>     else if(L&gt;=(l+r)/2+1)return query(rson,(l+r)/2+1,r,L,R);<br>     else return query(lson,l,(l+r)/2,L,(l+r)/2) + query(rson,(l+r)/2+1,r,(l+r)/2+1,R);<br>}<br>inline void init()<br>{<br>        pre = 2;<br>        sort(a,a+2<em>n);<br>        ha[a[0]] = pre;<br>        for(int i=1;i&lt;2</em>n;i++)<br>            if(a[i]&gt;a[i-1])<br>            {<br>                pre+=2;<br>                ha[a[i]] = pre;<br>            }<br>        pre2 = 1;<br>        for(int i=max(a[0]-1,0);i&lt;=a[2<em>n-1]+2;i++)<br>           if(ha[i])<br>           {<br>                  pre2 = ha[i]+1;<br>           }<br>           else ha[i] = pre2;<br>}<br>int main()<br>{<br>    scanf(“%d”,&amp;t);<br>    while(t–)<br>    {<br>        scanf(“%d%d”,&amp;n,&amp;m);<br>        for(int i=0;i&lt;n;i++)<br>        {<br>              scanf(“%d%d”,&amp;a[i</em>2],&amp;a[i<em>2+1]);<br>            b[i].x = a[i</em>2];<br>            b[i].y = a[i<em>2+1];<br>        }<br>        init();<br>        build(1,1,pre2);<br>        for(int i=0;i&lt;n;i++)<br>            update(1,1,pre2,ha[b[i].x],ha[b[i].y]);<br>        for(int i=0;i&lt;m;i++)<br>        {<br>            int c,d;<br>            c = max(c,max(0,a[0]-1));<br>            d = min(a[2</em>i-1]+2,d);<br>            scanf(“%d%d”,&amp;c,&amp;d);<br>            printf(“%d\n”,query(1,1,pre2,ha[c],ha[d]));<br>        }<br>        for(int i=max(a[0]-1,0);i&lt;=a[2*n-1]+2;i++)<br>            ha[i] = 0;<br>        if(t!=0)printf(“\n”);<br>    }<br>    return 0;<br>}</algorithm></cstring></cstdio></pre><br><br></div>
-
-<p></p></div><p></p>
+<p>##</p>
+<p>Description</p>
+<p><span style="white-space:pre"></span>相信大家都做过A+B问题，这个问题简直太简单了，以至于所有的程序员都会做这个题目。</p>
+<p>有一天，萌萌哒YZK学姐写了很久很久的代码，以至于在半睡半醒状态看到了恶魔。</p>
+<p>恶魔说：愚蠢的程序员啊，不要再做无谓的挣扎了，你再怎么写代码，也改变不了这个世界终将被我统治的结局。</p>
+<p>YZK学姐顿时觉得自己被侵犯了，为了程序员的尊严，她要求与恶魔进行决斗，决斗的形式就是写代码。</p>
+<p>恶魔给出了一个非常复杂的A+B问题，对于两个长度小于1000的26进制数，它们相加的结果是什么呢？</p>
+<p>两人谁先解决这个问题谁就获胜，你能帮助YZK学姐战胜恶魔吗？</p>
+<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><p>第一行一个整数T，代表测试数据组数，0&lt;T&lt;25。</p>
+<p>之后T行，每行两个长度不大于1000的字符串，仅包含a~z和小数点，a~z分别代表数字0~25。<br><a id="more"></a></p>
+<p>##</p>
+<p>Output</p>
+<p>相加的结果，不能包含前后导零（即a）。</p>
+<h2 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h2><p>2</p>
+<p>b b</p>
+<p>b.b a.c</p>
+<h2 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h2><p>c</p>
+<p>b.d</p>
 ]]></content>
       <categories>
         <category>省赛</category>
@@ -2135,7 +2169,6 @@ int main(int argc, char const *argv[])
       <tags>
         <tag>acm</tag>
         <tag>省赛</tag>
-        <tag>线段树</tag>
       </tags>
   </entry>
   <entry>
@@ -2174,28 +2207,53 @@ int main(int argc, char const *argv[])
       </tags>
   </entry>
   <entry>
-    <title>安徽省2016“京胜杯”程序设计大赛_I_恶魔A+B</title>
-    <url>/2016/10/30/e5-ae-89-e5-be-bd-e7-9c-812016-e4-ba-ac-e8-83-9c-e6-9d-af-e7-a8-8b-e5-ba-8f-e8-ae-be-e8-ae-a1-e5-a4-a7-e8-b5-9b-i-e6-81-b6-e9-ad-94a-2bb/</url>
-    <content><![CDATA[<div style="text-align:center"><br><br>恶魔A+B<br><br><table width="300" style="font-family:tahoma,arial,verdana,sans-serif; font-size:9pt; text-align:center; padding-left:15px; color:rgb(102,102,102); margin:auto"><br><tbody><br><tr><br><td style="margin:0px; padding:0px; text-align:left">Time Limit: 1000 MS</td><br><td style="margin:0px; padding:0px; text-align:left">Memory Limit: 65536 KB</td><br></tr><br><tr><br><td style="margin:0px; padding:0px; text-align:left">Total Submissions: 73</td><br><td style="margin:0px; padding:0px; text-align:left">Accepted: 17</td><br></tr><br></tbody><br></table><br><br></div>
+    <title>安徽省2016“京胜杯”程序设计大赛_J_YZK的大别墅</title>
+    <url>/2016/10/30/e5-ae-89-e5-be-bd-e7-9c-812016-e4-ba-ac-e8-83-9c-e6-9d-af-e7-a8-8b-e5-ba-8f-e8-ae-be-e8-ae-a1-e5-a4-a7-e8-b5-9b-j-yzk-e7-9a-84-e5-a4-a7-e5-88-ab-e5-a2-85/</url>
+    <content><![CDATA[<p>YZK的大别墅</p>
+<p></p><p></p>
+<table width="300" style="font-family:tahoma,arial,verdana,sans-serif; font-size:9pt; text-align:center; padding-left:15px; color:rgb(102,102,102); margin:auto"><br><tbody><br><tr><br><td style="margin:0px; padding:0px; text-align:left">Time Limit: 1000 MS</td><br><td style="margin:0px; padding:0px; text-align:left">Memory Limit: 65536 KB</td><br></tr><br><tr><br><td style="margin:0px; padding:0px; text-align:left">Total Submissions: 24</td><br><td style="margin:0px; padding:0px; text-align:left">Accepted: 12</td><br></tr><br></tbody><br></table>
 
-<p>##</p>
-<p>Description</p>
-<p><span style="white-space:pre"></span>相信大家都做过A+B问题，这个问题简直太简单了，以至于所有的程序员都会做这个题目。</p>
-<p>有一天，萌萌哒YZK学姐写了很久很久的代码，以至于在半睡半醒状态看到了恶魔。</p>
-<p>恶魔说：愚蠢的程序员啊，不要再做无谓的挣扎了，你再怎么写代码，也改变不了这个世界终将被我统治的结局。</p>
-<p>YZK学姐顿时觉得自己被侵犯了，为了程序员的尊严，她要求与恶魔进行决斗，决斗的形式就是写代码。</p>
-<p>恶魔给出了一个非常复杂的A+B问题，对于两个长度小于1000的26进制数，它们相加的结果是什么呢？</p>
-<p>两人谁先解决这个问题谁就获胜，你能帮助YZK学姐战胜恶魔吗？</p>
-<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><p>第一行一个整数T，代表测试数据组数，0&lt;T&lt;25。</p>
-<p>之后T行，每行两个长度不大于1000的字符串，仅包含a~z和小数点，a~z分别代表数字0~25。<br><a id="more"></a></p>
-<p>##</p>
-<p>Output</p>
-<p>相加的结果，不能包含前后导零（即a）。</p>
-<h2 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h2><p>2</p>
-<p>b b</p>
-<p>b.b a.c</p>
-<h2 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h2><p>c</p>
-<p>b.d</p>
+<p>&lt;</p>
+<p>div id=”ext-comp-1069”&gt;</p>
+<div id="ext-gen15"><br><div id="ext-gen16"><br><div id="showProblem1361"><br><div id="ext-gen226"><br><div id="ext-gen227"><br><br>## Description<br><a id="more"></a><br><div>土豪YZK最近得到了面积为n*m的一大块土地（高兴ING^_^），他想在这块土地上建造一所房别墅，但是这个别墅必须是方形的。<br>可是，这块土地并非十全十美，上面有很多不平坦的地方（也可以叫瑕疵）。这些瑕疵十分恶心，以至于根本不能在上面盖一砖一瓦。但是却可以挖成人工观赏湖，或者挖成游泳池。<br><br>YZK希望找到一块最大的方形土地来盖别墅，既然是别墅，肯定要有些景观，但是YZK最多只愿意造k个人工湖或游泳池，现在请你来帮助YZK找到面积最大的满足条件的土地。<br><br>给定一个01矩阵，0表示土地可用，1表示土地不可用，输出符合YZK要求的最大土地的面积。<br><br></div>
+
+<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><div>第一行一个整数T，表示有T组测试数据。<br>对于每组测试数据，第一行包含三个整数n，m，k，表示矩阵的行数和列数，以及最多的人工湖或游泳池数量。<br><br>之后n行，每行m个整数，表示矩阵。<br><br>T&lt;25<br><br>0&lt;n,m&lt;100<br></div>
+
+<h2 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h2><div>对于每组数据输出一行，包含一个整数，表示最大面积。</div>
+
+<h2 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h2><div>2<br><br>2&nbsp;2&nbsp;0<br><br>1&nbsp;0<br><br>0&nbsp;1<br><br>3&nbsp;3&nbsp;1<br><br>1&nbsp;0&nbsp;0<br><br>0&nbsp;0&nbsp;1<br><br>0&nbsp;0&nbsp;1<br><br></div>
+
+<h2 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h2><div>1<br><br>6</div><br></div><br><div id="ext-gen228"></div><br></div><br></div><br></div><br></div><br>
+]]></content>
+      <categories>
+        <category>省赛</category>
+        <category>算法学习</category>
+      </categories>
+      <tags>
+        <tag>acm</tag>
+        <tag>省赛</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>安徽省2016“京胜杯”程序设计大赛_K_纸上谈兵</title>
+    <url>/2016/10/30/e5-ae-89-e5-be-bd-e7-9c-812016-e4-ba-ac-e8-83-9c-e6-9d-af-e7-a8-8b-e5-ba-8f-e8-ae-be-e8-ae-a1-e5-a4-a7-e8-b5-9b-k-e7-ba-b8-e4-b8-8a-e8-b0-88-e5-85-b5/</url>
+    <content><![CDATA[<p>纸上谈兵</p>
+<p></p><p></p>
+<table width="300" style="font-family:tahoma,arial,verdana,sans-serif; font-size:9pt; text-align:center; padding-left:15px; color:rgb(102,102,102); margin:auto"><br><tbody><br><tr><br><td style="margin:0px; padding:0px; text-align:left"><span style="font-family:tahoma,arial,verdana,sans-serif">Time Limit: 1000 MS</span></td><br><td style="margin:0px; padding:0px; text-align:left"><span style="font-family:tahoma,arial,verdana,sans-serif">Memory Limit: 65536 KB</span></td><br></tr><br><tr><br><td style="margin:0px; padding:0px; text-align:left"><span style="font-family:tahoma,arial,verdana,sans-serif">Total Submissions: 3</span></td><br><td style="margin:0px; padding:0px; text-align:left"><span style="font-family:tahoma,arial,verdana,sans-serif">Accepted: 1</span></td><br></tr><br></tbody><br></table>
+
+<div style="text-align:left"><span style="font-family:tahoma,arial,verdana,sans-serif; color:#666666"></span><br><br>## Description<br><a id="more"></a><br><div><strong>&nbsp; &nbsp;&nbsp;战国时期，孙膑与庞涓都拜在鬼谷子门下学习。有一日师父鬼谷子想考察他们兵法，对着墙上挂着的一幅当时城池地图（假设城池编号从1到N，相邻城池之间有边相连），让他们自己相互考察：</strong><br><strong>庞涓出题：“如果我给出一组城池间相互约束的关系，你能否给我一个攻城方案，…….”</strong><br><br><strong>孙膑出题：“如果从1号城池出发，到达N号城池，请问最多有几条最近的路？我对不同的最近的路有两种定义，第一种：‘如果两条路径有一条边不相同，就认为这两条路径不同’，第二种‘如果两条路径有一条边相同，就认为相同’，请告诉我在这两种不同定义下，各自答案是多少”</strong><br><br><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;由于地图很大，图上大大小小的城池很多，两人对着图一时有点迷糊，这就很尴尬了！</strong><br><br><strong>据说当时缓解这尴尬局面的一位来自未来的神奇少年，背地里相互告诉他们各自的答案，这人莫非就是你？</strong><br><br></div>
+
+<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><div><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;先输入一个整数T，表示T（T&lt;50）组数据。</strong><br><strong>每组第一行三个正整数N，M，K（500&gt;N&gt;0，10000&gt;M&gt;0，50000&gt;K&gt;0），表示表示有N个城池，M条边,K组约束关系。</strong><br><br><strong>接下里M行，每行3个正整数a，b，w(N&gt;=a,b&gt;=1,1000000&gt;w&gt;0)，表示a,b之间有条边，长度为w。</strong><br><br><strong>接下来K行，每行有下面几种形式：</strong><br><br><strong>1 a b&nbsp;：表示如果攻打城池a，则必须攻打城池b。</strong><br><br><strong>2 a b&nbsp;：表示城池a,b至少攻打一个。</strong><br><br><strong>3 a b&nbsp;：表示如果城池a攻打了，则城池b不能攻打。</strong><br><br><strong>4 a b&nbsp;：表示如果城池a没有攻打，则城池b必须攻打。</strong><br><br><strong>5 a b&nbsp;：表示城池a与城池b只能都攻打或者都不攻打。&nbsp;</strong><br><br><strong>&nbsp;&nbsp; (N&gt;=a,b&gt;=1)&nbsp; &nbsp;&nbsp;</strong><br></div>
+
+<h2 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h2><div><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;每组数据输出占三行：</strong><br><strong>第一行输出孙膑给的方案，N个数，如果城池i攻打，输出1，反之输出0，这N个数构成的01序列代表一个方案。如果不存在方案，输出“impossible.”</strong><br><br><strong>第二行输出庞涓的第一个解，输出按第一种定义下的最短路；第三行输出庞涓的第二个解，输出按第二种定义下的最短路。如果不存在最短路，输出“-1”</strong><br></div>
+
+<h2 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h2><div>2<br><br>5&nbsp;6&nbsp;5<br><br>1&nbsp;2&nbsp;3<br><br>2&nbsp;4&nbsp;4&nbsp;<br><br>4&nbsp;5&nbsp;1<br><br>1&nbsp;3&nbsp;5<br><br>3&nbsp;4&nbsp;2<br><br>3&nbsp;5&nbsp;3<br><br>1&nbsp;1&nbsp;2<br><br>1&nbsp;2&nbsp;1<br><br>2&nbsp;1&nbsp;2<br><br>3&nbsp;1&nbsp;4<br><br>4&nbsp;3&nbsp;5<br><br>3&nbsp;3&nbsp;5<br><br>1&nbsp;2&nbsp;10<br><br>2&nbsp;3&nbsp;10<br><br>1&nbsp;3&nbsp;20<br><br>1&nbsp;1&nbsp;2<br><br>1&nbsp;2&nbsp;1<br><br>2&nbsp;1&nbsp;2<br><br>3&nbsp;1&nbsp;3<br><br>1&nbsp;2&nbsp;3&nbsp;&nbsp;<br><br></div>
+
+<h2 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h2><div>1&nbsp;1&nbsp;0&nbsp;0&nbsp;1<br><br>3<br><br>2<br><br>impossible.<br><br>2<br><br>2<br><br></div>
+
+<h2 id="Hint"><a href="#Hint" class="headerlink" title="Hint"></a>Hint</h2><div><strong>第一组样例中：孙膑的答案表示&nbsp;攻打1 2 5，不攻打3 4。庞涓的第一个解：1-&gt;2-&gt;4-&gt;5,&nbsp; 1-&gt;3-&gt;4-&gt;5, 1-&gt;3-&gt;5。第二个解：1-&gt;2-&gt;4-&gt;5, 1-&gt;3-&gt;5</strong></div>
+
+<p></p></div><p></p>
 ]]></content>
       <categories>
         <category>省赛</category>
@@ -2882,36 +2940,6 @@ AAA
       </tags>
   </entry>
   <entry>
-    <title>安徽省2016“京胜杯”程序设计大赛_K_纸上谈兵</title>
-    <url>/2016/10/30/e5-ae-89-e5-be-bd-e7-9c-812016-e4-ba-ac-e8-83-9c-e6-9d-af-e7-a8-8b-e5-ba-8f-e8-ae-be-e8-ae-a1-e5-a4-a7-e8-b5-9b-k-e7-ba-b8-e4-b8-8a-e8-b0-88-e5-85-b5/</url>
-    <content><![CDATA[<p>纸上谈兵</p>
-<p></p><p></p>
-<table width="300" style="font-family:tahoma,arial,verdana,sans-serif; font-size:9pt; text-align:center; padding-left:15px; color:rgb(102,102,102); margin:auto"><br><tbody><br><tr><br><td style="margin:0px; padding:0px; text-align:left"><span style="font-family:tahoma,arial,verdana,sans-serif">Time Limit: 1000 MS</span></td><br><td style="margin:0px; padding:0px; text-align:left"><span style="font-family:tahoma,arial,verdana,sans-serif">Memory Limit: 65536 KB</span></td><br></tr><br><tr><br><td style="margin:0px; padding:0px; text-align:left"><span style="font-family:tahoma,arial,verdana,sans-serif">Total Submissions: 3</span></td><br><td style="margin:0px; padding:0px; text-align:left"><span style="font-family:tahoma,arial,verdana,sans-serif">Accepted: 1</span></td><br></tr><br></tbody><br></table>
-
-<div style="text-align:left"><span style="font-family:tahoma,arial,verdana,sans-serif; color:#666666"></span><br><br>## Description<br><a id="more"></a><br><div><strong>&nbsp; &nbsp;&nbsp;战国时期，孙膑与庞涓都拜在鬼谷子门下学习。有一日师父鬼谷子想考察他们兵法，对着墙上挂着的一幅当时城池地图（假设城池编号从1到N，相邻城池之间有边相连），让他们自己相互考察：</strong><br><strong>庞涓出题：“如果我给出一组城池间相互约束的关系，你能否给我一个攻城方案，…….”</strong><br><br><strong>孙膑出题：“如果从1号城池出发，到达N号城池，请问最多有几条最近的路？我对不同的最近的路有两种定义，第一种：‘如果两条路径有一条边不相同，就认为这两条路径不同’，第二种‘如果两条路径有一条边相同，就认为相同’，请告诉我在这两种不同定义下，各自答案是多少”</strong><br><br><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;由于地图很大，图上大大小小的城池很多，两人对着图一时有点迷糊，这就很尴尬了！</strong><br><br><strong>据说当时缓解这尴尬局面的一位来自未来的神奇少年，背地里相互告诉他们各自的答案，这人莫非就是你？</strong><br><br></div>
-
-<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><div><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;先输入一个整数T，表示T（T&lt;50）组数据。</strong><br><strong>每组第一行三个正整数N，M，K（500&gt;N&gt;0，10000&gt;M&gt;0，50000&gt;K&gt;0），表示表示有N个城池，M条边,K组约束关系。</strong><br><br><strong>接下里M行，每行3个正整数a，b，w(N&gt;=a,b&gt;=1,1000000&gt;w&gt;0)，表示a,b之间有条边，长度为w。</strong><br><br><strong>接下来K行，每行有下面几种形式：</strong><br><br><strong>1 a b&nbsp;：表示如果攻打城池a，则必须攻打城池b。</strong><br><br><strong>2 a b&nbsp;：表示城池a,b至少攻打一个。</strong><br><br><strong>3 a b&nbsp;：表示如果城池a攻打了，则城池b不能攻打。</strong><br><br><strong>4 a b&nbsp;：表示如果城池a没有攻打，则城池b必须攻打。</strong><br><br><strong>5 a b&nbsp;：表示城池a与城池b只能都攻打或者都不攻打。&nbsp;</strong><br><br><strong>&nbsp;&nbsp; (N&gt;=a,b&gt;=1)&nbsp; &nbsp;&nbsp;</strong><br></div>
-
-<h2 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h2><div><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;每组数据输出占三行：</strong><br><strong>第一行输出孙膑给的方案，N个数，如果城池i攻打，输出1，反之输出0，这N个数构成的01序列代表一个方案。如果不存在方案，输出“impossible.”</strong><br><br><strong>第二行输出庞涓的第一个解，输出按第一种定义下的最短路；第三行输出庞涓的第二个解，输出按第二种定义下的最短路。如果不存在最短路，输出“-1”</strong><br></div>
-
-<h2 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h2><div>2<br><br>5&nbsp;6&nbsp;5<br><br>1&nbsp;2&nbsp;3<br><br>2&nbsp;4&nbsp;4&nbsp;<br><br>4&nbsp;5&nbsp;1<br><br>1&nbsp;3&nbsp;5<br><br>3&nbsp;4&nbsp;2<br><br>3&nbsp;5&nbsp;3<br><br>1&nbsp;1&nbsp;2<br><br>1&nbsp;2&nbsp;1<br><br>2&nbsp;1&nbsp;2<br><br>3&nbsp;1&nbsp;4<br><br>4&nbsp;3&nbsp;5<br><br>3&nbsp;3&nbsp;5<br><br>1&nbsp;2&nbsp;10<br><br>2&nbsp;3&nbsp;10<br><br>1&nbsp;3&nbsp;20<br><br>1&nbsp;1&nbsp;2<br><br>1&nbsp;2&nbsp;1<br><br>2&nbsp;1&nbsp;2<br><br>3&nbsp;1&nbsp;3<br><br>1&nbsp;2&nbsp;3&nbsp;&nbsp;<br><br></div>
-
-<h2 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h2><div>1&nbsp;1&nbsp;0&nbsp;0&nbsp;1<br><br>3<br><br>2<br><br>impossible.<br><br>2<br><br>2<br><br></div>
-
-<h2 id="Hint"><a href="#Hint" class="headerlink" title="Hint"></a>Hint</h2><div><strong>第一组样例中：孙膑的答案表示&nbsp;攻打1 2 5，不攻打3 4。庞涓的第一个解：1-&gt;2-&gt;4-&gt;5,&nbsp; 1-&gt;3-&gt;4-&gt;5, 1-&gt;3-&gt;5。第二个解：1-&gt;2-&gt;4-&gt;5, 1-&gt;3-&gt;5</strong></div>
-
-<p></p></div><p></p>
-]]></content>
-      <categories>
-        <category>省赛</category>
-        <category>算法学习</category>
-      </categories>
-      <tags>
-        <tag>acm</tag>
-        <tag>省赛</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>弱校ACM奋斗史</title>
     <url>/2016/12/12/e5-bc-b1-e6-a0-a1acm-e5-a5-8b-e6-96-97-e5-8f-b2/</url>
     <content><![CDATA[<div class="entry" style="margin: 26px 0pt 0pt; padding: 0pt; color: #4d4d4f;"><br><br><strong>看到这篇文章, 已是大三了, 我的ACM之路也即将走向终点, 感慨自己还是不够努力, 给自己的大学留下诸多遗憾. 和他们相比, 我差的就是太远了, 值得高兴的是我们学校有一个好老师—–赵靖老师, 在赵老师的高瞻远瞩下, 安科的acm事业快速发展, 愿学弟学妹要多加油, 为学校赢得更得更多的荣誉, 更多的是给自己一个挑战, 谁说弱校就不能引人夺目, 因此转载发此文与acmer共勉, 大家加油!</strong><br><br><span style="margin: 0pt; padding: 0pt;">这是一篇老文章，不过由于无法找到最初的发文地址，这里就不能粘贴原文网址了。本站转载此文与ACMer们共勉。</span><span id="more-369" style="margin: 0pt; padding: 0pt;"></span><br><br>题解：还记得2年前的一个晚上，我和一个女孩一起写完了这篇文章。写完后，她哭了，我笑了。然后，她走了，我哭了。2年后，我又找到她，这次，我没有让她走掉，她成了我的新娘。<br><br>不知道什么时候，开始知道ACM；也不知道什么时候，开始喜欢上ACM。但是，我知道，我喜欢上了，而且不会后悔。我是大一的时候进的学校ACM队，那个时候，一切都是冰冷的，华东理工大学，在别人的眼里，只是每次给别人垫底的学校，次次如此。<br>但是，我们不甘心，我们从不甘心，当我们主力队员中的一个，一个月拼命集训，瘦了很多的时候，突然，我有一种哭的冲动。我问他，为什么？他告诉我：我喜欢ACM。也许是个傻傻的理由，但是就是这句话让我一直留在了这里，并且为了这个梦奋斗着。<br>也许是天资的原因，第一次，我们失败了，彻底的失败了，在上海输的好惨，也使得我们第二年的经费雪上加霜。曾经的梦想，曾经的努力，似乎在一刹那间被否定了。也就在那个时候，有人说了一句：我们只有大一，我们的路还长，于是，我就坚持了下来。<br>现在看看大一时候的我们，真的是什么都不会的一些人。<br>到了大二，我们更加努力的集训，在北京之前，我们第一次尝试了全天集训的滋味。30天90袋跑面20袋咸菜，每天4个小时的睡眠。当时我觉得我们一定会崩溃的，当我每次快要崩溃的时候，总会记起当时我们的话：“我们才大一，我们喜欢ACM，我们还有的拼，我们能拼。”于是，就奇迹一样的继续做题。<br>现在想起来，那真的是个奇迹，LIANG HH居然可以一个月只在床上躺了6个晚上，平均每天睡2个小时。<br>就这样，我们在北京的时候，绝对意外的拿了第5名的成绩，当时的感觉绝对不是语言可以形容的，当时只是在想：我们终于证明自己了。<br>但是，这也是要代价的，LIANGHH回来就垮了，其他的人也不是很好受。但是，队长还是决定了去印度拼一下。决定的结果是：继续集训。那些日子我不愿意再回忆，也不愿意再来一次，但是，如果我必须要再来一次的话，我相信，我不会犹豫，因为：我喜欢ACM。<br>在印度的出现绝对不是一个奇迹，也不是运气，里面包含了苦涩，无奈，还有很多很多，当然最多的还是欣喜。<br>至于总决赛么，呵呵，就是去玩玩，也没有别的意思了。<br>我真的希望<br>大家加油！！！<br><a id="more"></a><br>不是因为别的原因，因为我们都曾经迷惑，无助，我们没有别人那么强的教练，没有别人那么好的基础，但是，我们都绝对不能放弃。绝对不能，因为，当我们坐在赛场上的时候，不管你是不是愿意，在你上空飘动的始终是你的校旗，别误会，我不是说什么要“为了学校争光”，那种话是用来哄小孩子的。我只想问大家，如果是你，坐在电脑前<del>，你的背后有多少人在看着你？你的身上寄托的是什么？<br>是希望，是所有喜欢ACM的同学对你的希望，希望有这么一天，ACM也可以象其他的东西一样被其他的人所肯定，而不是什么需要被人怜悯的东西！！！！！！！！！<br>是信任，是所有曾经帮助过你和被你帮助过你的人对你的信任，想想为了经费而受尽了苦的人们，想想其他曾经一起集训的队员们的信任。他们信任你，你们会是最好的。只要你们尽力了，你们就是英雄。不过，没有人同情失败的英雄吧。所以，我们必须成功。<br>还有，是耻辱，是一种被轻视和忽视的耻辱，不知道你们有没有这样的经历，当初我们想找一个比我们水平高的学校共同学习一下，谁知道竟然换来的是一句：“就你们？”也许你们没有遇到过想我们一样尴尬的场面，不过，我相信，这种感觉在你们心里也很深刻吧。从很多地方都能体会到。<br><br>如果，现在我们寄托了这些东西的话，谁还会告诉我：我们不该奋斗呢？<br>如果可以，我宁愿安静的呆在一个不为人知的小角落，平平淡淡的过了这大学四年的生活，至少不会这么累。<br>如果可以，我宁愿在开始的时候，就找一个可以依靠的地方，傻傻的什么都不想，幸福的过了这四年。<br>如果可以，我宁愿只做一个ACM的看客，静静的品味他们成功的喜悦，分担失败的痛苦。<br><br>如果可以，我宁愿早早的放弃着艰苦的训练，因为我实在不愿意再做这样一个噩梦。<br>如果、可以…………<br>但是，只是如果……<br>而且，决不可以！！<br>当我们弱校的人喜欢上ACM的时候，就应该有这种觉悟！<br>如果，要后退，那么，就你就不要参加ACM，因为，你不适合。ACM比的并不仅仅是写程序的水平，而更多是三个人的综合素质。没有胆小的人可以赢得ACM的青睐，没有退缩的人可以赢得比赛的胜利。我们这些人，水平本来就有限，也没有什么很出色专业教练。那么如果我们连一拼的勇气都没有了。我们还剩下什么？<br>如果可以，让我再次站在大一时候的海报前，我还是会小声的说：“去试试吧，也许很好玩呢</del>”<br>谢谢大家看了这么多，是不是烦了？呵呵，最后，我只希望大家能+U，同时弱校的队员，<br><br>我希望我们能互相帮助。<br>大家<del>~</del><del>~加油</del><del>~</del>~~<br><br><div class="ujian-hook" style="margin: 0pt; padding: 0pt;"></div><br><div style="margin: 0pt; padding: 0pt; clear: both;"></div><br><div class="clear" style="margin: 0pt; padding: 0pt; clear: both; visibility: hidden;"></div><br></div>
@@ -2922,6 +2950,43 @@ AAA
       </categories>
       <tags>
         <tag>闲谈</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>树、森林和二叉树的转换</title>
+    <url>/2016/12/31/e6-a0-91-e3-80-81-e6-a3-ae-e6-9e-97-e5-92-8c-e4-ba-8c-e5-8f-89-e6-a0-91-e7-9a-84-e8-bd-ac-e6-8d-a2/</url>
+    <content><![CDATA[<p><strong>树转换为二叉树</strong></p>
+<p>（1）加线。在所有兄弟结点之间加一条连线。</p>
+<p>（2）去线。树中的每个结点，只保留它与第一个孩子结点的连线，删除它与其它孩子结点之间的连线。</p>
+<p>（3）层次调整。以树的根节点为轴心，将整棵树顺时针旋转一定角度，使之结构层次分明。（注意第一个孩子是结点的左孩子，兄弟转换过来的孩子是结点的右孩子）</p>
+<p><img src="http://pic002.cnblogs.com/images/2012/457289/2012110416594150.jpg" alt></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p><strong>森林转换为二叉树</strong></p>
+<p>（1）把每棵树转换为二叉树。</p>
+<p>（2）第一棵二叉树不动，从第二棵二叉树开始，依次把后一棵二叉树的根结点作为前一棵二叉树的根结点的右孩子，用线连接起来。</p>
+<p>&nbsp;</p>
+<p><img src="http://pic002.cnblogs.com/images/2012/457289/2012110417004247.jpg" alt></p>
+<p><strong>二叉树转换为树</strong></p>
+<p>是树转换为二叉树的逆过程。</p>
+<p>（1）加线。若某结点X的左孩子结点存在，则将这个左孩子的右孩子结点、右孩子的右孩子结点、右孩子的右孩子的右孩子结点…，都作为结点X的孩子。将结点X与这些右孩子结点用线连接起来。</p>
+<p>（2）去线。删除原二叉树中所有结点与其右孩子结点的连线。</p>
+<p>（3）层次调整。<br><a id="more"></a><br><img src="http://pic002.cnblogs.com/images/2012/457289/2012110417011138.jpg" alt></p>
+<p>&nbsp;</p>
+<p><strong>二叉树转换为森林</strong></p>
+<p>假如一棵二叉树的根节点有右孩子，则这棵二叉树能够转换为森林，否则将转换为一棵树。</p>
+<p>（1）从根节点开始，若右孩子存在，则把与右孩子结点的连线删除。再查看分离后的二叉树，若其根节点的右孩子存在，则连线删除…。直到所有这些根节点与右孩子的连线都删除为止。</p>
+<p>（2）将每棵分离后的二叉树转换为树。</p>
+<p>&nbsp;</p>
+<p><img src="http://pic002.cnblogs.com/images/2012/457289/2012110417014911.jpg" alt></p>
+<p><strong>Reference</strong>:</p>
+<p>[1] 《大话数据结构》</p>
+<p><a href="http://www.cnblogs.com/zhuyf87/archive/2012/11/04/2753950.html" target="_blank" rel="noopener">原文出处</a></p>
+]]></content>
+      <categories>
+        <category>算法学习</category>
+      </categories>
+      <tags>
+        <tag>数据结构</tag>
       </tags>
   </entry>
   <entry>
@@ -3011,71 +3076,6 @@ AAA
       </categories>
       <tags>
         <tag>并查集</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>安徽省2016“京胜杯”程序设计大赛_J_YZK的大别墅</title>
-    <url>/2016/10/30/e5-ae-89-e5-be-bd-e7-9c-812016-e4-ba-ac-e8-83-9c-e6-9d-af-e7-a8-8b-e5-ba-8f-e8-ae-be-e8-ae-a1-e5-a4-a7-e8-b5-9b-j-yzk-e7-9a-84-e5-a4-a7-e5-88-ab-e5-a2-85/</url>
-    <content><![CDATA[<p>YZK的大别墅</p>
-<p></p><p></p>
-<table width="300" style="font-family:tahoma,arial,verdana,sans-serif; font-size:9pt; text-align:center; padding-left:15px; color:rgb(102,102,102); margin:auto"><br><tbody><br><tr><br><td style="margin:0px; padding:0px; text-align:left">Time Limit: 1000 MS</td><br><td style="margin:0px; padding:0px; text-align:left">Memory Limit: 65536 KB</td><br></tr><br><tr><br><td style="margin:0px; padding:0px; text-align:left">Total Submissions: 24</td><br><td style="margin:0px; padding:0px; text-align:left">Accepted: 12</td><br></tr><br></tbody><br></table>
-
-<p>&lt;</p>
-<p>div id=”ext-comp-1069”&gt;</p>
-<div id="ext-gen15"><br><div id="ext-gen16"><br><div id="showProblem1361"><br><div id="ext-gen226"><br><div id="ext-gen227"><br><br>## Description<br><a id="more"></a><br><div>土豪YZK最近得到了面积为n*m的一大块土地（高兴ING^_^），他想在这块土地上建造一所房别墅，但是这个别墅必须是方形的。<br>可是，这块土地并非十全十美，上面有很多不平坦的地方（也可以叫瑕疵）。这些瑕疵十分恶心，以至于根本不能在上面盖一砖一瓦。但是却可以挖成人工观赏湖，或者挖成游泳池。<br><br>YZK希望找到一块最大的方形土地来盖别墅，既然是别墅，肯定要有些景观，但是YZK最多只愿意造k个人工湖或游泳池，现在请你来帮助YZK找到面积最大的满足条件的土地。<br><br>给定一个01矩阵，0表示土地可用，1表示土地不可用，输出符合YZK要求的最大土地的面积。<br><br></div>
-
-<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><div>第一行一个整数T，表示有T组测试数据。<br>对于每组测试数据，第一行包含三个整数n，m，k，表示矩阵的行数和列数，以及最多的人工湖或游泳池数量。<br><br>之后n行，每行m个整数，表示矩阵。<br><br>T&lt;25<br><br>0&lt;n,m&lt;100<br></div>
-
-<h2 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h2><div>对于每组数据输出一行，包含一个整数，表示最大面积。</div>
-
-<h2 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h2><div>2<br><br>2&nbsp;2&nbsp;0<br><br>1&nbsp;0<br><br>0&nbsp;1<br><br>3&nbsp;3&nbsp;1<br><br>1&nbsp;0&nbsp;0<br><br>0&nbsp;0&nbsp;1<br><br>0&nbsp;0&nbsp;1<br><br></div>
-
-<h2 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h2><div>1<br><br>6</div><br></div><br><div id="ext-gen228"></div><br></div><br></div><br></div><br></div><br>
-]]></content>
-      <categories>
-        <category>省赛</category>
-        <category>算法学习</category>
-      </categories>
-      <tags>
-        <tag>acm</tag>
-        <tag>省赛</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>树、森林和二叉树的转换</title>
-    <url>/2016/12/31/e6-a0-91-e3-80-81-e6-a3-ae-e6-9e-97-e5-92-8c-e4-ba-8c-e5-8f-89-e6-a0-91-e7-9a-84-e8-bd-ac-e6-8d-a2/</url>
-    <content><![CDATA[<p><strong>树转换为二叉树</strong></p>
-<p>（1）加线。在所有兄弟结点之间加一条连线。</p>
-<p>（2）去线。树中的每个结点，只保留它与第一个孩子结点的连线，删除它与其它孩子结点之间的连线。</p>
-<p>（3）层次调整。以树的根节点为轴心，将整棵树顺时针旋转一定角度，使之结构层次分明。（注意第一个孩子是结点的左孩子，兄弟转换过来的孩子是结点的右孩子）</p>
-<p><img src="http://pic002.cnblogs.com/images/2012/457289/2012110416594150.jpg" alt></p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-<p><strong>森林转换为二叉树</strong></p>
-<p>（1）把每棵树转换为二叉树。</p>
-<p>（2）第一棵二叉树不动，从第二棵二叉树开始，依次把后一棵二叉树的根结点作为前一棵二叉树的根结点的右孩子，用线连接起来。</p>
-<p>&nbsp;</p>
-<p><img src="http://pic002.cnblogs.com/images/2012/457289/2012110417004247.jpg" alt></p>
-<p><strong>二叉树转换为树</strong></p>
-<p>是树转换为二叉树的逆过程。</p>
-<p>（1）加线。若某结点X的左孩子结点存在，则将这个左孩子的右孩子结点、右孩子的右孩子结点、右孩子的右孩子的右孩子结点…，都作为结点X的孩子。将结点X与这些右孩子结点用线连接起来。</p>
-<p>（2）去线。删除原二叉树中所有结点与其右孩子结点的连线。</p>
-<p>（3）层次调整。<br><a id="more"></a><br><img src="http://pic002.cnblogs.com/images/2012/457289/2012110417011138.jpg" alt></p>
-<p>&nbsp;</p>
-<p><strong>二叉树转换为森林</strong></p>
-<p>假如一棵二叉树的根节点有右孩子，则这棵二叉树能够转换为森林，否则将转换为一棵树。</p>
-<p>（1）从根节点开始，若右孩子存在，则把与右孩子结点的连线删除。再查看分离后的二叉树，若其根节点的右孩子存在，则连线删除…。直到所有这些根节点与右孩子的连线都删除为止。</p>
-<p>（2）将每棵分离后的二叉树转换为树。</p>
-<p>&nbsp;</p>
-<p><img src="http://pic002.cnblogs.com/images/2012/457289/2012110417014911.jpg" alt></p>
-<p><strong>Reference</strong>:</p>
-<p>[1] 《大话数据结构》</p>
-<p><a href="http://www.cnblogs.com/zhuyf87/archive/2012/11/04/2753950.html" target="_blank" rel="noopener">原文出处</a></p>
-]]></content>
-      <categories>
-        <category>算法学习</category>
-      </categories>
-      <tags>
-        <tag>数据结构</tag>
       </tags>
   </entry>
   <entry>
@@ -3602,6 +3602,30 @@ int main(){
       </tags>
   </entry>
   <entry>
+    <title>hexo+valine评论系统(评论无效+头像不显示问题解决)</title>
+    <url>/2019/01/08/new-comment-valine/</url>
+    <content><![CDATA[<p>之前使用的gitment，由于众所周知的原因，国内速度太慢了，而且评论账号得要是github账号，不是很方便，突然看到valine这个评论系统，感觉挺简洁的，于是就用上了…  </p>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>但是配置时遇到了问题，这里mark下，我使用的这个hexo版本是自带valine评论的，所以只需要在_config中开启即可，但是开启是有评论框了，但是评论完成一刷新就没有了，这让我很无奈，后来在网上查找原因，发现是新版本中字段名称改了，修改就OK了<br>修改位置<br><a id="more"></a><br><code>themes\next\layout\_third-party\comments\valine.swig</code> 15行左右，将appId和appKey分别替换为app_id和app_key即可<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">new Valine(&#123;</span><br><span class="line">    el: &apos;#comments&apos; ,</span><br><span class="line">    verify: &#123;&#123; theme.valine.verify &#125;&#125;,</span><br><span class="line">    notify: &#123;&#123; theme.valine.notify &#125;&#125;,</span><br><span class="line">    app_id: &apos;&#123;&#123; theme.valine.appid &#125;&#125;&apos;,</span><br><span class="line">    app_key: &apos;&#123;&#123; theme.valine.appkey &#125;&#125;&apos;,</span><br><span class="line">    placeholder: &apos;&#123;&#123; theme.valine.placeholder &#125;&#125;&apos;,</span><br><span class="line">    avatar:&apos;&#123;&#123; theme.valine.avatar &#125;&#125;&apos;,</span><br><span class="line">    guest_info:guest,</span><br><span class="line">    pageSize:&apos;&#123;&#123; theme.valine.pageSize &#125;&#125;&apos; || 10,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<h2 id="其他问题"><a href="#其他问题" class="headerlink" title="其他问题"></a>其他问题</h2><p>关于头像显示问题，注册了<a href="http://cn.gravatar.com/" target="_blank" rel="noopener">Gravatar</a>，之前看文档说是七天的同步时间，结果一直也没有显示头像，检查查看头像链接，发现把<code>&amp;v=1.3.4</code>去掉就可以了，于是下载js文件<a href="https://unpkg.com/valine@1.3.4/dist/Valine.min.js" target="_blank" rel="noopener">valine</a>，下载后然后编辑，搜索关键字<code>&amp;v=</code>，找到<code>g.params=&quot;?d=&quot;+(i.indexOf(a)&gt;-1?a:&quot;mp&quot;)+&quot;&amp;v=&quot;+o+d</code>，将<code>&quot;&amp;v=&quot;+o+d</code>删除即可，然后上传到七牛云，将cdn地址替换，头像就顺利显示了</p>
+<h2 id="评论FAQ"><a href="#评论FAQ" class="headerlink" title="评论FAQ"></a>评论FAQ</h2><ul>
+<li>关于评论刷新后消失的问题<br>这类问题解决较为容易，出现这类的问题一般是appId和appKey没有在js文件中找到原因，或者就是就是leancloud没有获取到正确的id和key<br>检查方法，默认的valine的js路径一般是<a href="//unpkg.com/valine/dist/Valine.min.js">//unpkg.com/valine/dist/Valine.min.js</a>，要是没有配置过，路径在<code>themes\next\layout\_third-party\comments\valine.swig</code>中<br><img src="https://cdn.fayne.cn/image/valineQA.png" alt="FQA"><br>图中椭圆中为默认路径，如果在_config.yml中配置过Valine地址，则地址为方框中的地址<br><img src="https://cdn.fayne.cn/image/js-url.png" alt="js"><br>打开js地址， 查找appId或者app_id，如果能找到就说明就没有问题，配置也就是配置这个能找到的变量名，我的配置文件就是使用的app_id和app_key，修改好了就能正常评论了</li>
+</ul>
+<blockquote>
+<p>根据评论中<code>@yutouwd</code>找到的解决办法，可能是hexo版本的自带的流量统计和valine冲突了，可以尝试升级hexo版本。感谢@yutouwd提供的解决方案</p>
+</blockquote>
+<ul>
+<li>关于评论头像不显示的问题<br>原因就是链接后跟了个<code>&amp;v=1.3.4</code>，解决就是将这段删掉就可以了，具体到js文件就是删掉<code>&amp;v=&quot;+o+d</code>即可，如果嫌太麻烦可以直接用我的<a href="https://cdn.fayne.cn/js/Valine.min.js" target="_blank" rel="noopener">https://cdn.fayne.cn/js/Valine.min.js</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>valine</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Mook第八周习题 单词长度（4分）(1)题</title>
     <url>/2015/04/20/mook-e7-ac-ac-e5-85-ab-e5-91-a8-e4-b9-a0-e9-a2-98-e5-8d-95-e8-af-8d-e9-95-bf-e5-ba-a6-ef-bc-884-e5-88-86-ef-bc-891-e9-a2-98/</url>
     <content><![CDATA[<div class="j-detail f-richEditorText detail f-fs0 edueditor_styleclass_4"><br><strong>题目内容：</strong><br><br>你的程序要读入一行文本，其中以空格分隔为若干个单词，以‘.’结束。你要输出这行文本中每个单词的长度。这里的单词与语言无关，可以包括各种符号，比如“it’s”算一个单词，长度为4。注意，行中可能出现连续的空格。<br><br><strong>输入格式:</strong><br><br>输入在一行中给出一行文本，以‘.’结束，结尾的句号不能计算在最后一个单词的长度内。<br><br><strong>输出格式：</strong><br><br>在一行中输出这行文本对应的单词的长度，每个长度之间以空格隔开，行末没有最后的空格。<br><br><strong>输入样例：</strong><br><br>It’s great to see you here.<br><br><strong>输出样例：</strong><br><a id="more"></a><br>4 5 2 3 3 4<br></div>
@@ -3726,6 +3750,17 @@ return 0;
       </tags>
   </entry>
   <entry>
+    <title>记录一下</title>
+    <url>/2018/03/30/new-day/</url>
+    <content><![CDATA[<div id="hexo-blog-encrypt" data-wpm="密码无效, 请检查并重试" data-whm="这些内容无法验证，但您仍然可以查看"><div class="hbe-input-container"><input type="password" id="hbePass" placeholder="输入密码，查看文章" /><label>输入密码，查看文章</label><div class="bottom-line"></div></div><script id="hbeData" type="hbeData" data-hmacdigest="8d711ea756b2855ad6a021b51204550481181474c200101fd29740daa9a7d574">5393d9cd48cf4ad629c25c2765d478ff918c3f927f5a06f7a62ff39ee7e52eb92c122b11915a1e384b8a2ea52a4880f24ffcec437a6a2d1f8b6efa9a671b1d4375a16b10426c90abd8530548245b0f01f4357c4cb1b2364effb6cbda32154fbe1808e8446ee65dc9349a4d799c7c98880474ea8e75c5912556acb47fb27c9d2e883e38fd5c51e5988d6dbbd2ffc7b73f44d3bf824d853cc57e61876b766be5a671d3a97c8b1054dfbcac8678a324658c2136b6bfa5d4fd1b31488f940e7e3981ec7197a9f22e8e6d662012c6891a33d8a25231b270b5d5a35d4215bedd8a9b033d4ce6b6512dc72556c1130d6a28d8acf2e577b066feb5279dc12ff3cdc9f3d4c9ceac65efd34a7a2472efab91b0e3feb1a59a2764b724846bfabc7f37908226f5338b3c1e4497d01b8551804d837a941a14691d57976a09bc80317fca6afe7502578634cbb9cb34aa42c84f47c2c2095e8882253f439f258fe096fe74955bc53803ee1521bedc4b8939b45d119dcfd7ba2a1a14a9644a1e96d44dd3140e8b6240e9fdaea0d504375422d1173eea17ed9ee6d7e7048c0df7a8f8ca5a1d5cf012d84ded26b977a94182507ad0bc0a0edc6c9245c41cb0a9eea027400ba79b73f9be6a29fbce3c13983c768517747658fda06f865ec22986ce4ae589bde68074116f68edc0cb910a944273a35b948f5f245c7e3be2d66325bbb1b9af9422c3c862c46af9b735a585f5da61943b71366ac7bde5447b51a188b58bf247f81676a285457238165bf59ded3d9078da50259a23464741eef83a78f3c22fdcb2e304ef3e5bed4063789a6cabe66240661e54389bd18019b56698fb89e9b0540d241d76ea3c71bfbc9c226fb5f2da162d6e2eaf7ee3f6c97f8c97a6a4d8189b6763f8d0de578ba8ac04b3240b3b3d855d7e14cb7637c8124336489d2437d95b535046e6fd3df0488626a8bb7e2962bdb7ec753b35025c1b9b1cc5332482ee85e749df09b59936a921c8e0402b79683f86181037b6072247892f45f14a69384bbc0f3fb6191666919f5b2cc8fab76deb29664c90b8f2b8adafcf2aea1e2768e3d41b10e8f4278524f15799383214b74a8aa44e7b56aca047143f851b5ac2d2197d47267edc8d82ecd0cbf150e4ab0c7e1f3882e69ac35afeb340ec501dbc9211b005a27d93d247d3e85cb9d51bde8968bd2908e9f6163ccd488448c4195212a9c8f1e97850c9fd09764efcb79b9c90c638c144f9ae24f3aaa87810ae7614fb6fc84165f29935055870c7456b41f91ef799454b57cea7077cd84b3bf734473ff4958a4bcdb4a47b44274007df05bce1d6f41ffecc7a5d927ff3e24d8ca5ebaa245e50d3d20c41b9fe8f7fdca81c0b3f7c0f3e7c3abf7e1c81b1d4e297bba93607acba71d43ed2caf6363b0b92d516fdc00658c613dd522067f08a788f9cca001af030124e4ccad68f7c16a285d6f7020f3e3a88649a5511fb063f0c8bedece6b3aee25ec545c934e3e0aa84c67da105d709ca197859a7dd586617d1cff3a47c161bdb914d20adef50fba59cfea892299a5453955f6395c55d93fd3d7483c513b48550d52e0fc896d0e38095cadc5ed2f2984de629f8923755b3dc0668b0b86cd72e771239728d276f03d889930ee32c098f29762c377ef25e77619e5c6573423c47638c57923a915b19b5986ea37e91e8c0df1e694f965f9f3856949f21dd74ce9b3e292b1b8ced18dd64cdca8cbe03c4ce3003f36cd11b1c607035862cc6eee05ca98054028c80079b22118cb5ca85c2e0b861ca1f21153b9e030896e6fc42ed12623080cfc536b346c51cb87f7dcd962796d9e5c3ad19db24c475dc9b24146393409d92f411b903b655fd3706a7fd987ca7345b6715bdab4003ef4fba5765dee40e87fc55f9e2b150dbf463cc0b11b339189ce2d9b85608af50ed71043206e396bbc179d49cdc0cfcd149892bd4cacf438a4bd23bfb29755f86c2cc26d90b25448ef2f75757607d78f2fff8a973b97463f0918b6dd972d4da426ac7af1f9179240b1291fba71e4c7e07fe06d2e7b22e9bb17bc4a0b6b10d85c13baef186d0d67b17f49fb6bdbb7639368271440e6fa7d70534afbfe89c825458b77008dd0dd7b33bd49a83b1f4bf0add14b5bf2600510382308b10d044a2363cb6b340ec28a6796a55fc40cf5465b6c9c46dfa0d37c30f68c266434773fbc3f73a77def5fe19fa7b65633c0f6f6041f515af522726ec4e654619f350871a4ce1a7429ba32abde1ef3256c0ffc69a8375fe0894dcae40541a08d1208204d38fc125c62ff0709351e658e86fdfc7d8cb5d0ae628637fc1e6f2f62ee123b83274748851b523ef540cc7f1eb927caf874ef0970d735f095ba9be7d3616ef14d83d37e7f78a870b7219004b78a871c17c4be333cc426e2e547c8ad55e939155ef2bf590547787ee1a8bf0fa28ef5f2492e1c4732cc605db239c81e3b776a7729ac4ba34d2330e2af7056aac0c98e626ab47b7067cf5794feaa0d2876f5d37cbba69fc47122af72a70e7249f3fb7076131bf4fc2190d7b6017e50195b0135d88e8e11d531bc4b01e3594b7f5eadd78f40e1aedb001cf8ac746ad3e288ddae6eb8a51b196223ca6d50cd6e00b2fc2fbefde62b12b80e4cd0f816c548abc55e46de2cd086dbf4b111be979d5849f930f02e3bdd0bf976474280c359963dbad8cc320da33fae6d6973025bf675e4265b652ea493d1bc85899016adef2ff6d7c8db3ee86182af89c298a951b3e7d4aeaf8e704fb3eb0bf9e3c1565ca7d112c6f5959ad316458a3b84b06fae1c02acf21efa54f0e07b13fea85a93c5503ae659fabeafca6aae71f6cd8bf6ba8becc01fceb7c2afacb16e2d448cc9a7acc553f454a5177b26f313c729dc45d3da33ad9c4f9d3335b013bfe212c7cc068b612940f58086da17a5aaae69f3753ba48472c29e2e6291c42549fe765dca5b515f982fe29828e6fdf28ed29d388d0eea7f66aa03be5626708f21eed36eef1a153fa60667a48ee709e9a43341c6058b0a62a189b179dd5d4f5684daab769ccfd4414b69fc1ba21469ce4c28325dafdb2aa4c39e462cd83d4e3b56ac1b359ec6e5f019a49c7a809039fa789aad38d35f4159fa21ea14938367e60bbcdfe86c8ca1d03e1926728308812beb00c77741ab6ebc473e5999ba06c58878adff3f751c3f0a0093a417933e3127e4230a87832467bedd426f4a2566f162de4303ad7afaed2009ff36b7cf03f557fb1d9a373fa99d749b1ce46fe9732effbcc78b60c275ac6fad11b13d95021ea21d477870170a7687390db6f556a1b999528f0f280e6306b2544512d8d2d4a0e0d828c6c6c6b9ab77fc1adb6ab145b9731cdd456c949b6a75347b31d407e8b585347ba6267fb9cc99bd88371b9d1f646b62cbb991b87697440f3821030f12a0cb0aac86a378692433cec2a84f2e64acc5009a73122b0c583d7609adbdaa59a484ab5e53ee9ed6566f26c231e9887236fffe6c3ed279d13b31f6aaaf284be620cb933838f8091a40381b2d15525d5163380bf8186b69b476b15b5a2f336b05cccbbb956a347d038e87e961cf6274f8e4287e649fda466873bc045113f8b4bc61a03682348f11d4a2ab1b9efde8532462c9fb208e858c262e5acdb92b839ed2dfc6be77a29dd4ca1ba0dde150187dc1b37635dea07451ba7be2858ed6a10c90592c2bf94d43bf919a80979ad545c9e4c5478a4fda4f76679e6479e3fb3ed1a0ef54d682b332c19164bb6060c1112df1d85d3110848ad44e40b491e223dc9fd385a0daaf24ff9db497905ca6722e562a3f26a7c25c4ecba1436ea3a8ec7fc77e645eaf19ff6c772d88ccd896df5c7554b46123594e7e6215a33378bac68395ab017b7ccdf28fb29d2ff0efaa6d961a168414e92c9ebb084629c70303fb6d274c4c3434f85d2f68ea64decc7cb5d33fd07cd87e5892d3e926014b739e6dfe2e7da0be0ad66bc92e05233b0a620b79d40e9a511c13eb84d603462a9baeebd72afd718134aab0dc6560c77c309108b41bad9c2d1ea131b84f440cd1f445f569b2029607944d93bf4c1bda805da1a07d9b594091b8ad962f74b0be35d147aa922dee53722a5cb6a54ac5536197c545728607c72e619b7d97bd2c3ca7eb098</script></div><script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Nginx配置http强制跳转到https</title>
     <url>/2017/07/23/nginx-e9-85-8d-e7-bd-aehttp-e5-bc-ba-e5-88-b6-e8-b7-b3-e8-bd-ac-e5-88-b0https/</url>
     <content><![CDATA[<p>刚刚配置好https证书，可以实现访问，可是发现个问题输入网址直接是到http网站而非https，每次需要输入https那也真麻烦</p>
@@ -3766,30 +3801,6 @@ return 0;
       </tags>
   </entry>
   <entry>
-    <title>hexo+valine评论系统(评论无效+头像不显示问题解决)</title>
-    <url>/2019/01/08/new-comment-valine/</url>
-    <content><![CDATA[<p>之前使用的gitment，由于众所周知的原因，国内速度太慢了，而且评论账号得要是github账号，不是很方便，突然看到valine这个评论系统，感觉挺简洁的，于是就用上了…  </p>
-<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>但是配置时遇到了问题，这里mark下，我使用的这个hexo版本是自带valine评论的，所以只需要在_config中开启即可，但是开启是有评论框了，但是评论完成一刷新就没有了，这让我很无奈，后来在网上查找原因，发现是新版本中字段名称改了，修改就OK了<br>修改位置<br><a id="more"></a><br><code>themes\next\layout\_third-party\comments\valine.swig</code> 15行左右，将appId和appKey分别替换为app_id和app_key即可<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">new Valine(&#123;</span><br><span class="line">    el: &apos;#comments&apos; ,</span><br><span class="line">    verify: &#123;&#123; theme.valine.verify &#125;&#125;,</span><br><span class="line">    notify: &#123;&#123; theme.valine.notify &#125;&#125;,</span><br><span class="line">    app_id: &apos;&#123;&#123; theme.valine.appid &#125;&#125;&apos;,</span><br><span class="line">    app_key: &apos;&#123;&#123; theme.valine.appkey &#125;&#125;&apos;,</span><br><span class="line">    placeholder: &apos;&#123;&#123; theme.valine.placeholder &#125;&#125;&apos;,</span><br><span class="line">    avatar:&apos;&#123;&#123; theme.valine.avatar &#125;&#125;&apos;,</span><br><span class="line">    guest_info:guest,</span><br><span class="line">    pageSize:&apos;&#123;&#123; theme.valine.pageSize &#125;&#125;&apos; || 10,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
-<h2 id="其他问题"><a href="#其他问题" class="headerlink" title="其他问题"></a>其他问题</h2><p>关于头像显示问题，注册了<a href="http://cn.gravatar.com/" target="_blank" rel="noopener">Gravatar</a>，之前看文档说是七天的同步时间，结果一直也没有显示头像，检查查看头像链接，发现把<code>&amp;v=1.3.4</code>去掉就可以了，于是下载js文件<a href="https://unpkg.com/valine@1.3.4/dist/Valine.min.js" target="_blank" rel="noopener">valine</a>，下载后然后编辑，搜索关键字<code>&amp;v=</code>，找到<code>g.params=&quot;?d=&quot;+(i.indexOf(a)&gt;-1?a:&quot;mp&quot;)+&quot;&amp;v=&quot;+o+d</code>，将<code>&quot;&amp;v=&quot;+o+d</code>删除即可，然后上传到七牛云，将cdn地址替换，头像就顺利显示了</p>
-<h2 id="评论FAQ"><a href="#评论FAQ" class="headerlink" title="评论FAQ"></a>评论FAQ</h2><ul>
-<li>关于评论刷新后消失的问题<br>这类问题解决较为容易，出现这类的问题一般是appId和appKey没有在js文件中找到原因，或者就是就是leancloud没有获取到正确的id和key<br>检查方法，默认的valine的js路径一般是<a href="//unpkg.com/valine/dist/Valine.min.js">//unpkg.com/valine/dist/Valine.min.js</a>，要是没有配置过，路径在<code>themes\next\layout\_third-party\comments\valine.swig</code>中<br><img src="https://cdn.fayne.cn/image/valineQA.png" alt="FQA"><br>图中椭圆中为默认路径，如果在_config.yml中配置过Valine地址，则地址为方框中的地址<br><img src="https://cdn.fayne.cn/image/js-url.png" alt="js"><br>打开js地址， 查找appId或者app_id，如果能找到就说明就没有问题，配置也就是配置这个能找到的变量名，我的配置文件就是使用的app_id和app_key，修改好了就能正常评论了</li>
-</ul>
-<blockquote>
-<p>根据评论中<code>@yutouwd</code>找到的解决办法，可能是hexo版本的自带的流量统计和valine冲突了，可以尝试升级hexo版本。感谢@yutouwd提供的解决方案</p>
-</blockquote>
-<ul>
-<li>关于评论头像不显示的问题<br>原因就是链接后跟了个<code>&amp;v=1.3.4</code>，解决就是将这段删掉就可以了，具体到js文件就是删掉<code>&amp;v=&quot;+o+d</code>即可，如果嫌太麻烦可以直接用我的<a href="https://cdn.fayne.cn/js/Valine.min.js" target="_blank" rel="noopener">https://cdn.fayne.cn/js/Valine.min.js</a></li>
-</ul>
-]]></content>
-      <categories>
-        <category>hexo</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-        <tag>valine</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>NYOJ_23_取石子（一）</title>
     <url>/2016/09/22/nyoj-23-e5-8f-96-e7-9f-b3-e5-ad-90-ef-bc-88-e4-b8-80-ef-bc-89/</url>
     <content><![CDATA[<div class="problem-display" style="font-size:14px; color:rgb(70,70,70); font-family:Tahoma,Arial,sans-serif,simsun"><br><br>##<br>取石子（一）<br><br><div class="problem-ins" style="text-align:center">时间限制：<span class="editable highlight" id="problem[time_limit]" style="color:rgb(113,32,21)">3000</span>&nbsp;ms &nbsp;|&nbsp; 内存限制：<span class="editable highlight" id="problem[memory_limit]" style="color:rgb(113,32,21)">65535</span>&nbsp;KB</div><br><div class="problem-ins" style="text-align:center">难度：<span class="editable highlight" style="color:rgb(113,32,21)">2</span></div><br></div>
@@ -3805,23 +3816,6 @@ return 0;
       </categories>
       <tags>
         <tag>博弈论</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>NYOJ-56 阶乘因式分解（一）</title>
-    <url>/2015/11/28/nyoj-56-e9-98-b6-e4-b9-98-e5-9b-a0-e5-bc-8f-e5-88-86-e8-a7-a3-ef-bc-88-e4-b8-80-ef-bc-89/</url>
-    <content><![CDATA[<div class="problem-display" style="font-size:14px; color:rgb(70,70,70); font-family:Tahoma,Arial,sans-serif,simsun"><br><br>##<br>阶乘因式分解（一）<br><br><div class="problem-ins" style="text-align:center">时间限制：<span class="editable highlight" id="problem[time_limit]" style="color:rgb(113,32,21)">3000</span>&nbsp;ms &nbsp;|&nbsp; 内存限制：<span class="editable highlight" id="problem[memory_limit]" style="color:rgb(113,32,21)">65535</span>&nbsp;KB</div><br><div class="problem-ins" style="text-align:center">难度：<span class="editable highlight" style="color:rgb(113,32,21)">2</span></div><br></div>
-
-<div class="clr" style="clear:both; color:rgb(70,70,70); font-family:Tahoma,Arial,sans-serif,simsun; font-size:13px; line-height:19.5px"><br></div>
-
-<dl class="problem-display" style="margin:0px; padding:0px; font-size:14px; color:rgb(70,70,70); font-family:Tahoma,Arial,sans-serif,simsun"><br><dt style="margin:1em 0px 0.2em; padding:0px; color:rgb(113,32,21); font-size:16px; font-weight:bold"><br>描述</dt><dd style="margin:0px; padding:0px"><span style="color:rgb(255,255,0); font-size:12px"></span><br><br><span style="font-weight:bold"><span style="color:rgb(76,51,229); background-color:rgb(255,255,255)"><span style="color:rgb(255,255,0)"><strong><span style="background-color:rgb(0,0,0)"><strong><strong><span style="color:rgb(0,0,0); background-color:rgb(255,255,255)">给定两个数m,n,其中m是一个素数。</span></strong></strong></span></strong></span></span></span><br><br><span style="color:rgb(0,0,0)"></span><span style="color:rgb(0,0,0)"></span><strong><span style="color:rgb(0,0,0)"></span></strong><br><br><span style="font-size:12px"><strong><span style="color:rgb(0,0,0)">将n（0&lt;=n&lt;=10000）的阶乘分解质因数，求其中有多少个m。</span></strong></span><br><a id="more"></a><br><div class="clr" style="clear:both"></div><br><dl class="others" style="margin:0px; padding:0px"><dt style="margin:1em 0px 0.2em; padding:0px; color:rgb(113,32,21); font-size:16px; font-weight:bold"><br>输入</dt><dd style="margin:0px; padding:0px">第一行是一个整数s（0&lt;s&lt;=100)，表示测试数据的组数<br><br>随后的s行, 每行有两个整数n，m。</dd><dt style="margin:1em 0px 0.2em; padding:0px; color:rgb(113,32,21); font-size:16px; font-weight:bold"><br>输出</dt><dd style="margin:0px; padding:0px">输出m的个数。</dd><dt style="margin:1em 0px 0.2em; padding:0px; color:rgb(113,32,21); font-size:16px; font-weight:bold"><br>样例输入</dt><dd style="margin:0px; padding:0px"><br><pre id="sample_input" style="margin-top:0px; margin-bottom:0px; padding:5px 10px; font-family:Consolas,'Courier New','DejaVu Sans Mono','Droid Sans Mono',monospace; border:1px solid rgb(204,204,204); min-height:20px; line-height:1.5em; background:rgb(239,239,239)">2<br>100 5<br>16 2<br></pre><br></dd><dt style="margin:1em 0px 0.2em; padding:0px; color:rgb(113,32,21); font-size:16px; font-weight:bold"><br>样例输出</dt><dd style="margin:0px; padding:0px"><br><pre id="sample_output" style="margin-top:0px; margin-bottom:0px; padding:5px 10px; font-family:Consolas,'Courier New','DejaVu Sans Mono','Droid Sans Mono',monospace; border:1px solid rgb(204,204,204); min-height:20px; line-height:1.5em; background:rgb(239,239,239)">24<br>15<br></pre><br></dd><dt style="margin:1em 0px 0.2em; padding:0px; color:rgb(113,32,21); font-size:16px; font-weight:bold"><br>来源</dt><dd style="margin:0px; padding:0px"><a href="http://acm.nyist.net/JudgeOnline/search_result.php?source=%E7%BD%91%E7%BB%9C" target="_blank" rel="noopener">网络</a></dd><dt style="margin:1em 0px 0.2em; padding:0px; color:rgb(113,32,21); font-size:16px; font-weight:bold"><br>上传者<br><br><a href="http://acm.nyist.net/JudgeOnline/profile.php?userid=%E8%8B%97%E6%A0%8B%E6%A0%8B" target="_blank" rel="noopener">苗栋栋</a><br><br><pre name="code" class="cpp">#include <iostream><br><br>using namespace std;<br><br>int f(int n, int m)<br>{<br>    return n &lt; m ? 0 : f(n / m, m) + n / m;<br>}<br><br>int main()<br>{<br>    int t;<br>    cin &gt;&gt; t;<br>    while (t–)<br>    {<br>        int n, m;<br>        cin &gt;&gt; n &gt;&gt; m;<br>        cout &lt;&lt; f(n, m) &lt;&lt; endl;<br>    }<br>    return 0;<br>}</iostream></pre><br><br></dt></dl><br></dd></dl>
-]]></content>
-      <categories>
-        <category>NYOJ</category>
-        <category>算法学习</category>
-      </categories>
-      <tags>
-        <tag>nyoj</tag>
       </tags>
   </entry>
   <entry>
@@ -3842,14 +3836,20 @@ return 0;
       </tags>
   </entry>
   <entry>
-    <title>记录一下</title>
-    <url>/2018/03/30/new-day/</url>
-    <content><![CDATA[<div id="hexo-blog-encrypt" data-wpm="密码无效, 请检查并重试" data-whm="这些内容无法验证，但您仍然可以查看"><div class="hbe-input-container"><input type="password" id="hbePass" placeholder="输入密码，查看文章" /><label>输入密码，查看文章</label><div class="bottom-line"></div></div><script id="hbeData" type="hbeData" data-hmacdigest="8d711ea756b2855ad6a021b51204550481181474c200101fd29740daa9a7d574">5393d9cd48cf4ad629c25c2765d478ff918c3f927f5a06f7a62ff39ee7e52eb92c122b11915a1e384b8a2ea52a4880f24ffcec437a6a2d1f8b6efa9a671b1d4375a16b10426c90abd8530548245b0f01f4357c4cb1b2364effb6cbda32154fbe1808e8446ee65dc9349a4d799c7c98880474ea8e75c5912556acb47fb27c9d2e883e38fd5c51e5988d6dbbd2ffc7b73f44d3bf824d853cc57e61876b766be5a671d3a97c8b1054dfbcac8678a324658c2136b6bfa5d4fd1b31488f940e7e3981ec7197a9f22e8e6d662012c6891a33d8a25231b270b5d5a35d4215bedd8a9b033d4ce6b6512dc72556c1130d6a28d8acf2e577b066feb5279dc12ff3cdc9f3d4c9ceac65efd34a7a2472efab91b0e3feb1a59a2764b724846bfabc7f37908226f5338b3c1e4497d01b8551804d837a941a14691d57976a09bc80317fca6afe7502578634cbb9cb34aa42c84f47c2c2095e8882253f439f258fe096fe74955bc53803ee1521bedc4b8939b45d119dcfd7ba2a1a14a9644a1e96d44dd3140e8b6240e9fdaea0d504375422d1173eea17ed9ee6d7e7048c0df7a8f8ca5a1d5cf012d84ded26b977a94182507ad0bc0a0edc6c9245c41cb0a9eea027400ba79b73f9be6a29fbce3c13983c768517747658fda06f865ec22986ce4ae589bde68074116f68edc0cb910a944273a35b948f5f245c7e3be2d66325bbb1b9af9422c3c862c46af9b735a585f5da61943b71366ac7bde5447b51a188b58bf247f81676a285457238165bf59ded3d9078da50259a23464741eef83a78f3c22fdcb2e304ef3e5bed4063789a6cabe66240661e54389bd18019b56698fb89e9b0540d241d76ea3c71bfbc9c226fb5f2da162d6e2eaf7ee3f6c97f8c97a6a4d8189b6763f8d0de578ba8ac04b3240b3b3d855d7e14cb7637c8124336489d2437d95b535046e6fd3df0488626a8bb7e2962bdb7ec753b35025c1b9b1cc5332482ee85e749df09b59936a921c8e0402b79683f86181037b6072247892f45f14a69384bbc0f3fb6191666919f5b2cc8fab76deb29664c90b8f2b8adafcf2aea1e2768e3d41b10e8f4278524f15799383214b74a8aa44e7b56aca047143f851b5ac2d2197d47267edc8d82ecd0cbf150e4ab0c7e1f3882e69ac35afeb340ec501dbc9211b005a27d93d247d3e85cb9d51bde8968bd2908e9f6163ccd488448c4195212a9c8f1e97850c9fd09764efcb79b9c90c638c144f9ae24f3aaa87810ae7614fb6fc84165f29935055870c7456b41f91ef799454b57cea7077cd84b3bf734473ff4958a4bcdb4a47b44274007df05bce1d6f41ffecc7a5d927ff3e24d8ca5ebaa245e50d3d20c41b9fe8f7fdca81c0b3f7c0f3e7c3abf7e1c81b1d4e297bba93607acba71d43ed2caf6363b0b92d516fdc00658c613dd522067f08a788f9cca001af030124e4ccad68f7c16a285d6f7020f3e3a88649a5511fb063f0c8bedece6b3aee25ec545c934e3e0aa84c67da105d709ca197859a7dd586617d1cff3a47c161bdb914d20adef50fba59cfea892299a5453955f6395c55d93fd3d7483c513b48550d52e0fc896d0e38095cadc5ed2f2984de629f8923755b3dc0668b0b86cd72e771239728d276f03d889930ee32c098f29762c377ef25e77619e5c6573423c47638c57923a915b19b5986ea37e91e8c0df1e694f965f9f3856949f21dd74ce9b3e292b1b8ced18dd64cdca8cbe03c4ce3003f36cd11b1c607035862cc6eee05ca98054028c80079b22118cb5ca85c2e0b861ca1f21153b9e030896e6fc42ed12623080cfc536b346c51cb87f7dcd962796d9e5c3ad19db24c475dc9b24146393409d92f411b903b655fd3706a7fd987ca7345b6715bdab4003ef4fba5765dee40e87fc55f9e2b150dbf463cc0b11b339189ce2d9b85608af50ed71043206e396bbc179d49cdc0cfcd149892bd4cacf438a4bd23bfb29755f86c2cc26d90b25448ef2f75757607d78f2fff8a973b97463f0918b6dd972d4da426ac7af1f9179240b1291fba71e4c7e07fe06d2e7b22e9bb17bc4a0b6b10d85c13baef186d0d67b17f49fb6bdbb7639368271440e6fa7d70534afbfe89c825458b77008dd0dd7b33bd49a83b1f4bf0add14b5bf2600510382308b10d044a2363cb6b340ec28a6796a55fc40cf5465b6c9c46dfa0d37c30f68c266434773fbc3f73a77def5fe19fa7b65633c0f6f6041f515af522726ec4e654619f350871a4ce1a7429ba32abde1ef3256c0ffc69a8375fe0894dcae40541a08d1208204d38fc125c62ff0709351e658e86fdfc7d8cb5d0ae628637fc1e6f2f62ee123b83274748851b523ef540cc7f1eb927caf874ef0970d735f095ba9be7d3616ef14d83d37e7f78a870b7219004b78a871c17c4be333cc426e2e547c8ad55e939155ef2bf590547787ee1a8bf0fa28ef5f2492e1c4732cc605db239c81e3b776a7729ac4ba34d2330e2af7056aac0c98e626ab47b7067cf5794feaa0d2876f5d37cbba69fc47122af72a70e7249f3fb7076131bf4fc2190d7b6017e50195b0135d88e8e11d531bc4b01e3594b7f5eadd78f40e1aedb001cf8ac746ad3e288ddae6eb8a51b196223ca6d50cd6e00b2fc2fbefde62b12b80e4cd0f816c548abc55e46de2cd086dbf4b111be979d5849f930f02e3bdd0bf976474280c359963dbad8cc320da33fae6d6973025bf675e4265b652ea493d1bc85899016adef2ff6d7c8db3ee86182af89c298a951b3e7d4aeaf8e704fb3eb0bf9e3c1565ca7d112c6f5959ad316458a3b84b06fae1c02acf21efa54f0e07b13fea85a93c5503ae659fabeafca6aae71f6cd8bf6ba8becc01fceb7c2afacb16e2d448cc9a7acc553f454a5177b26f313c729dc45d3da33ad9c4f9d3335b013bfe212c7cc068b612940f58086da17a5aaae69f3753ba48472c29e2e6291c42549fe765dca5b515f982fe29828e6fdf28ed29d388d0eea7f66aa03be5626708f21eed36eef1a153fa60667a48ee709e9a43341c6058b0a62a189b179dd5d4f5684daab769ccfd4414b69fc1ba21469ce4c28325dafdb2aa4c39e462cd83d4e3b56ac1b359ec6e5f019a49c7a809039fa789aad38d35f4159fa21ea14938367e60bbcdfe86c8ca1d03e1926728308812beb00c77741ab6ebc473e5999ba06c58878adff3f751c3f0a0093a417933e3127e4230a87832467bedd426f4a2566f162de4303ad7afaed2009ff36b7cf03f557fb1d9a373fa99d749b1ce46fe9732effbcc78b60c275ac6fad11b13d95021ea21d477870170a7687390db6f556a1b999528f0f280e6306b2544512d8d2d4a0e0d828c6c6c6b9ab77fc1adb6ab145b9731cdd456c949b6a75347b31d407e8b585347ba6267fb9cc99bd88371b9d1f646b62cbb991b87697440f3821030f12a0cb0aac86a378692433cec2a84f2e64acc5009a73122b0c583d7609adbdaa59a484ab5e53ee9ed6566f26c231e9887236fffe6c3ed279d13b31f6aaaf284be620cb933838f8091a40381b2d15525d5163380bf8186b69b476b15b5a2f336b05cccbbb956a347d038e87e961cf6274f8e4287e649fda466873bc045113f8b4bc61a03682348f11d4a2ab1b9efde8532462c9fb208e858c262e5acdb92b839ed2dfc6be77a29dd4ca1ba0dde150187dc1b37635dea07451ba7be2858ed6a10c90592c2bf94d43bf919a80979ad545c9e4c5478a4fda4f76679e6479e3fb3ed1a0ef54d682b332c19164bb6060c1112df1d85d3110848ad44e40b491e223dc9fd385a0daaf24ff9db497905ca6722e562a3f26a7c25c4ecba1436ea3a8ec7fc77e645eaf19ff6c772d88ccd896df5c7554b46123594e7e6215a33378bac68395ab017b7ccdf28fb29d2ff0efaa6d961a168414e92c9ebb084629c70303fb6d274c4c3434f85d2f68ea64decc7cb5d33fd07cd87e5892d3e926014b739e6dfe2e7da0be0ad66bc92e05233b0a620b79d40e9a511c13eb84d603462a9baeebd72afd718134aab0dc6560c77c309108b41bad9c2d1ea131b84f440cd1f445f569b2029607944d93bf4c1bda805da1a07d9b594091b8ad962f74b0be35d147aa922dee53722a5cb6a54ac5536197c545728607c72e619b7d97bd2c3ca7eb098</script></div><script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">]]></content>
+    <title>NYOJ-56 阶乘因式分解（一）</title>
+    <url>/2015/11/28/nyoj-56-e9-98-b6-e4-b9-98-e5-9b-a0-e5-bc-8f-e5-88-86-e8-a7-a3-ef-bc-88-e4-b8-80-ef-bc-89/</url>
+    <content><![CDATA[<div class="problem-display" style="font-size:14px; color:rgb(70,70,70); font-family:Tahoma,Arial,sans-serif,simsun"><br><br>##<br>阶乘因式分解（一）<br><br><div class="problem-ins" style="text-align:center">时间限制：<span class="editable highlight" id="problem[time_limit]" style="color:rgb(113,32,21)">3000</span>&nbsp;ms &nbsp;|&nbsp; 内存限制：<span class="editable highlight" id="problem[memory_limit]" style="color:rgb(113,32,21)">65535</span>&nbsp;KB</div><br><div class="problem-ins" style="text-align:center">难度：<span class="editable highlight" style="color:rgb(113,32,21)">2</span></div><br></div>
+
+<div class="clr" style="clear:both; color:rgb(70,70,70); font-family:Tahoma,Arial,sans-serif,simsun; font-size:13px; line-height:19.5px"><br></div>
+
+<dl class="problem-display" style="margin:0px; padding:0px; font-size:14px; color:rgb(70,70,70); font-family:Tahoma,Arial,sans-serif,simsun"><br><dt style="margin:1em 0px 0.2em; padding:0px; color:rgb(113,32,21); font-size:16px; font-weight:bold"><br>描述</dt><dd style="margin:0px; padding:0px"><span style="color:rgb(255,255,0); font-size:12px"></span><br><br><span style="font-weight:bold"><span style="color:rgb(76,51,229); background-color:rgb(255,255,255)"><span style="color:rgb(255,255,0)"><strong><span style="background-color:rgb(0,0,0)"><strong><strong><span style="color:rgb(0,0,0); background-color:rgb(255,255,255)">给定两个数m,n,其中m是一个素数。</span></strong></strong></span></strong></span></span></span><br><br><span style="color:rgb(0,0,0)"></span><span style="color:rgb(0,0,0)"></span><strong><span style="color:rgb(0,0,0)"></span></strong><br><br><span style="font-size:12px"><strong><span style="color:rgb(0,0,0)">将n（0&lt;=n&lt;=10000）的阶乘分解质因数，求其中有多少个m。</span></strong></span><br><a id="more"></a><br><div class="clr" style="clear:both"></div><br><dl class="others" style="margin:0px; padding:0px"><dt style="margin:1em 0px 0.2em; padding:0px; color:rgb(113,32,21); font-size:16px; font-weight:bold"><br>输入</dt><dd style="margin:0px; padding:0px">第一行是一个整数s（0&lt;s&lt;=100)，表示测试数据的组数<br><br>随后的s行, 每行有两个整数n，m。</dd><dt style="margin:1em 0px 0.2em; padding:0px; color:rgb(113,32,21); font-size:16px; font-weight:bold"><br>输出</dt><dd style="margin:0px; padding:0px">输出m的个数。</dd><dt style="margin:1em 0px 0.2em; padding:0px; color:rgb(113,32,21); font-size:16px; font-weight:bold"><br>样例输入</dt><dd style="margin:0px; padding:0px"><br><pre id="sample_input" style="margin-top:0px; margin-bottom:0px; padding:5px 10px; font-family:Consolas,'Courier New','DejaVu Sans Mono','Droid Sans Mono',monospace; border:1px solid rgb(204,204,204); min-height:20px; line-height:1.5em; background:rgb(239,239,239)">2<br>100 5<br>16 2<br></pre><br></dd><dt style="margin:1em 0px 0.2em; padding:0px; color:rgb(113,32,21); font-size:16px; font-weight:bold"><br>样例输出</dt><dd style="margin:0px; padding:0px"><br><pre id="sample_output" style="margin-top:0px; margin-bottom:0px; padding:5px 10px; font-family:Consolas,'Courier New','DejaVu Sans Mono','Droid Sans Mono',monospace; border:1px solid rgb(204,204,204); min-height:20px; line-height:1.5em; background:rgb(239,239,239)">24<br>15<br></pre><br></dd><dt style="margin:1em 0px 0.2em; padding:0px; color:rgb(113,32,21); font-size:16px; font-weight:bold"><br>来源</dt><dd style="margin:0px; padding:0px"><a href="http://acm.nyist.net/JudgeOnline/search_result.php?source=%E7%BD%91%E7%BB%9C" target="_blank" rel="noopener">网络</a></dd><dt style="margin:1em 0px 0.2em; padding:0px; color:rgb(113,32,21); font-size:16px; font-weight:bold"><br>上传者<br><br><a href="http://acm.nyist.net/JudgeOnline/profile.php?userid=%E8%8B%97%E6%A0%8B%E6%A0%8B" target="_blank" rel="noopener">苗栋栋</a><br><br><pre name="code" class="cpp">#include <iostream><br><br>using namespace std;<br><br>int f(int n, int m)<br>{<br>    return n &lt; m ? 0 : f(n / m, m) + n / m;<br>}<br><br>int main()<br>{<br>    int t;<br>    cin &gt;&gt; t;<br>    while (t–)<br>    {<br>        int n, m;<br>        cin &gt;&gt; n &gt;&gt; m;<br>        cout &lt;&lt; f(n, m) &lt;&lt; endl;<br>    }<br>    return 0;<br>}</iostream></pre><br><br></dt></dl><br></dd></dl>
+]]></content>
       <categories>
-        <category>随笔</category>
+        <category>NYOJ</category>
+        <category>算法学习</category>
       </categories>
       <tags>
-        <tag>随笔</tag>
+        <tag>nyoj</tag>
       </tags>
   </entry>
   <entry>
@@ -3930,6 +3930,76 @@ return 0;
       </categories>
       <tags>
         <tag>Android</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>POJ 1182 食物链 -- 解题报告</title>
+    <url>/2017/04/15/poj1182-e9-a3-9f-e7-89-a9-e9-93-be-e8-a7-a3-e9-a2-98-e6-8a-a5-e5-91-8a/</url>
+    <content><![CDATA[<div class="ptt" lang="en-US" style="text-align:center; font-size:18pt; font-weight:bold; color:blue"><br>食物链</div>
+
+<div class="plm" style="text-align:center; font-size:14px"><br><table align="center"><br><tbody><br><tr><br><td><strong>Time Limit:</strong>&nbsp;1000MS</td><br><td width="10px">&nbsp;</td><br><td><strong>Memory Limit:</strong>&nbsp;10000K</td><br></tr><br><tr><br><td><strong>Total Submissions:</strong>&nbsp;70529</td><br><td width="10px">&nbsp;</td><br><td><strong>Accepted:</strong>&nbsp;20875</td><br></tr><br></tbody><br></table><br></div>
+
+<p>Description</p>
+&lt;div class=”ptx” lang=”en-US” style=”font-family:”Times New Roman”,Times,serif; font-size:14px”&gt;<br>动物王国中有三类动物A,B,C，这三类动物的食物链构成了有趣的环形。A吃B， B吃C，C吃A。&nbsp;<br><br>现有N个动物，以1－N编号。每个动物都是A,B,C中的一种，但是我们并不知道它到底是哪一种。&nbsp;<br><br>有人用两种说法对这N个动物所构成的食物链关系进行描述：&nbsp;<br><br>第一种说法是”1 X Y”，表示X和Y是同类。&nbsp;<br><br>第二种说法是”2 X Y”，表示X吃Y。&nbsp;<br><br>此人对N个动物，用上述两种说法，一句接一句地说出K句话，这K句话有的是真的，有的是假的。当一句话满足下列三条之一时，这句话就是假话，否则就是真话。&nbsp;<br><br>1） 当前的话与前面的某些真的话冲突，就是假话；&nbsp;<br><br>2） 当前的话中X或Y比N大，就是假话；&nbsp;<br><br>3） 当前的话表示X吃X，就是假话。&nbsp;<br><br>你的任务是根据给定的N（1 &lt;= N &lt;= 50,000）和K句话（0 &lt;= K &lt;= 100,000），输出假话的总数。&nbsp;<br><br>
+
+<p>Input<br><a id="more"></a></p>
+&lt;div class=”ptx” lang=”en-US” style=”font-family:”Times New Roman”,Times,serif; font-size:14px”&gt;<br>第一行是两个整数N和K，以一个空格分隔。&nbsp;<br><br>以下K行每行是三个正整数 D，X，Y，两数之间用一个空格隔开，其中D表示说法的种类。&nbsp;<br><br>若D=1，则表示X和Y是同类。&nbsp;<br><br>若D=2，则表示X吃Y。
+
+<p>Output</p>
+&lt;div class=”ptx” lang=”en-US” style=”font-family:”Times New Roman”,Times,serif; font-size:14px”&gt;<br>只有一个整数，表示假话的数目。
+
+<p>Sample Input</p>
+<pre class="sio" style="font-family:" courier new",courier,monospace; font-size:14px">100 7
+1 101 1
+2 1 2
+2 2 3
+2 3 3
+1 1 3
+2 3 1
+1 5 5
+</pre>
+
+<p>Sample Output</p>
+<pre class="sio" style="font-family:" courier new",courier,monospace; font-size:14px">3</pre>
+
+<p>Source</p>
+&lt;div class=”ptx” lang=”en-US” style=”font-family:”Times New Roman”,Times,serif; font-size:14px”&gt;<br><a href="http://poj.org/searchproblem?field=source&amp;key=Noi+01" target="_blank" rel="noopener">Noi 01</a>
+
+&lt;div class=”ptx” lang=”en-US” style=”font-family:”Times New Roman”,Times,serif; font-size:14px”&gt;<br><span style="color:#ff0000">写在前面</span>
+
+&lt;div class=”ptx” lang=”en-US” style=”font-family:”Times New Roman”,Times,serif; font-size:14px”&gt;<br><span style="color:#ff0000">——————————-</span>
+
+&lt;div class=”ptx” lang=”en-US” style=”font-family:”Times New Roman”,Times,serif; font-size:14px”&gt;<br><span style="color:#ff0000">此题为经典并查集，考察的较为全面，这道题算是做了很久都没有思路的类型，之前看别人的博客都不是很理解他们的思路，都是要找规律的，不太懂，并且提交了几次都WA了。看了《挑战程序设计竞赛》中的解方案，豁然开朗，感觉清晰了很多，值得推荐</span>
+
+&lt;div class=”ptx” lang=”en-US” style=”font-family:”Times New Roman”,Times,serif; font-size:14px”&gt;<br><span style="color:#ff0000">题解</span>
+
+&lt;div class=”ptx” lang=”en-US” style=”font-family:”Times New Roman”,Times,serif; font-size:14px”&gt;<br><span style="color:#ff0000">——————————-</span>
+
+&lt;div class=”ptx” lang=”en-US” style=”font-family:”Times New Roman”,Times,serif; font-size:14px”&gt;<br><span style="color:#ff0000">此题的解决方案是对于每只动物创建3个元素，i-A，i-B，i-C，并用3*N个元素创建并查集。</span>
+
+&lt;div class=”ptx” lang=”en-US” style=”font-family:”Times New Roman”,Times,serif; font-size:14px”&gt;<br><span style="color:#ff0000">i-x表示“i属于种类x”</span>
+
+&lt;div class=”ptx” lang=”en-US” style=”font-family:”Times New Roman”,Times,serif; font-size:14px”&gt;<br><span style="color:#ff0000">并查集里的每一组表示组内所有元素代表的情况同时发生或者不发生</span>
+
+&lt;div class=”ptx” lang=”en-US” style=”font-family:”Times New Roman”,Times,serif; font-size:14px”&gt;<br><span style="color:#ff0000"><br><br></span>
+
+&lt;div class=”ptx” lang=”en-US” style=”font-family:”Times New Roman”,Times,serif; font-size:14px”&gt;<br><span style="color:#ff0000">第一种：x和y属于同一个种类——–合并x-A和y-A，&lt;span style=”font-family:”Times New Roman”,Times,serif; font-size:14px”&gt;x-B和y-B，</span>&lt;span style=”font-family:”Times New Roman”,Times,serif; font-size:14px”&gt;x-C和y-C。
+
+&lt;div class=”ptx” lang=”en-US” style=”font-family:”Times New Roman”,Times,serif; font-size:14px”&gt;<br><span style="color:#ff0000">第二种：x和y属于不同的种类——–合并x-A和y-B，x-B和y-C，x-C和y-A。</span>
+
+&lt;div class=”ptx” lang=”en-US” style=”font-family:”Times New Roman”,Times,serif; font-size:14px”&gt;<br><span style="color:#ff0000"><br><br></span>
+
+&lt;div class=”ptx” lang=”en-US” style=”font-family:”Times New Roman”,Times,serif; font-size:14px”&gt;<br><span style="color:#ff0000">p.s.在合并之前，需要判断合并是否产生矛盾</span>
+
+&lt;div class=”ptx” lang=”en-US” style=”font-family:”Times New Roman”,Times,serif; font-size:14px”&gt;<br><pre code_snippet_id="2335055" snippet_file_name="blog_20170416_1_2108272" name="code" class="cpp">#include <iostream><br>#include <cstdio><br><br>const int maxn = 1e6+7;<br><br>int N, K;<br>int par[maxn], rank[maxn];<br>int T[maxn], X[maxn], Y[maxn];<br><br>void init(int n)<br>{<br>    for (int i=0; i&lt;=n; i++)<br>        par[i] = i,<br>        rank[i] = 0;<br>}<br><br>int find(int x)<br>{<br>    return x == par[x] ? x : par[x] = find(par[x]);<br>}<br><br>void unite(int x, int y)<br>{<br>    x = find(x);<br>    y = find(y);<br>    if (x == y) return;<br>    if (rank[x] &lt; rank[y])<br>        par[x] = y;<br>    else<br>        par[y] = x;<br>    if (rank[x] == rank[y])<br>        rank[x]++;<br>}<br><br>bool same(int x, int y)<br>{<br>    return find(x) == find(y);<br>}<br><br>void solve()<br>{<br>    init(N<em>3);<br>    int ans = 0;<br>    for (int i=0; i&lt;K; i++)<br>    {<br>        int t = T[i];<br>        int x = X[i], y = Y[i];<br>        if (x &lt; 1 || y &lt; 1 || x &gt; N || y &gt; N) {<br>            ans++;<br>            continue;<br>        }<br>        if (t == 1) {<br>            if (same(x, y+N) || same(x, y+2</em>N))<br>                ans++;<br>            else{<br>                unite(x, y);<br>                unite(x+N, y+N);<br>                unite(x+2<em>N, y+2</em>N);<br>            }<br>        }<br>        else {<br>            if (same(x, y) || same(x, y+2<em>N))<br>                ans++;<br>            else {<br>                unite(x, y+N);<br>                unite(x+N, y+2</em>N);<br>                unite(x+2*N, y);<br>            }<br>        }<br>    }<br>    printf(“%d\n”, ans);<br>}<br><br>int main()<br>{<br>    scanf(“%d%d”, &amp;N, &amp;K);<br>    for (int i=0; i&lt;K; i++) {<br>        scanf(“%d%d%d”, &amp;T[i], &amp;X[i], &amp;Y[i]);<br>    }<br>    solve();<br>    return 0;<br>}<br></cstdio></iostream></pre><br><br>
+]]></content>
+      <categories>
+        <category>POJ</category>
+        <category>并查集</category>
+        <category>算法学习</category>
+      </categories>
+      <tags>
+        <tag>并查集</tag>
       </tags>
   </entry>
   <entry>
@@ -4029,76 +4099,6 @@ void init()
       <tags>
         <tag>并查集</tag>
         <tag>kruskal</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>POJ 1182 食物链 -- 解题报告</title>
-    <url>/2017/04/15/poj1182-e9-a3-9f-e7-89-a9-e9-93-be-e8-a7-a3-e9-a2-98-e6-8a-a5-e5-91-8a/</url>
-    <content><![CDATA[<div class="ptt" lang="en-US" style="text-align:center; font-size:18pt; font-weight:bold; color:blue"><br>食物链</div>
-
-<div class="plm" style="text-align:center; font-size:14px"><br><table align="center"><br><tbody><br><tr><br><td><strong>Time Limit:</strong>&nbsp;1000MS</td><br><td width="10px">&nbsp;</td><br><td><strong>Memory Limit:</strong>&nbsp;10000K</td><br></tr><br><tr><br><td><strong>Total Submissions:</strong>&nbsp;70529</td><br><td width="10px">&nbsp;</td><br><td><strong>Accepted:</strong>&nbsp;20875</td><br></tr><br></tbody><br></table><br></div>
-
-<p>Description</p>
-&lt;div class=”ptx” lang=”en-US” style=”font-family:”Times New Roman”,Times,serif; font-size:14px”&gt;<br>动物王国中有三类动物A,B,C，这三类动物的食物链构成了有趣的环形。A吃B， B吃C，C吃A。&nbsp;<br><br>现有N个动物，以1－N编号。每个动物都是A,B,C中的一种，但是我们并不知道它到底是哪一种。&nbsp;<br><br>有人用两种说法对这N个动物所构成的食物链关系进行描述：&nbsp;<br><br>第一种说法是”1 X Y”，表示X和Y是同类。&nbsp;<br><br>第二种说法是”2 X Y”，表示X吃Y。&nbsp;<br><br>此人对N个动物，用上述两种说法，一句接一句地说出K句话，这K句话有的是真的，有的是假的。当一句话满足下列三条之一时，这句话就是假话，否则就是真话。&nbsp;<br><br>1） 当前的话与前面的某些真的话冲突，就是假话；&nbsp;<br><br>2） 当前的话中X或Y比N大，就是假话；&nbsp;<br><br>3） 当前的话表示X吃X，就是假话。&nbsp;<br><br>你的任务是根据给定的N（1 &lt;= N &lt;= 50,000）和K句话（0 &lt;= K &lt;= 100,000），输出假话的总数。&nbsp;<br><br>
-
-<p>Input<br><a id="more"></a></p>
-&lt;div class=”ptx” lang=”en-US” style=”font-family:”Times New Roman”,Times,serif; font-size:14px”&gt;<br>第一行是两个整数N和K，以一个空格分隔。&nbsp;<br><br>以下K行每行是三个正整数 D，X，Y，两数之间用一个空格隔开，其中D表示说法的种类。&nbsp;<br><br>若D=1，则表示X和Y是同类。&nbsp;<br><br>若D=2，则表示X吃Y。
-
-<p>Output</p>
-&lt;div class=”ptx” lang=”en-US” style=”font-family:”Times New Roman”,Times,serif; font-size:14px”&gt;<br>只有一个整数，表示假话的数目。
-
-<p>Sample Input</p>
-<pre class="sio" style="font-family:" courier new",courier,monospace; font-size:14px">100 7
-1 101 1
-2 1 2
-2 2 3
-2 3 3
-1 1 3
-2 3 1
-1 5 5
-</pre>
-
-<p>Sample Output</p>
-<pre class="sio" style="font-family:" courier new",courier,monospace; font-size:14px">3</pre>
-
-<p>Source</p>
-&lt;div class=”ptx” lang=”en-US” style=”font-family:”Times New Roman”,Times,serif; font-size:14px”&gt;<br><a href="http://poj.org/searchproblem?field=source&amp;key=Noi+01" target="_blank" rel="noopener">Noi 01</a>
-
-&lt;div class=”ptx” lang=”en-US” style=”font-family:”Times New Roman”,Times,serif; font-size:14px”&gt;<br><span style="color:#ff0000">写在前面</span>
-
-&lt;div class=”ptx” lang=”en-US” style=”font-family:”Times New Roman”,Times,serif; font-size:14px”&gt;<br><span style="color:#ff0000">——————————-</span>
-
-&lt;div class=”ptx” lang=”en-US” style=”font-family:”Times New Roman”,Times,serif; font-size:14px”&gt;<br><span style="color:#ff0000">此题为经典并查集，考察的较为全面，这道题算是做了很久都没有思路的类型，之前看别人的博客都不是很理解他们的思路，都是要找规律的，不太懂，并且提交了几次都WA了。看了《挑战程序设计竞赛》中的解方案，豁然开朗，感觉清晰了很多，值得推荐</span>
-
-&lt;div class=”ptx” lang=”en-US” style=”font-family:”Times New Roman”,Times,serif; font-size:14px”&gt;<br><span style="color:#ff0000">题解</span>
-
-&lt;div class=”ptx” lang=”en-US” style=”font-family:”Times New Roman”,Times,serif; font-size:14px”&gt;<br><span style="color:#ff0000">——————————-</span>
-
-&lt;div class=”ptx” lang=”en-US” style=”font-family:”Times New Roman”,Times,serif; font-size:14px”&gt;<br><span style="color:#ff0000">此题的解决方案是对于每只动物创建3个元素，i-A，i-B，i-C，并用3*N个元素创建并查集。</span>
-
-&lt;div class=”ptx” lang=”en-US” style=”font-family:”Times New Roman”,Times,serif; font-size:14px”&gt;<br><span style="color:#ff0000">i-x表示“i属于种类x”</span>
-
-&lt;div class=”ptx” lang=”en-US” style=”font-family:”Times New Roman”,Times,serif; font-size:14px”&gt;<br><span style="color:#ff0000">并查集里的每一组表示组内所有元素代表的情况同时发生或者不发生</span>
-
-&lt;div class=”ptx” lang=”en-US” style=”font-family:”Times New Roman”,Times,serif; font-size:14px”&gt;<br><span style="color:#ff0000"><br><br></span>
-
-&lt;div class=”ptx” lang=”en-US” style=”font-family:”Times New Roman”,Times,serif; font-size:14px”&gt;<br><span style="color:#ff0000">第一种：x和y属于同一个种类——–合并x-A和y-A，&lt;span style=”font-family:”Times New Roman”,Times,serif; font-size:14px”&gt;x-B和y-B，</span>&lt;span style=”font-family:”Times New Roman”,Times,serif; font-size:14px”&gt;x-C和y-C。
-
-&lt;div class=”ptx” lang=”en-US” style=”font-family:”Times New Roman”,Times,serif; font-size:14px”&gt;<br><span style="color:#ff0000">第二种：x和y属于不同的种类——–合并x-A和y-B，x-B和y-C，x-C和y-A。</span>
-
-&lt;div class=”ptx” lang=”en-US” style=”font-family:”Times New Roman”,Times,serif; font-size:14px”&gt;<br><span style="color:#ff0000"><br><br></span>
-
-&lt;div class=”ptx” lang=”en-US” style=”font-family:”Times New Roman”,Times,serif; font-size:14px”&gt;<br><span style="color:#ff0000">p.s.在合并之前，需要判断合并是否产生矛盾</span>
-
-&lt;div class=”ptx” lang=”en-US” style=”font-family:”Times New Roman”,Times,serif; font-size:14px”&gt;<br><pre code_snippet_id="2335055" snippet_file_name="blog_20170416_1_2108272" name="code" class="cpp">#include <iostream><br>#include <cstdio><br><br>const int maxn = 1e6+7;<br><br>int N, K;<br>int par[maxn], rank[maxn];<br>int T[maxn], X[maxn], Y[maxn];<br><br>void init(int n)<br>{<br>    for (int i=0; i&lt;=n; i++)<br>        par[i] = i,<br>        rank[i] = 0;<br>}<br><br>int find(int x)<br>{<br>    return x == par[x] ? x : par[x] = find(par[x]);<br>}<br><br>void unite(int x, int y)<br>{<br>    x = find(x);<br>    y = find(y);<br>    if (x == y) return;<br>    if (rank[x] &lt; rank[y])<br>        par[x] = y;<br>    else<br>        par[y] = x;<br>    if (rank[x] == rank[y])<br>        rank[x]++;<br>}<br><br>bool same(int x, int y)<br>{<br>    return find(x) == find(y);<br>}<br><br>void solve()<br>{<br>    init(N<em>3);<br>    int ans = 0;<br>    for (int i=0; i&lt;K; i++)<br>    {<br>        int t = T[i];<br>        int x = X[i], y = Y[i];<br>        if (x &lt; 1 || y &lt; 1 || x &gt; N || y &gt; N) {<br>            ans++;<br>            continue;<br>        }<br>        if (t == 1) {<br>            if (same(x, y+N) || same(x, y+2</em>N))<br>                ans++;<br>            else{<br>                unite(x, y);<br>                unite(x+N, y+N);<br>                unite(x+2<em>N, y+2</em>N);<br>            }<br>        }<br>        else {<br>            if (same(x, y) || same(x, y+2<em>N))<br>                ans++;<br>            else {<br>                unite(x, y+N);<br>                unite(x+N, y+2</em>N);<br>                unite(x+2*N, y);<br>            }<br>        }<br>    }<br>    printf(“%d\n”, ans);<br>}<br><br>int main()<br>{<br>    scanf(“%d%d”, &amp;N, &amp;K);<br>    for (int i=0; i&lt;K; i++) {<br>        scanf(“%d%d%d”, &amp;T[i], &amp;X[i], &amp;Y[i]);<br>    }<br>    solve();<br>    return 0;<br>}<br></cstdio></iostream></pre><br><br>
-]]></content>
-      <categories>
-        <category>POJ</category>
-        <category>并查集</category>
-        <category>算法学习</category>
-      </categories>
-      <tags>
-        <tag>并查集</tag>
       </tags>
   </entry>
   <entry>
@@ -4243,6 +4243,119 @@ void init()
         if (a == 0 && b == 0) {
             for (int i=0; i<v.size(); i++) { for (int j="i+1;" j<v.size(); j++) 判断是否构成森林 if (i !="j" && v[i] !same(v[i], v[j])) judge="false;" break; } (!judge) (judge) printf("case %d is a tree.\n", c); else not c++; init(); v.clear(); }else v.push_back(a); v.push_back(b); (!same(a, b)) 判断是否构成回路或者环 unite(a, b); return 0; < pre>
 </v.size();></=maxn;></vector></cstdio></iostream></pre>]]></content>
+      <categories>
+        <category>POJ</category>
+        <category>并查集</category>
+        <category>算法学习</category>
+      </categories>
+      <tags>
+        <tag>并查集</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>POJ 2524 Ubiquitous Religions 解题报告</title>
+    <url>/2017/04/13/poj2524ubiquitousreligions-e8-a7-a3-e9-a2-98-e6-8a-a5-e5-91-8a/</url>
+    <content><![CDATA[<div class="ptt" lang="en-US" style="text-align: center; font-size: 18pt; font-weight: bold; color: blue;">Ubiquitous Religions</div>
+
+<div class="plm" style="text-align: center; font-size: 14px;"><br><table align="center"><br><tbody><br><tr><br><td><strong>Time Limit:</strong> 5000MS</td><br><td width="10px"></td><br><td><strong>Memory Limit:</strong> 65536K</td><br></tr><br><tr><br><td><strong>Total Submissions:</strong> 34122</td><br><td width="10px"></td><br><td><strong>Accepted:</strong> 16477</td><br></tr><br></tbody><br></table><br></div>
+
+<p>Description</p>
+<div class="ptx" lang="en-US">There are so many different religions in the world today that it is difficult to keep track of them all. You are interested in finding out how many different religions students in your university believe in.You know that there are n students in your university (0 &lt; n &lt;= 50000). It is infeasible for you to ask every student their religious beliefs. Furthermore, many students are not comfortable expressing their beliefs. One way to avoid these problems is to ask<br>m (0 &lt;= m &lt;= n(n-1)/2) pairs of students and ask them whether they believe in the same religion (e.g. they may know if they both attend the same church). From this data, you may not know what each person believes in, but you can get an idea of the upper bound<br>of how many different religions can be possibly represented on campus. You may assume that each student subscribes to at most one religion.<br><br></div>
+
+<p>Input</p>
+<div class="ptx" lang="en-US">The input consists of a number of cases. Each case starts with a line specifying the integers n and m. The next m lines each consists of two integers i and j, specifying that students i and j believe in the same religion. The students are numbered 1 to n. The<br>end of input is specified by a line in which n = m = 0.</div>
+
+<p>Output<br><a id="more"></a></p>
+<div class="ptx" lang="en-US">For each test case, print on a single line the case number (starting with 1) followed by the maximum number of different religions that the students in the university believe in.</div>
+
+<p>Sample Input</p>
+<pre class="sio" courier new monospace font-size:14px>10 9
+1 2
+1 3
+1 4
+1 5
+1 6
+1 7
+1 8
+1 9
+1 10
+10 4
+2 3
+4 5
+4 8
+5 8
+0 0
+</pre>
+
+<p>Sample Output</p>
+<pre class="sio" courier new monospace font-size:14px>Case 1: 1
+Case 2: 7
+</pre>
+
+<p>Hint</p>
+<div class="ptx" lang="en-US">Huge input, scanf is recommended.</div>
+
+<p>Source</p>
+<p><a href="http://poj.org/searchproblem?field=source&amp;key=Alberta+Collegiate+Programming+Contest+2003.10.18" target="_blank" rel="noopener">Alberta Collegiate Programming Contest 2003.10.18</a></p>
+<p><span style="color: #ff0000;">题解</span></p>
+<p><span style="color: #ff0000;">再来并查集，作为并查集学习的专题吧，这这道题考察连通块的个数，道题较为基础，每次合并的时候加入计数一次就好，但是要是没加到图里面的点才能计数，这样直接用总的点数减去它即可得到连通块的个数</span></p>
+<p>&nbsp;</p>
+<pre code_snippet_id="2331635" snippet_file_name="blog_20170414_1_9118115" name="code" class="cpp">#include
+#include
+
+const int maxn = 1e6+7;
+
+using namespace std;
+
+int father[maxn];
+int cnt = 0;
+
+void init()
+{
+    cnt = 0;
+    for (int i=0; i&lt;maxn; i++)
+        father[i] = i;
+}
+
+int fi(int x)
+{
+    return x == father[x] ? x : father[x] = fi(father[x]);
+}
+
+void unite(int x, int y)
+{
+    int p1 = fi(x), p2 = fi(y);
+    if (p1 == p2) return;
+    father[p1] = p2;
+    cnt++;
+}
+
+bool same(int x, int y)
+{
+    if (fi(x) == fi(y))
+        return true;
+    return false;
+}
+
+int main()
+{
+    int n, m, a, b, c = 1;
+    while (~scanf("%d%d", &amp;n ,&amp;m))
+    {
+        init();
+        if (n == 0 &amp;&amp; m == 0) break;
+        while (m--)
+        {
+            scanf("%d%d", &amp;a, &amp;b);
+            unite(a, b);
+        }
+
+        printf("Case %d: %d\n", c++, n-cnt);
+    }
+    return 0;
+}
+</pre>
+]]></content>
       <categories>
         <category>POJ</category>
         <category>并查集</category>
@@ -4409,119 +4522,6 @@ int main()
       </categories>
       <tags>
         <tag>usaco</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>POJ 2524 Ubiquitous Religions 解题报告</title>
-    <url>/2017/04/13/poj2524ubiquitousreligions-e8-a7-a3-e9-a2-98-e6-8a-a5-e5-91-8a/</url>
-    <content><![CDATA[<div class="ptt" lang="en-US" style="text-align: center; font-size: 18pt; font-weight: bold; color: blue;">Ubiquitous Religions</div>
-
-<div class="plm" style="text-align: center; font-size: 14px;"><br><table align="center"><br><tbody><br><tr><br><td><strong>Time Limit:</strong> 5000MS</td><br><td width="10px"></td><br><td><strong>Memory Limit:</strong> 65536K</td><br></tr><br><tr><br><td><strong>Total Submissions:</strong> 34122</td><br><td width="10px"></td><br><td><strong>Accepted:</strong> 16477</td><br></tr><br></tbody><br></table><br></div>
-
-<p>Description</p>
-<div class="ptx" lang="en-US">There are so many different religions in the world today that it is difficult to keep track of them all. You are interested in finding out how many different religions students in your university believe in.You know that there are n students in your university (0 &lt; n &lt;= 50000). It is infeasible for you to ask every student their religious beliefs. Furthermore, many students are not comfortable expressing their beliefs. One way to avoid these problems is to ask<br>m (0 &lt;= m &lt;= n(n-1)/2) pairs of students and ask them whether they believe in the same religion (e.g. they may know if they both attend the same church). From this data, you may not know what each person believes in, but you can get an idea of the upper bound<br>of how many different religions can be possibly represented on campus. You may assume that each student subscribes to at most one religion.<br><br></div>
-
-<p>Input</p>
-<div class="ptx" lang="en-US">The input consists of a number of cases. Each case starts with a line specifying the integers n and m. The next m lines each consists of two integers i and j, specifying that students i and j believe in the same religion. The students are numbered 1 to n. The<br>end of input is specified by a line in which n = m = 0.</div>
-
-<p>Output<br><a id="more"></a></p>
-<div class="ptx" lang="en-US">For each test case, print on a single line the case number (starting with 1) followed by the maximum number of different religions that the students in the university believe in.</div>
-
-<p>Sample Input</p>
-<pre class="sio" courier new monospace font-size:14px>10 9
-1 2
-1 3
-1 4
-1 5
-1 6
-1 7
-1 8
-1 9
-1 10
-10 4
-2 3
-4 5
-4 8
-5 8
-0 0
-</pre>
-
-<p>Sample Output</p>
-<pre class="sio" courier new monospace font-size:14px>Case 1: 1
-Case 2: 7
-</pre>
-
-<p>Hint</p>
-<div class="ptx" lang="en-US">Huge input, scanf is recommended.</div>
-
-<p>Source</p>
-<p><a href="http://poj.org/searchproblem?field=source&amp;key=Alberta+Collegiate+Programming+Contest+2003.10.18" target="_blank" rel="noopener">Alberta Collegiate Programming Contest 2003.10.18</a></p>
-<p><span style="color: #ff0000;">题解</span></p>
-<p><span style="color: #ff0000;">再来并查集，作为并查集学习的专题吧，这这道题考察连通块的个数，道题较为基础，每次合并的时候加入计数一次就好，但是要是没加到图里面的点才能计数，这样直接用总的点数减去它即可得到连通块的个数</span></p>
-<p>&nbsp;</p>
-<pre code_snippet_id="2331635" snippet_file_name="blog_20170414_1_9118115" name="code" class="cpp">#include
-#include
-
-const int maxn = 1e6+7;
-
-using namespace std;
-
-int father[maxn];
-int cnt = 0;
-
-void init()
-{
-    cnt = 0;
-    for (int i=0; i&lt;maxn; i++)
-        father[i] = i;
-}
-
-int fi(int x)
-{
-    return x == father[x] ? x : father[x] = fi(father[x]);
-}
-
-void unite(int x, int y)
-{
-    int p1 = fi(x), p2 = fi(y);
-    if (p1 == p2) return;
-    father[p1] = p2;
-    cnt++;
-}
-
-bool same(int x, int y)
-{
-    if (fi(x) == fi(y))
-        return true;
-    return false;
-}
-
-int main()
-{
-    int n, m, a, b, c = 1;
-    while (~scanf("%d%d", &amp;n ,&amp;m))
-    {
-        init();
-        if (n == 0 &amp;&amp; m == 0) break;
-        while (m--)
-        {
-            scanf("%d%d", &amp;a, &amp;b);
-            unite(a, b);
-        }
-
-        printf("Case %d: %d\n", c++, n-cnt);
-    }
-    return 0;
-}
-</pre>
-]]></content>
-      <categories>
-        <category>POJ</category>
-        <category>并查集</category>
-        <category>算法学习</category>
-      </categories>
-      <tags>
-        <tag>并查集</tag>
       </tags>
   </entry>
   <entry>
