@@ -343,6 +343,209 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.fayne.cn/2017/04/13/poj2524ubiquitousreligions-e8-a7-a3-e9-a2-98-e6-8a-a5-e5-91-8a/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Fayne">
+      <meta itemprop="description" content="成为自己想成为的人永远不会太迟">
+      <meta itemprop="image" content="/images/user.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Fayne's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/04/13/poj2524ubiquitousreligions-e8-a7-a3-e9-a2-98-e6-8a-a5-e5-91-8a/" itemprop="url">
+                  POJ 2524 Ubiquitous Religions 解题报告
+                </a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2017-04-13 17:46:00" itemprop="dateCreated datePublished" datetime="2017-04-13T17:46:00+08:00">2017-04-13</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/POJ/" itemprop="url" rel="index"><span itemprop="name">POJ</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/POJ/并查集/" itemprop="url" rel="index"><span itemprop="name">并查集</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/POJ/并查集/算法学习/" itemprop="url" rel="index"><span itemprop="name">算法学习</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/04/13/poj2524ubiquitousreligions-e8-a7-a3-e9-a2-98-e6-8a-a5-e5-91-8a/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2017/04/13/poj2524ubiquitousreligions-e8-a7-a3-e9-a2-98-e6-8a-a5-e5-91-8a/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2017/04/13/poj2524ubiquitousreligions-e8-a7-a3-e9-a2-98-e6-8a-a5-e5-91-8a/" class="leancloud_visitors" data-flag-title="POJ 2524 Ubiquitous Religions 解题报告">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <div class="ptt" lang="en-US" style="text-align: center; font-size: 18pt; font-weight: bold; color: blue;">Ubiquitous Religions</div>
+
+<div class="plm" style="text-align: center; font-size: 14px;"><br><table align="center"><br><tbody><br><tr><br><td><strong>Time Limit:</strong> 5000MS</td><br><td width="10px"></td><br><td><strong>Memory Limit:</strong> 65536K</td><br></tr><br><tr><br><td><strong>Total Submissions:</strong> 34122</td><br><td width="10px"></td><br><td><strong>Accepted:</strong> 16477</td><br></tr><br></tbody><br></table><br></div>
+
+<p>Description</p>
+<div class="ptx" lang="en-US">There are so many different religions in the world today that it is difficult to keep track of them all. You are interested in finding out how many different religions students in your university believe in.You know that there are n students in your university (0 &lt; n &lt;= 50000). It is infeasible for you to ask every student their religious beliefs. Furthermore, many students are not comfortable expressing their beliefs. One way to avoid these problems is to ask<br>m (0 &lt;= m &lt;= n(n-1)/2) pairs of students and ask them whether they believe in the same religion (e.g. they may know if they both attend the same church). From this data, you may not know what each person believes in, but you can get an idea of the upper bound<br>of how many different religions can be possibly represented on campus. You may assume that each student subscribes to at most one religion.<br><br></div>
+
+<p>Input</p>
+<div class="ptx" lang="en-US">The input consists of a number of cases. Each case starts with a line specifying the integers n and m. The next m lines each consists of two integers i and j, specifying that students i and j believe in the same religion. The students are numbered 1 to n. The<br>end of input is specified by a line in which n = m = 0.</div>
+
+<p>Output<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/04/13/poj2524ubiquitousreligions-e8-a7-a3-e9-a2-98-e6-8a-a5-e5-91-8a/#更多" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </p></div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://www.fayne.cn/2017/04/13/poj1308isitatree-e8-a7-a3-e9-a2-98-e6-8a-a5-e5-91-8a/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2167,198 +2370,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.fayne.cn/2016/09/27/e5-ae-89-e5-be-bd-e7-9c-812016-e4-ba-ac-e8-83-9c-e6-9d-af-e7-a8-8b-e5-ba-8f-e8-ae-be-e8-ae-a1-e5-a4-a7-e8-b5-9b-g-e6-9c-a8-e6-9d-a1-e6-9f-93-e8-89-b2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Fayne">
-      <meta itemprop="description" content="成为自己想成为的人永远不会太迟">
-      <meta itemprop="image" content="/images/user.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Fayne's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/09/27/e5-ae-89-e5-be-bd-e7-9c-812016-e4-ba-ac-e8-83-9c-e6-9d-af-e7-a8-8b-e5-ba-8f-e8-ae-be-e8-ae-a1-e5-a4-a7-e8-b5-9b-g-e6-9c-a8-e6-9d-a1-e6-9f-93-e8-89-b2/" itemprop="url">
-                  安徽省2016“京胜杯”程序设计大赛_G_木条染色
-                </a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2016-09-27 16:01:00" itemprop="dateCreated datePublished" datetime="2016-09-27T16:01:00+08:00">2016-09-27</time>
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/省赛/" itemprop="url" rel="index"><span itemprop="name">省赛</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/省赛/算法学习/" itemprop="url" rel="index"><span itemprop="name">算法学习</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2016/09/27/e5-ae-89-e5-be-bd-e7-9c-812016-e4-ba-ac-e8-83-9c-e6-9d-af-e7-a8-8b-e5-ba-8f-e8-ae-be-e8-ae-a1-e5-a4-a7-e8-b5-9b-g-e6-9c-a8-e6-9d-a1-e6-9f-93-e8-89-b2/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2016/09/27/e5-ae-89-e5-be-bd-e7-9c-812016-e4-ba-ac-e8-83-9c-e6-9d-af-e7-a8-8b-e5-ba-8f-e8-ae-be-e8-ae-a1-e5-a4-a7-e8-b5-9b-g-e6-9c-a8-e6-9d-a1-e6-9f-93-e8-89-b2/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2016/09/27/e5-ae-89-e5-be-bd-e7-9c-812016-e4-ba-ac-e8-83-9c-e6-9d-af-e7-a8-8b-e5-ba-8f-e8-ae-be-e8-ae-a1-e5-a4-a7-e8-b5-9b-g-e6-9c-a8-e6-9d-a1-e6-9f-93-e8-89-b2/" class="leancloud_visitors" data-flag-title="安徽省2016“京胜杯”程序设计大赛_G_木条染色">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数：</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>#<br>木条染色</p>
-<p></p><p></p>
-<table width="300" style="font-family:tahoma,arial,verdana,sans-serif; font-size:9pt; text-align:center; padding-left:15px; color:rgb(102,102,102); margin:auto"><br><tbody><br><tr><br><td style="margin:0px; padding:0px; text-align:left"><span style="font-family:tahoma,arial,verdana,sans-serif">Time Limit: 1000 MS</span></td><br><td style="margin:0px; padding:0px; text-align:left"><span style="font-family:tahoma,arial,verdana,sans-serif">Memory Limit: 65536 KB</span></td><br></tr><br><tr><br><td style="margin:0px; padding:0px; text-align:left"><span style="font-family:tahoma,arial,verdana,sans-serif">Total Submissions: 134</span></td><br><td style="margin:0px; padding:0px; text-align:left"><span style="font-family:tahoma,arial,verdana,sans-serif">Accepted: 20</span></td><br></tr><br></tbody><br></table>
-
-<div style="text-align:left"><span style="font-family:tahoma,arial,verdana,sans-serif"></span><br><br>## Description<br><br><div style="color:rgb(102,102,102)">&nbsp; &nbsp;小明是一个非常浪漫的画家，他喜欢画各种奇奇怪怪的画，虽然没人理解他画的究竟是什么东西。<br>有一天，他突发奇想，对于一根木条，他每次从木条中选取一个区间[l,r]进行染色，经过多次染色后，他想知道在[a,b]区间中有几个未被染色的子区间？<br><br>可惜小明虽然画画非常厉害，但是并不擅长解决这类问题，于是，他拿着这根木条来找你，希望你能够给他帮助。<br><br>假设木条无限长，所有查询都在木条长度范围内，未被染色的子区间是指，木条上染过色的区间的间断部分。<br><br></div>
-
-<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><div style="color:rgb(102,102,102)">第一行一个整数T，代表数据组数。<br>对于每组数据，第一行给出两个整数n，q，分别代表染色的区间个数，以及查询个数。<br><br>之后n行，每行两个整数l，r，表示将l到r的区间进行染色，包含l，r两个节点。<br><br>之后q行，每行两个整数a，b，表示询问a到b总共有多少未被染色的子区间。<br><br>两组数据之间用一个空行隔开。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2016/09/27/e5-ae-89-e5-be-bd-e7-9c-812016-e4-ba-ac-e8-83-9c-e6-9d-af-e7-a8-8b-e5-ba-8f-e8-ae-be-e8-ae-a1-e5-a4-a7-e8-b5-9b-g-e6-9c-a8-e6-9d-a1-e6-9f-93-e8-89-b2/#更多" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </div></div></article>
-
-
-    
   </section>
 
   
@@ -2408,7 +2419,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">85</span>
+                    <span class="site-state-item-count">86</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
