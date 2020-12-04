@@ -112,7 +112,7 @@
 
 
   <meta name="description" content="hexo(next主题) + gitment评论系统搭建的一些问题 最近在转移我的博客，想从以前的csdn和wordpress的博客转移到hexo, hexo 比较精简，也不需要购买服务器完全足够个人博客的搭建，因此开始转移在搭建时遇到很多问题">
-<meta name="keywords" content="gitment,hexo-next,blog,git">
+<meta name="keywords" content="git,gitment,hexo-next,blog">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hexo(next主题) + gitment评论系统搭建的一些问题">
 <meta property="og:url" content="https://www.fayne.cn/2017/08/06/gitment-issue/index.html">
@@ -286,20 +286,26 @@
   
     <div class="site-search">
       
-  <div class="popup search-popup local-search-popup">
-  <div class="local-search-header clearfix">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
     <span class="popup-btn-close">
       <i class="fa fa-times-circle"></i>
     </span>
-    <div class="local-search-input-wrapper">
-      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
-    </div>
   </div>
-  <div id="local-search-result"></div>
-</div>
+
 
 
 
@@ -543,13 +549,13 @@
       
         <div class="post-tags">
           
+            <a href="/tags/git/" rel="tag"><i class="fa fa-tag"></i> git</a>
+          
             <a href="/tags/gitment/" rel="tag"><i class="fa fa-tag"></i> gitment</a>
           
             <a href="/tags/hexo-next/" rel="tag"><i class="fa fa-tag"></i> hexo-next</a>
           
             <a href="/tags/blog/" rel="tag"><i class="fa fa-tag"></i> blog</a>
-          
-            <a href="/tags/git/" rel="tag"><i class="fa fa-tag"></i> git</a>
           
         </div>
       
@@ -1472,6 +1478,19 @@
   </script>
 
 
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=6.2.0"></script>
 
 
 
