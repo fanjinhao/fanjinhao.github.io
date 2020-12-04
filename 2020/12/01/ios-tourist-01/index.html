@@ -111,18 +111,17 @@
 
 
 
-  <meta name="description" content="面向对象一个 NSObject 对象占用多少内存？ 系统分配了 16 个字节给 NSObject 对象（通过 malloc_size 函数获得） 但 NSObject 对象内部只使用了 8 个字节的空间（64bit 环境下，可以通过 class_getInstanceSize 函数获得）  对象的 isa 指针指向哪里？ instance 对象的 isa 指向 class 对象 class 对象的">
-<meta name="keywords" content="iOS,gitment,hexo-next,blog">
+  <meta name="keywords" content="iOS,gitment,hexo-next,blog">
 <meta property="og:type" content="article">
 <meta property="og:title" content="iOS学习笔记 - OC语法">
 <meta property="og:url" content="https://www.fayne.cn/2020/12/01/ios-tourist-01/index.html">
 <meta property="og:site_name" content="Fayne&#39;s Blog">
-<meta property="og:description" content="面向对象一个 NSObject 对象占用多少内存？ 系统分配了 16 个字节给 NSObject 对象（通过 malloc_size 函数获得） 但 NSObject 对象内部只使用了 8 个字节的空间（64bit 环境下，可以通过 class_getInstanceSize 函数获得）  对象的 isa 指针指向哪里？ instance 对象的 isa 指向 class 对象 class 对象的">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-12-04T12:36:19.703Z">
+<meta property="og:image" content="https://cdn.fayne.cn/06a51b7fadee146d19d623adb1cec34d21f35993.png">
+<meta property="og:updated_time" content="2020-12-04T12:49:25.918Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS学习笔记 - OC语法">
-<meta name="twitter:description" content="面向对象一个 NSObject 对象占用多少内存？ 系统分配了 16 个字节给 NSObject 对象（通过 malloc_size 函数获得） 但 NSObject 对象内部只使用了 8 个字节的空间（64bit 环境下，可以通过 class_getInstanceSize 函数获得）  对象的 isa 指针指向哪里？ instance 对象的 isa 指向 class 对象 class 对象的">
+<meta name="twitter:image" content="https://cdn.fayne.cn/06a51b7fadee146d19d623adb1cec34d21f35993.png">
 
 
 
@@ -459,7 +458,9 @@
       
 
       
-        <h2 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h2><h3 id="一个-NSObject-对象占用多少内存？"><a href="#一个-NSObject-对象占用多少内存？" class="headerlink" title="一个 NSObject 对象占用多少内存？"></a>一个 NSObject 对象占用多少内存？</h3><ul>
+        <p><img src="https://cdn.fayne.cn/06a51b7fadee146d19d623adb1cec34d21f35993.png" alt="objc"></p>
+<a id="more"></a>
+<h2 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h2><h3 id="一个-NSObject-对象占用多少内存？"><a href="#一个-NSObject-对象占用多少内存？" class="headerlink" title="一个 NSObject 对象占用多少内存？"></a>一个 NSObject 对象占用多少内存？</h3><ul>
 <li>系统分配了 16 个字节给 NSObject 对象（通过 malloc_size 函数获得）</li>
 <li>但 NSObject 对象内部只使用了 8 个字节的空间（64bit 环境下，可以通过 class_getInstanceSize 函数获得）</li>
 </ul>
