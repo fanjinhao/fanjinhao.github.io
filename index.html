@@ -343,6 +343,246 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.fayne.cn/2021/05/07/autolayout-tips/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Fayne">
+      <meta itemprop="description" content="成为自己想成为的人永远不会太迟">
+      <meta itemprop="image" content="/images/user.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Fayne's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2021/05/07/autolayout-tips/" itemprop="url">
+                  「转载」一些值得记录的 AutoLayout 用法
+                </a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2021-05-07 21:40:24" itemprop="dateCreated datePublished" datetime="2021-05-07T21:40:24+08:00">2021-05-07</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/AutoLayout/" itemprop="url" rel="index"><span itemprop="name">AutoLayout</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/AutoLayout/转载/" itemprop="url" rel="index"><span itemprop="name">转载</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2021/05/07/autolayout-tips/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2021/05/07/autolayout-tips/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2021/05/07/autolayout-tips/" class="leancloud_visitors" data-flag-title="「转载」一些值得记录的 AutoLayout 用法">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="AutoLayout-Tips"><a href="#AutoLayout-Tips" class="headerlink" title="AutoLayout Tips"></a>AutoLayout Tips</h1><blockquote>
+<p>作者：<a href="https://github.com/nixzhu/dev-blog/edit/main/posts/autolayout-tips.md" target="_blank" rel="noopener">@nixzhu</a></p>
+</blockquote>
+<p>一些值得记录的 AutoLayout 用法。如无意外，作者是：<a href="https://twitter.com/nixzhu" target="_blank" rel="noopener">@nixzhu</a></p>
+<hr>
+<ul>
+<li><a href="#tip-1">Tip 1：两个不等宽的 View，彼此相邻，并“共同”居中于 Superview</a></li>
+<li><a href="#tip-2">Tip 2：让 AutoLayout 与 UIScrollView 合作无间</a></li>
+</ul>
+<hr>
+<h2 id="Tip-1"><a href="#Tip-1" class="headerlink" title="Tip 1"></a>Tip 1</h2><p><strong>两个不等宽的 View，彼此相邻，并“共同”居中于 Superview</strong></p>
+<p>文字可能不好描述，那就来图片：</p>
+<p><img src="https://github.com/nixzhu/dev-blog/raw/master/images/autolayout-tip1.png" alt="AutoLayout Tip 1"></p>
+<p>如上图所示，黑色的是 Superview，它有两个 Subview，一个是 imageView，一个是 label。</p>
+<p>imageView 和 label 相邻，且“它们的组合”居中于 Superview。label 的宽度是可变的，左右两个示意图非常清楚。</p>
+<p>那怎样用 AutoLayout 的约束来描述这样的布局呢？</p>
+<p>首先来处理两个 Subview 的“相邻”：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">NSArray *constraintH = [NSLayoutConstraint constraintsWithVisualFormat:@&quot;H:|-(&gt;=0)-[imageView]-[label]-(&gt;=0)-|&quot;</span><br><span class="line">                                                                   options:0</span><br><span class="line">                                                                   metrics:nil</span><br><span class="line">                                                                     views:viewsDictionary];</span><br></pre></td></tr></table></figure>
+<p>这个约束集描述了 imageView 和 label 相邻，而且，imageView 的左边相对于 Superview 的距离 &gt;=0 ，即是可变的；同样，label 的右边相对于 Superview 的距离也 &gt;= 0，一样可变。但若此时运行代码，它们并不会居中于 Superview，可能都挤在右边或左边。</p>
+<p>我们使用一个 helperView 来处理“居中”问题。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">NSLayoutConstraint *constraint3 =[NSLayoutConstraint constraintWithItem:helperView</span><br><span class="line">                                                              attribute:NSLayoutAttributeLeft</span><br><span class="line">                                                              relatedBy:NSLayoutRelationEqual</span><br><span class="line">                                                                 toItem:self.imageView</span><br><span class="line">                                                              attribute:NSLayoutAttributeLeft</span><br><span class="line">                                                             multiplier:1</span><br><span class="line">                                                               constant:0];</span><br><span class="line"></span><br><span class="line">NSLayoutConstraint *constraint4 =[NSLayoutConstraint constraintWithItem:helperView</span><br><span class="line">                                                              attribute:NSLayoutAttributeRight</span><br><span class="line">                                                              relatedBy:NSLayoutRelationEqual</span><br><span class="line">                                                                 toItem:self.label</span><br><span class="line">                                                              attribute:NSLayoutAttributeRight</span><br><span class="line">                                                             multiplier:1</span><br><span class="line">                                                               constant:0];</span><br></pre></td></tr></table></figure>
+<p>helperView 的左边相对于 imageView 的左边对齐，helperView 的右边相对于 label 的右边对齐。最后重点来了：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">NSLayoutConstraint *constraint5 =[NSLayoutConstraint constraintWithItem:helperView</span><br><span class="line">                                                              attribute:NSLayoutAttributeCenterX</span><br><span class="line">                                                              relatedBy:NSLayoutRelationEqual</span><br><span class="line">                                                                 toItem:self.view // Superview</span><br><span class="line">                                                              attribute:NSLayoutAttributeCenterX</span><br><span class="line">                                                             multiplier:1</span><br><span class="line">                                                               constant:0];</span><br></pre></td></tr></table></figure>
+<p>我们让 helperView 的 X 中心与 Superview 的 X 中心一致。于是，伟大的约束会让 helperView 横向居中于 Superview，虽然我们看不见它，但它会将 imageView 和 label 拉到“共同”居中的位置。</p>
+<p>搞定！（注意上面的代码省略了一些竖向居中的约束。）虽然是用代码描述的，但是文字说明很清楚了，直接在 IB 里构建约束也没有问题。关键就是我们的 helperView，它虽不可见，但只要它的约束起作用就可以了。</p>
+<p>我也写了一个 <a href="https://github.com/nixzhu/CenterTwoViewsUseAutoLayout" target="_blank" rel="noopener">Demo 放在 GitHub</a>，如有必要，请稍微看看！</p>
+<h2 id="Tip-2"><a href="#Tip-2" class="headerlink" title="Tip 2"></a>Tip 2</h2><p><strong>让 AutoLayout 与 UIScrollView 合作无间</strong></p>
+<p>只要度过了最开始的不适应期，各位用着 AutoLayout 时应该都是心情愉悦的。虽然手写约束会给人冗长的感觉，但 API 的长度并不会阻碍你对代码的理解。不过大部分时间里，我们都在 Storyboard 里，愉快的链接着约束，日子美好又幸福。</p>
+<p>可惜好景不长。有一天，我们遇到的某个需求很可能需要我们用 UIScrollView 来实现。比如一个很长的展示页面，里面有文字、有图片、可能还有一些按钮等等。它们的长度或宽度很可能会超过 iPhone（或 iPad）的高度或宽度。Apple 当然很仔细地研究过小尺寸屏幕，它提供的解决方案就是 UIScrollView。</p>
+<p>我们就来试试。</p>
+<p>我们拖入一个 UIScrollView 放在 ViewController 的 View 里，并设置其约束，到四边的距离都是 0：</p>
+<p><img src="https://raw.githubusercontent.com/nixzhu/dev-blog/master/images/autolayout_tip2_add_scrollview.png" alt></p>
+<p>更新一下它的 Frame：</p>
+<p><img src="https://raw.githubusercontent.com/nixzhu/dev-blog/master/images/autolayout_tip2_add_scrollview2.png" alt></p>
+<p>然后我们拖入一个 UILabel 到 UIScrollView 里，这时 Storyboard 就会报告两个错误：</p>
+<p><img src="https://raw.githubusercontent.com/nixzhu/dev-blog/master/images/autolayout_tip2_add_label.png" alt></p>
+<p>如果英文不太好的话，我们可以用谷歌翻译。ambiguous 的意思是“不明确”，也就是说，UIScrollView 不能确定其内容的宽或高。</p>
+<p>由此，我们可以推断，当 UIScrollView 有 SubView 的时候，它就会开始考虑其“内部”的 contentView 的 Size 了。因为 UIScrollView 处于一个 AutoLayout 的环境中，它不能直接得到 SubView 的 Frame，也就不能确定其 contentView 的 Size，于是 Storyboard 就会跑出来告诉我们这件事。</p>
+<p>那我们给 UILabel 加上 3 边约束：</p>
+<p><img src="https://raw.githubusercontent.com/nixzhu/dev-blog/master/images/autolayout_tip2_add_label2.png" alt></p>
+<p>正常来说，只需要上边和左边就能确定 UILabel 的位置，但右边的约束的作用实际是“撑宽”UIScrollView，这时错误就只有一个了：</p>
+<p><img src="https://raw.githubusercontent.com/nixzhu/dev-blog/master/images/autolayout_tip2_add_label3.png" alt></p>
+<p>很明显，UIScrollView 可以确定其 contentView 的宽度了，因为 UILabel 的宽度固定，它的左边到 UIScrollView 的左边固定，它的右边到 UIScrollView 的右边固定，于是 AutoLayout 系统可以通过这些约束“猜出” UIScrollView 的 contentView 的宽度。</p>
+<p>然后，我们再给 UILabel 加上下边的约束，错误就会完全消失了。</p>
+<p><img src="https://raw.githubusercontent.com/nixzhu/dev-blog/master/images/autolayout_tip2_add_label4.png" alt></p>
+<p>可事情还没完。若我想 UILabel 的右边约束是 20，下边约束也是 20，可行吗？读者可以自行修改约束的值，很明显是可以的。但这时候就“目测”来看，很明显这两个约束的“线段”会长于 20，那为什么 Storyboard 不会报错或警告呢？</p>
+<p>如果读者理解了前面的过程，那就会有答案。因为 UILabel 在 UIScrollView 内的 contentView 上，虽然看起来 UIScrollView 很宽很大，但其 contentView 并不是。相反，contentView 的 Size 是由其中的 Subview 的约束所确定的。</p>
+<p>这就是你在同时使用 AutoLayout 和 UIScrollView 时所唯一需要明白的地方。</p>
+<p>实际上，我们可以更进一步，修改 ViewController 的尺寸。</p>
+<p>将 ViewController 的 Size 改为 Freeform：</p>
+<p><img src="https://raw.githubusercontent.com/nixzhu/dev-blog/master/images/autolayout_tip2_size.png" alt></p>
+<p>并将 View 的 Size 改为 (70, 69)</p>
+<p><img src="https://raw.githubusercontent.com/nixzhu/dev-blog/master/images/autolayout_tip2_size2.png" alt></p>
+<p>这时候就看起来“正常”了，对吧？同样的道理，如果你要往 UIScrollView 里放入很多很多的 Subview，那你就先将 View 的 Size 改到一个合适的尺寸，再做 Subview 的布局，注意修改约束的“值”（因为看起来的长度不一定是实际的长度）。</p>
+<p>最后强调一点，确保约束能让 AutoLayout 确定 UIScrollView 的 contentView 的 Size，此外就是正常的 AutoLayout 用法。当然，有时候我们只需要高度增加，宽度和屏幕一样，那约束好设置吗？</p>
+<p>同样有个 <a href="https://github.com/nixzhu/AutoLayoutInUIScrollView" target="_blank" rel="noopener">Demo 放在 GitHub</a>，如有必要，请稍微看看！</p>
+<p>2015 年 11 月 7 日补记：<a href="http://weibo.com/2076580237/D2zBsiMPk?type=comment" target="_blank" rel="noopener">微博评论里</a>有人提到所谓正确的用法是“使用一个单一的 containerView 占满全部，然后把所有的 subview 添加到 containerView 中”，但这是我极力避免的，因为这样的方式并没有说清楚原理。Demo 里有三个 Tab，第一个是上面介绍的过程，第二个是限制为只能上下滑动，第三个是要显示的东西的尺寸（无论高宽）超过屏幕的情况。它们都不需要一个中间的 containerView。</p>
+<hr>
+<p>欢迎转载，但请一定注明出处！ <a href="https://github.com/nixzhu/dev-blog" target="_blank" rel="noopener">https://github.com/nixzhu/dev-blog</a></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://www.fayne.cn/2020/12/01/ios-tourist-01/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1922,185 +2162,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.fayne.cn/2018/08/26/android-linux-note/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Fayne">
-      <meta itemprop="description" content="成为自己想成为的人永远不会太迟">
-      <meta itemprop="image" content="/images/user.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Fayne's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/08/26/android-linux-note/" itemprop="url">
-                  Android定制之Ubuntu下常见问题及解决
-                </a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-08-26 21:27:49" itemprop="dateCreated datePublished" datetime="2018-08-26T21:27:49+08:00">2018-08-26</time>
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/08/26/android-linux-note/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/08/26/android-linux-note/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2018/08/26/android-linux-note/" class="leancloud_visitors" data-flag-title="Android定制之Ubuntu下常见问题及解决">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数：</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p><img src="https://cdn.fayne.cn/o-linux.png" alt="Android-O"><br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/08/26/android-linux-note/#更多" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2150,7 +2211,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">86</span>
+                    <span class="site-state-item-count">87</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2291,7 +2352,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">64</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">66</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -2398,7 +2463,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">47</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">49</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -2457,7 +2526,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
   <span class="with-love" id="animate">
     <i class="fa fa-heartbeat"></i>
   </span>
