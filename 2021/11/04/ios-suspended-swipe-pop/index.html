@@ -111,18 +111,17 @@
 
 
 
-  <meta name="description" content="示例">
-<meta name="keywords" content="iOS,interactivePopGestureRecognizer">
+  <meta name="keywords" content="iOS,interactivePopGestureRecognizer">
 <meta property="og:type" content="article">
 <meta property="og:title" content="iOS侧滑假死卡顿问题分析">
 <meta property="og:url" content="https://www.fayne.cn/2021/11/04/ios-suspended-swipe-pop/index.html">
 <meta property="og:site_name" content="Fayne&#39;s Blog">
-<meta property="og:description" content="示例">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2021-11-04T14:32:07.527Z">
+<meta property="og:image" content="https://docs-assets.developer.apple.com/published/f06f30fa63/UIViewController_Class_Reference_2x_ddcaa00c-87d8-4c85-961e-ccfb9fa4aac2.png">
+<meta property="og:updated_time" content="2021-11-04T14:39:53.771Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS侧滑假死卡顿问题分析">
-<meta name="twitter:description" content="示例">
+<meta name="twitter:image" content="https://docs-assets.developer.apple.com/published/f06f30fa63/UIViewController_Class_Reference_2x_ddcaa00c-87d8-4c85-961e-ccfb9fa4aac2.png">
 
 
 
@@ -459,7 +458,7 @@
       
 
       
-        <p><a href="https://docs-assets.developer.apple.com/published/f06f30fa63/UIViewController_Class_Reference_2x_ddcaa00c-87d8-4c85-961e-ccfb9fa4aac2.png" target="_blank" rel="noopener">示例</a></p>
+        <p><img src="https://docs-assets.developer.apple.com/published/f06f30fa63/UIViewController_Class_Reference_2x_ddcaa00c-87d8-4c85-961e-ccfb9fa4aac2.png" alt="示例"></p>
 <a id="more"></a>
 <h2 id="现象"><a href="#现象" class="headerlink" title="现象"></a>现象</h2><p>最近做项目时发现了一个奇怪的问题，App 不知道什么操作就什么也不能操作了，点什么都没有反应，后来经过反复测试，发现是在首页先侧滑一下，然后点击跳转其他页面，然后就卡死了</p>
 <h2 id="卡顿原因分析"><a href="#卡顿原因分析" class="headerlink" title="卡顿原因分析"></a>卡顿原因分析</h2><h3 id="操作路径"><a href="#操作路径" class="headerlink" title="操作路径"></a>操作路径</h3><div id="flowchart-0" class="flow-chart"></div>
@@ -496,11 +495,11 @@
 <li>页面 A 的生命周期：<code>viewWillDisappear</code>-&gt;<code>viewDidDisappear</code>-&gt;<code>viewWillAppear</code></li>
 <li>页面 B 的生命周期：<code>viewWillAppear</code>-&gt;<code>viewDidAppear</code>-&gt;<code>viewWillDisappear</code></li>
 </ul>
-<p>通过日志得知原因是页面 A 的<code>viewDidAppear</code>和页面 B 的<code>viewDidDisappear</code>没有走，所以给我们看到的是停留在第二个页面<br><a href="http://wiki.baidu.com/download/attachments/1711970523/RPReplay_Final1635743378.MP4?version=1&amp;modificationDate=1635743897000&amp;api=v2" target="_blank" rel="noopener">情况二：跳转页面卡顿/假死</a></p>
+<p>通过日志得知原因是页面 A 的<code>viewDidAppear</code>和页面 B 的<code>viewDidDisappear</code>没有走，所以给我们看到的是停留在第二个页面</p>
 <h4 id="解决方案-1"><a href="#解决方案-1" class="headerlink" title="解决方案"></a>解决方案</h4><p>判断如果页面当前生命周期是否是<code>viewDidAppear</code>，如果不是就不进行侧滑操作</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">- (void)viewWillAppear:(BOOL)animated &#123;</span><br><span class="line">    [super viewWillAppear:animated];</span><br><span class="line">    self.isViewDidAppear = NO;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (void)viewDidAppear:(BOOL)animated &#123;</span><br><span class="line">    [super viewDidAppear:animated];</span><br><span class="line">    self.isViewDidAppear = YES;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (void)viewWillDisappear:(BOOL)animated &#123;</span><br><span class="line">    [super viewWillDisappear:animated];</span><br><span class="line">    self.isViewDidAppear = NO;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer &#123;</span><br><span class="line">    // 防止还没有push完成就进行侧滑操作，这会导致假死bug</span><br><span class="line">    if (self.isViewDidAppear) &#123;</span><br><span class="line">        return [self.navigationController.viewControllers count] &gt; 1;</span><br><span class="line">    &#125;</span><br><span class="line">    return NO;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="还存在的问题"><a href="#还存在的问题" class="headerlink" title="还存在的问题"></a>还存在的问题</h3><ul>
-<li>对于第一种情况导致<code>self.navigationController.interactivePopGestureRecognizer.enabled = NO</code> 失效的原因不明</li>
+<li>对于第一种情况导致<code>interactivePopGestureRecognizer.enabled=NO</code> 失效的原因不明</li>
 <li>猜想：可能的原因是因为 ChildViewController，首页层级太多，还有其他多个滑动事件，导致响应了侧滑事件<br><script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.6.5/flowchart.min.js"></script><textarea id="flowchart-0-code" style="display: none">st=>start: 开始
 e=>end: 结束
 op=>operation: 进入首页
