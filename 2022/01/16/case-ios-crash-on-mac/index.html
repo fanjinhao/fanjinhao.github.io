@@ -120,7 +120,7 @@
 <meta property="og:image" content="https://cdn.fayne.cn/image/ios_crash.png">
 <meta property="og:image" content="https://cdn.fayne.cn/image/ios_mmjqo-9w8lm.gif">
 <meta property="og:image" content="https://cdn.fayne.cn/image/flow_ios_crash.png">
-<meta property="og:updated_time" content="2022-01-16T15:48:15.954Z">
+<meta property="og:updated_time" content="2022-01-16T15:50:24.172Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="macOS运行iOS应用的一个Crash记录 - Invalid parameter not satisfying:&lt;SPRoundedWindow:0x139fbbab0&gt;. &quot;frame=!CGRectIsNull(frame)&quot;">
 <meta name="twitter:image" content="https://cdn.fayne.cn/image/ios_crash.png">
@@ -466,7 +466,7 @@
 <h3 id="录屏"><a href="#录屏" class="headerlink" title="录屏"></a>录屏</h3><p><img src="https://cdn.fayne.cn/image/ios_mmjqo-9w8lm.gif" alt="flow"></p>
 <h2 id="复现步骤"><a href="#复现步骤" class="headerlink" title="复现步骤"></a>复现步骤</h2><p><img src="https://cdn.fayne.cn/image/flow_ios_crash.png" alt="flow"></p>
 <h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>此问题为苹果系统bug，已将此问题提交给了苹果，原因应该是是由于mac Catalyst 不支持predictive text自动纠错预测文本，可以尝试将mac上TextFiled的自动纠错预测文本关闭<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">textField.autocorrectionType = .no</span><br></pre></td></tr></table></figure></p>
-<p><a href="https://developer.apple.com/forums/thread/697575" target="_blank" rel="noopener">forums</a></p>
+<p><strong>详细可参考</strong>：<a href="https://developer.apple.com/forums/thread/697575" target="_blank" rel="noopener">forums</a></p>
 
       
     </div>
