@@ -343,6 +343,200 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.fayne.cn/2016/12/31/e6-a0-91-e3-80-81-e6-a3-ae-e6-9e-97-e5-92-8c-e4-ba-8c-e5-8f-89-e6-a0-91-e7-9a-84-e8-bd-ac-e6-8d-a2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Fayne">
+      <meta itemprop="description" content="成为自己想成为的人永远不会太迟">
+      <meta itemprop="image" content="/images/user.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Fayne's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/12/31/e6-a0-91-e3-80-81-e6-a3-ae-e6-9e-97-e5-92-8c-e4-ba-8c-e5-8f-89-e6-a0-91-e7-9a-84-e8-bd-ac-e6-8d-a2/" itemprop="url">
+                  树、森林和二叉树的转换
+                </a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2016-12-31 02:34:00" itemprop="dateCreated datePublished" datetime="2016-12-31T02:34:00+08:00">2016-12-31</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/算法学习/" itemprop="url" rel="index"><span itemprop="name">算法学习</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2016/12/31/e6-a0-91-e3-80-81-e6-a3-ae-e6-9e-97-e5-92-8c-e4-ba-8c-e5-8f-89-e6-a0-91-e7-9a-84-e8-bd-ac-e6-8d-a2/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2016/12/31/e6-a0-91-e3-80-81-e6-a3-ae-e6-9e-97-e5-92-8c-e4-ba-8c-e5-8f-89-e6-a0-91-e7-9a-84-e8-bd-ac-e6-8d-a2/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2016/12/31/e6-a0-91-e3-80-81-e6-a3-ae-e6-9e-97-e5-92-8c-e4-ba-8c-e5-8f-89-e6-a0-91-e7-9a-84-e8-bd-ac-e6-8d-a2/" class="leancloud_visitors" data-flag-title="树、森林和二叉树的转换">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p><strong>树转换为二叉树</strong></p>
+<p>（1）加线。在所有兄弟结点之间加一条连线。</p>
+<p>（2）去线。树中的每个结点，只保留它与第一个孩子结点的连线，删除它与其它孩子结点之间的连线。</p>
+<p>（3）层次调整。以树的根节点为轴心，将整棵树顺时针旋转一定角度，使之结构层次分明。（注意第一个孩子是结点的左孩子，兄弟转换过来的孩子是结点的右孩子）</p>
+<p><img src="http://pic002.cnblogs.com/images/2012/457289/2012110416594150.jpg" alt></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p><strong>森林转换为二叉树</strong></p>
+<p>（1）把每棵树转换为二叉树。</p>
+<p>（2）第一棵二叉树不动，从第二棵二叉树开始，依次把后一棵二叉树的根结点作为前一棵二叉树的根结点的右孩子，用线连接起来。</p>
+<p>&nbsp;</p>
+<p><img src="http://pic002.cnblogs.com/images/2012/457289/2012110417004247.jpg" alt></p>
+<p><strong>二叉树转换为树</strong></p>
+<p>是树转换为二叉树的逆过程。</p>
+<p>（1）加线。若某结点X的左孩子结点存在，则将这个左孩子的右孩子结点、右孩子的右孩子结点、右孩子的右孩子的右孩子结点…，都作为结点X的孩子。将结点X与这些右孩子结点用线连接起来。</p>
+<p>（2）去线。删除原二叉树中所有结点与其右孩子结点的连线。</p>
+<p>（3）层次调整。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/12/31/e6-a0-91-e3-80-81-e6-a3-ae-e6-9e-97-e5-92-8c-e4-ba-8c-e5-8f-89-e6-a0-91-e7-9a-84-e8-bd-ac-e6-8d-a2/#更多" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </p></div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://www.fayne.cn/2016/12/12/e5-bc-b1-e6-a0-a1acm-e5-a5-8b-e6-96-97-e5-8f-b2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2148,205 +2342,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.fayne.cn/2016/09/25/e5-ae-89-e5-be-bd-e7-9c-812016-e4-ba-ac-e8-83-9c-e6-9d-af-e7-a8-8b-e5-ba-8f-e8-ae-be-e8-ae-a1-e5-a4-a7-e8-b5-9b-d-e6-a2-af-e7-94-b0again/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Fayne">
-      <meta itemprop="description" content="成为自己想成为的人永远不会太迟">
-      <meta itemprop="image" content="/images/user.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Fayne's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/09/25/e5-ae-89-e5-be-bd-e7-9c-812016-e4-ba-ac-e8-83-9c-e6-9d-af-e7-a8-8b-e5-ba-8f-e8-ae-be-e8-ae-a1-e5-a4-a7-e8-b5-9b-d-e6-a2-af-e7-94-b0again/" itemprop="url">
-                  安徽省2016“京胜杯”程序设计大赛_D_梯田AGAIN
-                </a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2016-09-25 07:46:00" itemprop="dateCreated datePublished" datetime="2016-09-25T07:46:00+08:00">2016-09-25</time>
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/二分法/" itemprop="url" rel="index"><span itemprop="name">二分法</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/二分法/省赛/" itemprop="url" rel="index"><span itemprop="name">省赛</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/二分法/省赛/算法学习/" itemprop="url" rel="index"><span itemprop="name">算法学习</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2016/09/25/e5-ae-89-e5-be-bd-e7-9c-812016-e4-ba-ac-e8-83-9c-e6-9d-af-e7-a8-8b-e5-ba-8f-e8-ae-be-e8-ae-a1-e5-a4-a7-e8-b5-9b-d-e6-a2-af-e7-94-b0again/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2016/09/25/e5-ae-89-e5-be-bd-e7-9c-812016-e4-ba-ac-e8-83-9c-e6-9d-af-e7-a8-8b-e5-ba-8f-e8-ae-be-e8-ae-a1-e5-a4-a7-e8-b5-9b-d-e6-a2-af-e7-94-b0again/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2016/09/25/e5-ae-89-e5-be-bd-e7-9c-812016-e4-ba-ac-e8-83-9c-e6-9d-af-e7-a8-8b-e5-ba-8f-e8-ae-be-e8-ae-a1-e5-a4-a7-e8-b5-9b-d-e6-a2-af-e7-94-b0again/" class="leancloud_visitors" data-flag-title="安徽省2016“京胜杯”程序设计大赛_D_梯田AGAIN">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数：</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>梯田AGAIN</p>
-<p></p><p></p>
-<table width="300" style="font-family:tahoma,arial,verdana,sans-serif; font-size:9pt; text-align:center; padding-left:15px; color:rgb(102,102,102); margin:auto"><br><tbody><br><tr><br><td style="margin:0px; padding:0px; text-align:left">Time Limit: 5000 MS</td><br><td style="margin:0px; padding:0px; text-align:left">Memory Limit: 65536 KB</td><br></tr><br><tr><br><td style="margin:0px; padding:0px; text-align:left">Total Submissions: 95</td><br><td style="margin:0px; padding:0px; text-align:left">Accepted: 21</td><br></tr><br></tbody><br></table>
-
-<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><div>大家还记得去年的梯田吗？土豪YZK在一块小岛上有着一大片n<em>m的梯田，每块1</em>1的田地都有它的高度。奴隶们不甘被YZK剥削，他们联合起来决定发动一场海啸淹掉YZK的部分梯田。<br><br>奴隶们去年尝试了一下，结果发现，由于土质太过松软，水能够透过土地渗入到相邻的梯田，即对于海啸高度h，梯田中所有小于等于h的土地都会由于土质松软而被被淹没。<br><br>现在给你一个n*m的矩阵，代表梯田中每块田地的高度。然后给定q个询问，每个询问给定一个海啸高度h，问在此高度下，不被淹没的梯田数量是多少。<br><br></div>
-
-<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><div>第一行一个整数T，表示测试数据组数。<br><br>对于每组测试数据：<br><br>第一行三个数字n，m，q，表示梯田的行数，列数和询问数。<br><br>之后n行，每行m个数字，表示每块田地的高度，梯田高度不大于1000000。<br><br>之后q行，每行给出一个海啸高度h，问大于这个高度的梯田有多少块。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2016/09/25/e5-ae-89-e5-be-bd-e7-9c-812016-e4-ba-ac-e8-83-9c-e6-9d-af-e7-a8-8b-e5-ba-8f-e8-ae-be-e8-ae-a1-e5-a4-a7-e8-b5-9b-d-e6-a2-af-e7-94-b0again/#更多" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </div></article>
-
-
-    
   </section>
 
   
@@ -2396,7 +2391,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">92</span>
+                    <span class="site-state-item-count">93</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2668,7 +2663,13 @@
                     
                       
                     
-                    <span class="site-state-item-count">53</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">56</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
