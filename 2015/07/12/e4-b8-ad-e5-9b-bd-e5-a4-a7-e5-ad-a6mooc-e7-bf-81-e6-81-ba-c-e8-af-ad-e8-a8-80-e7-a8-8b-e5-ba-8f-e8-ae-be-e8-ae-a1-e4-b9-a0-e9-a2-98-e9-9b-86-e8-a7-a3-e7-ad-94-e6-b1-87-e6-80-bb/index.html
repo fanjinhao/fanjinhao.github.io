@@ -1,0 +1,1815 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+<html class="theme-next mist" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.2.0" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico?v=6.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon.ico?v=6.2.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.2.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '6.2.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="中国大学MOOC-翁恺-C语言程序设计习题集PAT 习题集 02-0. 整数四则运算(10)时间限制 400 ms内存限制 65536 kB代码长度限制 8000 B判题程序 Standard 作者 乔林（清华大学）  本题要求编写程序，计算2个正整数的和、差、积、商并输出。题目保证输入和输出全部在整型范围内。">
+<meta name="keywords" content="pat,acm,mooc">
+<meta property="og:type" content="article">
+<meta property="og:title" content="中国大学MOOC-翁恺-C语言程序设计习题集-解答汇总">
+<meta property="og:url" content="https://www.fayne.cn/2015/07/12/e4-b8-ad-e5-9b-bd-e5-a4-a7-e5-ad-a6mooc-e7-bf-81-e6-81-ba-c-e8-af-ad-e8-a8-80-e7-a8-8b-e5-ba-8f-e8-ae-be-e8-ae-a1-e4-b9-a0-e9-a2-98-e9-9b-86-e8-a7-a3-e7-ad-94-e6-b1-87-e6-80-bb/index.html">
+<meta property="og:site_name" content="Fayne&#39;s Blog">
+<meta property="og:description" content="中国大学MOOC-翁恺-C语言程序设计习题集PAT 习题集 02-0. 整数四则运算(10)时间限制 400 ms内存限制 65536 kB代码长度限制 8000 B判题程序 Standard 作者 乔林（清华大学）  本题要求编写程序，计算2个正整数的和、差、积、商并输出。题目保证输入和输出全部在整型范围内。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-05-13T03:26:29.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="中国大学MOOC-翁恺-C语言程序设计习题集-解答汇总">
+<meta name="twitter:description" content="中国大学MOOC-翁恺-C语言程序设计习题集PAT 习题集 02-0. 整数四则运算(10)时间限制 400 ms内存限制 65536 kB代码长度限制 8000 B判题程序 Standard 作者 乔林（清华大学）  本题要求编写程序，计算2个正整数的和、差、积、商并输出。题目保证输入和输出全部在整型范围内。">
+
+
+
+
+
+
+  <link rel="canonical" href="https://www.fayne.cn/2015/07/12/e4-b8-ad-e5-9b-bd-e5-a4-a7-e5-ad-a6mooc-e7-bf-81-e6-81-ba-c-e8-af-ad-e8-a8-80-e7-a8-8b-e5-ba-8f-e8-ae-be-e8-ae-a1-e4-b9-a0-e9-a2-98-e9-9b-86-e8-a7-a3-e7-ad-94-e6-b1-87-e6-80-bb/">
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>中国大学MOOC-翁恺-C语言程序设计习题集-解答汇总 | Fayne's Blog</title>
+  
+
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?066203df471a031e8ac8b508c3c6314b";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Fayne's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">成为自己想成为的人永远不会太迟</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-board">
+    <a href="/board/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-pencil"></i> <br>留言板</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-links">
+    <a href="/links/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-link"></i> <br>友链</a>
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@1.2/dist/Meting.min.js"></script>
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.fayne.cn/2015/07/12/e4-b8-ad-e5-9b-bd-e5-a4-a7-e5-ad-a6mooc-e7-bf-81-e6-81-ba-c-e8-af-ad-e8-a8-80-e7-a8-8b-e5-ba-8f-e8-ae-be-e8-ae-a1-e4-b9-a0-e9-a2-98-e9-9b-86-e8-a7-a3-e7-ad-94-e6-b1-87-e6-80-bb/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Fayne">
+      <meta itemprop="description" content="成为自己想成为的人永远不会太迟">
+      <meta itemprop="image" content="/images/user.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Fayne's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">中国大学MOOC-翁恺-C语言程序设计习题集-解答汇总
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2015-07-12 12:56:00" itemprop="dateCreated datePublished" datetime="2015-07-12T12:56:00+08:00">2015-07-12</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/MOOC/" itemprop="url" rel="index"><span itemprop="name">MOOC</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/MOOC/PAT/" itemprop="url" rel="index"><span itemprop="name">PAT</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/MOOC/PAT/算法学习/" itemprop="url" rel="index"><span itemprop="name">算法学习</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2015/07/12/e4-b8-ad-e5-9b-bd-e5-a4-a7-e5-ad-a6mooc-e7-bf-81-e6-81-ba-c-e8-af-ad-e8-a8-80-e7-a8-8b-e5-ba-8f-e8-ae-be-e8-ae-a1-e4-b9-a0-e9-a2-98-e9-9b-86-e8-a7-a3-e7-ad-94-e6-b1-87-e6-80-bb/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2015/07/12/e4-b8-ad-e5-9b-bd-e5-a4-a7-e5-ad-a6mooc-e7-bf-81-e6-81-ba-c-e8-af-ad-e8-a8-80-e7-a8-8b-e5-ba-8f-e8-ae-be-e8-ae-a1-e4-b9-a0-e9-a2-98-e9-9b-86-e8-a7-a3-e7-ad-94-e6-b1-87-e6-80-bb/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2015/07/12/e4-b8-ad-e5-9b-bd-e5-a4-a7-e5-ad-a6mooc-e7-bf-81-e6-81-ba-c-e8-af-ad-e8-a8-80-e7-a8-8b-e5-ba-8f-e8-ae-be-e8-ae-a1-e4-b9-a0-e9-a2-98-e9-9b-86-e8-a7-a3-e7-ad-94-e6-b1-87-e6-80-bb/" class="leancloud_visitors" data-flag-title="中国大学MOOC-翁恺-C语言程序设计习题集-解答汇总">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="中国大学MOOC-翁恺-C语言程序设计习题集"><a href="#中国大学MOOC-翁恺-C语言程序设计习题集" class="headerlink" title="中国大学MOOC-翁恺-C语言程序设计习题集"></a>中国大学MOOC-翁恺-C语言程序设计习题集</h1><p>PAT 习题集</p>
+<h1 id="02-0-整数四则运算-10"><a href="#02-0-整数四则运算-10" class="headerlink" title="02-0. 整数四则运算(10)"></a>02-0. 整数四则运算(10)</h1><div id="problemInfo" class="rfloat"><br><div class="limit"><br><div class="key">时间限制 </div><br><div class="value">400 ms<br><br></div><br></div><br><div class="limit"><br><div class="key">内存限制 </div><br><div class="value">65536 kB<br><br></div><br></div><br><div class="limit"><br><div class="key">代码长度限制 </div><br><div class="value">8000 B<br><br></div><br></div><br><div class="checker"><br><div class="key">判题程序 </div><br><div class="value"><span title="纯文本对比">Standard</span> </div><br></div><br><div class="key">作者 </div><br><div class="value">乔林（清华大学）<br><br></div><br></div>
+
+<div id="problemContent"><br>本题要求编写程序，计算2个正整数的和、差、积、商并输出。题目保证输入和输出全部在整型范围内。<br><a id="more"></a><br><strong>输入格式：</strong><br><br>输入在一行中给出2个正整数A和B。<br><br><strong>输出格式：</strong><br><br>在4行中按照格式“A 运算符 B = 结果”顺序输出和、差、积、商。<br><strong>输入样例：</strong><br><pre>3 2<br></pre><br><strong>输出样例：</strong><br><pre>3 + 2 = 5<br>3 - 2 = 1<br>3 <em> 2 = 6<br>3 / 2 = 1<br><pre name="code" class="cpp">#include &lt;stdio.h&gt;<br><br>int main()<br>{<br>    int A;<br>    int B;<br>    int X, Y, Z, W;<br>    scanf(“%d %d”, &amp;A, &amp;B);<br>    X = A + B;<br>    Y = A - B;<br>    Z = A </pre></em> B;<br>    W = A / B;<br>    printf(“%d + %d = %d\n” ,A, B, X);<br>    printf(“%d - %d = %d\n”, A, B, Y);<br>    printf(“%d * %d = %d\n”, A, B, Z);<br>    printf(“%d / %d = %d\n”, A, B, W);<br><br>    return 0;<br>}</pre><br>&nbsp;<br></div>
+
+<h1 id="02-1-厘米换算英尺英寸-15"><a href="#02-1-厘米换算英尺英寸-15" class="headerlink" title="02-1. 厘米换算英尺英寸(15)"></a>02-1. 厘米换算英尺英寸(15)</h1><div id="problemInfo" class="rfloat"><br><div class="limit"><br><div class="key">时间限制 </div><br><div class="value">400 ms<br><br></div><br></div><br><div class="limit"><br><div class="key">内存限制 </div><br><div class="value">65536 kB<br><br></div><br></div><br><div class="limit"><br><div class="key">代码长度限制 </div><br><div class="value">8000 B<br><br></div><br></div><br><div class="checker"><br><div class="key">判题程序 </div><br><div class="value"><span title="纯文本对比">Standard</span> </div><br></div><br><div class="key">作者 </div><br><div class="value">翁恺（浙江大学）<br><br></div><br></div>
+
+<div id="problemContent"><br>如果已知英制长度的英尺foot和英寸inch的值，那么对应的米是(foot+inch/12)<em>0.3048。现在，如果用户输入的是厘米数，那么对应英制长度的英尺和英寸是多少呢？别忘了1英尺等于12英寸。<br><br><strong>输入格式：</strong><br><br>输入在一行中给出1个正整数，单位是厘米。<br><br><strong>输出格式：</strong><br><br>在一行中输出这个厘米数对应英制长度的英尺和英寸的整数值，中间用空格分开。<br><strong>输入样例：</strong><br><pre>170<br></pre><br><strong>输出样例：</strong><br><pre>5 6<br><pre name="code" class="cpp">#include &lt;stdio.h&gt;<br><br>int main()<br>{<br>    int cm;<br>    scanf(“%d”, &amp;cm);<br>    int foot = cm / 30.48;<br>    int inch = (cm/30.48 - foot) </pre></pre></em> 12;<br>    printf(“%d %d”, foot, inch);<br>    return 0;<br> }<br>&nbsp;<br></div>
+
+<h1 id="02-2-然后是几点-15"><a href="#02-2-然后是几点-15" class="headerlink" title="02-2. 然后是几点(15)"></a>02-2. 然后是几点(15)</h1><div id="problemInfo" class="rfloat"><br><div class="limit"><br><div class="key">时间限制 </div><br><div class="value">400 ms<br><br></div><br></div><br><div class="limit"><br><div class="key">内存限制 </div><br><div class="value">65536 kB<br><br></div><br></div><br><div class="limit"><br><div class="key">代码长度限制 </div><br><div class="value">8000 B<br><br></div><br></div><br><div class="checker"><br><div class="key">判题程序 </div><br><div class="value"><span title="纯文本对比">Standard</span> </div><br></div><br><div class="key">作者 </div><br><div class="value">翁恺（浙江大学）<br><br></div><br></div>
+
+<div id="problemContent"><br>有时候人们用四位数字表示一个时间，比如1106表示11点零6分。现在，你的程序要根据起始时间和流逝的时间计算出终止时间。读入两个数字，第一个数字以这样的四位数字表示当前时间，第二个数字表示分钟数，计算当前时间经过那么多分钟后是几点，结果也表示为四位数字。当小时为个位数时，没有前导的零，即5点30分表示为530。注意，第二个数字表示的分钟数可能超过60，也可能是负数。<br><br><strong>输入格式：</strong><br><br>输入在一行中给出2个整数，分别是四位数字表示的起始时间、以及流逝的分钟数，其间以空格分隔。注意：在起始时间中，当小时为个位数时，没有前导的零，即5点30分表示为530；流逝的分钟数可能超过60，也可能是负数。<br><br><strong>输出格式：</strong><br><br>输出四位数字表示的终止时间。题目保证起始时间和终止时间在同一天内。<br><strong>输入样例：</strong><br><pre>1120 110<br></pre><br><strong>输出样例：</strong><br><pre>1310<br><pre name="code" class="cpp">#include &lt;stdio.h&gt;<br>int main()<br>{<br>    int i, j, x = 0, y, z;<br>    scanf(“%d%d”, &amp;i, &amp;j);<br>    if(i &gt;= 1000)<br>    {<br>           x = i / 1000;<br>           y = (i % 1000) / 100;<br>           z = (i %1000) %100;<br>    }<br>    else<br>    {<br>           y = i / 100;<br>           z = i % 100;<br>    }<br>    int s = (10<em>x + y) </em> 60 + z;<br>    int n = s + j;<br>    i = n / 60 <em>100 + (n - ((n / 60 )</em> 60));<br>    printf(“%d”, i);<br>    return 0;<br>}</pre><br>&nbsp;</pre><br></div>
+
+<h1 id="02-3-逆序的三位数-10"><a href="#02-3-逆序的三位数-10" class="headerlink" title="02-3. 逆序的三位数(10)"></a>02-3. 逆序的三位数(10)</h1><div id="problemInfo" class="rfloat"><br><div class="limit"><br><div class="key">时间限制 </div><br><div class="value">400 ms<br><br></div><br></div><br><div class="limit"><br><div class="key">内存限制 </div><br><div class="value">65536 kB<br><br></div><br></div><br><div class="limit"><br><div class="key">代码长度限制 </div><br><div class="value">8000 B<br><br></div><br></div><br><div class="checker"><br><div class="key">判题程序 </div><br><div class="value"><span title="纯文本对比">Standard</span> </div><br></div><br><div class="key">作者 </div><br><div class="value">翁恺（浙江大学）<br><br></div><br></div>
+
+<div id="problemContent"><br>程序每次读入一个正3位数，然后输出按位逆序的数字。注意：当输入的数字含有结尾的0时，输出不应带有前导的0。比如输入700，输出应该是7。<br><br><strong>输入格式：</strong><br><br>每个测试是一个3位的正整数。<br><br><strong>输出格式：</strong><br><br>输出按位逆序的数。<br><strong>输入样例：</strong><br><pre>123<br></pre><br><strong>输出样例：</strong><br><pre>321<br><br><pre name="code" class="cpp">#include &lt;stdio.h&gt;<br><br>int main()<br> {<br>    int i;<br>    scanf(“%d”, &amp;i);<br>    int a = i % 100 %10;<br>    int b = i / 100;<br>    int c = i %100 / 10;<br>    i = a<em>100 + b + c</em>10;<br>    printf(“%d”, i);<br>    return  0;<br> }</pre><br>&nbsp;</pre><br></div>
+
+<h1 id="02-4-BCD解密-10"><a href="#02-4-BCD解密-10" class="headerlink" title="02-4. BCD解密(10)"></a>02-4. BCD解密(10)</h1><div id="problemInfo" class="rfloat"><br><div class="limit"><br><div class="key">时间限制 </div><br><div class="value">400 ms<br><br></div><br></div><br><div class="limit"><br><div class="key">内存限制 </div><br><div class="value">65536 kB<br><br></div><br></div><br><div class="limit"><br><div class="key">代码长度限制 </div><br><div class="value">8000 B<br><br></div><br></div><br><div class="checker"><br><div class="key">判题程序 </div><br><div class="value"><span title="纯文本对比">Standard</span> </div><br></div><br><div class="key">作者 </div><br><div class="value">翁恺（浙江大学）<br><br></div><br></div>
+
+<div id="problemContent"><br>BCD数是用一个字节来表达两位十进制的数，每四个比特表示一位。所以如果一个BCD数的十六进制是0x12，它表达的就是十进制的12。但是小明没学过BCD，把所有的BCD数都当作二进制数转换成十进制输出了。于是BCD的0x12被输出成了十进制的18了！<br><br>现在，你的程序要读入这个错误的十进制数，然后输出正确的十进制数。提示：你可以把18转换回0x12，然后再转换回12。<br><br><strong>输入格式：</strong><br><br>输入在一行中给出一个[0, 153]范围内的正整数，保证能转换回有效的BCD数，也就是说这个整数转换成十六进制时不会出现A-F的数字。<br><br><strong>输出格式：</strong><br><br>输出对应的十进制数。<br><strong>输入样例：</strong><br><pre>18<br></pre><br><strong>输出样例：</strong><br><pre>12<br><pre name="code" class="cpp"> #include &lt;stdio.h&gt;<br><br>int main()<br> {<br>    int i;<br>    scanf(“%d”, &amp;i);<br>    int t = i % 16 + i / 16 * 10;<br>    printf(“%d”, t);<br>    return 0;<br> }</pre><br>&nbsp;</pre><br></div>
+
+<h1 id="03-0-超速判断-10"><a href="#03-0-超速判断-10" class="headerlink" title="03-0. 超速判断(10)"></a>03-0. 超速判断(10)</h1><div id="problemInfo" class="rfloat"><br><div class="limit"><br><div class="key">时间限制 </div><br><div class="value">400 ms<br><br></div><br></div><br><div class="limit"><br><div class="key">内存限制 </div><br><div class="value">65536 kB<br><br></div><br></div><br><div class="limit"><br><div class="key">代码长度限制 </div><br><div class="value">8000 B<br><br></div><br></div><br><div class="checker"><br><div class="key">判题程序 </div><br><div class="value"><span title="纯文本对比">Standard</span> </div><br></div><br><div class="key">作者 </div><br><div class="value">杨起帆（浙江大学城市学院）<br><br></div><br></div>
+
+<div id="problemContent"><br>模拟交通警察的雷达测速仪。输入汽车速度，如果速度超出60 mph，则显示“Speeding”，否则显示“OK”。<br><br><strong>输入格式：</strong><br><br>输入在一行中给出1个不超过500的非负整数，即雷达测到的车速。<br><br><strong>输出格式：</strong><br><br>在一行中输出测速仪显示结果，格式为：“Speed: V - S”，其中V是车速，S或者是Speeding、或者是OK。<br><strong>输入样例1：</strong><br><pre>40<br></pre><br><strong>输出样例1：</strong><br><pre>Speed: 40 - OK<br></pre><br><strong>输入样例2：</strong><br><pre>75<br></pre><br><strong>输出样例2：</strong><br><pre>Speed: 75 - Speeding<br><pre name="code" class="cpp">#include &lt;stdio.h&gt;<br><br>int main()<br>{<br>  int i;<br>  scanf(“%d”, &amp;i);<br>  if(i &lt;= 60)<br>    printf(“Speed: %d - OK”, i);<br>  else<br>    printf(“Speed: %d - Speeding”, i);<br>  return 0;<br>}</pre><br>&nbsp;</pre><br></div>
+
+<h1 id="03-1-三天打鱼两天晒网-15"><a href="#03-1-三天打鱼两天晒网-15" class="headerlink" title="03-1. 三天打鱼两天晒网(15)"></a>03-1. 三天打鱼两天晒网(15)</h1><div id="problemInfo" class="rfloat"><br><div class="limit"><br><div class="key">时间限制 </div><br><div class="value">400 ms<br><br></div><br></div><br><div class="limit"><br><div class="key">内存限制 </div><br><div class="value">65536 kB<br><br></div><br></div><br><div class="limit"><br><div class="key">代码长度限制 </div><br><div class="value">8000 B<br><br></div><br></div><br><div class="checker"><br><div class="key">判题程序 </div><br><div class="value"><span title="纯文本对比">Standard</span> </div><br></div><br></div>
+
+<div id="problemContent"><br>中国有句俗语叫“三天打鱼两天晒网”。假设某人从某天起，开始“三天打鱼两天晒网”，问这个人在以后的第N天中是“打鱼”还是“晒网”？<br><br><strong>输入格式：</strong><br><br>输入在一行中给出1个不超过1000的正整数N。<br><br><strong>输出格式：</strong><br><br>在一行中输出此人在第N天中是“Fishing”（即“打鱼”）还是“Drying”（即“晒网”），并且输出“in day N”。<br><strong>输入样例1：</strong><br><pre>103<br></pre><br><strong>输出样例1：</strong><br><pre>Fishing in day 103<br></pre><br><strong>输入样例2：</strong><br><pre>34<br></pre><br><strong>输出样例2：</strong><br><pre>Drying in day 34<br><pre name="code" class="cpp">#include &lt;stdio.h&gt;<br><br>int main()<br>{<br>    int i;<br>    scanf(“%d”, &amp;i);<br>    if(i%5 &lt;= 3 &amp;&amp; i%5 != 0)<br>         printf(“Fishing in day %d”, i);<br>    else<br>         printf(“Drying in day %d”, i);<br>    return 0;<br>} </pre><br>&nbsp;</pre><br></div>
+
+<h1 id="03-2-用天平找小球-10"><a href="#03-2-用天平找小球-10" class="headerlink" title="03-2. 用天平找小球(10)"></a>03-2. 用天平找小球(10)</h1><div id="problemInfo" class="rfloat"><br><div class="limit"><br><div class="key">时间限制 </div><br><div class="value">400 ms<br><br></div><br></div><br><div class="limit"><br><div class="key">内存限制 </div><br><div class="value">65536 kB<br><br></div><br></div><br><div class="limit"><br><div class="key">代码长度限制 </div><br><div class="value">8000 B<br><br></div><br></div><br><div class="checker"><br><div class="key">判题程序 </div><br><div class="value"><span title="纯文本对比">Standard</span> </div><br></div><br></div>
+
+<div id="problemContent"><br>三个球A、B、C，大小形状相同且其中有一个球与其他球重量不同。要求找出这个不一样的球。<br><br><strong>输入格式：</strong><br><br>输入在一行中给出3个正整数，顺序对应球A、B、C的重量。<br><br><strong>输出格式：</strong><br><br>在一行中输出唯一的那个不一样的球。<br><strong>输入样例：</strong><br><pre>1 1 2<br></pre><br><strong>输出样例：</strong><br><pre>C<br><br><pre name="code" class="cpp"># include &lt;stdio.h&gt;<br><br>int main()<br>{<br>     int A, B, C;<br>     scanf(“%d%d%d”,&amp;A, &amp;B, &amp;C);<br>     if(A != B &amp;&amp; B ==C)<br>           printf(“A”);<br>     else if(B != A &amp;&amp; A == C)<br>           printf(“B”);<br>     else if(C != A &amp;&amp; A == B)<br>           printf(“C”);<br>    return 0;<br>}</pre><br>&nbsp;</pre><br></div>
+
+<h1 id="03-3-12-24小时制-15"><a href="#03-3-12-24小时制-15" class="headerlink" title="03-3. 12-24小时制(15)"></a>03-3. 12-24小时制(15)</h1><div id="problemInfo" class="rfloat"><br><div class="limit"><br><div class="key">时间限制 </div><br><div class="value">400 ms<br><br></div><br></div><br><div class="limit"><br><div class="key">内存限制 </div><br><div class="value">65536 kB<br><br></div><br></div><br><div class="limit"><br><div class="key">代码长度限制 </div><br><div class="value">8000 B<br><br></div><br></div><br><div class="checker"><br><div class="key">判题程序 </div><br><div class="value"><span title="纯文本对比">Standard</span> </div><br></div><br><div class="key">作者 </div><br><div class="value">翁恺（浙江大学）<br><br></div><br></div>
+
+<div id="problemContent"><br>编写一个程序，要求用户输入24小时制的时间，然后显示12小时制的时间。<br><br><strong>输入格式：</strong><br><br>输入在一行中给出带有中间的“:”符号（半角的冒号）的24小时制的时间，如<code>12:34</code>表示12点34分。当小时或分钟数小于10时，均没有前导的零，如<code>5:6</code>表示5点零6分。<br><br><em>提示：在scanf的格式字符串中加入“:”，让scanf来处理这个冒号。</em><br><br><strong>输出格式：</strong><br><br>在一行中输出这个时间对应的12小时制的时间，数字部分格式与输入的相同，然后跟上空格，再跟上表示上午的字符串“AM”或表示下午的字符串“PM”。如“<code>5:6 PM</code>”表示下午5点零6分。注意，在英文的习惯中，中午12点被认为是下午，所以24小时制的<code>12:00</code>就是12小时制的<code>12:0 PM</code>；而0点被认为是第二天的时间，所以是<code>0:0 AM</code>。<br><strong>输入样例：</strong><br><pre>21:11<br></pre><br><strong>输出样例：</strong><br><pre>9:11 PM<br><br><pre name="code" class="cpp">#include &lt;stdio.h&gt;<br><br>int main()<br>{<br>    int i, j;<br>    scanf(“%d:%d”, &amp;i, &amp;j);<br>    if(i &gt;= 0 &amp;&amp; i &lt; 12)<br>        printf(“%d:%d AM”, i, j);<br>    else if(i == 12)<br>        printf(“%d:%d PM”, i, j);<br>    else if(i == 24)<br>        printf(“%d:%d AM”, i-24, j);<br>    else<br>        printf(“%d:%d PM”, i-12, j);<br><br>    return 0;<br>}</pre><br>&nbsp;</pre><br></div>
+
+<h1 id="03-4-成绩转换-15"><a href="#03-4-成绩转换-15" class="headerlink" title="03-4. 成绩转换(15)"></a>03-4. 成绩转换(15)</h1><div id="problemInfo" class="rfloat"><br><div class="limit"><br><div class="key">时间限制 </div><br><div class="value">400 ms<br><br></div><br></div><br><div class="limit"><br><div class="key">内存限制 </div><br><div class="value">65536 kB<br><br></div><br></div><br><div class="limit"><br><div class="key">代码长度限制 </div><br><div class="value">8000 B<br><br></div><br></div><br><div class="checker"><br><div class="key">判题程序 </div><br><div class="value"><span title="纯文本对比">Standard</span> </div><br></div><br><div class="key">作者 </div><br><div class="value">沈睿（浙江大学）<br><br></div><br></div>
+
+<div id="problemContent"><br>本题要求编写程序将一个百分制成绩转换为五分制成绩。转换规则：<br><br><li>大于等于90分为A；</li><li>小于90且大于等于80为B；</li><li>小于80且大于等于70为C；</li><li>小于70且大于等于60为D；</li><li>小于60为E。<br><strong>输入格式：</strong><br><br>输入在一行中给出1个整数的百分制成绩。<br><br><strong>输出格式：</strong><br><br>在一行中输出对应的五分制成绩。<br><strong>输入样例：</strong><br><pre>90<br></pre><br><strong>输出样例：</strong><br><pre>A</pre><br></li><li><br><pre><pre name="code" class="cpp">#include &lt;stdio.h&gt;<br><br>int main()<br>{<br>  int i;<br>  scanf(“%d”, &amp;i);<br>  if(i &gt;= 90)<br>    printf(“A”);<br>  else if(i &lt; 90 &amp;&amp; i &gt;= 80)<br>    printf(“B”);<br>  else if(i &lt; 80 &amp;&amp; i &gt;= 70)<br>    printf(“C”);<br>  else if(i &lt; 70 &amp;&amp; i &gt;= 60)<br>    printf(“D”);<br>  else if(i &lt; 60)<br>    printf(“E”);<br><br>  return 0;<br>}</pre><br>&nbsp;</pre><br></li></div>
+
+<h1 id="04-0-求符合给定条件的整数集-15"><a href="#04-0-求符合给定条件的整数集-15" class="headerlink" title="04-0. 求符合给定条件的整数集(15)"></a>04-0. 求符合给定条件的整数集(15)</h1><div id="problemInfo" class="rfloat"><br><div class="limit"><br><div class="key">时间限制 </div><br><div class="value">400 ms<br><br></div><br></div><br><div class="limit"><br><div class="key">内存限制 </div><br><div class="value">65536 kB<br><br></div><br></div><br><div class="limit"><br><div class="key">代码长度限制 </div><br><div class="value">8000 B<br><br></div><br></div><br><div class="checker"><br><div class="key">判题程序 </div><br><div class="value"><span title="纯文本对比">Standard</span> </div><br></div><br><div class="key">作者 </div><br><div class="value">徐镜春（浙江大学）<br><br></div><br></div>
+
+<div id="problemContent"><br>给定不超过6的正整数A，考虑从A开始的连续4个数字。请输出所有由它们组成的无重复数字的3位数。<br><br><strong>输入格式：</strong><br><br>输入在一行中给出A。<br><br><strong>输出格式：</strong><br><br>输出满足条件的的3位数，要求从小到大，每行6个整数。整数间以空格分隔，但行末不能有多余空格。<br><strong>输入样例：</strong><br><pre>2<br></pre><br><strong>输出样例：</strong><br><pre>234 235 243 245 253 254<br>324 325 342 345 352 354<br>423 425 432 435 452 453<br>523 524 532 534 542 543<br><pre name="code" class="cpp">#include &lt;stdio.h&gt;<br><br>int main()<br>{<br>    int A, i, j, k, p = 0;<br>    scanf(“%d”, &amp;A);<br>    for(i=A; i&lt;A+4; ++i)<br>        for(j=A; j&lt;A+4; ++j)<br>            for(k=A; k&lt;A+4; ++k)<br>            {<br>                if(i != j &amp;&amp; i != k &amp;&amp; j != k)<br>                {<br><br>                    printf(“%d”, i<em>100+10</em>j+k);<br>                    p++;<br>                    if(p%6 == 0)<br>                        printf(“\n”);<br>                    else<br>                        printf(“ “);<br>                }<br>            }<br><br>    return 0;<br>}</pre><br>&nbsp;</pre><br></div>
+
+<h1 id="04-1-水仙花数-20"><a href="#04-1-水仙花数-20" class="headerlink" title="04-1. 水仙花数(20)"></a>04-1. 水仙花数(20)</h1><div id="problemInfo" class="rfloat"><br><div class="limit"><br><div class="key">时间限制 </div><br><div class="value">2000 ms<br><br></div><br></div><br><div class="limit"><br><div class="key">内存限制 </div><br><div class="value">65536 kB<br><br></div><br></div><br><div class="limit"><br><div class="key">代码长度限制 </div><br><div class="value">8000 B<br><br></div><br></div><br><div class="checker"><br><div class="key">判题程序 </div><br><div class="value"><span title="纯文本对比">Standard</span> </div><br></div><br><div class="key">作者 </div><br><div class="value">徐镜春（浙江大学）<br><br></div><br></div>
+
+<div id="problemContent"><br>水仙花数是指一个N位正整数（N&gt;=3），它的每个位上的数字的N次幂之和等于它本身。例如：153 = 1<sup>3</sup> + 5<sup>3</sup>+ 3<sup>3</sup>。本题要求编写程序,计算所有N位水仙花数。<br><br><strong>输入格式：</strong><br><br>输入在一行中给出一个正整数N（3&lt;=N&lt;=7）。<br><br><strong>输出格式：</strong><br><br>按递增顺序输出所有N位水仙花数，每个数字占一行。<br><strong>输入样例：</strong><br><pre>3<br></pre><br><strong>输出样例：</strong><br><pre>153<br>370<br>371<br>407<br><pre name="code" class="cpp">#include &lt;stdio.h&gt;<br><br>int main()<br>{<br>    int n = 0, m = 0, l = 0, k = 0, roll = 0;<br>    int min = 1, t = 0, sum = 0, sum1 = 0;<br>    scanf(“%d”, &amp;n);<br>    m=n;<br>    while(m &gt; 1)   //built the minimum for n digit<br>    {<br>        min<em>=10;<br>        m–;<br>    }<br>    t=min;<br>    while(t &lt; 10</em>min)  //all the number for n digit<br>    {<br>        roll = t;<br>        m = n;<br>        sum = 1;<br>        while(m &gt; 0)<br>        {<br>            sum = sum<em>(roll%10);<br>            m–;<br>        }<br>        l = n;<br>        while(l &gt; 0)<br>        {<br>            roll = roll / 10;<br>            k = roll % 10;<br>            m = n;<br>            sum1 = 1;<br>            while(m &gt; 0)<br>            {<br>                sum1 = sum1 </em> k;<br>                m–;<br>            }<br>            sum = sum + sum1;<br>            l–;<br>        }<br>        if(t == sum)<br>        {<br>            printf(“%d\n”, t);<br>        }<br>        t++;<br>    }<br>    return 0;<br>}</pre><br>&nbsp;</pre><br></div>
+
+<h1 id="04-2-打印九九口诀表-15"><a href="#04-2-打印九九口诀表-15" class="headerlink" title="04-2. 打印九九口诀表(15)"></a>04-2. 打印九九口诀表(15)</h1><div id="problemInfo" class="rfloat"><br><div class="limit"><br><div class="key">时间限制 </div><br><div class="value">400 ms<br><br></div><br></div><br><div class="limit"><br><div class="key">内存限制 </div><br><div class="value">65536 kB<br><br></div><br></div><br><div class="limit"><br><div class="key">代码长度限制 </div><br><div class="value">8000 B<br><br></div><br></div><br><div class="checker"><br><div class="key">判题程序 </div><br><div class="value"><span title="纯文本对比">Standard</span> </div><br></div><br><div class="key">作者 </div><br><div class="value">徐镜春（浙江大学）<br><br></div><br></div>
+
+<div id="problemContent"><br>下面是一个完整的下三角九九口诀表：<br><pre>1<em>1=1<br>1</em>2=2   2<em>2=4<br>1</em>3=3   2<em>3=6   3</em>3=9<br>1<em>4=4   2</em>4=8   3<em>4=12  4</em>4=16<br>1<em>5=5   2</em>5=10  3<em>5=15  4</em>5=20  5<em>5=25<br>1</em>6=6   2<em>6=12  3</em>6=18  4<em>6=24  5</em>6=30  6<em>6=36<br>1</em>7=7   2<em>7=14  3</em>7=21  4<em>7=28  5</em>7=35  6<em>7=42  7</em>7=49<br>1<em>8=8   2</em>8=16  3<em>8=24  4</em>8=32  5<em>8=40  6</em>8=48  7<em>8=56  8</em>8=64<br>1<em>9=9   2</em>9=18  3<em>9=27  4</em>9=36  5<em>9=45  6</em>9=54  7<em>9=63  8</em>9=72  9<em>9=81<br></em></pre><br>本题要求对任意给定的1位正整数N，输出从11到N<em>N的部分口诀表。<br><br><strong>输入格式：</strong><br><br>输入在一行中给出一个正整数N（1&lt;=N&lt;=9）。<br><br><strong>输出格式：</strong><br><br>输出下三角N</em>N部分口诀表，其中等号右边数字占4位、左对齐。<br><strong>输入样例：</strong><br><pre>4<br></pre><br><strong>输出样例：</strong><br><pre>1<em>1=1<br>1</em>2=2   2<em>2=4<br>1</em>3=3   2<em>3=6   3</em>3=9<br>1<em>4=4   2</em>4=8   3<em>4=12  4</em>4=16<br><pre name="code" class="cpp">#include &lt;stdio.h&gt;<br><br>int main(void)<br>{<br>    int n;<br>    scanf(“%d”, &amp;n);<br>    int i, j;<br>    for (i=1; i&lt;=n; i++)<br>    {<br>        for (j=1; j&lt;=i; j++)<br>            printf(“%d<em>%d=%-4d”, j, i, i</em>j);<br>        puts(“”);<br>    }<br><br>    return 0;<br>}</pre><br> </pre><br></div>
+
+<h1 id="04-3-统计素数并求和-20"><a href="#04-3-统计素数并求和-20" class="headerlink" title="04-3. 统计素数并求和(20)"></a>04-3. 统计素数并求和(20)</h1><div id="problemInfo" class="rfloat"><br><div class="limit"><br><div class="key">时间限制 </div><br><div class="value">400 ms<br><br></div><br></div><br><div class="limit"><br><div class="key">内存限制 </div><br><div class="value">65536 kB<br><br></div><br></div><br><div class="limit"><br><div class="key">代码长度限制 </div><br><div class="value">8000 B<br><br></div><br></div><br><div class="checker"><br><div class="key">判题程序 </div><br><div class="value"><span title="纯文本对比">Standard</span> </div><br></div><br><div class="key">作者 </div><br><div class="value">张彤彧（浙江大学）<br><br></div><br></div>
+
+<div id="problemContent"><br>本题要求统计给定整数M和N区间内素数的个数并对它们求和。<br><br><strong>输入格式：</strong><br><br>输入在一行中给出2个正整数M和N（1&lt;=M&lt;=N&lt;=500）。<br><br><strong>输出格式：</strong><br><br>在一行中顺序输出M和N区间内素数的个数以及它们的和，数字间以空格分隔。<br><strong>输入样例：</strong><br><pre>10 31<br></pre><br><strong>输出样例：</strong><br><pre>7 143<br><br><pre name="code" class="cpp">#include &lt;stdio.h&gt;<br>#include &lt;stdbool.h&gt;<br>int nums(int x)<br>{<br>    int i;<br>    if(x ==1 ){<br>        return 0;<br>    }<br>    for(i=2; i*i&lt;=x; i++){<br>        if(x%i == 0){<br>            return 0;<br>        }<br>    }<br>    return 1;<br>}<br>int main()<br>{<br>    int m,n;<br>    int j;<br>    scanf(“%d %d”, &amp;m, &amp;n);<br>    int count = 0;<br>    int sum = 0;<br>    for(j=m; j&lt;=n; j++)<br>    {<br>        if(nums(j) == 1)<br>        {<br>            count++;<br>            sum += j;<br>        }<br>    }<br>    printf(“%d %d”, count, sum);<br><br>    return 0;<br>}<br></pre><br>&nbsp;</pre><br></div>
+
+<h1 id="04-4-猜数字游戏-15"><a href="#04-4-猜数字游戏-15" class="headerlink" title="04-4. 猜数字游戏(15)"></a>04-4. 猜数字游戏(15)</h1><div id="problemInfo" class="rfloat"><br><div class="limit"><br><div class="key">时间限制 </div><br><div class="value">400 ms<br><br></div><br></div><br><div class="limit"><br><div class="key">内存限制 </div><br><div class="value">65536 kB<br><br></div><br></div><br><div class="limit"><br><div class="key">代码长度限制 </div><br><div class="value">8000 B<br><br></div><br></div><br><div class="checker"><br><div class="key">判题程序 </div><br><div class="value"><span title="纯文本对比">Standard</span> </div><br></div><br></div>
+
+<div id="problemContent"><br>猜数字游戏是令系统随机产生一个100以内的正整数，用户输入一个数对其进行猜测，需要你编写程序自动对其与随机产生的被猜数进行比较，并提示大了（“Too big”），还是小了（“Too small”），相等表示猜到了。如果猜到，则结束程序。程序还要求统计猜的次数，如果1次猜出该数，提示“Bingo!”；如果3次以内猜到该数，则提示“Lucky You!”；如果超过3次但是在N（&gt;3）次以内（包括第N次）猜到该数，则提示“Good Guess!”；如果超过N次都没有猜到，则提示“Game Over”，并结束程序。如果在到达N次之前，用户输入了一个负数，也输出“Game<br> Over”，并结束程序。<br><br><strong>输入格式：</strong><br><br>输入第一行中给出2个不超过100的正整数，分别是系统产生的随机数、以及猜测的最大次数N。随后每行给出一个用户的输入，直到出现负数为止。<br><br><strong>输出格式：</strong><br><br>在一行中输出每次猜测相应的结果，直到输出猜对的结果或“Game Over”则结束。<br><strong>输入样例：</strong><br><pre>58 4<br>70<br>50<br>56<br>58<br>60<br>-2<br></pre><br><strong>输出样例：</strong><br><pre>Too big<br>Too small<br>Too small<br>Good Guess!<br><br><pre name="code" class="cpp"> #include &lt;stdio.h&gt;<br><br> int main()<br> {<br>    int n, times;<br>    int i, t = 0;<br>    scanf(“%d %d”, &amp;n, ×);<br>    while(1)<br>    {<br>        scanf(“%d”, &amp;i);<br>        ++t;<br>        if(i == n &amp;&amp; t == 1)<br>        {<br>            printf(“Bingo!\n”);<br>            break;<br>        }<br>        else if(i &lt; 0 || t &gt; times )<br>        {<br>            printf(“Game Over”);<br>            break;<br>        }<br>        else if(i == n &amp;&amp; t &gt; 1 &amp;&amp; t &lt;= 3 &amp;&amp; t &lt;= times)<br>        {<br>            printf(“Lucky You!\n”);<br>            break;<br>        }<br>        else if(i &gt; n)<br>        {<br>            printf(“Too big\n”);<br>        }<br>        else if(i &lt; n &amp;&amp; i &gt; 0)<br>        {<br>            printf(“Too small\n”);<br>        }<br>        else if(i == n &amp;&amp; t &gt; 3 &amp;&amp; t &lt;= times)<br>        {<br>            printf(“Good Guess!\n”);<br>            break;<br>        }<br>    }<br><br>    return 0;<br>}<br></pre><br>&nbsp;</pre><br></div>
+
+<h1 id="05-0-求序列前N项和-15"><a href="#05-0-求序列前N项和-15" class="headerlink" title="05-0. 求序列前N项和(15)"></a>05-0. 求序列前N项和(15)</h1><div id="problemInfo" class="rfloat"><br><div class="limit"><br><div class="key">时间限制 </div><br><div class="value">400 ms<br><br></div><br></div><br><div class="limit"><br><div class="key">内存限制 </div><br><div class="value">65536 kB<br><br></div><br></div><br><div class="limit"><br><div class="key">代码长度限制 </div><br><div class="value">8000 B<br><br></div><br></div><br><div class="checker"><br><div class="key">判题程序 </div><br><div class="value"><span title="纯文本对比">Standard</span> </div><br></div><br><div class="key">作者 </div><br><div class="value">张彤彧（浙江大学）<br><br></div><br></div>
+
+<div id="problemContent"><br>本题要求编写程序,计算序列 2/1+3/2+5/3+8/5+… 的前N项之和。注意该序列从第2项起，每一项的分子是前一项分子与分母的和，分母是前一项的分子。<br><br><strong>输入格式：</strong><br><br>输入在一行中给出一个正整数N。<br><br><strong>输出格式：</strong><br><br>在一行中输出部分和的值，精确到小数点后2位。题目保证计算结果不超过双精度范围。<br><strong>输入样例：</strong><br><pre>20<br></pre><br><strong>输出样例：</strong><br><pre>32.66<br><pre name="code" class="cpp">#include &lt;stdio.h&gt;<br><br>int main()<br>{<br>    int n = 1, i;<br>    double a = 2, b = 1, t, s = 0;<br>    scanf(“%d”, &amp;n);<br>    for(i=1; i&lt;=n; ++i)<br>    {<br>        t = a;<br>        s += a/b;<br>        a += b;<br>        b = t;<br>    }<br>    printf(“%.2lf”, s);<br><br>    return 0;<br>}</pre><br>&nbsp;</pre><br></div>
+
+<h1 id="05-1-约分最简分式-15"><a href="#05-1-约分最简分式-15" class="headerlink" title="05-1. 约分最简分式(15)"></a>05-1. 约分最简分式(15)</h1><div id="problemInfo" class="rfloat"><br><div class="limit"><br><div class="key">时间限制 </div><br><div class="value">400 ms<br><br></div><br></div><br><div class="limit"><br><div class="key">内存限制 </div><br><div class="value">65536 kB<br><br></div><br></div><br><div class="limit"><br><div class="key">代码长度限制 </div><br><div class="value">8000 B<br><br></div><br></div><br><div class="checker"><br><div class="key">判题程序 </div><br><div class="value"><span title="纯文本对比">Standard</span> </div><br></div><br><div class="key">作者 </div><br><div class="value">翁恺（浙江大学）<br><br></div><br></div>
+
+<div id="problemContent"><br>分数可以表示为“分子/分母”的形式。编写一个程序，要求用户输入一个分数，然后将其约分为最简分式。最简分式是指分子和分母不具有可以约分的成分了。如6/12可以被约分为1/2。当分子大于分母时，不需要表达为整数又分数的形式，即11/8还是11/8；而当分子分母相等时，仍然表达为1/1的分数形式。<br><br><strong>输入格式：</strong><br><br>输入在一行中给出一个分数，分子和分母中间以斜杠“/”分隔，如：<code>12/34</code>表示34分之12。分子和分母都是正整数（不包含0，如果不清楚正整数的定义的话）。<br><br><em>提示：在scanf的格式字符串中加入“/”，让scanf来处理这个斜杠。</em><br><br><strong>输出格式：</strong><br><br>在一行中输出这个分数对应的最简分式，格式与输入的相同，即采用“分子/分母”的形式表示分数。如<code>5/6</code>表示6分之5。<br><strong>输入样例：</strong><br><pre>60/120<br></pre><br><strong>输出样例：</strong><br><pre>1/2<br><pre name="code" class="cpp">#include &lt;stdio.h&gt;<br><br>int main()<br>{<br>    int i, j, n, k;<br>    scanf(“%d/%d”, &amp;i, &amp;j);<br>    loop:<br>        if(i &gt;= j)<br>            n = j;<br>        else<br>            n = i;<br>        for(k=2; k&lt;=n; ++k)<br>        {<br>            if(j % k == 0 &amp;&amp; i % k == 0)<br>            {<br>                j /= k;<br>                i /= k;<br>                goto loop;<br>            }<br>        }<br>    printf(“%d/%d”, i, j);<br><br>    return 0;<br>}</pre><br>&nbsp;</pre><br></div>
+
+<h1 id="05-2-念数字-15"><a href="#05-2-念数字-15" class="headerlink" title="05-2. 念数字(15)"></a>05-2. 念数字(15)</h1><div id="problemInfo" class="rfloat"><br><div class="limit"><br><div class="key">时间限制 </div><br><div class="value">400 ms<br><br></div><br></div><br><div class="limit"><br><div class="key">内存限制 </div><br><div class="value">65536 kB<br><br></div><br></div><br><div class="limit"><br><div class="key">代码长度限制 </div><br><div class="value">8000 B<br><br></div><br></div><br><div class="checker"><br><div class="key">判题程序 </div><br><div class="value"><span title="纯文本对比">Standard</span> </div><br></div><br><div class="key">作者 </div><br><div class="value">翁恺（浙江大学）<br><br></div><br></div>
+
+<div id="problemContent"><br>输入一个整数，输出每个数字对应的拼音。当整数为负数时，先输出“fu”字。十个数字对应的拼音如下：<br><pre>0: ling<br>1: yi<br>2: er<br>3: san<br>4: si<br>5: wu<br>6: liu<br>7: qi<br>8: ba<br>9: jiu<br></pre><br><strong>输入格式：</strong><br><br>输入在一行中给出一个整数，如：<code>1234</code>。<br><br><em>提示：整数包括负数、零和正数。</em><br><br><strong>输出格式：</strong><br><br>在一行中输出这个整数对应的拼音，每个数字的拼音之间用空格分开，行末没有最后的空格。如<code>yi er san si</code>。<br><strong>输入样例：</strong><br><pre>-600<br></pre><br><strong>输出样例：</strong><br><pre>fu liu ling ling<br><br><pre name="code" class="cpp">#include &lt;stdio.h&gt;<br>#include &lt;string.h&gt;<br>char str[20];<br>const char *num[] = {“ling”, “yi”, “er”, “san”, “si”, “wu”, “liu”, “qi”, “ba”, “jiu”};<br><br>int main()<br>{<br>    int i, k;<br>    scanf(“%s”, str);<br>    k = strlen(str);<br>    if ( str[0] == ‘-‘) printf(“fu”);<br>    else<br>        printf(“%s”, num[str[0]-‘0’]);<br>    for ( i=1; i&lt;k; i++ )<br>    {<br>        printf(“ %s”, num[str[i]-‘0’]);<br>    }<br>    printf(“\n”);<br><br>    return 0;<br>}</pre><br>&nbsp;</pre><br></div>
+
+<h1 id="05-3-求a的连续和-15"><a href="#05-3-求a的连续和-15" class="headerlink" title="05-3. 求a的连续和(15)"></a>05-3. 求a的连续和(15)</h1><div id="problemInfo" class="rfloat"><br><div class="limit"><br><div class="key">时间限制 </div><br><div class="value">400 ms<br><br></div><br></div><br><div class="limit"><br><div class="key">内存限制 </div><br><div class="value">65536 kB<br><br></div><br></div><br><div class="limit"><br><div class="key">代码长度限制 </div><br><div class="value">8000 B<br><br></div><br></div><br><div class="checker"><br><div class="key">判题程序 </div><br><div class="value"><span title="纯文本对比">Standard</span> </div><br></div><br><div class="key">作者 </div><br><div class="value">翁恺（浙江大学）<br><br></div><br></div>
+
+<div id="problemContent"><br>输入两个整数a和n，a的范围是[0,9]，n的范围是[1,8]，求数列之和S = a+aa+aaa+…+aaa…a（n个a）。如a为2、n为8时输出的是2+22+222+…+22222222的和。<br><br><strong>输入格式：</strong><br><br>输入在一行中给出两个整数，先后表示a和n。<br><br><strong>输出格式：</strong><br><br>在一行中输出要求的数列之和。<br><strong>输入样例：</strong><br><pre>2 4<br></pre><br><strong>输出样例：</strong><br><pre>2468<br><br><pre name="code" class="cpp">#include &lt;stdio.h&gt;<br>#include &lt;math.h&gt;<br><br>int main()<br>{<br>    int a, n, i, s = 0;<br>    scanf(“%d%d”, &amp;a, &amp;n);<br>    for(i=1; i&lt;=n; ++i)<br>    {<br>        s += (pow(10.0,i)-1) * a / 9;<br>    }<br>    printf(“%d”, s);<br><br>    return 0;<br>}</pre><br>&nbsp;</pre><br></div>
+
+<h1 id="06-0-混合类型数据格式化输入-5"><a href="#06-0-混合类型数据格式化输入-5" class="headerlink" title="06-0. 混合类型数据格式化输入(5)"></a>06-0. 混合类型数据格式化输入(5)</h1><div id="problemInfo" class="rfloat"><br><div class="limit"><br><div class="key">时间限制 </div><br><div class="value">400 ms<br><br></div><br></div><br><div class="limit"><br><div class="key">内存限制 </div><br><div class="value">65536 kB<br><br></div><br></div><br><div class="limit"><br><div class="key">代码长度限制 </div><br><div class="value">8000 B<br><br></div><br></div><br><div class="checker"><br><div class="key">判题程序 </div><br><div class="value"><span title="纯文本对比">Standard</span> </div><br></div><br><div class="key">作者 </div><br><div class="value">乔林（清华大学）<br><br></div><br></div>
+
+<div id="problemContent"><br>本题要求编写程序，顺序读入浮点数1、整数、字符、浮点数2，再按照字符、整数、浮点数1、浮点数2的顺序输出。<br><br><strong>输入格式：</strong><br><br>输入在一行中顺序给出浮点数1、整数、字符、浮点数2，其间以1个空格分隔。<br><br><strong>输出格式：</strong><br><br>在一行中按照字符、整数、浮点数1、浮点数2的顺序输出，其中浮点数保留小数点后2位。<br><strong>输入样例：</strong><br><pre>2.12 88 c 4.7<br></pre><br><strong>输出样例：</strong><br><pre>c 88 2.12 4.70<br><br><pre name="code" class="cpp">#include &lt;stdio.h&gt;<br><br>int main()<br>{<br>  float f1, f2;<br>  char ch;<br>  int i;<br>  scanf(“%f %d %c %f”, &amp;f1, &amp;i, &amp;ch, &amp;f2);<br>  printf(“%c %d %.2f %.2f”, ch, i, f1, f2);<br><br>  return 0;<br>}</pre><br>&nbsp;</pre><br></div>
+
+<h1 id="06-1-简单计算器-20"><a href="#06-1-简单计算器-20" class="headerlink" title="06-1. 简单计算器(20)"></a>06-1. 简单计算器(20)</h1><div id="problemInfo" class="rfloat"><br><div class="limit"><br><div class="key">时间限制 </div><br><div class="value">400 ms<br><br></div><br></div><br><div class="limit"><br><div class="key">内存限制 </div><br><div class="value">65536 kB<br><br></div><br></div><br><div class="limit"><br><div class="key">代码长度限制 </div><br><div class="value">8000 B<br><br></div><br></div><br><div class="checker"><br><div class="key">判题程序 </div><br><div class="value"><span title="纯文本对比">Standard</span> </div><br></div><br><div class="key">作者 </div><br><div class="value">张彤彧（浙江大学）<br><br></div><br></div>
+
+<div id="problemContent"><br>模拟简单运算器的工作。假设计算器只能进行加减乘除运算，运算数和结果都是整数，4种运算符的优先级相同，按从左到右的顺序计算。<br><br><strong>输入格式：</strong><br><br>输入在一行中给出一个四则运算算式，没有空格，且至少有一个操作数。遇等号”=”说明输入结束。<br><br><strong>输出格式：</strong><br><br>在一行中输出算式的运算结果，或者如果除法分母为0或有非法运算符，则输出错误信息“ERROR”。<br><strong>输入样例：</strong><br><pre>1+2<em>10-10/2=<br></em></pre><br><strong>输出样例：</strong><br><pre>10<br><pre name="code" class="cpp">#include &lt;stdio.h&gt;<br><br>int main()<br>{<br>    char ch = ‘0’;<br>    int result, i, flag = 0;<br>    scanf(“%d”, &amp;result);<br>    while( ch != ‘=’ )<br>    {<br>        scanf(“%c”, &amp;ch);<br>        if(ch == ‘=’)<br>            break;<br>        scanf(“%d”, &amp;i);<br>        if( ch == ‘+’ )<br>            result += i;<br>        else if( ch == ‘-‘ )<br>            result -= i;<br>        else if( ch == ‘‘ )<br>            result *= i;<br>        else if( ch == ‘/‘ )<br>        {<br>            if( i != 0 )<br>                result /= i;<br>            else<br>                flag = 1;<br>        }<br>        else<br>            flag = 1;<br>    }<br>    if(flag)<br>        printf(“ERROR\n”);<br>    else<br>        printf(“%d”, result);<br><br>    return 0;<br>}</pre><br>&nbsp;</pre><br></div>
+
+<h1 id="06-2-字符串字母大小写转换-10"><a href="#06-2-字符串字母大小写转换-10" class="headerlink" title="06-2. 字符串字母大小写转换(10)"></a>06-2. 字符串字母大小写转换(10)</h1><div id="problemInfo" class="rfloat"><br><div class="limit"><br><div class="key">时间限制 </div><br><div class="value">400 ms<br><br></div><br></div><br><div class="limit"><br><div class="key">内存限制 </div><br><div class="value">65536 kB<br><br></div><br></div><br><div class="limit"><br><div class="key">代码长度限制 </div><br><div class="value">8000 B<br><br></div><br></div><br><div class="checker"><br><div class="key">判题程序 </div><br><div class="value"><span title="纯文本对比">Standard</span> </div><br></div><br><div class="key">作者 </div><br><div class="value">张彤彧（浙江大学）<br><br></div><br></div>
+
+<div id="problemContent"><br>输入一个以#结束的字符串，本题要求将小写字母全部转换成大写字母，把大写字母全部转换成小写字母，其它字符不变。<br><br><strong>输入格式：</strong><br><br>输入在一行中给出一个长度不超过40的、以#结束的非空字符串。<br><br><strong>输出格式：</strong><br><br>在一行中按照要求输出转换后的字符串。<br><strong>输入样例：</strong><br><pre>Hello World! 123#<br></pre><br><strong>输出样例：</strong><br><pre>hELLO wORLD! 123<br><pre name="code" class="cpp">#include &lt;stdio.h&gt;<br><br>int main()<br>{<br>    char c;<br>    c = getchar();<br>    while(c != ‘#’)<br>    {<br>        if(c &gt;= ‘a’ &amp;&amp; c &lt;= ‘z’)<br>        {<br>            c -= 32;<br>        }<br>        else if(c &gt;= ‘A’ &amp;&amp; c &lt;= ‘Z’)<br>        {<br>            c += 32;<br>        }<br>        printf(“%c”, c);<br>        c = getchar();<br>    }<br><br>    return 0;<br>}</pre><br>&nbsp;</pre><br></div>
+
+<h1 id="06-3-单词长度-15"><a href="#06-3-单词长度-15" class="headerlink" title="06-3. 单词长度(15)"></a>06-3. 单词长度(15)</h1><div id="problemInfo" class="rfloat"><br><div class="limit"><br><div class="key">时间限制 </div><br><div class="value">400 ms<br><br></div><br></div><br><div class="limit"><br><div class="key">内存限制 </div><br><div class="value">65536 kB<br><br></div><br></div><br><div class="limit"><br><div class="key">代码长度限制 </div><br><div class="value">8000 B<br><br></div><br></div><br><div class="checker"><br><div class="key">判题程序 </div><br><div class="value"><span title="纯文本对比">Standard</span> </div><br></div><br><div class="key">作者 </div><br><div class="value">翁恺（浙江大学）<br><br></div><br></div>
+
+<div id="problemContent"><br>你的程序要读入一行文本，其中以空格分隔为若干个单词，以‘.’结束。你要输出每个单词的长度。这里的单词与语言无关，可以包括各种符号，比如“it’s”算一个单词，长度为4。注意，行中可能出现连续的空格；最后的‘.’不计算在内。<br><br><strong>输入格式：</strong><br><br>输入在一行中给出一行文本，以‘.’结束。<br><br><em>提示：用<code>scanf(&quot;%c&quot;,...);</code>来读入一个字符，直到读到‘.’为止。</em><br><br><strong>输出格式：</strong><br><br>在一行中输出这行文本对应的单词的长度，每个长度之间以空格隔开，行末没有最后的空格。<br><br><strong>输入样例：</strong><br><pre>It’s great to see you here.<br></pre><br><strong>输出样例：</strong><br><pre>4 5 2 3 3 4<br><pre name="code" class="cpp">#include &lt;stdio.h&gt;<br><br>int main()<br>{<br>    char s[100];<br>    int i = 0;<br>    do<br>    {<br>        scanf(“%c”, &amp;s[i]);<br>        i++;<br>    } while(s[i-1] != ‘.’);<br>    int j;<br>    int cnt = 0;<br>    int k = 0;<br>    for(j=0; j&lt;i; j++)<br>    {<br>        if(s[j] != ‘ ‘)<br>        {<br>            cnt++;<br>            if(k != 0 &amp;&amp; s[j] != ‘.’)<br>            {<br>                printf(“ “);<br>                k = 0;<br>            }<br>            if(s[j] == ‘.’ &amp;&amp; s[j - 1] != ‘ ‘ &amp;&amp; cnt != 1)<br>            {<br>                printf(“%d”, cnt-1);<br>            }<br>        }<br>        else if(cnt != 0)<br>        {<br>            printf(“%d”, cnt);<br>            cnt = 0;<br>            k = 1;<br>        }<br>    }<br><br>    return 0;<br>}</pre><br>&nbsp;</pre><br></div>
+
+<h1 id="07-0-写出这个数-20"><a href="#07-0-写出这个数-20" class="headerlink" title="07-0. 写出这个数 (20)"></a>07-0. 写出这个数 (20)</h1><div id="problemInfo" class="rfloat"><br><div class="limit"><br><div class="key">时间限制 </div><br><div class="value">400 ms<br><br></div><br></div><br><div class="limit"><br><div class="key">内存限制 </div><br><div class="value">65536 kB<br><br></div><br></div><br><div class="limit"><br><div class="key">代码长度限制 </div><br><div class="value">8000 B<br><br></div><br></div><br><div class="checker"><br><div class="key">判题程序 </div><br><div class="value"><span title="纯文本对比">Standard</span> </div><br></div><br><div class="key">作者 </div><br><div class="value">CHEN, Yue<br><br></div><br></div>
+
+<div id="problemContent"><br>读入一个自然数n，计算其各位数字之和，用汉语拼音写出和的每一位数字。<br><br><strong>输入格式：</strong>每个测试输入包含1个测试用例，即给出自然数n的值。这里保证n小于10<sup>100</sup>。<br><br><strong>输出格式：</strong>在一行内输出n的各位数字之和的每一位，拼音数字间有1空格，但一行中最后一个拼音数字后没有空格。<br><strong>输入样例：</strong><br><pre>1234567890987654321123456789<br></pre><br><strong>输出样例：</strong><br><pre>yi san wu<br><pre name="code" class="cpp">#include &lt;stdio.h&gt;<br>#include &lt;string.h&gt;<br><br>const char *num[] = {“ling”, “yi”, “er”, “san”, “si”, “wu”, “liu”, “qi”, “ba”, “jiu”};<br><br>int main()<br>{<br>    char ch, number[10];<br>    int s = 0, i;<br>    while( (ch = getchar()) != ‘\n’ )<br>    {<br>        s += ch-‘0’;<br>    }<br>    sprintf(number, “%d”, s);<br>    printf(“%s”, num[number[0]-‘0’]);<br>    for ( i=1; i&lt;strlen(number); i++ )<br>    {<br>        printf(“ %s”, num[number[i]-‘0’]);<br>    }<br>    printf(“\n”);<br><br>    return 0;<br>}</pre><br><br>&nbsp;</pre><br></div>
+
+<h1 id="07-1-换个格式输出整数-15"><a href="#07-1-换个格式输出整数-15" class="headerlink" title="07-1. 换个格式输出整数 (15)"></a>07-1. 换个格式输出整数 (15)</h1><div id="problemInfo" class="rfloat"><br><div class="limit"><br><div class="key">时间限制 </div><br><div class="value">400 ms<br><br></div><br></div><br><div class="limit"><br><div class="key">内存限制 </div><br><div class="value">65536 kB<br><br></div><br></div><br><div class="limit"><br><div class="key">代码长度限制 </div><br><div class="value">8000 B<br><br></div><br></div><br><div class="checker"><br><div class="key">判题程序 </div><br><div class="value"><span title="纯文本对比">Standard</span> </div><br></div><br><div class="key">作者 </div><br><div class="value">CHEN, Yue<br><br></div><br></div>
+
+<div id="problemContent"><br>让我们用字母B来表示“百”、字母S表示“十”，用“12…n”来表示个位数字n（&lt;10），换个格式来输出任一个不超过3位的正整数。例如234应该被输出为BBSSS1234，因为它有2个“百”、3个“十”、以及个位的4。<br><br><strong>输入格式：</strong>每个测试输入包含1个测试用例，给出正整数n（&lt;1000）。<br><br><strong>输出格式：</strong>每个测试用例的输出占一行，用规定的格式输出n。<br><strong>输入样例1：</strong><br><pre>234<br></pre><br><strong>输出样例1：</strong><br><pre>BBSSS1234<br></pre><br><strong>输入样例2：</strong><br><pre>23<br></pre><br><strong>输出样例2：</strong><br><pre>SS123<br><br><pre name="code" class="cpp">#include &lt;stdio.h&gt;<br><br>int main()<br>{<br>    int i, j, B, S;<br>    scanf(“%d”, &amp;i);<br>    if(i &gt;= 1 &amp;&amp; i &lt; 1000)<br>    {<br>        if(i &gt;= 1 &amp;&amp; i &lt; 10)<br>        {<br>            for(j=1; j&lt;=i; ++j)<br>            {<br>                printf(“%d”, j);<br>            }<br>        }<br>        if(i &gt;= 10 &amp;&amp; i &lt; 100)<br>        {<br>            S = i / 10;<br>            for(j=1; j&lt;=S; ++j)<br>            {<br>                printf(“S”);<br>            }<br>            i = i % 10;<br>            for(j=1; j&lt;=i; ++j)<br>            {<br>                printf(“%d”, j);<br>            }<br>        }<br>        if(i &gt;= 100 &amp;&amp; i &lt; 1000)<br>        {<br>            B = i / 100;<br>            for(j=1; j&lt;=B; ++j)<br>            {<br>                printf(“B”);<br>            }<br>            S = i /10 % 10;<br>            for(j=1; j&lt;=S; ++j)<br>            {<br>                printf(“S”);<br>            }<br>            i = i % 10;<br>            for(j=1; j&lt;=i; ++j)<br>            {<br>                printf(“%d”, j);<br>            }<br>        }<br>    }<br><br>    return 0;<br>}</pre><br>&nbsp;</pre><br></div>
+
+<h1 id="07-2-A-B和C-15"><a href="#07-2-A-B和C-15" class="headerlink" title="07-2. A+B和C (15)"></a>07-2. A+B和C (15)</h1><div id="problemInfo" class="rfloat"><br><div class="limit"><br><div class="key">时间限制 </div><br><div class="value">50 ms<br><br></div><br></div><br><div class="limit"><br><div class="key">内存限制 </div><br><div class="value">65536 kB<br><br></div><br></div><br><div class="limit"><br><div class="key">代码长度限制 </div><br><div class="value">8000 B<br><br></div><br></div><br><div class="checker"><br><div class="key">判题程序 </div><br><div class="value"><span title="纯文本对比">Standard</span> </div><br></div><br><div class="key">作者 </div><br><div class="value">HOU, Qiming<br><br></div><br></div>
+
+<div id="problemContent"><br>给定区间[-2<sup>31</sup>, 2<sup>31</sup>]内的3个整数A、B和C，请判断A+B是否大于C。<br><br><strong>输入格式：</strong><br><br>输入第1行给出正整数T(&lt;=10)，是测试用例的个数。随后给出T组测试用例，每组占一行，顺序给出A、B和C。整数间以空格分隔。<br><br><strong>输出格式：</strong><br><br>对每组测试用例，在一行中输出“Case #X: true”如果A+B&gt;C，否则输出“Case #X: false”，其中X是测试用例的编号（从1开始）。<br><strong>输入样例：</strong><br><pre>4<br>1 2 3<br>2 3 4<br>2147483647 0 2147483646<br>0 -2147483648 -2147483647<br></pre><br><strong>输出样例：</strong><br><pre>Case #1: false<br>Case #2: true<br>Case #3: true<br>Case #4: false<br><br><pre name="code" class="cpp">#include &lt;stdio.h&gt;<br><br>int main()<br>{<br>    int t, i;<br>    long a, j, k;<br>    scanf(“%d”, &amp;t);<br>    if(t &gt;= 1 &amp;&amp; t &lt;= 10)<br>    {<br>        for(i=1; i&lt;=t; ++i)<br>        {<br>            scanf(“%ld%ld%ld”, &amp;a, &amp;j, &amp;k);<br>            if(a + j &gt; k)<br>            {<br>                printf(“Case #%d: true\n”, i);<br>            }<br>            else<br>            {<br>                printf(“Case #%d: false\n”, i);<br>            }<br>        }<br>    }<br><br>    return 0;<br>}</pre><br>&nbsp;</pre><br></div>
+
+<h1 id="07-3-数素数-20"><a href="#07-3-数素数-20" class="headerlink" title="07-3. 数素数 (20)"></a>07-3. 数素数 (20)</h1><div id="problemInfo" class="rfloat"><br><div class="limit"><br><div class="key">时间限制 </div><br><div class="value">100 ms<br><br></div><br></div><br><div class="limit"><br><div class="key">内存限制 </div><br><div class="value">65536 kB<br><br></div><br></div><br><div class="limit"><br><div class="key">代码长度限制 </div><br><div class="value">8000 B<br><br></div><br></div><br><div class="checker"><br><div class="key">判题程序 </div><br><div class="value"><span title="纯文本对比">Standard</span> </div><br></div><br><div class="key">作者 </div><br><div class="value">CHEN, Yue<br><br></div><br></div>
+
+<div id="problemContent"><br>令P<sub>i</sub>表示第i个素数。现任给两个正整数M &lt;= N &lt;= 10<sup>4</sup>，请输出P<sub>M</sub>到P<sub>N</sub>的所有素数。<br><br><strong>输入格式：</strong><br><br>输入在一行中给出M和N，其间以空格分隔。<br><br><strong>输出格式：</strong><br><br>输出从P<sub>M</sub>到P<sub>N</sub>的所有素数，每10个数字占1行，其间以空格分隔，但行末不得有多余空格。<br><strong>输入样例：</strong><br><pre>5 27<br></pre><br><strong>输出样例：</strong><br><pre>11 13 17 19 23 29 31 37 41 43<br>47 53 59 61 67 71 73 79 83 89<br>97 101 103<br><br><pre name="code" class="cpp">#include &lt;stdio.h&gt;<br><br>int a[10001];<br><br>int main()<br>{<br>    int i, c = 0, j, p, m, n;<br>    a[0] = 2;<br>    for ( i=3; ;i+=2 )<br>    {<br>        p = 1;<br>        for ( j=2; j*j&lt;=i; j++ )<br>        {<br>            if ( i % j == 0 )<br>            {<br>                p = 0;<br>                break;<br>            }<br>        }<br>        if ( p )<br>        {<br>            a[++c] = i;<br>        }<br>        if ( c == 10000 ) break;<br>    }<br>    c = 0;<br>    scanf(“%d %d”, &amp;m, &amp;n);<br>    for ( i=m; i&lt;=n; i++ )<br>    {<br>        c++;<br>        printf(“%d”, a[i-1]);<br>        if ( c % 10 == 0 )<br>            printf(“\n”);<br>        else if ( i &lt; n )<br>            printf(“ “);<br>    }<br>    if ( c % 5 != 0 )<br>        printf(“\n”);<br><br>    return 0;<br>}</pre><br>&nbsp;</pre><br></div>
+
+<h1 id="08-0-查找整数-10"><a href="#08-0-查找整数-10" class="headerlink" title="08-0. 查找整数(10)"></a>08-0. 查找整数(10)</h1><div id="problemInfo" class="rfloat"><br><div class="limit"><br><div class="key">时间限制 </div><br><div class="value">400 ms<br><br></div><br></div><br><div class="limit"><br><div class="key">内存限制 </div><br><div class="value">65536 kB<br><br></div><br></div><br><div class="limit"><br><div class="key">代码长度限制 </div><br><div class="value">8000 B<br><br></div><br></div><br><div class="checker"><br><div class="key">判题程序 </div><br><div class="value"><span title="纯文本对比">Standard</span> </div><br></div><br><div class="key">作者 </div><br><div class="value">杨起帆（浙江大学城市学院）<br><br></div><br></div>
+
+<div id="problemContent"><br>本题要求从输入的N个整数中查找给定的X。如果找到，输出X的位置（从0开始数）；如果没有找到，输出“Not Found”。<br><br><strong>输入格式：</strong><br><br>输入在第1行中给出2个正整数N（&lt;=20）和X，第2行给出N个整数。数字均不超过长整型，其间以空格分隔。<br><br><strong>输出格式：</strong><br><br>在一行中输出X的位置，或者“Not Found”。<br><strong>输入样例1：</strong><br><pre>5 7<br>3 5 7 1 9<br></pre><br><strong>输出样例1：</strong><br><pre>2<br></pre><br><strong>输入样例2：</strong><br><pre>5 7<br>3 5 8 1 9<br></pre><br><strong>输出样例2：</strong><br><pre>Not Found<br><br><pre name="code" class="cpp">#include &lt;stdio.h&gt;<br>#define N 1000<br><br>int a[N];<br><br>int main()<br>{<br>    int n, key, i;<br>    scanf(“%d%d”, &amp;n, &amp;key);<br>    for ( i=0; i&lt;n; i++ )<br>    {<br>        scanf(“%d”, &amp;a[i]);<br>    }<br>    for ( i=0; i&lt;n; i++ )<br>    {<br>        if ( a[i] == key )<br>        {<br>            printf(“%d\n”, i);<br>            break;<br>        }<br>    }<br>    if ( i == n )<br>    {<br>        printf(“Not Found\n”);<br>    }<br><br>    return 0;<br>}</pre><br>&nbsp;</pre><br></div>
+
+<h1 id="08-1-求一批整数中出现最多的个位数字-20"><a href="#08-1-求一批整数中出现最多的个位数字-20" class="headerlink" title="08-1. 求一批整数中出现最多的个位数字(20)"></a>08-1. 求一批整数中出现最多的个位数字(20)</h1><div id="problemInfo" class="rfloat"><br><div class="limit"><br><div class="key">时间限制 </div><br><div class="value">400 ms<br><br></div><br></div><br><div class="limit"><br><div class="key">内存限制 </div><br><div class="value">65536 kB<br><br></div><br></div><br><div class="limit"><br><div class="key">代码长度限制 </div><br><div class="value">8000 B<br><br></div><br></div><br><div class="checker"><br><div class="key">判题程序 </div><br><div class="value"><span title="纯文本对比">Standard</span> </div><br></div><br><div class="key">作者 </div><br><div class="value">徐镜春（浙江大学）<br><br></div><br></div>
+
+<div id="problemContent"><br>给定一批整数，分析每个整数的每一位数字，求出现次数最多的个位数字。例如给定3个整数1234、2345、3456，其中出现最多次数的数字是3和4，均出现了3次。<br><br><strong>输入格式：</strong><br><br>输入在第1行中给出正整数N（&lt;=1000），在第2行中给出N个不超过整型范围的正整数，数字间以空格分隔。<br><br><strong>输出格式：</strong><br><br>在一行中按格式“M: n1 n2 …”输出，其中M是最大次数，n1、n2、……为出现次数最多的个位数字，按从小到大的顺序排列。数字间以空格分隔，但末尾不得有多余空格。<br><strong>输入样例：</strong><br><pre>3<br>1234 2345 3456<br></pre><br><strong>输出样例：</strong><br><pre>3: 3 4<br><br><pre name="code" class="cpp">#include &lt;stdio.h&gt;<br>#include &lt;string.h&gt;<br><br>int a[1002];<br><br>int main()<br>{<br>    int t, i, max = 0;<br>    int count[10];<br>    scanf(“%d”, &amp;t);<br>    for ( i=0; i&lt;10; i++ )<br>    {<br>        count[i] = 0;<br>    }<br>    for ( i=0; i&lt;t; i++ )<br>    {<br>        scanf(“%d”, &amp;a[i]);<br>    }<br>    for ( i=0; i&lt;t; i++ )<br>    {<br>        while (a[i])<br>        {<br>            count[a[i]%10]++;<br>            a[i] /= 10;<br>        }<br>    }<br>    for ( i=0; i&lt;10; i++ )<br>    {<br>        if ( max &lt; count[i] )<br>        {<br>            max = count[i];<br>        }<br>    }<br>    printf(“%d:”, max);<br>    for ( i=0; i&lt;10; i++ )<br>    {<br>        if ( count[i] == max )<br>        {<br>            printf(“ %d”, i);<br>        }<br>    }<br>    printf(“\n”);<br><br>    return 0;<br>}</pre><br>&nbsp;</pre><br></div>
+
+<h1 id="08-2-求矩阵的局部极大值-15"><a href="#08-2-求矩阵的局部极大值-15" class="headerlink" title="08-2. 求矩阵的局部极大值(15)"></a>08-2. 求矩阵的局部极大值(15)</h1><div id="problemInfo" class="rfloat"><br><div class="limit"><br><div class="key">时间限制 </div><br><div class="value">400 ms<br><br></div><br></div><br><div class="limit"><br><div class="key">内存限制 </div><br><div class="value">65536 kB<br><br></div><br></div><br><div class="limit"><br><div class="key">代码长度限制 </div><br><div class="value">8000 B<br><br></div><br></div><br><div class="checker"><br><div class="key">判题程序 </div><br><div class="value"><span title="纯文本对比">Standard</span> </div><br></div><br><div class="key">作者 </div><br><div class="value">徐镜春（浙江大学）<br><br></div><br></div>
+
+<div id="problemContent"><br>给定M行N列的整数矩阵A，如果A的非边界元素A[i][j]大于相邻的上下左右4个元素，那么就称元素A[i][j]是矩阵的局部极大值。本题要求给定矩阵的全部局部极大值及其所在的位置。<br><br><strong>输入格式：</strong><br><br>输入在第1行中给出矩阵A的行数M和列数N（3&lt;=M,N&lt;=20）；最后M行，每行给出A在该行的N个元素的值。数字间以空格分隔。<br><br><strong>输出格式：</strong><br><br>每行按照“元素值 行号 列号”的格式输出一个局部极大值，其中行、列编号从1开始。要求按照行号递增输出；若同行有超过1个局部极大值，则该行按列号递增输出。若没有局部极大值，则输出“None 总行数 总列数”。<br><strong>输入样例1：</strong><br><pre>4 5<br>1 1 1 1 1<br>1 3 9 3 1<br>1 5 3 5 1<br>1 1 1 1 1<br></pre><br><strong>输出样例1：</strong><br><pre>9 2 3<br>5 3 2<br>5 3 4<br></pre><br><strong>输入样例2：</strong><br><pre>3 5<br>1 1 1 1 1<br>9 3 9 9 1<br>1 5 3 5 1<br></pre><br><strong>输出样例2：</strong><br><pre>None 3 5<br><br><pre name="code" class="cpp">#include &lt;stdio.h&gt;<br><br>int a[21][21];<br><br>int main()<br>{<br>    int m, n, i, j, p = 0;<br>    scanf(“%d %d”, &amp;m, &amp;n);<br>    for ( i=0; i&lt;m; i++ )<br>    {<br>        for ( j=0; j&lt;n; j++ )<br>        {<br>            scanf(“%d”, &amp;a[i][j]);<br>        }<br>    }<br>    for ( i=1; i&lt;m-1; i++ )<br>    {<br>        for ( j=1; j&lt;n-1; j++ )<br>        {<br>            if ( a[i][j] &gt; a[i][j+1] &amp;&amp; a[i][j] &gt; a[i][j-1] &amp;&amp;<br>                a[i][j] &gt; a[i+1][j] &amp;&amp; a[i][j] &gt; a[i-1][j] )<br>            {<br>                printf(“%d %d %d\n”, a[i][j], i+1, j+1);<br>                p = 1;<br>            }<br>        }<br>    }<br>    if ( !p )<br>    {<br>        printf(“None %d %d\n”, m, n);<br>    }<br><br>    return 0;<br>}</pre><br>&nbsp;</pre><br></div>
+
+<h1 id="08-3-组个最小数-20"><a href="#08-3-组个最小数-20" class="headerlink" title="08-3. 组个最小数 (20)"></a>08-3. 组个最小数 (20)</h1><div id="problemInfo" class="rfloat"><br><div class="limit"><br><div class="key">时间限制 </div><br><div class="value">100 ms<br><br></div><br></div><br><div class="limit"><br><div class="key">内存限制 </div><br><div class="value">65536 kB<br><br></div><br></div><br><div class="limit"><br><div class="key">代码长度限制 </div><br><div class="value">8000 B<br><br></div><br></div><br><div class="checker"><br><div class="key">判题程序 </div><br><div class="value"><span title="纯文本对比">Standard</span> </div><br></div><br><div class="key">作者 </div><br><div class="value">CAO, Peng<br><br></div><br></div>
+
+<div id="problemContent"><br>给定数字0-9各若干个。你可以以任意顺序排列这些数字，但必须全部使用。目标是使得最后得到的数尽可能小（注意0不能做首位）。例如：给定两个0，两个1，三个5，一个8，我们得到的最小的数就是10015558。<br><br>现给定数字，请编写程序输出能够组成的最小的数。<br><br><strong>输入格式：</strong><br><br>每个输入包含1个测试用例。每个测试用例在一行中给出10个非负整数，顺序表示我们拥有数字0、数字1、……数字9的个数。整数间用一个空格分隔。10个数字的总个数不超过50，且至少拥有1个非0的数字。<br><br><strong>输出格式：</strong><br><br>在一行中输出能够组成的最小的数。<br><strong>输入样例：</strong><br><pre>2 2 0 0 0 3 0 0 1 0<br></pre><br><strong>输出样例：</strong><br><pre>10015558<br><br><pre name="code" class="cpp">#include &lt;stdio.h&gt;<br><br>int b[10];<br><br>int main()<br>{<br>    int i, j;<br>    for ( i=0; i&lt;10; i++ )<br>    {<br>        b[i] = 0;<br>    }<br>    for ( i=0; i&lt;10; i++ )<br>    {<br>        scanf(“%d”, &amp;b[i]);<br>    }<br>    for ( i=1; i&lt;10; i++ )<br>    {<br>        if (b[i])<br>        {<br>            printf(“%d”, i);<br>            b[i]–;<br>            break;<br>        }<br>    }<br>    for ( i=0; i&lt;10; i++ )<br>    {<br>        for ( j=0; j&lt;b[i]; j++ )<br>        {<br>            printf(“%d”, i);<br>        }<br>    }<br>    printf(“\n”);<br><br>    return 0;<br>}</pre><br>&nbsp;</pre><br></div>
+
+<h1 id="10-0-说反话-20"><a href="#10-0-说反话-20" class="headerlink" title="10-0. 说反话 (20)"></a>10-0. 说反话 (20)</h1><div id="problemInfo" class="rfloat"><br><div class="limit"><br><div class="key">时间限制 </div><br><div class="value">400 ms<br><br></div><br></div><br><div class="limit"><br><div class="key">内存限制 </div><br><div class="value">65536 kB<br><br></div><br></div><br><div class="limit"><br><div class="key">代码长度限制 </div><br><div class="value">8000 B<br><br></div><br></div><br><div class="checker"><br><div class="key">判题程序 </div><br><div class="value"><span title="纯文本对比">Standard</span> </div><br></div><br><div class="key">作者 </div><br><div class="value">CHEN, Yue<br><br></div><br></div>
+
+<div id="problemContent"><br>给定一句英语，要求你编写程序，将句中所有单词的顺序颠倒输出。<br><br><strong>输入格式：</strong>测试输入包含一个测试用例，在一行内给出总长度不超过80的字符串。字符串由若干单词和若干空格组成，其中单词是由英文字母（大小写有区分）组成的字符串，单词之间用1个空格分开，输入保证句子末尾没有多余的空格。<br><br><strong>输出格式：</strong>每个测试用例的输出占一行，输出倒序后的句子。<br><strong>输入样例：</strong><br><pre>Hello World Here I Come<br></pre><br><strong>输出样例：</strong><br><pre>Come I Here World Hello<br><br><pre name="code" class="cpp">#include &lt;stdio.h&gt;<br>#include &lt;string.h&gt;<br><br>char str[81];<br><br>int main()<br>{<br>    int i, k;<br>    char <em>p;<br>    gets(str);<br>    k = strlen(str);<br>    p = str + k;<br>    while (1)<br>    {<br>        if ( p == str )<br>        {<br>            printf(“%s\n”, p);<br>            break;<br>        }<br>        if (</em>p == ‘ ‘ &amp;&amp; <em>(p+1) != ‘ ‘)<br>        {
+            </em>p = ‘\0’;<br>            printf(“%s “, p+1);<br>        }<br>        p–;<br>    }<br>    return 0;<br>}</pre><br>&nbsp;</pre><br></div>
+
+<h1 id="10-1-在字符串中查找指定字符-15"><a href="#10-1-在字符串中查找指定字符-15" class="headerlink" title="10-1. 在字符串中查找指定字符(15)"></a>10-1. 在字符串中查找指定字符(15)</h1><div id="problemInfo" class="rfloat"><br><div class="limit"><br><div class="key">时间限制 </div><br><div class="value">400 ms<br><br></div><br></div><br><div class="limit"><br><div class="key">内存限制 </div><br><div class="value">65536 kB<br><br></div><br></div><br><div class="limit"><br><div class="key">代码长度限制 </div><br><div class="value">8000 B<br><br></div><br></div><br><div class="checker"><br><div class="key">判题程序 </div><br><div class="value"><span title="纯文本对比">Standard</span> </div><br></div><br><div class="key">作者 </div><br><div class="value">白洪欢（浙江大学）<br><br></div><br></div>
+
+<div id="problemContent"><br>输入一个字符串S，再输入一个字符c，要求在字符串S中查找字符c。如果找不到则输出“Not found”；若找到则输出字符串S中从c开始的所有字符。<br><br><strong>输入格式：</strong><br><br>输入在第1行中给出一个不超过80个字符长度的、以回车结束的非空字符串；在第2行中给出一个字符。<br><br><strong>输出格式：</strong><br><br>在一行中按照题目要求输出结果。<br><strong>输入样例1：</strong><br><pre>It is a black box<br>b<br></pre><br><strong>输出样例1：</strong><br><pre>black box<br></pre><br><strong>输入样例2：</strong><br><pre>It is a black box<br>B<br></pre><br><strong>输出样例2：</strong><br><pre>Not found<br><br><pre name="code" class="cpp">#include &lt;string.h&gt;<br>#include &lt;stdio.h&gt;<br><br>char str[180];<br><br>int main()<br>{<br>    char ch;<br>    int i, k, p = 0;<br>    gets(str);<br>    k = strlen(str);<br>    scanf(“%c”, &amp;ch);<br>    for ( i=0; i&lt;k; i++ )<br>    {<br>        if ( str[i] == ch )<br>        {<br>            p = 1;<br>        }<br>        if ( p )<br>        {<br>            printf(“%c”, str[i]);<br>        }<br>    }<br>    if ( !p )<br>    {<br>        printf(“Not found\n”);<br>    }<br>    else<br>    {<br>        printf(“\n”);<br>    }<br><br>    return 0;<br>}</pre><br>&nbsp;</pre><br></div>
+
+<h1 id="10-2-删除字符串中的子串-20"><a href="#10-2-删除字符串中的子串-20" class="headerlink" title="10-2. 删除字符串中的子串(20)"></a>10-2. 删除字符串中的子串(20)</h1><div id="problemInfo" class="rfloat"><br><div class="limit"><br><div class="key">时间限制 </div><br><div class="value">400 ms<br><br></div><br></div><br><div class="limit"><br><div class="key">内存限制 </div><br><div class="value">65536 kB<br><br></div><br></div><br><div class="limit"><br><div class="key">代码长度限制 </div><br><div class="value">8000 B<br><br></div><br></div><br><div class="checker"><br><div class="key">判题程序 </div><br><div class="value"><span title="纯文本对比">Standard</span> </div><br></div><br><div class="key">作者 </div><br><div class="value">白洪欢（浙江大学）<br><br></div><br></div>
+
+<div id="problemContent"><br>输入2个字符串S1和S2，要求删除字符串S1中出现的所有子串S2，即结果字符串中不能包含S2。<br><br><strong>输入格式：</strong><br><br>输入在2行中分别给出不超过80个字符长度的、以回车结束的2个非空字符串，对应S1和S2。<br><br><strong>输出格式：</strong><br><br>在一行中输出删除字符串S1中出现的所有子串S2后的结果字符串。<br><strong>输入样例：</strong><br><pre>Tomcat is a male ccatat<br>cat<br></pre><br><strong>输出样例：</strong><br><pre>Tom is a male<br><pre name="code" class="cpp">#include &lt;stdio.h&gt;<br>#include &lt;string.h&gt;<br><br>char s1[81], s2[81];<br><br>int main()<br>{<br>    int i, k;<br>    gets(s1);<br>    gets(s2);<br>    char <em>p = strstr(s1, s2);<br>    while(1)<br>    {<br>        char </em>p = strstr(s1, s2);<br>        if ( p )<br>        {<br>            for ( i=0; i&lt;strlen(p) - strlen(s2); i++ )<br>            {<br>                p[i] = p[strlen(s2) + i];<br>            }<br>            p[i] = ‘\0’;<br>        }<br>        else<br>        {<br>            puts(s1);<br>            break;<br>        }<br>    }<br><br>    return 0;<br>}</pre><br></pre><br></div>
+
+<h1 id="10-3-字符串逆序-15"><a href="#10-3-字符串逆序-15" class="headerlink" title="10-3. 字符串逆序(15)"></a>10-3. 字符串逆序(15)</h1><div id="problemInfo" class="rfloat"><br><div class="limit"><br><div class="key">时间限制 </div><br><div class="value">400 ms<br><br></div><br></div><br><div class="limit"><br><div class="key">内存限制 </div><br><div class="value">65536 kB<br><br></div><br></div><br><div class="limit"><br><div class="key">代码长度限制 </div><br><div class="value">8000 B<br><br></div><br></div><br><div class="checker"><br><div class="key">判题程序 </div><br><div class="value"><span title="纯文本对比">Standard</span> </div><br></div><br><div class="key">作者 </div><br><div class="value">白洪欢（浙江大学）<br><br></div><br></div>
+
+<div id="problemContent"><br>输入一个字符串，对该字符串进行逆序，输出逆序后的字符串。<br><br><strong>输入格式：</strong><br><br>输入在一行中给出一个不超过80个字符长度的、以回车结束的非空字符串。<br><br><strong>输出格式：</strong><br><br>在一行中输出逆序后的字符串。<br><strong>输入样例：</strong><br><pre>Hello World!<br></pre><br><strong>输出样例：</strong><br><pre>!dlroW olleH<br><br><pre name="code" class="cpp">#include &lt;stdio.h&gt;<br>#include &lt;string.h&gt;<br><br>int main()<br>{<br>    char str[81];<br>    int k;<br>    gets(str);<br>    k = strlen(str);<br>    k -= 1;<br>    for ( k; k&gt;=0; k– )<br>    {<br>        printf(“%c”, str[k]);<br>    }<br>    printf(“\n”);<br><br>    return 0;<br>}</pre><br>&nbsp;</pre><br></div>
+
+<h1 id="10-4-字符串循环左移-20"><a href="#10-4-字符串循环左移-20" class="headerlink" title="10-4. 字符串循环左移(20)"></a>10-4. 字符串循环左移(20)</h1><div id="problemInfo" class="rfloat"><br><div class="limit"><br><div class="key">时间限制 </div><br><div class="value">400 ms<br><br></div><br></div><br><div class="limit"><br><div class="key">内存限制 </div><br><div class="value">65536 kB<br><br></div><br></div><br><div class="limit"><br><div class="key">代码长度限制 </div><br><div class="value">8000 B<br><br></div><br></div><br><div class="checker"><br><div class="key">判题程序 </div><br><div class="value"><span title="纯文本对比">Standard</span> </div><br></div><br><div class="key">作者 </div><br><div class="value">白洪欢（浙江大学）<br><br></div><br></div>
+
+<div id="problemContent"><br>输入一个字符串和一个非负整数N，要求将字符串循环左移N次。<br><br><strong>输入格式：</strong><br><br>输入在第1行中给出一个不超过100个字符长度的、以回车结束的非空字符串；第2行给出非负整数N。<br><br><strong>输出格式：</strong><br><br>在一行中输出循环左移N次后的字符串。<br><strong>输入样例：</strong><br><pre>Hello World!<br>2<br></pre><br><strong>输出样例：</strong><br><pre>llo World!He<br><br><pre name="code" class="cpp">#include &lt;stdio.h&gt;<br>#include &lt;string.h&gt;<br><br>char str[103];<br><br>int main()<br>{<br>    int i, k, n;<br>    gets(str);<br>    k = strlen(str);<br>    scanf(“%d”, &amp;n);<br>    if ( n % k == 0 )<br>        puts(str);<br>    else<br>    {<br>        for ( i=n%k; i&lt;k; i++ )<br>        {<br>            printf(“%c”, str[i]);<br>        }<br>        for ( i=0; i&lt;n%k; i++ )<br>        {<br>            printf(“%c”, str[i]);<br>        }<br>        printf(“\n”);<br>    }<br><br>    return 0;<br>}</pre><br>&nbsp;</pre><br></div>
+
+<h1 id="11-0-平面向量加法-10"><a href="#11-0-平面向量加法-10" class="headerlink" title="11-0. 平面向量加法(10)"></a>11-0. 平面向量加法(10)</h1><div id="problemInfo" class="rfloat"><br><div class="limit"><br><div class="key">时间限制 </div><br><div class="value">400 ms<br><br></div><br></div><br><div class="limit"><br><div class="key">内存限制 </div><br><div class="value">65536 kB<br><br></div><br></div><br><div class="limit"><br><div class="key">代码长度限制 </div><br><div class="value">8000 B<br><br></div><br></div><br><div class="checker"><br><div class="key">判题程序 </div><br><div class="value"><span title="纯文本对比">Standard</span> </div><br></div><br><div class="key">作者 </div><br><div class="value">乔林（清华大学）<br><br></div><br></div>
+
+<div id="problemContent"><br>本题要求编写程序，计算两个二维平面向量的和向量。<br><br><strong>输入格式：</strong><br><br>输入在一行中按照“x1 y1 x2 y2”的格式给出两个二维平面向量V1=(x1, y1)和V2=(x2, y2)的分量。<br><br><strong>输出格式：</strong><br><br>在一行中按照“(x, y)”的格式输出和向量，坐标输出小数点后1位（注意不能输出-0.0）。<br><strong>输入样例：</strong><br><pre>3.5 -2.7 -13.9 8.7<br></pre><br><strong>输出样例：</strong><br><pre>(-10.4, 6.0)<br><br><pre name="code" class="cpp">#include &lt;stdio.h&gt;<br>#include &lt;math.h&gt;<br>#define EPSILON 0.05<br><br>struct Vector {<br>    double x;<br>    double y;<br>};<br><br>int main(void)<br>{<br>    struct Vector v1, v2, v3;<br>    scanf(“%lf%lf%lf%lf”, &amp;v1.x, &amp;v1.y, &amp;v2.x, &amp;v2.y);<br>    v3.x = v1.x + v2.x;<br>    v3.y = v1.y + v2.y;<br>    if(fabs(v3.x) &lt; EPSILON)<br>        v3.x = fabs(v3.x);<br>    if(fabs(v3.y) &lt; EPSILON)<br>        v3.y = fabs(v3.y);<br>    printf(“(%.1f, %.1f)\n”, v3.x, v3.y);<br>    return 0;<br>}</pre><br>&nbsp;</pre><br></div>
+
+<h1 id="11-1-通讯录的录入与显示-10"><a href="#11-1-通讯录的录入与显示-10" class="headerlink" title="11-1. 通讯录的录入与显示(10)"></a>11-1. 通讯录的录入与显示(10)</h1><div id="problemInfo" class="rfloat"><br><div class="limit"><br><div class="key">时间限制 </div><br><div class="value">400 ms<br><br></div><br></div><br><div class="limit"><br><div class="key">内存限制 </div><br><div class="value">65536 kB<br><br></div><br></div><br><div class="limit"><br><div class="key">代码长度限制 </div><br><div class="value">8000 B<br><br></div><br></div><br><div class="checker"><br><div class="key">判题程序 </div><br><div class="value"><span title="纯文本对比">Standard</span> </div><br></div><br><div class="key">作者 </div><br><div class="value">乔林（清华大学）<br><br></div><br></div>
+
+<div id="problemContent"><br>通讯录中的一条记录包含下述基本信息：朋友的姓名、出生日期、性别、固定电话号码、移动电话号码。本题要求编写程序，录入N条记录，并且根据要求显示任意某条记录。<br><br><strong>输入格式：</strong><br><br>输入在第1行给出正整数N（&lt;=10）；随后N行，每行按照格式“姓名 生日 性别 固话 手机”给出一条记录。其中“姓名”是不超过10个字符、不包含空格的非空字符串；生日按“yyyy/mm/dd”的格式给出年月日；性别用“M”表示“男”、“F”表示“女”；“固话”和“手机”均为不超过15位的连续数字，前面有可能出现“+”。<br><br>在通讯录记录输入完成后，最后一行给出正整数K，并且随后给出K个整数，表示要查询的记录编号（从0到N-1顺序编号）。数字间以空格分隔。<br><br><strong>输出格式：</strong><br><br>对每一条要查询的记录编号，在一行中按照“姓名 固话 手机 性别 生日”的格式输出该记录。若要查询的记录不存在，则输出“Not Found”。<br><strong>输入样例：</strong><br><pre>3<br>Chris 1984/03/10 F +86181779452 13707010007<br>LaoLao 1967/11/30 F 057187951100 +8618618623333<br>QiaoLin 1980/01/01 M 84172333 10086<br>2 1 7<br></pre><br><strong>输出样例：</strong><br><pre>LaoLao 057187951100 +8618618623333 F 1967/11/30<br>Not Found<br><pre name="code" class="cpp">#include &lt;stdio.h&gt;<br>#define N 10<br><br>struct Person {<br>    char name[11];<br>    char birthday[11];<br>    char sex;<br>    char fixed[17];<br>    char mobile[17];<br>};<br><br>int main(void)<br>{<br>    struct Person p[N];<br>    int num[N];<br>    int i, n, k;<br>    scanf(“%d”, &amp;n);<br>    for(i = 0; i &lt; n; ++i)<br>        scanf(“%s %s %c %s %s”, p[i].name, p[i].birthday,<br>              &amp;p[i].sex, p[i].fixed, p[i].mobile);<br>    scanf(“%d”, &amp;k);<br>    for(i = 0; i &lt; k; ++i)<br>        scanf(“%d”, &amp;num[i]);<br>    for(i = 0; i &lt; k; ++i) {<br>        if(num[i] &gt;= 0 &amp;&amp; num[i] &lt; n)<br>            printf(“%s %s %s %c %s\n”, p[num[i]].name,<br>                   p[num[i]].fixed, p[num[i]].mobile, p[num[i]].sex, p[num[i]].birthday);<br>        else<br>            printf(“Not Found\n”);<br>    }<br>    return 0;<br>}</pre><br>&nbsp;</pre><br></div>
+
+<h1 id="此汇总由http-blog-csdn-net-fjinhao编辑整理，转载请注明来源，代码书写有不规范或有错误之处，欢迎批评指教，有任何问题请联系fjinhao-qq-com。"><a href="#此汇总由http-blog-csdn-net-fjinhao编辑整理，转载请注明来源，代码书写有不规范或有错误之处，欢迎批评指教，有任何问题请联系fjinhao-qq-com。" class="headerlink" title="此汇总由http://blog.csdn.net/fjinhao编辑整理，转载请注明来源，代码书写有不规范或有错误之处，欢迎批评指教，有任何问题请联系fjinhao@qq.com。"></a><span style="color:#FF0000"><span style="font-family:KaiTi_GB2312">此汇总由<a href="http://blog.csdn.net/fjinhao编辑整理，转载请注明来源，代码书写有不规范或有错误之处，欢迎批评指教，有任何问题请联系fjinhao@qq.com。" target="_blank" rel="noopener">http://blog.csdn.net/fjinhao编辑整理，转载请注明来源，代码书写有不规范或有错误之处，欢迎批评指教，有任何问题请联系fjinhao@qq.com。</a></span></span></h1>
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/mm_reward_qrcode.png" alt="Fayne 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay_qrcode.png" alt="Fayne 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Fayne</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="378.html" title="中国大学MOOC-翁恺-C语言程序设计习题集-解答汇总">378.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/pat/" rel="tag"><i class="fa fa-tag"></i> pat</a>
+          
+            <a href="/tags/acm/" rel="tag"><i class="fa fa-tag"></i> acm</a>
+          
+            <a href="/tags/mooc/" rel="tag"><i class="fa fa-tag"></i> mooc</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/07/11/1009-e8-af-b4-e5-8f-8d-e8-af-9d20/" rel="next" title="1009. 说反话 (20)">
+                <i class="fa fa-chevron-left"></i> 1009. 说反话 (20)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/07/12/akoj-1319-e5-9b-9b-e6-96-b9-e5-ae-9a-e7-90-86/" rel="prev" title="akoj-1319-四方定理">
+                akoj-1319-四方定理 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+  
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/user.jpg" alt="Fayne">
+            
+              <p class="site-author-name" itemprop="name">Fayne</p>
+              <p class="site-description motion-element" itemprop="description">成为自己想成为的人永远不会太迟</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">93</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">70</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">57</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/fanjinhao" target="_blank" title="GitHub" rel="external nofollow"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="http://blog.csdn.net/fjinhao" target="_blank" title="CSDN" rel="external nofollow"><i class="fa fa-fw fa-blogger"></i>CSDN</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:jinhaoxc@gmail.com" target="_blank" title="E-Mail" rel="external nofollow"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#中国大学MOOC-翁恺-C语言程序设计习题集"><span class="nav-number">1.</span> <span class="nav-text">中国大学MOOC-翁恺-C语言程序设计习题集</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#02-0-整数四则运算-10"><span class="nav-number">2.</span> <span class="nav-text">02-0. 整数四则运算(10)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#02-1-厘米换算英尺英寸-15"><span class="nav-number">3.</span> <span class="nav-text">02-1. 厘米换算英尺英寸(15)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#02-2-然后是几点-15"><span class="nav-number">4.</span> <span class="nav-text">02-2. 然后是几点(15)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#02-3-逆序的三位数-10"><span class="nav-number">5.</span> <span class="nav-text">02-3. 逆序的三位数(10)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#02-4-BCD解密-10"><span class="nav-number">6.</span> <span class="nav-text">02-4. BCD解密(10)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#03-0-超速判断-10"><span class="nav-number">7.</span> <span class="nav-text">03-0. 超速判断(10)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#03-1-三天打鱼两天晒网-15"><span class="nav-number">8.</span> <span class="nav-text">03-1. 三天打鱼两天晒网(15)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#03-2-用天平找小球-10"><span class="nav-number">9.</span> <span class="nav-text">03-2. 用天平找小球(10)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#03-3-12-24小时制-15"><span class="nav-number">10.</span> <span class="nav-text">03-3. 12-24小时制(15)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#03-4-成绩转换-15"><span class="nav-number">11.</span> <span class="nav-text">03-4. 成绩转换(15)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#04-0-求符合给定条件的整数集-15"><span class="nav-number">12.</span> <span class="nav-text">04-0. 求符合给定条件的整数集(15)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#04-1-水仙花数-20"><span class="nav-number">13.</span> <span class="nav-text">04-1. 水仙花数(20)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#04-2-打印九九口诀表-15"><span class="nav-number">14.</span> <span class="nav-text">04-2. 打印九九口诀表(15)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#04-3-统计素数并求和-20"><span class="nav-number">15.</span> <span class="nav-text">04-3. 统计素数并求和(20)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#04-4-猜数字游戏-15"><span class="nav-number">16.</span> <span class="nav-text">04-4. 猜数字游戏(15)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#05-0-求序列前N项和-15"><span class="nav-number">17.</span> <span class="nav-text">05-0. 求序列前N项和(15)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#05-1-约分最简分式-15"><span class="nav-number">18.</span> <span class="nav-text">05-1. 约分最简分式(15)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#05-2-念数字-15"><span class="nav-number">19.</span> <span class="nav-text">05-2. 念数字(15)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#05-3-求a的连续和-15"><span class="nav-number">20.</span> <span class="nav-text">05-3. 求a的连续和(15)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#06-0-混合类型数据格式化输入-5"><span class="nav-number">21.</span> <span class="nav-text">06-0. 混合类型数据格式化输入(5)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#06-1-简单计算器-20"><span class="nav-number">22.</span> <span class="nav-text">06-1. 简单计算器(20)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#06-2-字符串字母大小写转换-10"><span class="nav-number">23.</span> <span class="nav-text">06-2. 字符串字母大小写转换(10)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#06-3-单词长度-15"><span class="nav-number">24.</span> <span class="nav-text">06-3. 单词长度(15)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#07-0-写出这个数-20"><span class="nav-number">25.</span> <span class="nav-text">07-0. 写出这个数 (20)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#07-1-换个格式输出整数-15"><span class="nav-number">26.</span> <span class="nav-text">07-1. 换个格式输出整数 (15)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#07-2-A-B和C-15"><span class="nav-number">27.</span> <span class="nav-text">07-2. A+B和C (15)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#07-3-数素数-20"><span class="nav-number">28.</span> <span class="nav-text">07-3. 数素数 (20)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#08-0-查找整数-10"><span class="nav-number">29.</span> <span class="nav-text">08-0. 查找整数(10)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#08-1-求一批整数中出现最多的个位数字-20"><span class="nav-number">30.</span> <span class="nav-text">08-1. 求一批整数中出现最多的个位数字(20)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#08-2-求矩阵的局部极大值-15"><span class="nav-number">31.</span> <span class="nav-text">08-2. 求矩阵的局部极大值(15)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#08-3-组个最小数-20"><span class="nav-number">32.</span> <span class="nav-text">08-3. 组个最小数 (20)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#10-0-说反话-20"><span class="nav-number">33.</span> <span class="nav-text">10-0. 说反话 (20)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#10-1-在字符串中查找指定字符-15"><span class="nav-number">34.</span> <span class="nav-text">10-1. 在字符串中查找指定字符(15)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#10-2-删除字符串中的子串-20"><span class="nav-number">35.</span> <span class="nav-text">10-2. 删除字符串中的子串(20)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#10-3-字符串逆序-15"><span class="nav-number">36.</span> <span class="nav-text">10-3. 字符串逆序(15)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#10-4-字符串循环左移-20"><span class="nav-number">37.</span> <span class="nav-text">10-4. 字符串循环左移(20)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#11-0-平面向量加法-10"><span class="nav-number">38.</span> <span class="nav-text">11-0. 平面向量加法(10)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#11-1-通讯录的录入与显示-10"><span class="nav-number">39.</span> <span class="nav-text">11-1. 通讯录的录入与显示(10)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#此汇总由http-blog-csdn-net-fjinhao编辑整理，转载请注明来源，代码书写有不规范或有错误之处，欢迎批评指教，有任何问题请联系fjinhao-qq-com。"><span class="nav-number">40.</span> <span class="nav-text">此汇总由http://blog.csdn.net/fjinhao编辑整理，转载请注明来源，代码书写有不规范或有错误之处，欢迎批评指教，有任何问题请联系fjinhao@qq.com。</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2022</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-heartbeat"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Fayne</span>
+
+  
+
+  
+</div>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.2.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.2.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.2.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.2.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.2.0"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  
+  
+    
+  
+  <script src="//cdn.fayne.cn/js/Valine.min.js"></script>
+
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(function (item) {
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: true,
+        app_id: 'XBJP13WAQUdm3Pp0TwYIGMU8-gzGzoHsz',
+        app_key: 'ywisBiYQCmqpzycdshD9pUCv',
+        placeholder: '记得留下你的邮箱哦~',
+        avatar:'mp',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("XBJP13WAQUdm3Pp0TwYIGMU8-gzGzoHsz", "ywisBiYQCmqpzycdshD9pUCv");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            
+            counter.save(null, {
+              success: function(counter) {
+                
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(counter.get('time'));
+                
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            
+              var newcounter = new Counter();
+              /* Set ACL */
+              var acl = new AV.ACL();
+              acl.setPublicReadAccess(true);
+              acl.setPublicWriteAccess(true);
+              newcounter.setACL(acl);
+              /* End Set ACL */
+              newcounter.set("title", title);
+              newcounter.set("url", url);
+              newcounter.set("time", 1);
+              newcounter.save(null, {
+                success: function(newcounter) {
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+                },
+                error: function(newcounter, error) {
+                  console.log('Failed to create');
+                }
+              });
+            
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <script id="ribbon" type="text/javascript" size="100" alpha="0.3" zindex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
+  
+</body>
+</html>
